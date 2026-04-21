@@ -4,24 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Muhammad Ibrahim Butt | Senior Software Engineer</title>
-  <meta name="description" content="Professional portfolio of Muhammad Ibrahim Butt, Senior Software Engineer specializing in backend systems, cloud, distributed systems, and AI-enabled platforms." />
+  <meta name="description" content="Professional portfolio of Muhammad Ibrahim Butt, Senior Software Engineer specializing in backend systems, cloud architecture, distributed systems, and AI-enabled platforms." />
   <meta property="og:title" content="Muhammad Ibrahim Butt | Senior Software Engineer" />
   <meta property="og:description" content="Backend, cloud, distributed systems, and AI-enabled engineering portfolio." />
   <meta property="og:type" content="website" />
   <meta name="theme-color" content="#0f172a" />
   <style>
     :root {
-      --bg: #0b1120;
-      --bg-soft: #111827;
-      --card: rgba(15, 23, 42, 0.82);
-      --line: rgba(148, 163, 184, 0.18);
+      --bg: #08111f;
+      --bg-2: #0f172a;
+      --surface: rgba(15, 23, 42, 0.82);
+      --surface-2: rgba(30, 41, 59, 0.72);
+      --line: rgba(148, 163, 184, 0.16);
       --text: #e5eefb;
       --muted: #94a3b8;
       --accent: #38bdf8;
-      --accent-2: #22c55e;
-      --shadow: 0 25px 50px rgba(2, 8, 23, 0.35);
-      --radius: 22px;
-      --max: 1120px;
+      --accent-2: #60a5fa;
+      --accent-3: #22c55e;
+      --max: 1160px;
+      --radius: 24px;
+      --shadow: 0 30px 60px rgba(2, 8, 23, 0.35);
     }
 
     * { box-sizing: border-box; }
@@ -30,28 +32,29 @@
       margin: 0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(56, 189, 248, 0.16), transparent 28%),
-        radial-gradient(circle at top right, rgba(34, 197, 94, 0.10), transparent 22%),
-        linear-gradient(180deg, #020617 0%, #0b1120 45%, #0f172a 100%);
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.14), transparent 28%),
+        radial-gradient(circle at top right, rgba(96, 165, 250, 0.10), transparent 24%),
+        linear-gradient(180deg, #020617 0%, #08111f 45%, #0f172a 100%);
       color: var(--text);
       line-height: 1.6;
     }
 
     a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; }
-
-    .container {
-      width: min(calc(100% - 2rem), var(--max));
-      margin: 0 auto;
+    .container { width: min(calc(100% - 2rem), var(--max)); margin: 0 auto; }
+    .panel {
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.76));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
     }
 
     .nav {
       position: sticky;
       top: 0;
       z-index: 50;
-      backdrop-filter: blur(16px);
-      background: rgba(2, 6, 23, 0.68);
-      border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+      backdrop-filter: blur(18px);
+      background: rgba(2, 6, 23, 0.72);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.10);
     }
 
     .nav-inner {
@@ -59,32 +62,27 @@
       align-items: center;
       justify-content: space-between;
       gap: 1rem;
-      padding: 0.9rem 0;
+      padding: 0.95rem 0;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 0.9rem;
+      gap: 0.85rem;
       min-width: 0;
     }
 
-    .brand-mark {
-      width: 44px;
-      height: 44px;
+    .brand-badge {
+      width: 46px;
+      height: 46px;
+      border-radius: 15px;
       display: grid;
       place-items: center;
-      border-radius: 14px;
-      background: linear-gradient(135deg, var(--accent), #60a5fa 60%, #818cf8);
-      color: #04121d;
       font-weight: 800;
-      letter-spacing: 0.02em;
-      box-shadow: var(--shadow);
+      letter-spacing: 0.03em;
+      color: #07131d;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
       flex-shrink: 0;
-    }
-
-    .brand-copy {
-      min-width: 0;
     }
 
     .brand-copy strong,
@@ -95,62 +93,41 @@
       text-overflow: ellipsis;
     }
 
-    .brand-copy strong {
-      font-size: 0.98rem;
-      letter-spacing: 0.01em;
-    }
-
-    .brand-copy span {
-      color: var(--muted);
-      font-size: 0.82rem;
-    }
+    .brand-copy strong { font-size: 0.98rem; }
+    .brand-copy span { color: var(--muted); font-size: 0.84rem; }
 
     .nav-links {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      justify-content: flex-end;
       gap: 1rem;
-      font-size: 0.95rem;
       color: var(--muted);
+      font-size: 0.95rem;
     }
 
     .nav-links a:hover,
-    .nav-links a:focus-visible {
-      color: var(--text);
-    }
+    .nav-links a:focus-visible { color: var(--text); }
 
-    .hero {
-      padding: 5.5rem 0 3rem;
-    }
-
+    .hero { padding: 4.8rem 0 2.4rem; }
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.5fr 1fr;
-      gap: 1.75rem;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 1.25rem;
       align-items: stretch;
     }
 
-    .panel {
-      background: linear-gradient(180deg, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.78));
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-
-    .hero-card {
-      padding: 2.25rem;
-    }
+    .hero-main,
+    .hero-side { padding: 2rem; }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.45rem 0.8rem;
+      gap: 0.45rem;
+      padding: 0.45rem 0.85rem;
       border-radius: 999px;
-      border: 1px solid rgba(56, 189, 248, 0.22);
+      border: 1px solid rgba(56, 189, 248, 0.20);
       background: rgba(14, 165, 233, 0.08);
-      color: #c8efff;
+      color: #cbefff;
       font-size: 0.9rem;
       margin-bottom: 1rem;
     }
@@ -158,49 +135,24 @@
     h1, h2, h3, h4, p { margin-top: 0; }
 
     h1 {
-      font-size: clamp(2.2rem, 5vw, 4rem);
-      line-height: 1.05;
-      letter-spacing: -0.03em;
+      font-size: clamp(2.4rem, 5vw, 4.4rem);
+      line-height: 1.02;
+      letter-spacing: -0.04em;
       margin-bottom: 1rem;
     }
 
-    .hero-subtitle {
-      font-size: clamp(1.05rem, 2.1vw, 1.2rem);
+    .hero-main p.lead {
+      max-width: 62ch;
       color: #cbd5e1;
-      max-width: 60ch;
+      font-size: clamp(1.02rem, 2vw, 1.18rem);
       margin-bottom: 1.4rem;
-    }
-
-    .hero-highlights {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 0.9rem;
-      margin: 1.4rem 0 1.8rem;
-    }
-
-    .highlight {
-      padding: 1rem;
-      border-radius: 18px;
-      background: rgba(30, 41, 59, 0.72);
-      border: 1px solid rgba(148, 163, 184, 0.12);
-    }
-
-    .highlight strong {
-      display: block;
-      font-size: 1.3rem;
-      margin-bottom: 0.2rem;
-    }
-
-    .highlight span {
-      color: var(--muted);
-      font-size: 0.92rem;
     }
 
     .actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.85rem;
-      margin-bottom: 1.2rem;
+      gap: 0.8rem;
+      margin-bottom: 1.25rem;
     }
 
     .btn {
@@ -210,48 +162,123 @@
       gap: 0.5rem;
       padding: 0.9rem 1.15rem;
       border-radius: 14px;
-      font-weight: 600;
+      font-weight: 700;
       transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
       border: 1px solid transparent;
     }
 
     .btn:hover,
     .btn:focus-visible { transform: translateY(-1px); }
-
     .btn-primary {
-      background: linear-gradient(135deg, var(--accent), #2563eb);
       color: white;
+      background: linear-gradient(135deg, var(--accent), #2563eb);
       box-shadow: 0 20px 35px rgba(37, 99, 235, 0.25);
     }
 
     .btn-secondary {
-      border-color: rgba(148, 163, 184, 0.18);
+      border-color: rgba(148, 163, 184, 0.16);
       background: rgba(15, 23, 42, 0.72);
     }
 
-    .contact-row {
+    .contact-strip {
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
+      gap: 0.9rem;
       color: var(--muted);
       font-size: 0.95rem;
     }
 
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.85rem;
+      margin-top: 1.5rem;
+    }
+
+    .stat {
+      padding: 1rem;
+      border-radius: 18px;
+      background: rgba(30, 41, 59, 0.72);
+      border: 1px solid rgba(148, 163, 184, 0.10);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.35rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
     .hero-side {
-      padding: 1.6rem;
       display: flex;
       flex-direction: column;
       gap: 1rem;
     }
 
-    .info-card {
-      padding: 1.2rem;
-      border-radius: 18px;
+    .profile-box,
+    .side-card {
+      border-radius: 20px;
       background: rgba(15, 23, 42, 0.58);
       border: 1px solid rgba(148, 163, 184, 0.12);
     }
 
-    .info-card h3 {
+    .profile-box {
+      padding: 1.4rem;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .portrait {
+      aspect-ratio: 1 / 1;
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(56, 189, 248, 0.28), transparent 28%),
+        linear-gradient(135deg, rgba(56, 189, 248, 0.18), rgba(37, 99, 235, 0.20), rgba(15, 23, 42, 0.9));
+      border: 1px solid rgba(148, 163, 184, 0.12);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 1.4rem;
+    }
+
+    .portrait strong {
+      font-size: 1.45rem;
+      letter-spacing: 0.03em;
+    }
+
+    .portrait span {
+      display: block;
+      color: var(--muted);
+      margin-top: 0.25rem;
+    }
+
+    .availability {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: #d8f5e4;
+      padding: 0.8rem 0.95rem;
+      border-radius: 14px;
+      background: rgba(34, 197, 94, 0.08);
+      border: 1px solid rgba(34, 197, 94, 0.14);
+    }
+
+    .availability::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--accent-3);
+      box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.12);
+      flex-shrink: 0;
+    }
+
+    .side-card { padding: 1.1rem; }
+    .side-card h3 {
       font-size: 0.88rem;
       text-transform: uppercase;
       letter-spacing: 0.08em;
@@ -259,35 +286,19 @@
       margin-bottom: 0.75rem;
     }
 
-    .focus-list,
-    .mini-list {
-      display: grid;
-      gap: 0.7rem;
-    }
-
-    .focus-list div,
+    .mini-list { display: grid; gap: 0.75rem; }
     .mini-list div {
       padding: 0.85rem 0.95rem;
       border-radius: 14px;
       background: rgba(30, 41, 59, 0.72);
-      border: 1px solid rgba(148, 163, 184, 0.1);
+      border: 1px solid rgba(148, 163, 184, 0.08);
     }
 
-    .focus-list strong,
-    .mini-list strong {
-      display: block;
-      font-size: 0.98rem;
-      margin-bottom: 0.15rem;
-    }
+    .mini-list strong { display: block; font-size: 0.98rem; margin-bottom: 0.15rem; }
+    .mini-list span { color: var(--muted); font-size: 0.92rem; }
 
-    .focus-list span,
-    .mini-list span {
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    section {
-      padding: 1.2rem 0 0.4rem;
+    .clients {
+      padding: 1.25rem 0 0.4rem;
     }
 
     .section-head {
@@ -295,25 +306,42 @@
       justify-content: space-between;
       align-items: flex-end;
       gap: 1rem;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.1rem;
     }
 
     .section-head h2 {
       font-size: clamp(1.55rem, 3vw, 2.2rem);
-      margin-bottom: 0.3rem;
       letter-spacing: -0.02em;
+      margin-bottom: 0.25rem;
     }
 
     .section-head p {
       color: var(--muted);
-      max-width: 58ch;
       margin-bottom: 0;
+      max-width: 60ch;
     }
+
+    .client-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .client-pill {
+      padding: 0.75rem 1rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.72);
+      border: 1px solid rgba(148, 163, 184, 0.10);
+      color: #d9e7f8;
+      font-size: 0.95rem;
+    }
+
+    section { padding: 1rem 0 0.4rem; }
 
     .grid-2 {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 1.2rem;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 1rem;
     }
 
     .about-card,
@@ -321,26 +349,21 @@
     .timeline-card,
     .project-card,
     .education-card,
-    .contact-card {
-      padding: 1.5rem;
-    }
+    .contact-card,
+    .tools-card { padding: 1.45rem; }
 
     .about-card p,
-    .contact-card p,
-    .education-card p {
-      color: #cbd5e1;
-    }
+    .education-card p,
+    .contact-card p { color: #cbd5e1; }
 
-    .skill-groups {
+    .skill-groups,
+    .tools-grid {
       display: grid;
       gap: 1rem;
     }
 
-    .skill-group h3 {
-      font-size: 1rem;
-      margin-bottom: 0.65rem;
-    }
-
+    .skill-group h3,
+    .tool-group h3 { font-size: 1rem; margin-bottom: 0.65rem; }
     .chips {
       display: flex;
       flex-wrap: wrap;
@@ -348,26 +371,25 @@
     }
 
     .chip {
-      padding: 0.55rem 0.82rem;
+      padding: 0.55rem 0.8rem;
       border-radius: 999px;
       background: rgba(56, 189, 248, 0.08);
       border: 1px solid rgba(56, 189, 248, 0.16);
-      color: #d8f5ff;
+      color: #d9f5ff;
       font-size: 0.9rem;
     }
 
     .timeline {
       display: grid;
-      gap: 1rem;
-      position: relative;
+      gap: 0.95rem;
     }
 
     .timeline-item {
       position: relative;
-      padding: 1.25rem 1.25rem 1.25rem 1.4rem;
-      border-radius: 18px;
+      padding: 1.25rem 1.25rem 1.25rem 1.45rem;
+      border-radius: 20px;
       background: rgba(15, 23, 42, 0.72);
-      border: 1px solid rgba(148, 163, 184, 0.12);
+      border: 1px solid rgba(148, 163, 184, 0.10);
     }
 
     .timeline-item::before {
@@ -386,25 +408,14 @@
       justify-content: space-between;
       gap: 1rem;
       flex-wrap: wrap;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.55rem;
     }
 
-    .timeline-top h3 {
-      margin-bottom: 0.2rem;
-      font-size: 1.08rem;
-    }
-
+    .timeline-top h3 { margin-bottom: 0.2rem; font-size: 1.08rem; }
     .timeline-top span,
     .timeline-location,
-    .timeline-item ul {
-      color: var(--muted);
-    }
-
-    .timeline-item ul {
-      padding-left: 1.1rem;
-      margin: 0.7rem 0 0;
-    }
-
+    .timeline-item ul { color: var(--muted); }
+    .timeline-item ul { padding-left: 1rem; margin: 0.7rem 0 0; }
     .timeline-item li + li { margin-top: 0.45rem; }
 
     .projects-grid {
@@ -420,25 +431,11 @@
       min-height: 100%;
     }
 
-    .project-card h3 {
-      margin-bottom: 0.25rem;
-      font-size: 1.1rem;
-    }
-
-    .project-meta {
-      color: var(--muted);
-      font-size: 0.93rem;
-    }
-
+    .project-card h3 { font-size: 1.1rem; margin-bottom: 0.2rem; }
+    .project-meta { color: var(--muted); font-size: 0.93rem; }
     .project-card p { color: #d3deeb; }
-
-    .project-card ul {
-      margin: 0;
-      padding-left: 1rem;
-      color: var(--muted);
-    }
-
-    .project-card li + li { margin-top: 0.45rem; }
+    .project-card ul { margin: 0; padding-left: 1rem; color: var(--muted); }
+    .project-card li + li { margin-top: 0.42rem; }
 
     .edu-grid {
       display: grid;
@@ -463,40 +460,29 @@
 
     .muted { color: var(--muted); }
 
-    @media (max-width: 980px) {
+    @media (max-width: 1024px) {
       .hero-grid,
       .grid-2,
       .projects-grid,
-      .edu-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-highlights {
-        grid-template-columns: 1fr;
-      }
-
-      .nav-inner {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .nav-links {
-        justify-content: flex-start;
-      }
+      .edu-grid { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 760px) {
+      .nav-inner { flex-direction: column; align-items: stretch; }
       .hero { padding-top: 4rem; }
-      .hero-card,
+      .hero-main,
       .hero-side,
       .about-card,
       .skills-card,
       .timeline-card,
       .project-card,
       .education-card,
-      .contact-card { padding: 1.15rem; }
-      .section-head { align-items: flex-start; }
+      .contact-card,
+      .tools-card { padding: 1.15rem; }
+      .stats { grid-template-columns: 1fr; }
       .timeline-top { flex-direction: column; }
+      .section-head { align-items: flex-start; }
     }
   </style>
 </head>
@@ -504,7 +490,7 @@
   <header class="nav">
     <div class="container nav-inner">
       <a href="#top" class="brand" aria-label="Go to top">
-        <div class="brand-mark">MB</div>
+        <div class="brand-badge">MB</div>
         <div class="brand-copy">
           <strong>Muhammad Ibrahim Butt</strong>
           <span>Senior Software Engineer</span>
@@ -523,77 +509,71 @@
   <main id="top">
     <section class="hero">
       <div class="container hero-grid">
-        <div class="panel hero-card">
-          <div class="eyebrow">Backend • Cloud • Distributed Systems</div>
-          <h1>Building reliable software that scales in production.</h1>
-          <p class="hero-subtitle">
-            I’m Muhammad Ibrahim Butt, a Senior Software Engineer with 5+ years of experience designing backend systems,
-            cloud-native applications, APIs, and AI-enabled platforms that improve performance, reliability, and delivery speed.
+        <div class="panel hero-main">
+          <div class="eyebrow">Backend · Cloud · Distributed Systems · AI Workflows</div>
+          <h1>Engineering reliable systems that perform at scale.</h1>
+          <p class="lead">
+            I’m Muhammad Ibrahim Butt, a Senior Software Engineer with 5+ years of experience building backend systems,
+            cloud-native applications, internal platforms, and AI-enabled workflows with a strong focus on performance,
+            maintainability, and measurable business impact.
           </p>
-
-          <div class="hero-highlights" aria-label="Career highlights">
-            <div class="highlight">
-              <strong>5+ years</strong>
-              <span>shipping production software</span>
-            </div>
-            <div class="highlight">
-              <strong>70%</strong>
-              <span>API response improvement achieved</span>
-            </div>
-            <div class="highlight">
-              <strong>99.9%</strong>
-              <span>uptime and accuracy focused delivery</span>
-            </div>
-          </div>
-
           <div class="actions">
-            <a class="btn btn-primary" href="mailto:m.ibrahim8325@gmail.com">Email Me</a>
-            <a class="btn btn-secondary" href="https://linkedin.com/in/muhammad-ibrahim-butt" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="btn btn-primary" href="mailto:m.ibrahim8325@gmail.com">Hire / Collaborate</a>
             <a class="btn btn-secondary" href="#projects">View Projects</a>
+            <a class="btn btn-secondary" href="https://linkedin.com/in/muhammad-ibrahim-butt" target="_blank" rel="noreferrer">LinkedIn</a>
           </div>
-
-          <div class="contact-row">
+          <div class="contact-strip">
             <span>Faisalabad, Pakistan</span>
             <span>•</span>
             <a href="mailto:m.ibrahim8325@gmail.com">m.ibrahim8325@gmail.com</a>
             <span>•</span>
             <a href="tel:+923118663209">+92 311 8663209</a>
           </div>
+          <div class="stats" aria-label="Key metrics">
+            <div class="stat">
+              <strong>5+ Years</strong>
+              <span>building production software</span>
+            </div>
+            <div class="stat">
+              <strong>70%</strong>
+              <span>API response time improvement</span>
+            </div>
+            <div class="stat">
+              <strong>99.9%</strong>
+              <span>uptime and accuracy targets delivered</span>
+            </div>
+            <div class="stat">
+              <strong>500+</strong>
+              <span>AI evaluation scenarios benchmarked</span>
+            </div>
+          </div>
         </div>
 
         <aside class="panel hero-side">
-          <div class="info-card">
-            <h3>Current focus</h3>
-            <div class="focus-list">
+          <div class="profile-box">
+            <div class="portrait">
               <div>
-                <strong>Scalable backend systems</strong>
-                <span>Microservices, APIs, performance optimization, and distributed architecture.</span>
-              </div>
-              <div>
-                <strong>Cloud & DevOps</strong>
-                <span>AWS, Docker, Kubernetes, CI/CD, observability, and deployment automation.</span>
-              </div>
-              <div>
-                <strong>AI-enabled engineering</strong>
-                <span>Model evaluation, agentic workflows, RLHF, and production-ready AI tooling.</span>
+                <strong>MIB</strong>
+                <span>Senior Software Engineer</span>
               </div>
             </div>
+            <div class="availability">Available for remote senior engineering roles and consulting projects.</div>
           </div>
 
-          <div class="info-card">
-            <h3>What I bring</h3>
+          <div class="side-card">
+            <h3>Core focus</h3>
             <div class="mini-list">
               <div>
-                <strong>Performance-minded delivery</strong>
-                <span>Improved API speed, release cycles, and operational efficiency across multiple teams.</span>
+                <strong>Scalable backend systems</strong>
+                <span>Microservices, APIs, distributed architecture, and performance optimization.</span>
               </div>
               <div>
-                <strong>Cross-stack versatility</strong>
-                <span>Python, Node.js, Laravel, C#, SQL, React, and cloud infrastructure.</span>
+                <strong>Cloud & delivery</strong>
+                <span>AWS, Docker, Kubernetes, CI/CD, observability, and infrastructure automation.</span>
               </div>
               <div>
-                <strong>Business-aware engineering</strong>
-                <span>Systems built to reduce cost, manual effort, downtime, and reporting delays.</span>
+                <strong>Applied AI engineering</strong>
+                <span>Agentic workflows, RLHF, evaluation pipelines, and production-ready tooling.</span>
               </div>
             </div>
           </div>
@@ -601,32 +581,50 @@
       </div>
     </section>
 
+    <section class="clients">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Selected experience</h2>
+            <p>Professional work across software engineering, cloud systems, business automation, and AI-enabled delivery.</p>
+          </div>
+        </div>
+        <div class="client-strip">
+          <span class="client-pill">Turing</span>
+          <span class="client-pill">Linx Computations Inc.</span>
+          <span class="client-pill">DevXen</span>
+          <span class="client-pill">Microbeck</span>
+          <span class="client-pill">QuickBooks Integrations</span>
+          <span class="client-pill">Cloud-Native Platforms</span>
+        </div>
+      </div>
+    </section>
+
     <section id="about">
       <div class="container grid-2">
-        <div class="panel about-card">
+        <article class="panel about-card">
           <div class="section-head">
             <div>
               <h2>About</h2>
-              <p>A concise overview of my engineering background and strengths.</p>
+              <p>A focused summary for recruiters, hiring managers, and clients.</p>
             </div>
           </div>
           <p>
             I specialize in backend engineering, cloud systems, and distributed applications with hands-on experience across
-            SaaS platforms, internal business systems, and AI-enabled products. My work focuses on building maintainable
-            architectures, improving system reliability, and translating complex business requirements into practical software.
+            SaaS products, internal business platforms, reporting systems, and AI-enabled workflows. My work is centered on
+            clean architecture, stable delivery, and software that makes operations faster and more reliable.
           </p>
           <p>
-            Across recent roles, I have led engineering efforts that improved API performance, reduced infrastructure cost,
-            streamlined deployment workflows, and automated repetitive business processes. I enjoy solving high-impact problems
-            where clean architecture and measurable results matter.
+            In recent roles, I have led initiatives that improved response time, reduced infrastructure cost, automated manual
+            workflows, and strengthened production delivery through better system design, DevOps practices, and practical engineering decisions.
           </p>
-        </div>
+        </article>
 
-        <div id="skills" class="panel skills-card">
+        <article id="skills" class="panel skills-card">
           <div class="section-head">
             <div>
-              <h2>Core skills</h2>
-              <p>Tools and technologies I use across backend, cloud, and product delivery.</p>
+              <h2>Technical skills</h2>
+              <p>Balanced across backend development, infrastructure, data systems, and modern product engineering.</p>
             </div>
           </div>
           <div class="skill-groups">
@@ -649,6 +647,7 @@
               <h3>Cloud, data & DevOps</h3>
               <div class="chips">
                 <span class="chip">AWS</span>
+                <span class="chip">Azure</span>
                 <span class="chip">Docker</span>
                 <span class="chip">Kubernetes</span>
                 <span class="chip">Terraform</span>
@@ -657,14 +656,13 @@
                 <span class="chip">PostgreSQL</span>
                 <span class="chip">Redis</span>
                 <span class="chip">Kafka</span>
-                <span class="chip">Prometheus</span>
               </div>
             </div>
             <div class="skill-group">
               <h3>AI & frontend</h3>
               <div class="chips">
-                <span class="chip">LangChain</span>
                 <span class="chip">Transformers</span>
+                <span class="chip">LangChain</span>
                 <span class="chip">PyTorch</span>
                 <span class="chip">TensorFlow</span>
                 <span class="chip">React</span>
@@ -675,7 +673,75 @@
               </div>
             </div>
           </div>
-        </div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="container grid-2">
+        <article class="panel tools-card">
+          <div class="section-head">
+            <div>
+              <h2>Tools & workflow</h2>
+              <p>A practical working stack for shipping and operating software efficiently.</p>
+            </div>
+          </div>
+          <div class="tools-grid">
+            <div class="tool-group">
+              <h3>Development</h3>
+              <div class="chips">
+                <span class="chip">VS Code</span>
+                <span class="chip">GitHub</span>
+                <span class="chip">Postman</span>
+                <span class="chip">Swagger</span>
+                <span class="chip">Linux</span>
+              </div>
+            </div>
+            <div class="tool-group">
+              <h3>Delivery</h3>
+              <div class="chips">
+                <span class="chip">CI/CD</span>
+                <span class="chip">Docker</span>
+                <span class="chip">Kubernetes</span>
+                <span class="chip">Nginx</span>
+                <span class="chip">OpenShift</span>
+              </div>
+            </div>
+            <div class="tool-group">
+              <h3>Monitoring & quality</h3>
+              <div class="chips">
+                <span class="chip">Prometheus</span>
+                <span class="chip">Grafana</span>
+                <span class="chip">Benchmarking</span>
+                <span class="chip">Model Evaluation</span>
+                <span class="chip">Testing</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel about-card">
+          <div class="section-head">
+            <div>
+              <h2>What sets me apart</h2>
+              <p>Why this portfolio is positioned for professional opportunities.</p>
+            </div>
+          </div>
+          <div class="mini-list">
+            <div>
+              <strong>Business impact orientation</strong>
+              <span>My work consistently ties engineering improvements to speed, reliability, and operational efficiency.</span>
+            </div>
+            <div>
+              <strong>Cross-domain depth</strong>
+              <span>Comfortable across backend systems, cloud delivery, internal tooling, AI workflows, and reporting platforms.</span>
+            </div>
+            <div>
+              <strong>Strong execution</strong>
+              <span>Experienced taking work from architecture and implementation through production readiness and iteration.</span>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -684,10 +750,9 @@
         <div class="section-head">
           <div>
             <h2>Professional experience</h2>
-            <p>Selected roles with impact focused on scalability, automation, performance, and AI-enabled engineering.</p>
+            <p>Recent roles with measurable impact across platform engineering, cloud migration, automation, and AI evaluation.</p>
           </div>
         </div>
-
         <div class="timeline">
           <article class="panel timeline-card timeline-item">
             <div class="timeline-top">
@@ -748,21 +813,6 @@
               <li>Built real-time data pipelines and automated backend workflows to increase delivery speed and reduce manual effort.</li>
             </ul>
           </article>
-
-          <article class="panel timeline-card timeline-item">
-            <div class="timeline-top">
-              <div>
-                <h3>Software Engineer · Microbeck</h3>
-                <div class="timeline-location">Faisalabad, Pakistan</div>
-              </div>
-              <span>Aug 2021 – Jun 2022</span>
-            </div>
-            <ul>
-              <li>Built Django and JavaScript internal dashboards that improved decision-making speed by 50%.</li>
-              <li>Automated recurring tasks to save 15+ hours per week and reduce operational errors.</li>
-              <li>Contributed to stronger user retention and a 20% reduction in support tickets through performance improvements.</li>
-            </ul>
-          </article>
         </div>
       </div>
     </section>
@@ -772,21 +822,18 @@
         <div class="section-head">
           <div>
             <h2>Selected projects</h2>
-            <p>Representative work spanning automation, analytics, machine learning, and business systems.</p>
+            <p>Representative work that shows technical depth, measurable results, and practical engineering value.</p>
           </div>
         </div>
-
         <div class="projects-grid">
           <article class="panel project-card">
             <div>
               <h3>Invoices Tax Calculator</h3>
               <div class="project-meta">Linx Computations Inc. · C# Desktop Application</div>
             </div>
-            <p>
-              Built a desktop application that automated tax calculations for 10,000+ invoices across customizable date ranges.
-            </p>
+            <p>Automated tax calculations for 10,000+ invoices across customizable date ranges with high compliance accuracy.</p>
             <ul>
-              <li>Implemented U.S. state-specific tax rules with 99.9% accuracy.</li>
+              <li>Implemented U.S. state-specific tax rules with 99.9% computation accuracy.</li>
               <li>Reduced manual calculation errors by 40%.</li>
             </ul>
           </article>
@@ -796,9 +843,7 @@
               <h3>Sentiment Analysis Tool</h3>
               <div class="project-meta">DevXen · Python, NLP, Automation</div>
             </div>
-            <p>
-              Created a Python-based NLP application using NLTK and spaCy to classify customer sentiment from multiple feedback channels.
-            </p>
+            <p>Created a Python-based sentiment classification workflow using NLTK and spaCy for multi-channel feedback analysis.</p>
             <ul>
               <li>Reached 85% classification accuracy.</li>
               <li>Reduced manual effort by 60% through automated preprocessing and training workflows.</li>
@@ -808,14 +853,12 @@
           <article class="panel project-card">
             <div>
               <h3>Predictive Maintenance System</h3>
-              <div class="project-meta">DevXen · ML, Real-Time Analytics</div>
+              <div class="project-meta">DevXen · Machine Learning, Real-Time Analytics</div>
             </div>
-            <p>
-              Designed a machine learning system using Random Forest and XGBoost to analyze live data from 500+ industrial machines.
-            </p>
+            <p>Designed an ML system using Random Forest and XGBoost to analyze real-time data from 500+ industrial machines.</p>
             <ul>
               <li>Improved failure prediction accuracy by 20%.</li>
-              <li>Reduced unplanned downtime by 25% and contributed to major annual savings.</li>
+              <li>Reduced unplanned downtime by 25% and contributed to major annual maintenance savings.</li>
             </ul>
           </article>
         </div>
@@ -828,7 +871,7 @@
           <div class="section-head">
             <div>
               <h2>Education</h2>
-              <p>Academic foundation supporting software engineering and systems work.</p>
+              <p>Academic background supporting software engineering and systems design.</p>
             </div>
           </div>
           <h3>Bachelor of Science in Computer Science</h3>
@@ -839,16 +882,16 @@
         <article id="contact" class="panel contact-card">
           <div class="section-head">
             <div>
-              <h2>Contact</h2>
-              <p>Open to backend, cloud, platform, and senior software engineering opportunities.</p>
+              <h2>Let’s work together</h2>
+              <p>Open to senior backend, cloud, platform, and AI-enabled software engineering opportunities.</p>
             </div>
           </div>
           <p>
-            The best way to reach me is by email. You can also connect with me on LinkedIn for opportunities,
-            collaborations, and technical discussions.
+            I’m available for remote full-time roles, contract engagements, and high-impact backend or platform work.
+            Email is the best way to start a conversation.
           </p>
           <div class="actions">
-            <a class="btn btn-primary" href="mailto:m.ibrahim8325@gmail.com">m.ibrahim8325@gmail.com</a>
+            <a class="btn btn-primary" href="mailto:m.ibrahim8325@gmail.com">Email Me</a>
             <a class="btn btn-secondary" href="https://linkedin.com/in/muhammad-ibrahim-butt" target="_blank" rel="noreferrer">LinkedIn Profile</a>
           </div>
         </article>
