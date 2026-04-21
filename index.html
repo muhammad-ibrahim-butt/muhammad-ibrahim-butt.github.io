@@ -1,945 +1,1754 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Muhammad Ibrahim Butt | AI Automation, Backend & Cloud Engineer</title>
-  <meta name="description" content="Professional portfolio of Muhammad Ibrahim Butt — Senior Software Engineer focused on AI automation, backend engineering, cloud-native systems, and applied machine learning." />
+  <meta name="description"
+    content="Muhammad Ibrahim Butt — Senior Software Engineer focused on AI automation, backend engineering, cloud-native systems, and applied machine learning." />
+  <meta name="author" content="Muhammad Ibrahim Butt" />
+  <meta name="theme-color" content="#05060a" />
+
   <meta property="og:title" content="Muhammad Ibrahim Butt | AI Automation, Backend & Cloud Engineer" />
-  <meta property="og:description" content="AI automation, backend engineering, cloud-native systems, and applied ML portfolio." />
+  <meta property="og:description"
+    content="AI automation, backend engineering, cloud-native systems, and applied ML portfolio." />
+  <meta property="og:image" content="./assets/images/profile.JPG" />
   <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#0f172a" />
+
+  <title>Muhammad Ibrahim Butt | AI Automation, Backend & Cloud Engineer</title>
+
+  <link rel="icon" type="image/jpeg" href="./assets/images/profile.JPG" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'ui-monospace', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
   <style>
     :root {
-      --bg: #08111f;
-      --surface: rgba(15, 23, 42, 0.82);
-      --surface-2: rgba(30, 41, 59, 0.72);
-      --line: rgba(148, 163, 184, 0.16);
-      --text: #e5eefb;
-      --muted: #94a3b8;
-      --accent: #38bdf8;
-      --accent-2: #60a5fa;
-      --accent-3: #22c55e;
-      --max: 1160px;
-      --radius: 24px;
-      --shadow: 0 30px 60px rgba(2, 8, 23, 0.35);
+      --bg: #05060a;
+      --bg-soft: #0a0b12;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(56, 189, 248, 0.14), transparent 28%),
-        radial-gradient(circle at top right, rgba(96, 165, 250, 0.10), transparent 24%),
-        linear-gradient(180deg, #020617 0%, #08111f 45%, #0f172a 100%);
-      color: var(--text);
-      line-height: 1.6;
+      background: var(--bg);
     }
 
-    a { color: inherit; text-decoration: none; }
-    .container { width: min(calc(100% - 2rem), var(--max)); margin: 0 auto; }
-    .panel {
-      background: linear-gradient(180deg, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.76));
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(18px);
-      background: rgba(2, 6, 23, 0.72);
-      border-bottom: 1px solid rgba(148, 163, 184, 0.10);
-    }
-
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 0.95rem 0;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.85rem;
-      min-width: 0;
-    }
-
-    .brand-badge {
-      width: 46px;
-      height: 46px;
-      border-radius: 15px;
-      display: grid;
-      place-items: center;
-      font-weight: 800;
-      letter-spacing: 0.03em;
-      color: #07131d;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      flex-shrink: 0;
-    }
-
-    .brand-copy strong,
-    .brand-copy span {
-      display: block;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .brand-copy strong { font-size: 0.98rem; }
-    .brand-copy span { color: var(--muted); font-size: 0.84rem; }
-
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 1rem;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .nav-links a:hover,
-    .nav-links a:focus-visible { color: var(--text); }
-
-    .hero { padding: 4.8rem 0 2.4rem; }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.3fr 0.7fr;
-      gap: 1.25rem;
-      align-items: stretch;
-    }
-
-    .hero-main,
-    .hero-side { padding: 2rem; }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      padding: 0.45rem 0.85rem;
-      border-radius: 999px;
-      border: 1px solid rgba(56, 189, 248, 0.20);
-      background: rgba(14, 165, 233, 0.08);
-      color: #cbefff;
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
-    }
-
-    h1, h2, h3, h4, p { margin-top: 0; }
-
-    h1 {
-      font-size: clamp(2.4rem, 5vw, 4.4rem);
-      line-height: 1.02;
-      letter-spacing: -0.04em;
-      margin-bottom: 1rem;
-    }
-
-    .hero-main p.lead {
-      max-width: 64ch;
-      color: #cbd5e1;
-      font-size: clamp(1.02rem, 2vw, 1.18rem);
-      margin-bottom: 1.4rem;
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      margin-bottom: 1.25rem;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      padding: 0.9rem 1.15rem;
-      border-radius: 14px;
-      font-weight: 700;
-      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-      border: 1px solid transparent;
-    }
-
-    .btn:hover,
-    .btn:focus-visible { transform: translateY(-1px); }
-
-    .btn-primary {
-      color: white;
-      background: linear-gradient(135deg, var(--accent), #2563eb);
-      box-shadow: 0 20px 35px rgba(37, 99, 235, 0.25);
-    }
-
-    .btn-secondary {
-      border-color: rgba(148, 163, 184, 0.16);
-      background: rgba(15, 23, 42, 0.72);
-    }
-
-    .contact-strip {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.9rem;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 0.85rem;
-      margin-top: 1.5rem;
-    }
-
-    .stat {
-      padding: 1rem;
-      border-radius: 18px;
-      background: rgba(30, 41, 59, 0.72);
-      border: 1px solid rgba(148, 163, 184, 0.10);
-    }
-
-    .stat strong {
-      display: block;
-      font-size: 1.35rem;
-      margin-bottom: 0.2rem;
-    }
-
-    .stat span {
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    .hero-side {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .profile-box,
-    .side-card {
-      border-radius: 20px;
-      background: rgba(15, 23, 42, 0.58);
-      border: 1px solid rgba(148, 163, 184, 0.12);
-    }
-
-    .profile-box {
-      padding: 1.4rem;
-      display: grid;
-      gap: 1rem;
-    }
-
-    .portrait {
-      aspect-ratio: 1 / 1;
-      border-radius: 22px;
-      background:
-        radial-gradient(circle at 30% 30%, rgba(56, 189, 248, 0.28), transparent 28%),
-        linear-gradient(135deg, rgba(56, 189, 248, 0.18), rgba(37, 99, 235, 0.20), rgba(15, 23, 42, 0.9));
-      border: 1px solid rgba(148, 163, 184, 0.12);
-      display: grid;
-      place-items: center;
-      text-align: center;
-      padding: 1.4rem;
-    }
-
-    .portrait strong {
-      font-size: 1.45rem;
-      letter-spacing: 0.03em;
-    }
-
-    .portrait span {
-      display: block;
-      color: var(--muted);
-      margin-top: 0.25rem;
-    }
-
-    .availability {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      color: #d8f5e4;
-      padding: 0.8rem 0.95rem;
-      border-radius: 14px;
-      background: rgba(34, 197, 94, 0.08);
-      border: 1px solid rgba(34, 197, 94, 0.14);
-    }
-
-    .availability::before {
-      content: "";
+    /* ═══ Scrollbar ═══ */
+    ::-webkit-scrollbar {
       width: 10px;
-      height: 10px;
-      border-radius: 999px;
-      background: var(--accent-3);
-      box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.12);
-      flex-shrink: 0;
     }
 
-    .side-card { padding: 1.1rem; }
-    .side-card h3 {
-      font-size: 0.88rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--muted);
-      margin-bottom: 0.75rem;
+    ::-webkit-scrollbar-track {
+      background: #0a0b12;
     }
 
-    .mini-list { display: grid; gap: 0.75rem; }
-    .mini-list div {
-      padding: 0.85rem 0.95rem;
-      border-radius: 14px;
-      background: rgba(30, 41, 59, 0.72);
-      border: 1px solid rgba(148, 163, 184, 0.08);
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(to bottom, #0ea5e9, #6366f1);
+      border-radius: 10px;
     }
 
-    .mini-list strong { display: block; font-size: 0.98rem; margin-bottom: 0.15rem; }
-    .mini-list span { color: var(--muted); font-size: 0.92rem; }
-
-    section { padding: 1rem 0 0.4rem; }
-
-    .section-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 1rem;
-      margin-bottom: 1.1rem;
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(to bottom, #38bdf8, #818cf8);
     }
 
-    .section-head h2 {
-      font-size: clamp(1.55rem, 3vw, 2.2rem);
-      letter-spacing: -0.02em;
-      margin-bottom: 0.25rem;
+    /* ═══ Glass surfaces ═══ */
+    .glass {
+      background: linear-gradient(180deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, .02));
+      border: 1px solid rgba(255, 255, 255, .08);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
     }
 
-    .section-head p {
-      color: var(--muted);
-      margin-bottom: 0;
-      max-width: 60ch;
-    }
-
-    .pill-strip {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-
-    .pill {
-      padding: 0.75rem 1rem;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.72);
-      border: 1px solid rgba(148, 163, 184, 0.10);
-      color: #d9e7f8;
-      font-size: 0.95rem;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 1rem;
-    }
-
-    .grid-4 {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 1rem;
-    }
-
-    .about-card,
-    .skills-card,
-    .timeline-card,
-    .project-card,
-    .education-card,
-    .contact-card,
-    .tools-card,
-    .position-card { padding: 1.45rem; }
-
-    .about-card p,
-    .education-card p,
-    .contact-card p,
-    .position-card p { color: #cbd5e1; }
-
-    .skill-groups,
-    .tools-grid {
-      display: grid;
-      gap: 1rem;
-    }
-
-    .skill-group h3,
-    .tool-group h3 { font-size: 1rem; margin-bottom: 0.65rem; }
-
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.65rem;
+    .glass-strong {
+      background: linear-gradient(180deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, .03));
+      border: 1px solid rgba(255, 255, 255, .12);
+      backdrop-filter: blur(20px);
     }
 
     .chip {
-      padding: 0.55rem 0.8rem;
-      border-radius: 999px;
-      background: rgba(56, 189, 248, 0.08);
-      border: 1px solid rgba(56, 189, 248, 0.16);
-      color: #d9f5ff;
-      font-size: 0.9rem;
+      border: 1px solid rgba(255, 255, 255, .10);
+      background: rgba(255, 255, 255, .035);
+      transition: all .2s ease;
     }
 
-    .timeline {
+    .chip:hover {
+      border-color: rgba(56, 189, 248, .35);
+      background: rgba(56, 189, 248, .08);
+      transform: translateY(-1px);
+    }
+
+    /* ═══ Icons ═══ */
+    .tool-logo {
+      width: 26px;
+      height: 26px;
+      object-fit: contain;
+    }
+
+    .tool-logo-sm {
+      width: 16px;
+      height: 16px;
+      object-fit: contain;
+    }
+
+    .company-logo-marquee {
+      height: 42px;
+      width: auto;
+      max-width: 140px;
+      object-fit: contain;
+      opacity: .75;
+      transition: .3s ease;
+      filter: grayscale(1);
+    }
+
+    .company-logo-marquee:hover {
+      transform: scale(1.1);
+      opacity: 1;
+      filter: grayscale(0);
+    }
+
+    .company-badge-marquee {
+      height: 42px;
+      min-width: 120px;
+      padding: 0 22px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      color: #cbd5e1;
+      background: linear-gradient(135deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, .01));
+      border: 1px solid rgba(255, 255, 255, .08);
+      opacity: .75;
+      transition: .3s ease;
+      white-space: nowrap;
+    }
+
+    .company-badge-marquee:hover {
+      transform: scale(1.06);
+      opacity: 1;
+      color: white;
+      border-color: rgba(56, 189, 248, .35);
+    }
+
+    .company-logo-exp {
+      height: 48px;
+      width: 48px;
+      object-fit: contain;
+      border-radius: 10px;
+      background: white;
+      padding: 6px;
+      flex-shrink: 0;
+    }
+
+    .company-badge-exp {
+      height: 48px;
+      width: 48px;
+      border-radius: 10px;
       display: grid;
-      gap: 0.95rem;
+      place-items: center;
+      color: white;
+      font-weight: 800;
+      font-size: 1.1rem;
+      letter-spacing: .04em;
+      flex-shrink: 0;
+      box-shadow: 0 10px 25px -10px rgba(99, 102, 241, .5);
     }
 
-    .timeline-item {
+    /* ═══ Marquee ═══ */
+    .marquee {
+      overflow: hidden;
       position: relative;
-      padding: 1.25rem 1.25rem 1.25rem 1.45rem;
-      border-radius: 20px;
-      background: rgba(15, 23, 42, 0.72);
-      border: 1px solid rgba(148, 163, 184, 0.10);
+      mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
     }
 
-    .timeline-item::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 1rem;
-      bottom: 1rem;
-      width: 4px;
-      border-radius: 999px;
-      background: linear-gradient(180deg, var(--accent), #2563eb);
-    }
-
-    .timeline-top {
+    .marquee-track {
       display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-bottom: 0.55rem;
+      gap: 64px;
+      width: max-content;
+      align-items: center;
+      animation: marquee 28s linear infinite;
     }
 
-    .timeline-top h3 { margin-bottom: 0.2rem; font-size: 1.08rem; }
-    .timeline-top span,
-    .timeline-location,
-    .timeline-item ul { color: var(--muted); }
-    .timeline-item ul { padding-left: 1rem; margin: 0.7rem 0 0; }
-    .timeline-item li + li { margin-top: 0.42rem; }
+    .marquee:hover .marquee-track {
+      animation-play-state: paused;
+    }
 
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1rem;
+    @keyframes marquee {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* ═══ Animations ═══ */
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-14px);
+      }
+    }
+
+    .float-anim {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes gradient-shift {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .gradient-anim {
+      background-size: 200% 200%;
+      animation: gradient-shift 6s ease infinite;
+    }
+
+    @keyframes pulse-glow {
+
+      0%,
+      100% {
+        box-shadow: 0 0 20px rgba(56, 189, 248, .3), 0 0 40px rgba(99, 102, 241, .15);
+      }
+
+      50% {
+        box-shadow: 0 0 30px rgba(56, 189, 248, .5), 0 0 60px rgba(99, 102, 241, .25);
+      }
+    }
+
+    .pulse-glow {
+      animation: pulse-glow 4s ease-in-out infinite;
+    }
+
+    /* ═══ Fade-in on scroll ═══ */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ═══ Interactive cards ═══ */
+    .exp-card {
+      transition: all .35s cubic-bezier(.4, 0, .2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .exp-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(to bottom, #38bdf8, #6366f1);
+      opacity: 0;
+      transition: opacity .35s ease;
+    }
+
+    .exp-card:hover {
+      border-color: rgba(56, 189, 248, .35);
+      transform: translateY(-2px);
+      box-shadow: 0 20px 50px -20px rgba(56, 189, 248, .25);
+    }
+
+    .exp-card:hover::before {
+      opacity: 1;
     }
 
     .project-card {
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-      min-height: 100%;
+      transition: all .35s cubic-bezier(.4, 0, .2, 1);
+      position: relative;
+      overflow: hidden;
     }
 
-    .project-card h3 { font-size: 1.1rem; margin-bottom: 0.2rem; }
-    .project-meta { color: var(--muted); font-size: 0.93rem; }
-    .project-card p { color: #d3deeb; }
-    .project-card ul { margin: 0; padding-left: 1rem; color: var(--muted); }
-    .project-card li + li { margin-top: 0.42rem; }
+    .project-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #38bdf8, #6366f1, transparent);
+      transform: translateX(-100%);
+      transition: transform .6s ease;
+    }
 
-    .edu-grid {
+    .project-card:hover::after {
+      transform: translateX(100%);
+    }
+
+    .project-card:hover {
+      border-color: rgba(56, 189, 248, .3);
+      transform: translateY(-6px);
+      box-shadow: 0 25px 60px -25px rgba(56, 189, 248, .3);
+    }
+
+    .skill-card {
+      transition: all .3s ease;
+    }
+
+    .skill-card:hover {
+      border-color: rgba(56, 189, 248, .25);
+      transform: translateY(-3px);
+    }
+
+    .stat-card {
+      transition: all .35s cubic-bezier(.4, 0, .2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 0%, rgba(56, 189, 248, .15), transparent 70%);
+      opacity: 0;
+      transition: opacity .4s ease;
+    }
+
+    .stat-card:hover::before {
+      opacity: 1;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(56, 189, 248, .25);
+    }
+
+    /* ═══ Nav underline ═══ */
+    .nav-link {
+      position: relative;
+      transition: color .2s ease;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #38bdf8, #6366f1);
+      transition: width .3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* ═══ Section header accent ═══ */
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: .75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      color: #38bdf8;
+    }
+
+    .section-label::before {
+      content: '';
+      width: 40px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #38bdf8, #6366f1);
+    }
+
+    /* ═══ Social icon hover ═══ */
+    .social-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, .04);
+      border: 1px solid rgba(255, 255, 255, .1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all .3s ease;
+    }
+
+    .social-btn:hover {
+      transform: translateY(-3px);
+      border-color: rgba(56, 189, 248, .4);
+      box-shadow: 0 10px 25px -10px rgba(56, 189, 248, .5);
+    }
+
+    /* ═══ Timeline bullet ═══ */
+    .timeline-bullet {
+      color: #38bdf8;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* ═══ Grid dots background ═══ */
+    .grid-bg {
+      background-image: radial-gradient(circle, rgba(255, 255, 255, .04) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    /* ═══ Mobile menu ═══ */
+    .mobile-menu {
+      display: none;
+    }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+
+    /* ═══ Browser mockup frame ═══ */
+    .browser-mockup {
+      background: #1a1d28;
+      border: 1px solid rgba(255, 255, 255, .08);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 25px 60px -20px rgba(0, 0, 0, .7), 0 0 0 1px rgba(255, 255, 255, .03);
+      transition: all .4s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    .browser-mockup:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 35px 70px -20px rgba(56, 189, 248, .25), 0 0 0 1px rgba(56, 189, 248, .2);
+    }
+
+    .browser-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      background: linear-gradient(180deg, #2a2e3d, #1f222d);
+      border-bottom: 1px solid rgba(255, 255, 255, .05);
+    }
+
+    .traffic-lights {
+      display: flex;
+      gap: 6px;
+    }
+
+    .traffic-light {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+    }
+
+    .traffic-red {
+      background: #ff5f57;
+    }
+
+    .traffic-yellow {
+      background: #febc2e;
+    }
+
+    .traffic-green {
+      background: #28c840;
+    }
+
+    .url-bar {
+      flex: 1;
+      background: rgba(255, 255, 255, .04);
+      border: 1px solid rgba(255, 255, 255, .06);
+      border-radius: 6px;
+      padding: 4px 12px;
+      font-size: 11px;
+      color: #94a3b8;
+      text-align: center;
+      font-family: 'JetBrains Mono', monospace;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .url-bar i {
+      color: #64748b;
+      font-size: 9px;
+    }
+
+    /* ═══ Mockup placeholder (when no screenshot yet) ═══ */
+    .mockup-placeholder {
+      aspect-ratio: 16/10;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    .footer {
-      padding: 2.2rem 0 3rem;
-      color: var(--muted);
-      font-size: 0.94rem;
-    }
-
-    .footer-inner {
-      border-top: 1px solid rgba(148, 163, 184, 0.12);
-      padding-top: 1.2rem;
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .muted { color: var(--muted); }
-
-    @media (max-width: 1024px) {
-      .hero-grid,
-      .grid-2,
-      .projects-grid,
-      .edu-grid,
-      .grid-4 { grid-template-columns: 1fr; }
-      .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-
-    @media (max-width: 760px) {
-      .nav-inner { flex-direction: column; align-items: stretch; }
-      .hero { padding-top: 4rem; }
-      .hero-main,
-      .hero-side,
-      .about-card,
-      .skills-card,
-      .timeline-card,
-      .project-card,
-      .education-card,
-      .contact-card,
-      .tools-card,
-      .position-card { padding: 1.15rem; }
-      .stats { grid-template-columns: 1fr; }
-      .timeline-top { flex-direction: column; }
-      .section-head { align-items: flex-start; }
+      place-items: center;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(56, 189, 248, .18), transparent 40%),
+        radial-gradient(circle at 70% 70%, rgba(99, 102, 241, .18), transparent 40%),
+        linear-gradient(135deg, #0f172a, #020617);
+      color: #64748b;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      text-align: center;
+      padding: 1rem;
     }
   </style>
 </head>
-<body>
-  <header class="nav">
-    <div class="container nav-inner">
-      <a href="#top" class="brand" aria-label="Go to top">
-        <div class="brand-badge">MB</div>
-        <div class="brand-copy">
-          <strong>Muhammad Ibrahim Butt</strong>
-          <span>AI Automation, Backend & Cloud Engineer</span>
-        </div>
+
+<body class="text-slate-200 font-sans">
+
+  <!-- ═══ Background gradient ═══ -->
+  <div class="fixed inset-0 -z-10 overflow-hidden">
+    <div class="absolute inset-0 grid-bg opacity-40"></div>
+    <div class="absolute -top-40 -left-40 h-[36rem] w-[36rem] rounded-full bg-sky-600/20 blur-[120px]"></div>
+    <div class="absolute top-1/4 -right-40 h-[32rem] w-[32rem] rounded-full bg-indigo-600/20 blur-[120px]"></div>
+    <div class="absolute bottom-1/4 left-1/4 h-[28rem] w-[28rem] rounded-full bg-blue-600/10 blur-[120px]"></div>
+    <div class="absolute -bottom-40 right-1/3 h-[24rem] w-[24rem] rounded-full bg-cyan-600/10 blur-[120px]"></div>
+  </div>
+
+  <!-- ═══ Header ═══ -->
+  <header class="sticky top-0 z-50 bg-black/70 backdrop-blur-xl border-b border-white/5">
+    <nav class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
+      <a href="#top" class="flex items-center gap-2">
+        <span
+          class="w-9 h-9 rounded-xl bg-gradient-to-br from-sky-500 to-indigo-600 flex items-center justify-center font-black text-sm text-white pulse-glow">MIB</span>
+        <span class="hidden sm:block text-sm font-semibold text-white">Muhammad Ibrahim Butt</span>
       </a>
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#about">About</a>
-        <a href="#positioning">Positioning</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-      </nav>
+
+      <div class="hidden md:flex gap-8 text-sm text-slate-400">
+        <a href="#about" class="nav-link hover:text-white">About</a>
+        <a href="#skills" class="nav-link hover:text-white">Skills</a>
+        <a href="#experience" class="nav-link hover:text-white">Experience</a>
+        <a href="#projects" class="nav-link hover:text-white">Projects</a>
+        <a href="#education" class="nav-link hover:text-white">Education</a>
+        <a href="#certifications" class="nav-link hover:text-white">Certifications</a>
+        <a href="#contact" class="nav-link hover:text-white">Contact</a>
+      </div>
+
+      <a href="#contact"
+        class="hidden sm:inline-flex px-4 py-2 rounded-xl bg-gradient-to-r from-sky-600 to-indigo-600 hover:from-sky-500 hover:to-indigo-500 text-sm font-semibold transition shadow-lg shadow-sky-500/25 text-white">
+        Hire Me
+      </a>
+
+      <button id="mobile-toggle" class="md:hidden text-white text-xl" aria-label="Toggle menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </nav>
+
+    <div id="mobile-menu"
+      class="mobile-menu md:hidden flex-col px-6 py-4 border-t border-white/5 bg-black/80 backdrop-blur-xl">
+      <a href="#about" class="py-2 text-slate-300 hover:text-white">About</a>
+      <a href="#skills" class="py-2 text-slate-300 hover:text-white">Skills</a>
+      <a href="#experience" class="py-2 text-slate-300 hover:text-white">Experience</a>
+      <a href="#projects" class="py-2 text-slate-300 hover:text-white">Projects</a>
+      <a href="#education" class="py-2 text-slate-300 hover:text-white">Education</a>
+      <a href="#certifications" class="py-2 text-slate-300 hover:text-white">Certifications</a>
+      <a href="#contact" class="py-2 text-slate-300 hover:text-white">Contact</a>
     </div>
   </header>
 
-  <main id="top">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="panel hero-main">
-          <div class="eyebrow">AI Automation · Python · Laravel · C#/.NET · Cloud-Native Systems</div>
-          <h1>Building AI-enabled automation and backend platforms for modern products.</h1>
-          <p class="lead">
-            I’m Muhammad Ibrahim Butt, a Senior Software Engineer focused on AI automation, backend engineering,
-            cloud-native applications, and applied machine learning. I build production systems with Python,
-            Laravel, C#/.NET, Node.js, AWS, Docker, Kubernetes, and modern AI tooling for agentic workflows,
-            intelligent automation, and data-driven products.
+  <main id="top" class="max-w-6xl mx-auto px-6">
+
+    <!-- ═══════════ HERO ═══════════ -->
+    <section class="py-20 md:py-28 grid md:grid-cols-[1.3fr_1fr] gap-12 items-center min-h-[85vh]">
+      <div>
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium text-sky-300 border border-sky-500/30 bg-sky-500/10 mb-6">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+          </span>
+          Available for senior &amp; remote opportunities
+        </div>
+
+        <h1 class="text-5xl md:text-7xl font-black leading-[1.05] tracking-tight text-white">
+          Muhammad Ibrahim<br>
+          <span
+            class="bg-gradient-to-r from-sky-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent gradient-anim">Butt</span>
+        </h1>
+
+        <h2 class="mt-5 text-xl md:text-2xl text-slate-300 font-medium">
+          AI Automation, Backend &amp; Cloud Engineer
+        </h2>
+
+        <p class="mt-6 text-slate-400 max-w-xl leading-relaxed">
+          Senior software engineer building production-grade
+          <span class="text-sky-300">AI automation</span>,
+          <span class="text-indigo-300">backend platforms</span>, and
+          <span class="text-purple-300">cloud-native systems</span>.
+          Benchmarked <span class="text-white font-semibold">500+ AI evaluation scenarios</span>,
+          automated <span class="text-white font-semibold">10,000+ invoices</span>, and
+          delivered <span class="text-white font-semibold">70% API performance</span> improvements.
+        </p>
+
+        <div class="mt-10 flex flex-wrap gap-3">
+          <a href="#experience"
+            class="group px-6 py-3 rounded-xl bg-gradient-to-r from-sky-600 to-indigo-600 hover:from-sky-500 hover:to-indigo-500 font-semibold transition shadow-lg shadow-sky-500/25 flex items-center gap-2 text-white">
+            View Experience
+            <i class="fa-solid fa-arrow-right text-sm transition-transform group-hover:translate-x-1"></i>
+          </a>
+          <a href="./assets/resume.pdf" target="_blank"
+            class="px-6 py-3 rounded-xl border border-white/15 hover:bg-white/5 hover:border-white/25 font-semibold transition flex items-center gap-2"
+            download>
+            <i class="fa-solid fa-download text-sm"></i>Resume
+          </a>
+          <a href="https://github.com/muhammad-ibrahim-butt" target="_blank" rel="noreferrer"
+            class="px-6 py-3 rounded-xl border border-white/15 hover:bg-white/5 hover:border-white/25 transition flex items-center gap-2">
+            <i class="fa-brands fa-github"></i>GitHub
+          </a>
+          <a href="https://linkedin.com/in/muhammad-ibrahim-butt" target="_blank" rel="noreferrer"
+            class="px-6 py-3 rounded-xl border border-white/15 hover:bg-white/5 hover:border-white/25 transition flex items-center gap-2">
+            <i class="fa-brands fa-linkedin"></i>LinkedIn
+          </a>
+          <a href="https://g.dev/muhammadibrahimbutt" target="_blank" rel="noreferrer"
+            class="px-6 py-3 rounded-xl border border-white/15 hover:bg-white/5 hover:border-white/25 transition flex items-center gap-2">
+            <img src="./assets/tools/google-dev.png" class="w-4 h-4" alt="Google Developer">Google Dev
+          </a>
+        </div>
+
+        <!-- Quick contact -->
+        <div class="mt-10 flex flex-wrap gap-5 text-sm text-slate-500">
+          <a href="mailto:m.ibrahim8325@gmail.com" class="flex items-center gap-2 hover:text-white transition">
+            <i class="fa-solid fa-envelope text-sky-400"></i>m.ibrahim8325@gmail.com
+          </a>
+          <a href="tel:+923118663209" class="flex items-center gap-2 hover:text-white transition">
+            <i class="fa-solid fa-phone text-emerald-400"></i>+92 311 8663209
+          </a>
+          <span class="flex items-center gap-2">
+            <i class="fa-solid fa-location-dot text-indigo-400"></i>Faisalabad, Pakistan
+          </span>
+        </div>
+      </div>
+
+      <div class="flex justify-center md:justify-end">
+        <div class="relative">
+          <div
+            class="absolute -inset-6 rounded-[2.5rem] bg-gradient-to-br from-sky-500/30 via-indigo-500/30 to-purple-500/20 blur-3xl">
+          </div>
+          <div
+            class="absolute inset-0 rounded-3xl bg-gradient-to-br from-sky-500 via-indigo-500 to-purple-500 p-[2px] float-anim">
+            <div class="w-full h-full rounded-3xl bg-black"></div>
+          </div>
+          <!-- TODO: replace ./assets/images/profile.JPG with your preferred portrait -->
+          <img src="./assets/images/profile.JPG"
+            class="relative w-72 md:w-80 rounded-3xl float-anim object-cover aspect-square" alt="Muhammad Ibrahim Butt">
+          <!-- Floating badges -->
+          <div class="absolute -top-3 -right-3 glass-strong rounded-2xl px-4 py-2 flex items-center gap-2 text-sm">
+            <i class="fa-solid fa-code text-sky-400"></i>
+            <span class="font-semibold text-white">5+ yrs</span>
+          </div>
+          <div class="absolute -bottom-3 -left-3 glass-strong rounded-2xl px-4 py-2 flex items-center gap-2 text-sm">
+            <i class="fa-solid fa-robot text-indigo-400"></i>
+            <span class="font-semibold text-white">AI Automation</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ COMPANIES MARQUEE ═══════════ -->
+    <section class="pb-20 fade-in">
+      <div class="text-center mb-8">
+        <p class="section-label justify-center">Trusted across forward-thinking teams</p>
+      </div>
+
+      <div class="marquee glass rounded-2xl py-8 px-6">
+        <div class="marquee-track">
+          <img class="company-logo-marquee" src="./assets/companies/turing.png" alt="Turing" title="Turing">
+          <img class="company-logo-marquee" src="./assets/companies/mercor.png" alt="Mercor" title="Mercor">
+          <img class="company-logo-marquee" src="./assets/companies/superannotate.png" alt="SuperAnnotate"
+            title="SuperAnnotate">
+          <img class="company-logo-marquee" src="./assets/companies/micro1.png" alt="micro1" title="micro1">
+          <img class="company-logo-marquee" src="./assets/companies/fiverr.png" alt="Fiverr" title="Fiverr">
+
+          <img class="company-logo-marquee" src="./assets/companies/turing.png" alt="Turing" title="Turing">
+          <img class="company-logo-marquee" src="./assets/companies/mercor.png" alt="Mercor" title="Mercor">
+          <img class="company-logo-marquee" src="./assets/companies/superannotate.png" alt="SuperAnnotate"
+            title="SuperAnnotate">
+          <img class="company-logo-marquee" src="./assets/companies/micro1.png" alt="micro1" title="micro1">
+          <img class="company-logo-marquee" src="./assets/companies/fiverr.png" alt="Fiverr" title="Fiverr">
+
+          <img class="company-logo-marquee" src="./assets/companies/turing.png" alt="Turing" title="Turing">
+          <img class="company-logo-marquee" src="./assets/companies/mercor.png" alt="Mercor" title="Mercor">
+          <img class="company-logo-marquee" src="./assets/companies/superannotate.png" alt="SuperAnnotate"
+            title="SuperAnnotate">
+          <img class="company-logo-marquee" src="./assets/companies/micro1.png" alt="micro1" title="micro1">
+          <img class="company-logo-marquee" src="./assets/companies/fiverr.png" alt="Fiverr" title="Fiverr">
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ IMPACT BLOCKS ═══════════ -->
+    <section class="pb-24 fade-in">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+
+        <div class="glass stat-card rounded-3xl p-6 md:p-8 text-center">
+          <div class="relative">
+            <p
+              class="text-4xl md:text-5xl font-black bg-gradient-to-r from-sky-400 to-indigo-400 bg-clip-text text-transparent">
+              70%</p>
+            <p class="text-xs md:text-sm text-slate-400 mt-3 tracking-wide">API Response Improved</p>
+          </div>
+        </div>
+
+        <div class="glass stat-card rounded-3xl p-6 md:p-8 text-center">
+          <div class="relative">
+            <p
+              class="text-4xl md:text-5xl font-black bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+              60%</p>
+            <p class="text-xs md:text-sm text-slate-400 mt-3 tracking-wide">Faster Deployments</p>
+          </div>
+        </div>
+
+        <div class="glass stat-card rounded-3xl p-6 md:p-8 text-center">
+          <div class="relative">
+            <p
+              class="text-4xl md:text-5xl font-black bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+              500+</p>
+            <p class="text-xs md:text-sm text-slate-400 mt-3 tracking-wide">AI Scenarios Benchmarked</p>
+          </div>
+        </div>
+
+        <div class="glass stat-card rounded-3xl p-6 md:p-8 text-center">
+          <div class="relative">
+            <p
+              class="text-4xl md:text-5xl font-black bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+              99.9%</p>
+            <p class="text-xs md:text-sm text-slate-400 mt-3 tracking-wide">Uptime Delivered</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════ ABOUT ═══════════ -->
+    <section id="about" class="pb-24 fade-in">
+      <div class="mb-8">
+        <p class="section-label">Introduction</p>
+        <h2 class="text-3xl md:text-4xl font-black text-white mt-3">About Me</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="glass rounded-3xl p-8 md:p-10 md:col-span-2 leading-relaxed text-slate-300">
+          <p class="text-lg">
+            I'm a senior software engineer working at the intersection of
+            <span class="text-sky-300 font-medium">AI automation</span>,
+            <span class="text-indigo-300 font-medium">backend engineering</span>, and
+            <span class="text-purple-300 font-medium">cloud-native systems</span>.
+            I build production platforms with Python, Laravel, C#/.NET, Node.js, AWS, Docker, Kubernetes,
+            and modern AI tooling for agentic workflows, intelligent automation, and data-driven products.
           </p>
-          <div class="actions">
-            <a class="btn btn-primary" href="mailto:m.ibrahim8325@gmail.com">Hire / Collaborate</a>
-            <a class="btn btn-secondary" href="#projects">View Projects</a>
-            <a class="btn btn-secondary" href="https://linkedin.com/in/muhammad-ibrahim-butt" target="_blank" rel="noreferrer">LinkedIn</a>
-          </div>
-          <div class="contact-strip">
-            <span>Faisalabad, Pakistan</span>
-            <span>•</span>
-            <a href="mailto:m.ibrahim8325@gmail.com">m.ibrahim8325@gmail.com</a>
-            <span>•</span>
-            <a href="tel:+923118663209">+92 311 8663209</a>
-          </div>
-          <div class="stats" aria-label="Key metrics">
-            <div class="stat">
-              <strong>500+</strong>
-              <span>AI evaluation scenarios benchmarked</span>
-            </div>
-            <div class="stat">
-              <strong>10,000+</strong>
-              <span>invoices automated through custom tooling</span>
-            </div>
-            <div class="stat">
-              <strong>70%</strong>
-              <span>API response time improvement delivered</span>
-            </div>
-            <div class="stat">
-              <strong>99.9%</strong>
-              <span>accuracy and uptime focused delivery</span>
-            </div>
-          </div>
-        </div>
-
-        <aside class="panel hero-side">
-          <div class="profile-box">
-            <div class="portrait">
-              <div>
-                <strong>MIB</strong>
-                <span>Senior Software Engineer</span>
-              </div>
-            </div>
-            <div class="availability">Available for remote senior engineering roles, consulting, and AI automation projects.</div>
-          </div>
-
-          <div class="side-card">
-            <h3>Current focus</h3>
-            <div class="mini-list">
-              <div>
-                <strong>AI automation systems</strong>
-                <span>Agentic workflows, evaluation pipelines, RLHF-style task design, and business process automation.</span>
-              </div>
-              <div>
-                <strong>Backend platforms</strong>
-                <span>APIs, microservices, integrations, and operational systems built with Python, Laravel, C#/.NET, and Node.js.</span>
-              </div>
-              <div>
-                <strong>Applied AI/ML</strong>
-                <span>NLP, predictive analytics, vector search, model evaluation, and data-intensive production workflows.</span>
-              </div>
-            </div>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>Market-aligned stack</h2>
-            <p>Positioned around the kinds of systems teams are actively building now: AI automation, intelligent workflows, cloud backends, and applied ML.</p>
-          </div>
-        </div>
-        <div class="pill-strip">
-          <span class="pill">Python for AI, ML, APIs, and automation</span>
-          <span class="pill">Laravel for business platforms and integrations</span>
-          <span class="pill">C# / .NET for cloud-native and enterprise systems</span>
-          <span class="pill">LangChain & AutoGen for agentic workflows</span>
-          <span class="pill">AWS, Docker, Kubernetes, Terraform</span>
-          <span class="pill">Vector databases, ETL, analytics, automation</span>
-        </div>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="container grid-2">
-        <article class="panel about-card">
-          <div class="section-head">
-            <div>
-              <h2>About</h2>
-              <p>A clear profile for companies hiring across AI, automation, backend, platform, and cloud roles.</p>
-            </div>
-          </div>
-          <p>
-            My portfolio is intentionally positioned at the intersection of software engineering and modern intelligent systems.
-            I bring a practical combination of backend engineering, cloud architecture, workflow automation, and applied AI/ML
-            to teams that need production-ready systems rather than demos.
+          <p class="mt-5">
+            At <span class="text-white font-semibold">Turing</span>, I lead a pod of 10 AI trainers focused on agentic
+            AI
+            development, evaluation, and RLHF — improving task completion by 40% and cutting deployment time by 60%
+            across
+            500+ enterprise scenarios. At <span class="text-white font-semibold">Linx Computations</span> and
+            <span class="text-white font-semibold">DevXen</span>, I've shipped Laravel and C# automation platforms,
+            finance integrations, and ML-powered services that reduced manual work by 60% and improved API response
+            times by up to 70%.
           </p>
-          <p>
-            I’m strongest where business workflows, APIs, integrations, data, and AI capabilities need to come together.
-            That includes internal platforms, finance and operations automation, evaluation frameworks, ML-powered products,
-            and backend services that need to scale reliably.
+          <p class="mt-5 text-slate-400">
+            I'm strongest where business workflows, APIs, integrations, data, and AI capabilities converge — building
+            internal platforms, finance and operations automation, evaluation frameworks, ML-powered features, and
+            backend services that need to scale reliably.
           </p>
-        </article>
-
-        <article id="positioning" class="panel position-card">
-          <div class="section-head">
-            <div>
-              <h2>How I should be positioned</h2>
-              <p>Professional titles and value propositions that match current hiring language.</p>
-            </div>
-          </div>
-          <div class="mini-list">
-            <div>
-              <strong>AI Automation Engineer</strong>
-              <span>For companies looking to automate workflows with LLMs, agents, orchestration, and reliable backend systems.</span>
-            </div>
-            <div>
-              <strong>Senior Backend / Platform Engineer</strong>
-              <span>For API platforms, microservices, integrations, cloud migration, performance optimization, and DevOps delivery.</span>
-            </div>
-            <div>
-              <strong>Applied AI / ML Engineer</strong>
-              <span>For evaluation systems, predictive models, NLP workflows, intelligent automation, and data-intensive applications.</span>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="skills">
-      <div class="container grid-2">
-        <article class="panel skills-card">
-          <div class="section-head">
-            <div>
-              <h2>Modern technical stack</h2>
-              <p>Organized around the technologies that best represent your profile in the current market.</p>
-            </div>
-          </div>
-          <div class="skill-groups">
-            <div class="skill-group">
-              <h3>AI automation & agents</h3>
-              <div class="chips">
-                <span class="chip">Python</span>
-                <span class="chip">LangChain</span>
-                <span class="chip">AutoGen</span>
-                <span class="chip">Agentic Workflows</span>
-                <span class="chip">RLHF</span>
-                <span class="chip">Model Evaluation</span>
-                <span class="chip">Benchmarking</span>
-                <span class="chip">Transformers</span>
-                <span class="chip">Vector Databases</span>
-              </div>
-            </div>
-            <div class="skill-group">
-              <h3>Backend engineering & automation</h3>
-              <div class="chips">
-                <span class="chip">Laravel</span>
-                <span class="chip">PHP</span>
-                <span class="chip">C# / .NET</span>
-                <span class="chip">Django</span>
-                <span class="chip">Flask</span>
-                <span class="chip">Node.js</span>
-                <span class="chip">Express.js</span>
-                <span class="chip">REST APIs</span>
-                <span class="chip">GraphQL</span>
-                <span class="chip">QuickBooks API</span>
-              </div>
-            </div>
-            <div class="skill-group">
-              <h3>AI/ML & data systems</h3>
-              <div class="chips">
-                <span class="chip">PyTorch</span>
-                <span class="chip">TensorFlow</span>
-                <span class="chip">Scikit-learn</span>
-                <span class="chip">NLP</span>
-                <span class="chip">XGBoost</span>
-                <span class="chip">ETL Pipelines</span>
-                <span class="chip">Data Aggregation</span>
-                <span class="chip">PostgreSQL</span>
-                <span class="chip">Redis</span>
-                <span class="chip">Kafka</span>
-              </div>
-            </div>
-            <div class="skill-group">
-              <h3>Cloud, DevOps & delivery</h3>
-              <div class="chips">
-                <span class="chip">AWS</span>
-                <span class="chip">Azure</span>
-                <span class="chip">Docker</span>
-                <span class="chip">Kubernetes</span>
-                <span class="chip">Terraform</span>
-                <span class="chip">GitHub Actions</span>
-                <span class="chip">Jenkins</span>
-                <span class="chip">Prometheus</span>
-                <span class="chip">Grafana</span>
-                <span class="chip">Nginx</span>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="panel tools-card">
-          <div class="section-head">
-            <div>
-              <h2>What I build</h2>
-              <p>Examples of the work this portfolio should immediately signal to recruiters and clients.</p>
-            </div>
-          </div>
-          <div class="mini-list">
-            <div>
-              <strong>AI workflow automation</strong>
-              <span>Designing systems that classify, route, evaluate, and automate complex tasks with human-in-the-loop control.</span>
-            </div>
-            <div>
-              <strong>Business process automation</strong>
-              <span>Inventory, ledger, invoicing, reporting, and finance systems that replace manual work with reliable software.</span>
-            </div>
-            <div>
-              <strong>ML-powered applications</strong>
-              <span>Sentiment analysis, predictive maintenance, model evaluation, and analytics features built into real products.</span>
-            </div>
-            <div>
-              <strong>Cloud-native backends</strong>
-              <span>APIs, microservices, observability, DevOps pipelines, and platform services optimized for reliability and scale.</span>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="experience">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>Professional experience</h2>
-            <p>Recent work aligned with AI automation, intelligent systems, cloud platforms, and enterprise-grade backend delivery.</p>
-          </div>
         </div>
-        <div class="timeline">
-          <article class="panel timeline-card timeline-item">
-            <div class="timeline-top">
-              <div>
-                <h3>Pod Lead (Contract) · Turing</h3>
-                <div class="timeline-location">Remote · Palo Alto, California</div>
-              </div>
-              <span>Aug 2025 – Apr 2026</span>
-            </div>
-            <ul>
-              <li>Led a pod of 10 AI trainers focused on agentic AI development, evaluation, RLHF, and multi-step reasoning.</li>
-              <li>Improved task completion rates by 40% and reduced deployment time by 60% across complex workflow evaluations.</li>
-              <li>Built training protocols and benchmarking frameworks spanning 500+ test scenarios for enterprise AI use cases.</li>
-            </ul>
-          </article>
 
-          <article class="panel timeline-card timeline-item">
-            <div class="timeline-top">
-              <div>
-                <h3>Senior Software Engineer (Contract) · Linx Computations Inc.</h3>
-                <div class="timeline-location">Remote · New York, NY</div>
+        <div class="space-y-4">
+          <div class="glass rounded-2xl p-6">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-10 h-10 rounded-xl bg-sky-500/20 flex items-center justify-center">
+                <i class="fa-solid fa-map-pin text-sky-400"></i>
               </div>
-              <span>May 2024 – Present</span>
+              <div>
+                <p class="text-xs text-slate-500 uppercase tracking-wider">Location</p>
+                <p class="text-white font-semibold">Faisalabad, Pakistan</p>
+              </div>
             </div>
-            <ul>
-              <li>Built automation-first business systems with Laravel and C# for POS, inventory, ledger management, and QuickBooks integration.</li>
-              <li>Developed finance automation workflows that reduced manual data entry by 60% and improved accounting accuracy.</li>
-              <li>Improved backend response time by 50% under high load through better architecture and optimization.</li>
-            </ul>
-          </article>
+          </div>
 
-          <article class="panel timeline-card timeline-item">
-            <div class="timeline-top">
-              <div>
-                <h3>Senior Software Engineer · DevXen</h3>
-                <div class="timeline-location">Remote · Wollongong, New South Wales</div>
+          <div class="glass rounded-2xl p-6">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-10 h-10 rounded-xl bg-indigo-500/20 flex items-center justify-center">
+                <i class="fa-solid fa-briefcase text-indigo-400"></i>
               </div>
-              <span>May 2024 – Jul 2025</span>
+              <div>
+                <p class="text-xs text-slate-500 uppercase tracking-wider">Experience</p>
+                <p class="text-white font-semibold">5+ Years</p>
+              </div>
             </div>
-            <ul>
-              <li>Improved API response time by 70% through backend optimization, data-access tuning, and service workflow improvements.</li>
-              <li>Designed scalable microservices that reduced server load by 60% and improved application availability.</li>
-              <li>Delivered automation, reporting, and ML-oriented systems including sentiment analysis and predictive maintenance solutions.</li>
-            </ul>
-          </article>
+          </div>
 
-          <article class="panel timeline-card timeline-item">
-            <div class="timeline-top">
-              <div>
-                <h3>Senior Software Engineer · Microbeck</h3>
-                <div class="timeline-location">Faisalabad, Pakistan</div>
+          <div class="glass rounded-2xl p-6">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center">
+                <i class="fa-solid fa-globe text-emerald-400"></i>
               </div>
-              <span>Jul 2022 – Apr 2024</span>
+              <div>
+                <p class="text-xs text-slate-500 uppercase tracking-wider">Availability</p>
+                <p class="text-white font-semibold">Remote / Global</p>
+              </div>
             </div>
-            <ul>
-              <li>Migrated legacy services to cloud-native infrastructure using Docker, Kubernetes, and AWS.</li>
-              <li>Reduced server costs by 30%, supported 99.9% uptime, and improved API latency by 60% with Redis caching.</li>
-              <li>Built real-time data pipelines and automated backend workflows to improve performance and delivery speed.</li>
-            </ul>
-          </article>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="projects">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>Selected projects</h2>
-            <p>Projects reframed to highlight AI automation, applied ML, and business workflow engineering.</p>
+    <!-- ═══════════ SKILLS ═══════════ -->
+    <section id="skills" class="pb-24 fade-in">
+      <div class="mb-8">
+        <p class="section-label">What I Work With</p>
+        <h2 class="text-3xl md:text-4xl font-black text-white mt-3">Technical Skills</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <div class="glass skill-card rounded-3xl p-7">
+          <h3 class="font-semibold text-white mb-5 flex items-center gap-3">
+            <span class="w-9 h-9 rounded-lg bg-sky-500/15 flex items-center justify-center">
+              <i class="fa-solid fa-code text-sky-400 text-sm"></i>
+            </span>
+            Languages
+          </h3>
+          <div class="flex flex-wrap gap-2 text-sm">
+            <span class="chip px-3 py-1.5 rounded-full flex items-center gap-2"><img
+                src="./assets/tools/python-original.svg" class="tool-logo-sm" alt="">Python</span>
+            <span class="chip px-3 py-1.5 rounded-full flex items-center gap-2"><img
+                src="./assets/tools/php-original.svg" class="tool-logo-sm" alt="">PHP</span>
+            <span class="chip px-3 py-1.5 rounded-full">C# / .NET</span>
+            <span class="chip px-3 py-1.5 rounded-full flex items-center gap-2"><img
+                src="./assets/tools/javascript-original.svg" class="tool-logo-sm" alt="">JavaScript</span>
+            <span class="chip px-3 py-1.5 rounded-full flex items-center gap-2"><img
+                src="./assets/tools/typescript-original.svg" class="tool-logo-sm" alt="">TypeScript</span>
+            <span class="chip px-3 py-1.5 rounded-full flex items-center gap-2"><img
+                src="./assets/tools/cplusplus-original.svg" class="tool-logo-sm" alt="">C/C++</span>
+            <span class="chip px-3 py-1.5 rounded-full flex items-center gap-2"><img
+                src="./assets/tools/java-original.svg" class="tool-logo-sm" alt="">Java</span>
+            <span class="chip px-3 py-1.5 rounded-full">SQL</span>
+            <span class="chip px-3 py-1.5 rounded-full">Bash</span>
           </div>
         </div>
-        <div class="projects-grid">
-          <article class="panel project-card">
-            <div>
-              <h3>Agentic AI Training & Evaluation</h3>
-              <div class="project-meta">Turing · AI Workflow Design, Evaluation, Benchmarking</div>
-            </div>
-            <p>Led agentic AI training and evaluation initiatives for enterprise scenarios with structured testing and quality-focused workflows.</p>
-            <ul>
-              <li>Built evaluation frameworks across 500+ scenarios.</li>
-              <li>Improved task completion by 40% and reduced deployment time by 60%.</li>
-            </ul>
-          </article>
 
-          <article class="panel project-card">
-            <div>
-              <h3>Finance & Operations Automation Platform</h3>
-              <div class="project-meta">Linx Computations Inc. · Laravel, C#, QuickBooks API</div>
-            </div>
-            <p>Developed automation tooling for invoicing, stock, ledger, and finance workflows, combining backend systems with enterprise integrations.</p>
-            <ul>
-              <li>Automated tax calculations for 10,000+ invoices.</li>
-              <li>Reduced manual accounting work by 60% with bi-directional QuickBooks integration.</li>
-            </ul>
-          </article>
-
-          <article class="panel project-card">
-            <div>
-              <h3>Predictive Maintenance & NLP Systems</h3>
-              <div class="project-meta">DevXen · Python, Scikit-learn, NLP, Real-Time Analytics</div>
-            </div>
-            <p>Built ML-powered applications including predictive maintenance and sentiment analysis to turn operational and customer data into decisions.</p>
-            <ul>
-              <li>Improved failure prediction accuracy by 20% across 500+ machines.</li>
-              <li>Reached 85% sentiment classification accuracy with automated NLP workflows.</li>
-            </ul>
-          </article>
+        <div class="glass skill-card rounded-3xl p-7">
+          <h3 class="font-semibold text-white mb-5 flex items-center gap-3">
+            <span class="w-9 h-9 rounded-lg bg-indigo-500/15 flex items-center justify-center">
+              <i class="fa-solid fa-layer-group text-indigo-400 text-sm"></i>
+            </span>
+            Frameworks &amp; Backend
+          </h3>
+          <div class="flex flex-wrap gap-2 text-sm">
+            <span class="chip px-3 py-1.5 rounded-full flex items-center gap-2"><img
+                src="./assets/tools/laravel-original.svg" class="tool-logo-sm" alt="">Laravel</span>
+            <span class="chip px-3 py-1.5 rounded-full flex items-center gap-2"><img
+                src="./assets/tools/django-plain.svg" class="tool-logo-sm" alt="">Django</span>
+            <span class="chip px-3 py-1.5 rounded-full flex items-center gap-2"><img
+                src="./assets/tools/flask-original.svg" class="tool-logo-sm" alt=""
+                style="filter: invert(1)">Flask</span>
+            <span class="chip px-3 py-1.5 rounded-full">.NET / ASP.NET</span>
+            <span class="chip px-3 py-1.5 rounded-full flex items-center gap-2"><img
+                src="./assets/tools/nodejs-original.svg" class="tool-logo-sm" alt="">Node.js</span>
+            <span class="chip px-3 py-1.5 rounded-full">Express.js</span>
+            <span class="chip px-3 py-1.5 rounded-full">FastAPI</span>
+            <span class="chip px-3 py-1.5 rounded-full">REST APIs</span>
+            <span class="chip px-3 py-1.5 rounded-full">GraphQL</span>
+            <span class="chip px-3 py-1.5 rounded-full">Microservices</span>
+          </div>
         </div>
+
+        <div class="glass skill-card rounded-3xl p-7">
+          <h3 class="font-semibold text-white mb-5 flex items-center gap-3">
+            <span class="w-9 h-9 rounded-lg bg-purple-500/15 flex items-center justify-center">
+              <i class="fa-solid fa-brain text-purple-400 text-sm"></i>
+            </span>
+            AI Automation &amp; ML
+          </h3>
+          <div class="flex flex-wrap gap-2 text-sm">
+            <span class="chip px-3 py-1.5 rounded-full">LangChain</span>
+            <span class="chip px-3 py-1.5 rounded-full">AutoGen</span>
+            <span class="chip px-3 py-1.5 rounded-full">Agentic Workflows</span>
+            <span class="chip px-3 py-1.5 rounded-full">RLHF</span>
+            <span class="chip px-3 py-1.5 rounded-full">Model Evaluation</span>
+            <span class="chip px-3 py-1.5 rounded-full">Benchmarking</span>
+            <span class="chip px-3 py-1.5 rounded-full">Transformers</span>
+            <span class="chip px-3 py-1.5 rounded-full">NLP</span>
+            <span class="chip px-3 py-1.5 rounded-full">Vector Databases</span>
+            <span class="chip px-3 py-1.5 rounded-full">RAG</span>
+            <span class="chip px-3 py-1.5 rounded-full">PyTorch</span>
+            <span class="chip px-3 py-1.5 rounded-full">TensorFlow</span>
+            <span class="chip px-3 py-1.5 rounded-full">Scikit-learn</span>
+            <span class="chip px-3 py-1.5 rounded-full">XGBoost</span>
+          </div>
+        </div>
+
+        <div class="glass skill-card rounded-3xl p-7">
+          <h3 class="font-semibold text-white mb-5 flex items-center gap-3">
+            <span class="w-9 h-9 rounded-lg bg-emerald-500/15 flex items-center justify-center">
+              <i class="fa-solid fa-database text-emerald-400 text-sm"></i>
+            </span>
+            Databases &amp; Data
+          </h3>
+          <div class="flex flex-wrap gap-2 text-sm">
+            <span class="chip px-3 py-1.5 rounded-full flex items-center gap-2"><img
+                src="./assets/tools/postgresql-original.svg" class="tool-logo-sm" alt="">PostgreSQL</span>
+            <span class="chip px-3 py-1.5 rounded-full flex items-center gap-2"><img
+                src="./assets/tools/mysql-original.svg" class="tool-logo-sm" alt="">MySQL</span>
+            <span class="chip px-3 py-1.5 rounded-full flex items-center gap-2"><img
+                src="./assets/tools/microsoftsqlserver-original.svg" class="tool-logo-sm" alt="">SQL Server</span>
+            <span class="chip px-3 py-1.5 rounded-full">Redis</span>
+            <span class="chip px-3 py-1.5 rounded-full">Kafka</span>
+            <span class="chip px-3 py-1.5 rounded-full">ETL Pipelines</span>
+            <span class="chip px-3 py-1.5 rounded-full">Data Aggregation</span>
+            <span class="chip px-3 py-1.5 rounded-full">Database Design</span>
+          </div>
+        </div>
+
+        <div class="glass skill-card rounded-3xl p-7 md:col-span-2">
+          <h3 class="font-semibold text-white mb-5 flex items-center gap-3">
+            <span class="w-9 h-9 rounded-lg bg-orange-500/15 flex items-center justify-center p-1.5">
+              <img src="./assets/tools/amazonwebservices-original-wordmark.svg" class="w-full h-full object-contain"
+                alt="AWS">
+            </span>
+            Amazon Web Services (AWS)
+          </h3>
+          <div class="flex flex-wrap gap-2 text-sm">
+            <span class="chip px-3 py-1.5 rounded-full">EC2</span>
+            <span class="chip px-3 py-1.5 rounded-full">S3</span>
+            <span class="chip px-3 py-1.5 rounded-full">Lambda</span>
+            <span class="chip px-3 py-1.5 rounded-full">RDS</span>
+            <span class="chip px-3 py-1.5 rounded-full">ECS</span>
+            <span class="chip px-3 py-1.5 rounded-full">ECR</span>
+            <span class="chip px-3 py-1.5 rounded-full">CloudFront</span>
+            <span class="chip px-3 py-1.5 rounded-full">CloudWatch</span>
+            <span class="chip px-3 py-1.5 rounded-full">API Gateway</span>
+            <span class="chip px-3 py-1.5 rounded-full">SQS</span>
+            <span class="chip px-3 py-1.5 rounded-full">SNS</span>
+            <span class="chip px-3 py-1.5 rounded-full">IAM</span>
+            <span class="chip px-3 py-1.5 rounded-full">Route 53</span>
+            <span class="chip px-3 py-1.5 rounded-full">Secrets Manager</span>
+            <span class="chip px-3 py-1.5 rounded-full">CodePipeline</span>
+          </div>
+        </div>
+
+        <div class="glass skill-card rounded-3xl p-7">
+          <h3 class="font-semibold text-white mb-5 flex items-center gap-3">
+            <span class="w-9 h-9 rounded-lg bg-blue-500/15 flex items-center justify-center">
+              <i class="fa-solid fa-cloud text-blue-400 text-sm"></i>
+            </span>
+            Cloud &amp; DevOps
+          </h3>
+          <div class="flex flex-wrap gap-2 text-sm">
+            <span class="chip px-3 py-1.5 rounded-full flex items-center gap-2"><img
+                src="./assets/tools/azure-original.svg" class="tool-logo-sm" alt="">Azure</span>
+            <span class="chip px-3 py-1.5 rounded-full flex items-center gap-2"><img
+                src="./assets/tools/googlecloud-original.svg" class="tool-logo-sm" alt="">GCP</span>
+            <span class="chip px-3 py-1.5 rounded-full flex items-center gap-2"><img
+                src="./assets/tools/docker-original.svg" class="tool-logo-sm" alt="">Docker</span>
+            <span class="chip px-3 py-1.5 rounded-full">Kubernetes</span>
+            <span class="chip px-3 py-1.5 rounded-full">Terraform</span>
+            <span class="chip px-3 py-1.5 rounded-full">GitHub Actions</span>
+            <span class="chip px-3 py-1.5 rounded-full">Jenkins</span>
+            <span class="chip px-3 py-1.5 rounded-full">Prometheus</span>
+            <span class="chip px-3 py-1.5 rounded-full">Grafana</span>
+            <span class="chip px-3 py-1.5 rounded-full flex items-center gap-2"><img
+                src="./assets/tools/nginx-original.svg" class="tool-logo-sm" alt="">Nginx</span>
+            <span class="chip px-3 py-1.5 rounded-full flex items-center gap-2"><img
+                src="./assets/tools/linux-original.svg" class="tool-logo-sm" alt="">Linux</span>
+            <span class="chip px-3 py-1.5 rounded-full">CI/CD</span>
+          </div>
+        </div>
+
+        <div class="glass skill-card rounded-3xl p-7">
+          <h3 class="font-semibold text-white mb-5 flex items-center gap-3">
+            <span class="w-9 h-9 rounded-lg bg-amber-500/15 flex items-center justify-center">
+              <i class="fa-solid fa-plug text-amber-400 text-sm"></i>
+            </span>
+            APIs &amp; Integrations
+          </h3>
+          <div class="flex flex-wrap gap-2 text-sm">
+            <span class="chip px-3 py-1.5 rounded-full">REST APIs</span>
+            <span class="chip px-3 py-1.5 rounded-full">GraphQL</span>
+            <span class="chip px-3 py-1.5 rounded-full">QuickBooks API</span>
+            <span class="chip px-3 py-1.5 rounded-full">Stripe</span>
+            <span class="chip px-3 py-1.5 rounded-full">Square API</span>
+            <span class="chip px-3 py-1.5 rounded-full">Google API</span>
+            <span class="chip px-3 py-1.5 rounded-full">Webhooks</span>
+            <span class="chip px-3 py-1.5 rounded-full">3rd Party Integrations</span>
+          </div>
+        </div>
+
+        <div class="glass skill-card rounded-3xl p-7 md:col-span-2">
+          <h3 class="font-semibold text-white mb-5 flex items-center gap-3">
+            <span class="w-9 h-9 rounded-lg bg-rose-500/15 flex items-center justify-center">
+              <i class="fa-solid fa-users text-rose-400 text-sm"></i>
+            </span>
+            Soft Skills &amp; Leadership
+          </h3>
+          <div class="flex flex-wrap gap-2 text-sm">
+            <span class="chip px-3 py-1.5 rounded-full">Team Leadership</span>
+            <span class="chip px-3 py-1.5 rounded-full">Pod Management</span>
+            <span class="chip px-3 py-1.5 rounded-full">Project Management</span>
+            <span class="chip px-3 py-1.5 rounded-full">Software Architecture</span>
+            <span class="chip px-3 py-1.5 rounded-full">Code Review</span>
+            <span class="chip px-3 py-1.5 rounded-full">Mentoring</span>
+            <span class="chip px-3 py-1.5 rounded-full">Problem Solving</span>
+            <span class="chip px-3 py-1.5 rounded-full">Client Communication</span>
+            <span class="chip px-3 py-1.5 rounded-full">Cross-functional Collaboration</span>
+            <span class="chip px-3 py-1.5 rounded-full">Technical Writing</span>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <section>
-      <div class="container grid-4">
-        <article class="panel position-card">
-          <h3>AI Automation</h3>
-          <p>Agentic workflows, evaluation systems, orchestration logic, and intelligent task automation.</p>
-        </article>
-        <article class="panel position-card">
-          <h3>Automation</h3>
-          <p>Finance, reporting, operations, and repetitive workflow automation through practical software systems.</p>
-        </article>
-        <article class="panel position-card">
-          <h3>AI / ML</h3>
-          <p>NLP, predictive analytics, evaluation pipelines, vector search, and applied machine learning.</p>
-        </article>
-        <article class="panel position-card">
-          <h3>Cloud Engineering</h3>
-          <p>AWS, Docker, Kubernetes, CI/CD, observability, and scalable backend architecture.</p>
-        </article>
+    <!-- ═══════════ WORK EXPERIENCE ═══════════ -->
+    <section id="experience" class="pb-24 fade-in">
+      <div class="mb-8">
+        <p class="section-label">Career Timeline</p>
+        <h2 class="text-3xl md:text-4xl font-black text-white mt-3">Work Experience</h2>
+      </div>
+
+      <div class="space-y-6">
+
+        <!-- Turing -->
+        <div class="glass exp-card rounded-3xl p-8">
+          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
+            <div class="flex items-start gap-4">
+              <img src="./assets/companies/turing.png" alt="Turing" class="company-logo-exp">
+              <div>
+                <h3 class="text-xl font-bold text-white">Pod Lead (Contract)</h3>
+                <p class="text-sky-400 font-semibold mt-0.5">Turing</p>
+                <p class="text-xs text-slate-500 mt-1"><i class="fa-solid fa-location-dot mr-1"></i>Remote &middot; Palo
+                  Alto, California</p>
+              </div>
+            </div>
+            <span
+              class="text-xs whitespace-nowrap font-medium bg-sky-500/10 text-sky-300 border border-sky-500/20 px-3 py-1.5 rounded-full">Aug
+              2025 &ndash; Apr 2026</span>
+          </div>
+
+          <ul class="space-y-2.5 text-sm text-slate-300 leading-relaxed">
+            <li class="flex gap-3"><i class="fa-solid fa-chevron-right text-xs timeline-bullet"></i><span>Led a pod of
+                <span class="text-white font-medium">10 AI trainers</span> focused on agentic AI development,
+                evaluation, RLHF, and multi-step reasoning.</span></li>
+            <li class="flex gap-3"><i class="fa-solid fa-chevron-right text-xs timeline-bullet"></i><span>Improved task
+                completion rates by <span class="text-sky-300 font-semibold">40%</span> and reduced deployment time by
+                <span class="text-sky-300 font-semibold">60%</span> across complex workflow evaluations.</span></li>
+            <li class="flex gap-3"><i class="fa-solid fa-chevron-right text-xs timeline-bullet"></i><span>Built training
+                protocols and benchmarking frameworks spanning <span class="text-white font-medium">500+ test
+                  scenarios</span> for enterprise AI use cases.</span></li>
+            <li class="flex gap-3"><i class="fa-solid fa-chevron-right text-xs timeline-bullet"></i><span>Established
+                quality gates and review workflows that improved evaluation consistency across the pod.</span></li>
+          </ul>
+
+          <div class="mt-6 flex flex-wrap gap-2 text-xs">
+            <span class="chip px-2.5 py-1 rounded-full text-slate-400">Python</span>
+            <span class="chip px-2.5 py-1 rounded-full text-slate-400">Agentic AI</span>
+            <span class="chip px-2.5 py-1 rounded-full text-slate-400">RLHF</span>
+            <span class="chip px-2.5 py-1 rounded-full text-slate-400">LLM Evaluation</span>
+            <span class="chip px-2.5 py-1 rounded-full text-slate-400">Benchmarking</span>
+            <span class="chip px-2.5 py-1 rounded-full text-slate-400">Pod Leadership</span>
+          </div>
+        </div>
+
+        <!-- Linx Computations -->
+        <div class="glass exp-card rounded-3xl p-8">
+          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
+            <div class="flex items-start gap-4">
+              <!-- TODO: replace badge with <img src="./assets/companies/linx.png" class="company-logo-exp" alt="Linx"> -->
+              <div class="company-badge-exp bg-gradient-to-br from-emerald-500 to-teal-600">L</div>
+              <div>
+                <h3 class="text-xl font-bold text-white">Senior Software Engineer (Contract)</h3>
+                <p class="text-sky-400 font-semibold mt-0.5">Linx Computations Inc.</p>
+                <p class="text-xs text-slate-500 mt-1"><i class="fa-solid fa-location-dot mr-1"></i>Remote &middot; New
+                  York, NY</p>
+              </div>
+            </div>
+            <span
+              class="text-xs whitespace-nowrap font-medium bg-white/5 text-slate-300 border border-white/10 px-3 py-1.5 rounded-full">May
+              2024 &ndash; Present</span>
+          </div>
+
+          <ul class="space-y-2.5 text-sm text-slate-300 leading-relaxed">
+            <li class="flex gap-3"><i class="fa-solid fa-chevron-right text-xs timeline-bullet"></i><span>Built
+                automation-first business systems with Laravel and C# for POS, inventory, ledger management, and <span
+                  class="text-white font-medium">QuickBooks integration</span>.</span></li>
+            <li class="flex gap-3"><i class="fa-solid fa-chevron-right text-xs timeline-bullet"></i><span>Developed
+                finance automation workflows that reduced manual data entry by <span
+                  class="text-sky-300 font-semibold">60%</span> and improved accounting accuracy.</span></li>
+            <li class="flex gap-3"><i class="fa-solid fa-chevron-right text-xs timeline-bullet"></i><span>Improved
+                backend response time by <span class="text-sky-300 font-semibold">50%</span> under high load through
+                better architecture and query optimization.</span></li>
+            <li class="flex gap-3"><i class="fa-solid fa-chevron-right text-xs timeline-bullet"></i><span>Automated tax
+                calculations across <span class="text-white font-medium">10,000+ invoices</span> with bi-directional
+                QuickBooks sync.</span></li>
+          </ul>
+
+          <div class="mt-6 flex flex-wrap gap-2 text-xs">
+            <span class="chip px-2.5 py-1 rounded-full text-slate-400">Laravel</span>
+            <span class="chip px-2.5 py-1 rounded-full text-slate-400">PHP</span>
+            <span class="chip px-2.5 py-1 rounded-full text-slate-400">C# / .NET</span>
+            <span class="chip px-2.5 py-1 rounded-full text-slate-400">QuickBooks API</span>
+            <span class="chip px-2.5 py-1 rounded-full text-slate-400">MySQL</span>
+            <span class="chip px-2.5 py-1 rounded-full text-slate-400">Stripe</span>
+            <span class="chip px-2.5 py-1 rounded-full text-slate-400">REST APIs</span>
+          </div>
+        </div>
+
+        <!-- DevXen -->
+        <div class="glass exp-card rounded-3xl p-8">
+          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
+            <div class="flex items-start gap-4">
+              <!-- TODO: replace badge with <img src="./assets/companies/devxen.png" class="company-logo-exp" alt="DevXen"> -->
+              <div class="company-badge-exp bg-gradient-to-br from-indigo-500 to-purple-600">D</div>
+              <div>
+                <h3 class="text-xl font-bold text-white">Senior Software Engineer</h3>
+                <p class="text-sky-400 font-semibold mt-0.5">DevXen</p>
+                <p class="text-xs text-slate-500 mt-1"><i class="fa-solid fa-location-dot mr-1"></i>Remote &middot;
+                  Wollongong, NSW</p>
+              </div>
+            </div>
+            <span
+              class="text-xs whitespace-nowrap font-medium bg-white/5 text-slate-300 border border-white/10 px-3 py-1.5 rounded-full">May
+              2024 &ndash; Jul 2025</span>
+          </div>
+
+          <ul class="space-y-2.5 text-sm text-slate-300 leading-relaxed">
+            <li class="flex gap-3"><i class="fa-solid fa-chevron-right text-xs timeline-bullet"></i><span>Improved API
+                response time by <span class="text-sky-300 font-semibold">70%</span> through backend optimization,
+                data-access tuning, and service workflow improvements.</span></li>
+            <li class="flex gap-3"><i class="fa-solid fa-chevron-right text-xs timeline-bullet"></i><span>Designed
+                scalable microservices that reduced server load by <span class="text-sky-300 font-semibold">60%</span>
+                and improved application availability.</span></li>
+            <li class="flex gap-3"><i class="fa-solid fa-chevron-right text-xs timeline-bullet"></i><span>Delivered
+                ML-oriented systems including <span class="text-white font-medium">sentiment analysis</span> (85%
+                accuracy) and <span class="text-white font-medium">predictive maintenance</span> (20% accuracy lift
+                across 500+ machines).</span></li>
+            <li class="flex gap-3"><i class="fa-solid fa-chevron-right text-xs timeline-bullet"></i><span>Built
+                real-time analytics dashboards and automated reporting pipelines for operations teams.</span></li>
+          </ul>
+
+          <div class="mt-6 flex flex-wrap gap-2 text-xs">
+            <span class="chip px-2.5 py-1 rounded-full text-slate-400">Python</span>
+            <span class="chip px-2.5 py-1 rounded-full text-slate-400">Node.js</span>
+            <span class="chip px-2.5 py-1 rounded-full text-slate-400">Scikit-learn</span>
+            <span class="chip px-2.5 py-1 rounded-full text-slate-400">NLP</span>
+            <span class="chip px-2.5 py-1 rounded-full text-slate-400">PostgreSQL</span>
+            <span class="chip px-2.5 py-1 rounded-full text-slate-400">Microservices</span>
+            <span class="chip px-2.5 py-1 rounded-full text-slate-400">AWS</span>
+          </div>
+        </div>
+
+        <!-- Microbeck -->
+        <div class="glass exp-card rounded-3xl p-8">
+          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
+            <div class="flex items-start gap-4">
+              <!-- TODO: replace badge with <img src="./assets/companies/microbeck.png" class="company-logo-exp" alt="Microbeck"> -->
+              <div class="company-badge-exp bg-gradient-to-br from-amber-500 to-orange-600">M</div>
+              <div>
+                <h3 class="text-xl font-bold text-white">Senior Software Engineer</h3>
+                <p class="text-sky-400 font-semibold mt-0.5">Microbeck</p>
+                <p class="text-xs text-slate-500 mt-1"><i class="fa-solid fa-location-dot mr-1"></i>Faisalabad, Pakistan
+                </p>
+              </div>
+            </div>
+            <span
+              class="text-xs whitespace-nowrap font-medium bg-white/5 text-slate-300 border border-white/10 px-3 py-1.5 rounded-full">Jul
+              2022 &ndash; Apr 2024</span>
+          </div>
+
+          <ul class="space-y-2.5 text-sm text-slate-300 leading-relaxed">
+            <li class="flex gap-3"><i class="fa-solid fa-chevron-right text-xs timeline-bullet"></i><span>Migrated
+                legacy services to <span class="text-white font-medium">cloud-native infrastructure</span> using Docker,
+                Kubernetes, and AWS.</span></li>
+            <li class="flex gap-3"><i class="fa-solid fa-chevron-right text-xs timeline-bullet"></i><span>Reduced server
+                costs by <span class="text-sky-300 font-semibold">30%</span> while supporting <span
+                  class="text-sky-300 font-semibold">99.9% uptime</span>.</span></li>
+            <li class="flex gap-3"><i class="fa-solid fa-chevron-right text-xs timeline-bullet"></i><span>Improved API
+                latency by <span class="text-sky-300 font-semibold">60%</span> through Redis caching and query
+                tuning.</span></li>
+            <li class="flex gap-3"><i class="fa-solid fa-chevron-right text-xs timeline-bullet"></i><span>Built
+                real-time data pipelines and automated backend workflows to improve performance and delivery
+                speed.</span></li>
+          </ul>
+
+          <div class="mt-6 flex flex-wrap gap-2 text-xs">
+            <span class="chip px-2.5 py-1 rounded-full text-slate-400">Python</span>
+            <span class="chip px-2.5 py-1 rounded-full text-slate-400">Docker</span>
+            <span class="chip px-2.5 py-1 rounded-full text-slate-400">Kubernetes</span>
+            <span class="chip px-2.5 py-1 rounded-full text-slate-400">AWS</span>
+            <span class="chip px-2.5 py-1 rounded-full text-slate-400">Redis</span>
+            <span class="chip px-2.5 py-1 rounded-full text-slate-400">PostgreSQL</span>
+            <span class="chip px-2.5 py-1 rounded-full text-slate-400">CI/CD</span>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <section>
-      <div class="container edu-grid">
-        <article class="panel education-card">
-          <div class="section-head">
-            <div>
-              <h2>Education</h2>
-              <p>Academic foundation supporting engineering, software systems, and technical problem solving.</p>
-            </div>
-          </div>
-          <h3>Bachelor of Science in Computer Science</h3>
-          <p>National University of Computer and Emerging Sciences, Pakistan</p>
-          <p class="muted">2021 · CGPA: 3.10</p>
-        </article>
+    <!-- ═══════════ KEY PROJECTS ═══════════ -->
+    <section id="projects" class="pb-24 fade-in">
+      <div class="mb-8">
+        <p class="section-label">Selected Work</p>
+        <h2 class="text-3xl md:text-4xl font-black text-white mt-3">Key Projects</h2>
+      </div>
 
-        <article id="contact" class="panel contact-card">
-          <div class="section-head">
-            <div>
-              <h2>Let’s work together</h2>
-              <p>Open to AI automation, senior backend, platform, cloud, and applied AI/ML engineering opportunities.</p>
+      <!-- Featured Project: Finance & Operations Automation Platform -->
+      <div class="glass-strong project-card rounded-3xl overflow-hidden mb-6 group relative">
+        <div class="absolute -top-20 -right-20 w-72 h-72 bg-amber-500/10 rounded-full blur-3xl pointer-events-none">
+        </div>
+        <div class="absolute -bottom-20 -left-20 w-72 h-72 bg-sky-500/10 rounded-full blur-3xl pointer-events-none">
+        </div>
+
+        <!-- Screenshots banner (top) with browser mockups -->
+        <div
+          class="relative bg-gradient-to-b from-slate-950/80 to-slate-950/40 border-b border-white/5 p-6 md:p-10 overflow-hidden">
+          <div class="absolute inset-0 opacity-40"
+            style="background-image: radial-gradient(circle at 30% 30%, rgba(56,189,248,.15), transparent 50%), radial-gradient(circle at 70% 70%, rgba(245,158,11,.1), transparent 50%);">
+          </div>
+
+          <div class="relative grid md:grid-cols-2 gap-5 md:gap-6">
+            <div class="browser-mockup">
+              <div class="browser-header">
+                <div class="traffic-lights">
+                  <span class="traffic-light traffic-red"></span>
+                  <span class="traffic-light traffic-yellow"></span>
+                  <span class="traffic-light traffic-green"></span>
+                </div>
+                <div class="url-bar"><i class="fa-solid fa-lock"></i>linx.app/dashboard</div>
+              </div>
+              <!-- TODO: drop a screenshot at ./assets/projects/linx-dashboard.png and replace this placeholder -->
+              <div class="mockup-placeholder">
+                <div>
+                  <i class="fa-solid fa-image text-3xl mb-3 block opacity-50"></i>
+                  ./assets/projects/linx-dashboard.png
+                </div>
+              </div>
+            </div>
+
+            <div class="browser-mockup">
+              <div class="browser-header">
+                <div class="traffic-lights">
+                  <span class="traffic-light traffic-red"></span>
+                  <span class="traffic-light traffic-yellow"></span>
+                  <span class="traffic-light traffic-green"></span>
+                </div>
+                <div class="url-bar"><i class="fa-solid fa-lock"></i>linx.app/invoices</div>
+              </div>
+              <!-- TODO: drop a screenshot at ./assets/projects/linx-invoices.png and replace this placeholder -->
+              <div class="mockup-placeholder">
+                <div>
+                  <i class="fa-solid fa-image text-3xl mb-3 block opacity-50"></i>
+                  ./assets/projects/linx-invoices.png
+                </div>
+              </div>
             </div>
           </div>
-          <p>
-            I’m available for remote full-time roles, contract engagements, and high-impact projects involving modern backend systems,
-            AI-enabled automation, or cloud-native product engineering.
+        </div>
+
+        <!-- Content (bottom) -->
+        <div class="relative p-8 md:p-10">
+          <div class="flex items-start justify-between flex-wrap gap-3 mb-5">
+            <div class="flex items-center gap-3">
+              <div
+                class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center shadow-lg shadow-amber-500/25 flex-shrink-0">
+                <i class="fa-solid fa-file-invoice-dollar text-white text-lg"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-white text-2xl md:text-3xl leading-tight">Finance &amp; Operations Automation
+                  Platform</h3>
+                <p class="text-xs text-slate-500 mt-1">
+                  <span class="text-sky-300">Linx Computations Inc.</span> &middot; May 2024 &ndash; Present &middot;
+                  Senior Engineer
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-1.5 flex-wrap">
+              <span
+                class="text-[10px] text-amber-300 bg-amber-500/10 border border-amber-500/30 px-2 py-0.5 rounded-full font-semibold uppercase tracking-wider">
+                <i class="fa-solid fa-star text-[9px] mr-1"></i>Featured
+              </span>
+              <span class="text-xs text-slate-500 bg-white/5 px-2.5 py-1 rounded-full">Linx</span>
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-[1.4fr_1fr] gap-6 md:gap-10">
+            <div>
+              <p class="text-sm md:text-base text-slate-400 leading-relaxed mb-4">
+                End-to-end automation platform for invoicing, inventory, ledger management, and finance workflows.
+                Combines Laravel and C# backends with bi-directional <span class="text-white font-medium">QuickBooks
+                  API</span>
+                sync, automated tax calculation across <span class="text-white font-medium">10,000+ invoices</span>,
+                and POS integrations &mdash; replacing manual accounting work with reliable, auditable software.
+              </p>
+              <div class="flex flex-wrap gap-1.5 text-xs">
+                <span class="chip px-2.5 py-1 rounded-full text-slate-400">Laravel</span>
+                <span class="chip px-2.5 py-1 rounded-full text-slate-400">C# / .NET</span>
+                <span class="chip px-2.5 py-1 rounded-full text-slate-400">PHP</span>
+                <span class="chip px-2.5 py-1 rounded-full text-slate-400">QuickBooks API</span>
+                <span class="chip px-2.5 py-1 rounded-full text-slate-400">Stripe</span>
+                <span class="chip px-2.5 py-1 rounded-full text-slate-400">MySQL</span>
+                <span class="chip px-2.5 py-1 rounded-full text-slate-400">REST APIs</span>
+              </div>
+            </div>
+
+            <div class="md:border-l md:border-white/5 md:pl-8">
+              <p class="text-[10px] text-slate-500 uppercase tracking-wider font-semibold mb-3">Key Impact</p>
+              <ul class="text-xs md:text-sm text-slate-400 space-y-2 leading-relaxed">
+                <li class="flex items-baseline gap-2.5">
+                  <span class="text-emerald-400 font-bold text-base">10K+</span>
+                  <span class="text-slate-500">invoices automated</span>
+                </li>
+                <li class="flex items-baseline gap-2.5">
+                  <span class="text-emerald-400 font-bold text-base">60%</span>
+                  <span class="text-slate-500">less manual entry</span>
+                </li>
+                <li class="flex items-baseline gap-2.5">
+                  <span class="text-emerald-400 font-bold text-base">50%</span>
+                  <span class="text-slate-500">faster API response</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <div class="glass project-card rounded-3xl p-8">
+          <div class="flex items-start justify-between mb-5">
+            <div
+              class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-violet-600 flex items-center justify-center shadow-lg shadow-purple-500/25">
+              <i class="fa-solid fa-robot text-white text-lg"></i>
+            </div>
+            <span class="text-xs text-slate-500 bg-white/5 px-2.5 py-1 rounded-full">Turing</span>
+          </div>
+          <h3 class="font-bold text-white text-xl mb-2">Agentic AI Training &amp; Evaluation</h3>
+          <p class="text-xs text-slate-500 mb-3">Aug 2025 &ndash; Apr 2026</p>
+          <p class="text-sm text-slate-400 leading-relaxed mb-5">
+            Led agentic AI training and evaluation initiatives for enterprise scenarios with structured testing and
+            quality-focused workflows. Built evaluation frameworks across <span class="text-white font-medium">500+
+              scenarios</span>;
+            improved task completion by 40% and cut deployment time by 60%.
           </p>
-          <div class="actions">
-            <a class="btn btn-primary" href="mailto:m.ibrahim8325@gmail.com">Email Me</a>
-            <a class="btn btn-secondary" href="https://linkedin.com/in/muhammad-ibrahim-butt" target="_blank" rel="noreferrer">LinkedIn Profile</a>
+          <div class="flex flex-wrap gap-1.5 text-xs">
+            <span class="chip px-2 py-0.5 rounded-full text-slate-500">Python</span>
+            <span class="chip px-2 py-0.5 rounded-full text-slate-500">Agentic AI</span>
+            <span class="chip px-2 py-0.5 rounded-full text-slate-500">RLHF</span>
+            <span class="chip px-2 py-0.5 rounded-full text-slate-500">LLM Evaluation</span>
           </div>
-        </article>
+        </div>
+
+        <div class="glass project-card rounded-3xl p-8">
+          <div class="flex items-start justify-between mb-5">
+            <div
+              class="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center shadow-lg shadow-indigo-500/25">
+              <i class="fa-solid fa-chart-line text-white text-lg"></i>
+            </div>
+            <span class="text-xs text-slate-500 bg-white/5 px-2.5 py-1 rounded-full">DevXen</span>
+          </div>
+          <h3 class="font-bold text-white text-xl mb-2">Predictive Maintenance &amp; NLP Systems</h3>
+          <p class="text-xs text-slate-500 mb-3">May 2024 &ndash; Jul 2025</p>
+          <p class="text-sm text-slate-400 leading-relaxed mb-5">
+            ML-powered applications for operational and customer data: predictive maintenance and sentiment analysis.
+            Improved failure prediction accuracy by <span class="text-white font-semibold">20%</span> across 500+
+            machines
+            and reached <span class="text-white font-semibold">85%</span> sentiment classification accuracy.
+          </p>
+          <div class="flex flex-wrap gap-1.5 text-xs">
+            <span class="chip px-2 py-0.5 rounded-full text-slate-500">Python</span>
+            <span class="chip px-2 py-0.5 rounded-full text-slate-500">Scikit-learn</span>
+            <span class="chip px-2 py-0.5 rounded-full text-slate-500">NLP</span>
+            <span class="chip px-2 py-0.5 rounded-full text-slate-500">Real-Time Analytics</span>
+          </div>
+        </div>
+
+        <div class="glass project-card rounded-3xl p-8">
+          <div class="flex items-start justify-between mb-5">
+            <div
+              class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/25">
+              <i class="fa-solid fa-cloud-arrow-up text-white text-lg"></i>
+            </div>
+            <span class="text-xs text-slate-500 bg-white/5 px-2.5 py-1 rounded-full">Microbeck</span>
+          </div>
+          <h3 class="font-bold text-white text-xl mb-2">Cloud-Native Migration Platform</h3>
+          <p class="text-xs text-slate-500 mb-3">Jul 2022 &ndash; Apr 2024</p>
+          <p class="text-sm text-slate-400 leading-relaxed mb-5">
+            Migrated legacy monolith services to a containerized, cloud-native architecture on AWS using Docker,
+            Kubernetes, and Redis caching. Reduced server costs by <span class="text-white font-semibold">30%</span>,
+            improved API latency by <span class="text-white font-semibold">60%</span>, and supported 99.9% uptime.
+          </p>
+          <div class="flex flex-wrap gap-1.5 text-xs">
+            <span class="chip px-2 py-0.5 rounded-full text-slate-500">Docker</span>
+            <span class="chip px-2 py-0.5 rounded-full text-slate-500">Kubernetes</span>
+            <span class="chip px-2 py-0.5 rounded-full text-slate-500">AWS</span>
+            <span class="chip px-2 py-0.5 rounded-full text-slate-500">Redis</span>
+          </div>
+        </div>
+
+        <!-- TODO: add another real project here -->
+        <div class="glass project-card rounded-3xl p-8 border-dashed">
+          <div class="flex items-start justify-between mb-5">
+            <div
+              class="w-12 h-12 rounded-xl bg-gradient-to-br from-slate-600 to-slate-700 flex items-center justify-center shadow-lg shadow-slate-500/25">
+              <i class="fa-solid fa-plus text-white text-lg"></i>
+            </div>
+            <span class="text-xs text-slate-500 bg-white/5 px-2.5 py-1 rounded-full">Placeholder</span>
+          </div>
+          <h3 class="font-bold text-white text-xl mb-2">Add another project</h3>
+          <p class="text-xs text-slate-500 mb-3">TODO: replace this card</p>
+          <p class="text-sm text-slate-400 leading-relaxed mb-5">
+            Drop in another flagship project &mdash; describe the problem, your approach, the stack, and the measurable
+            outcome. Keep it tight (3&ndash;4 sentences) and punchy.
+          </p>
+          <div class="flex flex-wrap gap-1.5 text-xs">
+            <span class="chip px-2 py-0.5 rounded-full text-slate-500">Stack</span>
+            <span class="chip px-2 py-0.5 rounded-full text-slate-500">Tools</span>
+            <span class="chip px-2 py-0.5 rounded-full text-slate-500">Tech</span>
+          </div>
+        </div>
+
       </div>
     </section>
+
+    <!-- ═══════════ TOOLS ═══════════ -->
+    <section id="tools" class="pb-24 fade-in">
+      <div class="mb-8">
+        <p class="section-label">My Toolbox</p>
+        <h2 class="text-3xl md:text-4xl font-black text-white mt-3">Tools &amp; Platforms</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <div class="glass rounded-3xl p-7">
+          <h3 class="font-semibold text-white mb-6 flex items-center gap-3">
+            <span class="w-9 h-9 rounded-lg bg-sky-500/15 flex items-center justify-center">
+              <i class="fa-solid fa-terminal text-sky-400 text-sm"></i>
+            </span>
+            Development
+          </h3>
+          <div class="space-y-4 text-sm">
+            <div class="flex items-center gap-3"><img class="tool-logo" src="./assets/tools/vscode-original.svg"
+                alt="VS Code">VS Code</div>
+            <div class="flex items-center gap-3"><img class="tool-logo" src="./assets/tools/cursor.svg" alt="Cursor"
+                style="filter: invert(1)">Cursor</div>
+            <div class="flex items-center gap-3"><img class="tool-logo" src="./assets/tools/github-original.svg"
+                alt="GitHub" style="filter: invert(1)">GitHub</div>
+            <div class="flex items-center gap-3"><img class="tool-logo" src="./assets/tools/git-original.svg"
+                alt="Git">Git</div>
+            <div class="flex items-center gap-3"><img class="tool-logo" src="./assets/tools/docker-original.svg"
+                alt="Docker">Docker</div>
+            <div class="flex items-center gap-3"><img class="tool-logo" src="./assets/tools/postman-original.svg"
+                alt="Postman">Postman</div>
+          </div>
+        </div>
+
+        <div class="glass rounded-3xl p-7">
+          <h3 class="font-semibold text-white mb-6 flex items-center gap-3">
+            <span class="w-9 h-9 rounded-lg bg-purple-500/15 flex items-center justify-center">
+              <i class="fa-solid fa-wand-magic-sparkles text-purple-400 text-sm"></i>
+            </span>
+            AI Platforms
+          </h3>
+          <div class="space-y-4 text-sm">
+            <div class="flex items-center gap-3"><img class="tool-logo" src="./assets/tools/anthropic.svg"
+                alt="Anthropic" style="filter: invert(1)">Claude / Anthropic</div>
+            <div class="flex items-center gap-3"><img class="tool-logo" src="./assets/tools/openai.svg" alt="OpenAI"
+                style="filter: invert(1)">OpenAI / ChatGPT</div>
+            <div class="flex items-center gap-3"><img class="tool-logo" src="./assets/tools/googlegemini.svg"
+                alt="Google Gemini" style="filter: invert(1)">Google Gemini</div>
+            <div class="flex items-center gap-3"><img class="tool-logo" src="./assets/tools/huggingface.svg"
+                alt="Hugging Face">Hugging Face</div>
+            <div class="flex items-center gap-3"><i
+                class="fa-solid fa-link text-emerald-400 text-lg w-[26px] text-center"></i>LangChain / AutoGen</div>
+          </div>
+        </div>
+
+        <div class="glass rounded-3xl p-7">
+          <h3 class="font-semibold text-white mb-6 flex items-center gap-3">
+            <span class="w-9 h-9 rounded-lg bg-emerald-500/15 flex items-center justify-center">
+              <i class="fa-solid fa-clipboard-check text-emerald-400 text-sm"></i>
+            </span>
+            Productivity
+          </h3>
+          <div class="space-y-4 text-sm">
+            <div class="flex items-center gap-3"><img class="tool-logo" src="./assets/tools/slack-original.svg"
+                alt="Slack">Slack</div>
+            <div class="flex items-center gap-3"><img class="tool-logo" src="./assets/tools/jira-original.svg"
+                alt="Jira">Jira</div>
+            <div class="flex items-center gap-3"><img class="tool-logo" src="./assets/tools/clickup.svg" alt="ClickUp"
+                style="filter: invert(1)">ClickUp</div>
+            <div class="flex items-center gap-3"><img class="tool-logo" src="./assets/tools/notion.svg" alt="Notion"
+                style="filter: invert(1)">Notion</div>
+            <div class="flex items-center gap-3"><img class="tool-logo" src="./assets/tools/figma-original.svg"
+                alt="Figma">Figma</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════ EDUCATION ═══════════ -->
+    <section id="education" class="pb-24 fade-in">
+      <div class="mb-8">
+        <p class="section-label">Academic Background</p>
+        <h2 class="text-3xl md:text-4xl font-black text-white mt-3">Education</h2>
+      </div>
+
+      <div class="glass exp-card rounded-3xl p-8">
+        <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-5">
+          <div class="flex items-start gap-4">
+            <div
+              class="w-12 h-12 rounded-xl bg-gradient-to-br from-sky-500 via-indigo-500 to-purple-500 flex items-center justify-center flex-shrink-0 shadow-lg shadow-sky-500/25">
+              <i class="fa-solid fa-graduation-cap text-white text-lg"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-white">Bachelor of Science in Computer Science</h3>
+              <p class="text-sky-400 font-semibold mt-0.5">National University of Computer &amp; Emerging Sciences
+                (FAST-NUCES)</p>
+              <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-slate-500 mt-1.5">
+                <span><i class="fa-solid fa-location-dot mr-1"></i>Pakistan</span>
+                <span class="text-slate-600">&middot;</span>
+                <span>CGPA <span class="text-slate-300 font-semibold">3.10 / 4.00</span></span>
+                <span class="text-slate-600">&middot;</span>
+                <span>4 Years</span>
+              </div>
+            </div>
+          </div>
+          <span
+            class="text-xs whitespace-nowrap font-medium bg-white/5 text-slate-300 border border-white/10 px-3 py-1.5 rounded-full">Graduated
+            2021</span>
+        </div>
+
+        <div class="mt-6 pt-5 border-t border-white/5">
+          <p class="text-xs text-slate-500 uppercase tracking-wider mb-4 font-semibold">Relevant Coursework</p>
+          <div class="flex flex-wrap gap-2 text-xs">
+            <span class="chip px-2.5 py-1 rounded-full text-slate-400">Applied Machine Learning</span>
+            <span class="chip px-2.5 py-1 rounded-full text-slate-400">Artificial Intelligence</span>
+            <span class="chip px-2.5 py-1 rounded-full text-slate-400">Data Structures</span>
+            <span class="chip px-2.5 py-1 rounded-full text-slate-400">Design &amp; Analysis of Algorithms</span>
+            <span class="chip px-2.5 py-1 rounded-full text-slate-400">Cloud Computing</span>
+            <span class="chip px-2.5 py-1 rounded-full text-slate-400">Software Engineering</span>
+            <span class="chip px-2.5 py-1 rounded-full text-slate-400">Software Testing</span>
+            <span class="chip px-2.5 py-1 rounded-full text-slate-400">Object Oriented Analysis &amp; Design</span>
+            <span class="chip px-2.5 py-1 rounded-full text-slate-400">Web Programming</span>
+            <span class="chip px-2.5 py-1 rounded-full text-slate-400">Discrete Structures</span>
+            <span class="chip px-2.5 py-1 rounded-full text-slate-400">Database Systems</span>
+            <span class="chip px-2.5 py-1 rounded-full text-slate-400">Operating Systems</span>
+            <span class="chip px-2.5 py-1 rounded-full text-slate-400">Computer Networks</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ CERTIFICATIONS ═══════════ -->
+    <section id="certifications" class="pb-24 fade-in">
+      <div class="mb-8">
+        <p class="section-label">Continuous Learning</p>
+        <h2 class="text-3xl md:text-4xl font-black text-white mt-3">Licenses &amp; Certifications</h2>
+      </div>
+
+      <!-- TODO: replace these placeholder cards with your real certifications.
+       For each: update the icon (FontAwesome class), title, issuer, date, and href to the credential URL. -->
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <a href="#" class="glass project-card rounded-3xl p-6 block">
+          <div class="flex items-start gap-4 mb-4">
+            <div
+              class="w-11 h-11 rounded-xl bg-gradient-to-br from-orange-500 to-amber-600 flex items-center justify-center flex-shrink-0">
+              <i class="fa-brands fa-aws text-white text-xl"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="font-bold text-white text-sm leading-tight">AWS Certified Solutions Architect</h3>
+              <p class="text-xs text-sky-400 mt-1">Amazon Web Services</p>
+            </div>
+          </div>
+          <div class="flex items-center justify-between text-xs">
+            <span class="text-slate-500"><i class="fa-solid fa-calendar-days mr-1"></i>TODO: date</span>
+            <span class="text-sky-400 font-semibold">Add Credential <i
+                class="fa-solid fa-arrow-up-right-from-square text-[10px] ml-0.5"></i></span>
+          </div>
+        </a>
+
+        <a href="#" class="glass project-card rounded-3xl p-6 block">
+          <div class="flex items-start gap-4 mb-4">
+            <div
+              class="w-11 h-11 rounded-xl bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center flex-shrink-0">
+              <i class="fa-solid fa-brain text-white text-lg"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="font-bold text-white text-sm leading-tight">Machine Learning Specialization</h3>
+              <p class="text-xs text-sky-400 mt-1">TODO: issuer</p>
+            </div>
+          </div>
+          <div class="flex items-center justify-between text-xs">
+            <span class="text-slate-500"><i class="fa-solid fa-calendar-days mr-1"></i>TODO: date</span>
+            <span class="text-sky-400 font-semibold">Add Credential <i
+                class="fa-solid fa-arrow-up-right-from-square text-[10px] ml-0.5"></i></span>
+          </div>
+        </a>
+
+        <a href="#" class="glass project-card rounded-3xl p-6 block">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="w-11 h-11 rounded-xl bg-white flex items-center justify-center flex-shrink-0">
+              <i class="fa-brands fa-github text-black text-xl"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="font-bold text-white text-sm leading-tight">GitHub Professional Certificate</h3>
+              <p class="text-xs text-sky-400 mt-1">GitHub</p>
+            </div>
+          </div>
+          <div class="flex items-center justify-between text-xs">
+            <span class="text-slate-500"><i class="fa-solid fa-calendar-days mr-1"></i>TODO: date</span>
+            <span class="text-sky-400 font-semibold">Add Credential <i
+                class="fa-solid fa-arrow-up-right-from-square text-[10px] ml-0.5"></i></span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ═══════════ CONTACT ═══════════ -->
+    <section id="contact" class="pb-24 fade-in">
+      <div class="glass-strong rounded-3xl p-12 md:p-16 relative overflow-hidden">
+        <div class="absolute -top-20 -right-20 w-72 h-72 bg-sky-600/15 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-20 -left-20 w-72 h-72 bg-indigo-600/15 rounded-full blur-3xl"></div>
+
+        <div class="relative text-center">
+          <p class="section-label justify-center">Get In Touch</p>
+          <h2 class="text-4xl md:text-5xl font-black text-white mt-4 mb-4">Let's Build Something</h2>
+          <p class="text-slate-400 mb-10 max-w-md mx-auto leading-relaxed">
+            Available for full-time remote roles, AI automation contracts, and senior backend / cloud engagements.
+            Open to collaborating on meaningful work.
+          </p>
+
+          <div class="flex flex-wrap justify-center gap-3 mb-10">
+            <a href="mailto:m.ibrahim8325@gmail.com"
+              class="px-6 py-3 rounded-xl bg-gradient-to-r from-sky-600 to-indigo-600 hover:from-sky-500 hover:to-indigo-500 font-semibold transition shadow-lg shadow-sky-500/25 flex items-center gap-2 text-white">
+              <i class="fa-solid fa-envelope text-sm"></i>Email Me
+            </a>
+            <!-- TODO: drop your resume PDF at ./assets/resume.pdf -->
+            <a href="./assets/resume.pdf"
+              class="px-6 py-3 rounded-xl border border-white/15 hover:bg-white/5 hover:border-white/25 font-semibold transition flex items-center gap-2"
+              download>
+              <i class="fa-solid fa-download text-sm"></i>Download Resume
+            </a>
+            <a href="tel:+923118663209"
+              class="px-6 py-3 rounded-xl border border-white/15 hover:bg-white/5 hover:border-white/25 font-semibold transition flex items-center gap-2">
+              <i class="fa-solid fa-phone text-sm"></i>+92 311 8663209
+            </a>
+          </div>
+
+          <div class="flex justify-center gap-4">
+            <a href="mailto:m.ibrahim8325@gmail.com" class="social-btn text-slate-400 hover:text-sky-400" title="Email">
+              <i class="fa-solid fa-envelope text-xl"></i>
+            </a>
+            <a href="tel:+923118663209" class="social-btn text-slate-400 hover:text-emerald-400" title="Phone">
+              <i class="fa-solid fa-phone text-xl"></i>
+            </a>
+            <a href="https://linkedin.com/in/muhammad-ibrahim-butt" target="_blank" rel="noreferrer"
+              class="social-btn text-slate-400 hover:text-blue-400" title="LinkedIn">
+              <i class="fa-brands fa-linkedin text-xl"></i>
+            </a>
+            <!-- TODO: replace with your real GitHub username if different -->
+            <a href="https://github.com/muhammad-ibrahim-butt" target="_blank" rel="noreferrer"
+              class="social-btn text-slate-400 hover:text-white" title="GitHub">
+              <i class="fa-brands fa-github text-xl"></i>
+            </a>
+          </div>
+
+          <p class="text-xs text-slate-600 mt-10">
+            Response time usually within <span class="text-slate-400">24 hours</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <span>© <span id="year"></span> Muhammad Ibrahim Butt</span>
-      <span>Built for GitHub Pages</span>
+  <!-- ═══ Footer ═══ -->
+  <footer class="border-t border-white/5 py-8 text-center">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="text-xs text-slate-600">
+        &copy; <span id="year">2026</span> Muhammad Ibrahim Butt. Built for GitHub Pages.
+      </p>
     </div>
   </footer>
 
+  <!-- ═══ Scroll to top button ═══ -->
+  <button id="scroll-top"
+    class="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-gradient-to-br from-sky-600 to-indigo-600 text-white shadow-lg shadow-sky-500/30 opacity-0 transition-opacity invisible hover:scale-110 z-40"
+    aria-label="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileToggle?.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+    });
+    mobileMenu?.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => mobileMenu.classList.remove('open'));
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    const scrollBtn = document.getElementById('scroll-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 600) {
+        scrollBtn.classList.remove('opacity-0', 'invisible');
+        scrollBtn.classList.add('opacity-100', 'visible');
+      } else {
+        scrollBtn.classList.add('opacity-0', 'invisible');
+        scrollBtn.classList.remove('opacity-100', 'visible');
+      }
+    });
+    scrollBtn?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   </script>
+
 </body>
+
 </html>
