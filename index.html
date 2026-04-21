@@ -3,16 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Muhammad Ibrahim Butt | Senior Software Engineer</title>
-  <meta name="description" content="Professional portfolio of Muhammad Ibrahim Butt, Senior Software Engineer specializing in backend systems, cloud architecture, distributed systems, and AI-enabled platforms." />
-  <meta property="og:title" content="Muhammad Ibrahim Butt | Senior Software Engineer" />
-  <meta property="og:description" content="Backend, cloud, distributed systems, and AI-enabled engineering portfolio." />
+  <title>Muhammad Ibrahim Butt | AI Automation, Backend & Cloud Engineer</title>
+  <meta name="description" content="Professional portfolio of Muhammad Ibrahim Butt — Senior Software Engineer focused on AI automation, backend engineering, cloud-native systems, and applied machine learning." />
+  <meta property="og:title" content="Muhammad Ibrahim Butt | AI Automation, Backend & Cloud Engineer" />
+  <meta property="og:description" content="AI automation, backend engineering, cloud-native systems, and applied ML portfolio." />
   <meta property="og:type" content="website" />
   <meta name="theme-color" content="#0f172a" />
   <style>
     :root {
       --bg: #08111f;
-      --bg-2: #0f172a;
       --surface: rgba(15, 23, 42, 0.82);
       --surface-2: rgba(30, 41, 59, 0.72);
       --line: rgba(148, 163, 184, 0.16);
@@ -142,7 +141,7 @@
     }
 
     .hero-main p.lead {
-      max-width: 62ch;
+      max-width: 64ch;
       color: #cbd5e1;
       font-size: clamp(1.02rem, 2vw, 1.18rem);
       margin-bottom: 1.4rem;
@@ -169,6 +168,7 @@
 
     .btn:hover,
     .btn:focus-visible { transform: translateY(-1px); }
+
     .btn-primary {
       color: white;
       background: linear-gradient(135deg, var(--accent), #2563eb);
@@ -297,9 +297,7 @@
     .mini-list strong { display: block; font-size: 0.98rem; margin-bottom: 0.15rem; }
     .mini-list span { color: var(--muted); font-size: 0.92rem; }
 
-    .clients {
-      padding: 1.25rem 0 0.4rem;
-    }
+    section { padding: 1rem 0 0.4rem; }
 
     .section-head {
       display: flex;
@@ -321,13 +319,13 @@
       max-width: 60ch;
     }
 
-    .client-strip {
+    .pill-strip {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
     }
 
-    .client-pill {
+    .pill {
       padding: 0.75rem 1rem;
       border-radius: 999px;
       background: rgba(15, 23, 42, 0.72);
@@ -336,11 +334,15 @@
       font-size: 0.95rem;
     }
 
-    section { padding: 1rem 0 0.4rem; }
-
     .grid-2 {
       display: grid;
       grid-template-columns: 1.05fr 0.95fr;
+      gap: 1rem;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 1rem;
     }
 
@@ -350,11 +352,13 @@
     .project-card,
     .education-card,
     .contact-card,
-    .tools-card { padding: 1.45rem; }
+    .tools-card,
+    .position-card { padding: 1.45rem; }
 
     .about-card p,
     .education-card p,
-    .contact-card p { color: #cbd5e1; }
+    .contact-card p,
+    .position-card p { color: #cbd5e1; }
 
     .skill-groups,
     .tools-grid {
@@ -364,6 +368,7 @@
 
     .skill-group h3,
     .tool-group h3 { font-size: 1rem; margin-bottom: 0.65rem; }
+
     .chips {
       display: flex;
       flex-wrap: wrap;
@@ -416,7 +421,7 @@
     .timeline-location,
     .timeline-item ul { color: var(--muted); }
     .timeline-item ul { padding-left: 1rem; margin: 0.7rem 0 0; }
-    .timeline-item li + li { margin-top: 0.45rem; }
+    .timeline-item li + li { margin-top: 0.42rem; }
 
     .projects-grid {
       display: grid;
@@ -464,7 +469,8 @@
       .hero-grid,
       .grid-2,
       .projects-grid,
-      .edu-grid { grid-template-columns: 1fr; }
+      .edu-grid,
+      .grid-4 { grid-template-columns: 1fr; }
       .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
@@ -479,7 +485,8 @@
       .project-card,
       .education-card,
       .contact-card,
-      .tools-card { padding: 1.15rem; }
+      .tools-card,
+      .position-card { padding: 1.15rem; }
       .stats { grid-template-columns: 1fr; }
       .timeline-top { flex-direction: column; }
       .section-head { align-items: flex-start; }
@@ -493,11 +500,12 @@
         <div class="brand-badge">MB</div>
         <div class="brand-copy">
           <strong>Muhammad Ibrahim Butt</strong>
-          <span>Senior Software Engineer</span>
+          <span>AI Automation, Backend & Cloud Engineer</span>
         </div>
       </a>
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="#about">About</a>
+        <a href="#positioning">Positioning</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
@@ -510,12 +518,13 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="panel hero-main">
-          <div class="eyebrow">Backend · Cloud · Distributed Systems · AI Workflows</div>
-          <h1>Engineering reliable systems that perform at scale.</h1>
+          <div class="eyebrow">AI Automation · Python · Laravel · C#/.NET · Cloud-Native Systems</div>
+          <h1>Building AI-enabled automation and backend platforms for modern products.</h1>
           <p class="lead">
-            I’m Muhammad Ibrahim Butt, a Senior Software Engineer with 5+ years of experience building backend systems,
-            cloud-native applications, internal platforms, and AI-enabled workflows with a strong focus on performance,
-            maintainability, and measurable business impact.
+            I’m Muhammad Ibrahim Butt, a Senior Software Engineer focused on AI automation, backend engineering,
+            cloud-native applications, and applied machine learning. I build production systems with Python,
+            Laravel, C#/.NET, Node.js, AWS, Docker, Kubernetes, and modern AI tooling for agentic workflows,
+            intelligent automation, and data-driven products.
           </p>
           <div class="actions">
             <a class="btn btn-primary" href="mailto:m.ibrahim8325@gmail.com">Hire / Collaborate</a>
@@ -531,20 +540,20 @@
           </div>
           <div class="stats" aria-label="Key metrics">
             <div class="stat">
-              <strong>5+ Years</strong>
-              <span>building production software</span>
+              <strong>500+</strong>
+              <span>AI evaluation scenarios benchmarked</span>
+            </div>
+            <div class="stat">
+              <strong>10,000+</strong>
+              <span>invoices automated through custom tooling</span>
             </div>
             <div class="stat">
               <strong>70%</strong>
-              <span>API response time improvement</span>
+              <span>API response time improvement delivered</span>
             </div>
             <div class="stat">
               <strong>99.9%</strong>
-              <span>uptime and accuracy targets delivered</span>
-            </div>
-            <div class="stat">
-              <strong>500+</strong>
-              <span>AI evaluation scenarios benchmarked</span>
+              <span>accuracy and uptime focused delivery</span>
             </div>
           </div>
         </div>
@@ -557,23 +566,23 @@
                 <span>Senior Software Engineer</span>
               </div>
             </div>
-            <div class="availability">Available for remote senior engineering roles and consulting projects.</div>
+            <div class="availability">Available for remote senior engineering roles, consulting, and AI automation projects.</div>
           </div>
 
           <div class="side-card">
-            <h3>Core focus</h3>
+            <h3>Current focus</h3>
             <div class="mini-list">
               <div>
-                <strong>Scalable backend systems</strong>
-                <span>Microservices, APIs, distributed architecture, and performance optimization.</span>
+                <strong>AI automation systems</strong>
+                <span>Agentic workflows, evaluation pipelines, RLHF-style task design, and business process automation.</span>
               </div>
               <div>
-                <strong>Cloud & delivery</strong>
-                <span>AWS, Docker, Kubernetes, CI/CD, observability, and infrastructure automation.</span>
+                <strong>Backend platforms</strong>
+                <span>APIs, microservices, integrations, and operational systems built with Python, Laravel, C#/.NET, and Node.js.</span>
               </div>
               <div>
-                <strong>Applied AI engineering</strong>
-                <span>Agentic workflows, RLHF, evaluation pipelines, and production-ready tooling.</span>
+                <strong>Applied AI/ML</strong>
+                <span>NLP, predictive analytics, vector search, model evaluation, and data-intensive production workflows.</span>
               </div>
             </div>
           </div>
@@ -581,21 +590,21 @@
       </div>
     </section>
 
-    <section class="clients">
+    <section>
       <div class="container">
         <div class="section-head">
           <div>
-            <h2>Selected experience</h2>
-            <p>Professional work across software engineering, cloud systems, business automation, and AI-enabled delivery.</p>
+            <h2>Market-aligned stack</h2>
+            <p>Positioned around the kinds of systems teams are actively building now: AI automation, intelligent workflows, cloud backends, and applied ML.</p>
           </div>
         </div>
-        <div class="client-strip">
-          <span class="client-pill">Turing</span>
-          <span class="client-pill">Linx Computations Inc.</span>
-          <span class="client-pill">DevXen</span>
-          <span class="client-pill">Microbeck</span>
-          <span class="client-pill">QuickBooks Integrations</span>
-          <span class="client-pill">Cloud-Native Platforms</span>
+        <div class="pill-strip">
+          <span class="pill">Python for AI, ML, APIs, and automation</span>
+          <span class="pill">Laravel for business platforms and integrations</span>
+          <span class="pill">C# / .NET for cloud-native and enterprise systems</span>
+          <span class="pill">LangChain & AutoGen for agentic workflows</span>
+          <span class="pill">AWS, Docker, Kubernetes, Terraform</span>
+          <span class="pill">Vector databases, ETL, analytics, automation</span>
         </div>
       </div>
     </section>
@@ -606,45 +615,102 @@
           <div class="section-head">
             <div>
               <h2>About</h2>
-              <p>A focused summary for recruiters, hiring managers, and clients.</p>
+              <p>A clear profile for companies hiring across AI, automation, backend, platform, and cloud roles.</p>
             </div>
           </div>
           <p>
-            I specialize in backend engineering, cloud systems, and distributed applications with hands-on experience across
-            SaaS products, internal business platforms, reporting systems, and AI-enabled workflows. My work is centered on
-            clean architecture, stable delivery, and software that makes operations faster and more reliable.
+            My portfolio is intentionally positioned at the intersection of software engineering and modern intelligent systems.
+            I bring a practical combination of backend engineering, cloud architecture, workflow automation, and applied AI/ML
+            to teams that need production-ready systems rather than demos.
           </p>
           <p>
-            In recent roles, I have led initiatives that improved response time, reduced infrastructure cost, automated manual
-            workflows, and strengthened production delivery through better system design, DevOps practices, and practical engineering decisions.
+            I’m strongest where business workflows, APIs, integrations, data, and AI capabilities need to come together.
+            That includes internal platforms, finance and operations automation, evaluation frameworks, ML-powered products,
+            and backend services that need to scale reliably.
           </p>
         </article>
 
-        <article id="skills" class="panel skills-card">
+        <article id="positioning" class="panel position-card">
           <div class="section-head">
             <div>
-              <h2>Technical skills</h2>
-              <p>Balanced across backend development, infrastructure, data systems, and modern product engineering.</p>
+              <h2>How I should be positioned</h2>
+              <p>Professional titles and value propositions that match current hiring language.</p>
+            </div>
+          </div>
+          <div class="mini-list">
+            <div>
+              <strong>AI Automation Engineer</strong>
+              <span>For companies looking to automate workflows with LLMs, agents, orchestration, and reliable backend systems.</span>
+            </div>
+            <div>
+              <strong>Senior Backend / Platform Engineer</strong>
+              <span>For API platforms, microservices, integrations, cloud migration, performance optimization, and DevOps delivery.</span>
+            </div>
+            <div>
+              <strong>Applied AI / ML Engineer</strong>
+              <span>For evaluation systems, predictive models, NLP workflows, intelligent automation, and data-intensive applications.</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container grid-2">
+        <article class="panel skills-card">
+          <div class="section-head">
+            <div>
+              <h2>Modern technical stack</h2>
+              <p>Organized around the technologies that best represent your profile in the current market.</p>
             </div>
           </div>
           <div class="skill-groups">
             <div class="skill-group">
-              <h3>Backend & APIs</h3>
+              <h3>AI automation & agents</h3>
               <div class="chips">
                 <span class="chip">Python</span>
+                <span class="chip">LangChain</span>
+                <span class="chip">AutoGen</span>
+                <span class="chip">Agentic Workflows</span>
+                <span class="chip">RLHF</span>
+                <span class="chip">Model Evaluation</span>
+                <span class="chip">Benchmarking</span>
+                <span class="chip">Transformers</span>
+                <span class="chip">Vector Databases</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <h3>Backend engineering & automation</h3>
+              <div class="chips">
+                <span class="chip">Laravel</span>
+                <span class="chip">PHP</span>
+                <span class="chip">C# / .NET</span>
                 <span class="chip">Django</span>
                 <span class="chip">Flask</span>
                 <span class="chip">Node.js</span>
                 <span class="chip">Express.js</span>
-                <span class="chip">Laravel</span>
-                <span class="chip">C# / .NET</span>
                 <span class="chip">REST APIs</span>
                 <span class="chip">GraphQL</span>
-                <span class="chip">WebSockets</span>
+                <span class="chip">QuickBooks API</span>
               </div>
             </div>
             <div class="skill-group">
-              <h3>Cloud, data & DevOps</h3>
+              <h3>AI/ML & data systems</h3>
+              <div class="chips">
+                <span class="chip">PyTorch</span>
+                <span class="chip">TensorFlow</span>
+                <span class="chip">Scikit-learn</span>
+                <span class="chip">NLP</span>
+                <span class="chip">XGBoost</span>
+                <span class="chip">ETL Pipelines</span>
+                <span class="chip">Data Aggregation</span>
+                <span class="chip">PostgreSQL</span>
+                <span class="chip">Redis</span>
+                <span class="chip">Kafka</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <h3>Cloud, DevOps & delivery</h3>
               <div class="chips">
                 <span class="chip">AWS</span>
                 <span class="chip">Azure</span>
@@ -653,92 +719,37 @@
                 <span class="chip">Terraform</span>
                 <span class="chip">GitHub Actions</span>
                 <span class="chip">Jenkins</span>
-                <span class="chip">PostgreSQL</span>
-                <span class="chip">Redis</span>
-                <span class="chip">Kafka</span>
-              </div>
-            </div>
-            <div class="skill-group">
-              <h3>AI & frontend</h3>
-              <div class="chips">
-                <span class="chip">Transformers</span>
-                <span class="chip">LangChain</span>
-                <span class="chip">PyTorch</span>
-                <span class="chip">TensorFlow</span>
-                <span class="chip">React</span>
-                <span class="chip">Next.js</span>
-                <span class="chip">Vue.js</span>
-                <span class="chip">Tailwind CSS</span>
-                <span class="chip">System Design</span>
+                <span class="chip">Prometheus</span>
+                <span class="chip">Grafana</span>
+                <span class="chip">Nginx</span>
               </div>
             </div>
           </div>
         </article>
-      </div>
-    </section>
 
-    <section>
-      <div class="container grid-2">
         <article class="panel tools-card">
           <div class="section-head">
             <div>
-              <h2>Tools & workflow</h2>
-              <p>A practical working stack for shipping and operating software efficiently.</p>
-            </div>
-          </div>
-          <div class="tools-grid">
-            <div class="tool-group">
-              <h3>Development</h3>
-              <div class="chips">
-                <span class="chip">VS Code</span>
-                <span class="chip">GitHub</span>
-                <span class="chip">Postman</span>
-                <span class="chip">Swagger</span>
-                <span class="chip">Linux</span>
-              </div>
-            </div>
-            <div class="tool-group">
-              <h3>Delivery</h3>
-              <div class="chips">
-                <span class="chip">CI/CD</span>
-                <span class="chip">Docker</span>
-                <span class="chip">Kubernetes</span>
-                <span class="chip">Nginx</span>
-                <span class="chip">OpenShift</span>
-              </div>
-            </div>
-            <div class="tool-group">
-              <h3>Monitoring & quality</h3>
-              <div class="chips">
-                <span class="chip">Prometheus</span>
-                <span class="chip">Grafana</span>
-                <span class="chip">Benchmarking</span>
-                <span class="chip">Model Evaluation</span>
-                <span class="chip">Testing</span>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <article class="panel about-card">
-          <div class="section-head">
-            <div>
-              <h2>What sets me apart</h2>
-              <p>Why this portfolio is positioned for professional opportunities.</p>
+              <h2>What I build</h2>
+              <p>Examples of the work this portfolio should immediately signal to recruiters and clients.</p>
             </div>
           </div>
           <div class="mini-list">
             <div>
-              <strong>Business impact orientation</strong>
-              <span>My work consistently ties engineering improvements to speed, reliability, and operational efficiency.</span>
+              <strong>AI workflow automation</strong>
+              <span>Designing systems that classify, route, evaluate, and automate complex tasks with human-in-the-loop control.</span>
             </div>
             <div>
-              <strong>Cross-domain depth</strong>
-              <span>Comfortable across backend systems, cloud delivery, internal tooling, AI workflows, and reporting platforms.</span>
+              <strong>Business process automation</strong>
+              <span>Inventory, ledger, invoicing, reporting, and finance systems that replace manual work with reliable software.</span>
             </div>
             <div>
-              <strong>Strong execution</strong>
-              <span>Experienced taking work from architecture and implementation through production readiness and iteration.</span>
+              <strong>ML-powered applications</strong>
+              <span>Sentiment analysis, predictive maintenance, model evaluation, and analytics features built into real products.</span>
+            </div>
+            <div>
+              <strong>Cloud-native backends</strong>
+              <span>APIs, microservices, observability, DevOps pipelines, and platform services optimized for reliability and scale.</span>
             </div>
           </div>
         </article>
@@ -750,7 +761,7 @@
         <div class="section-head">
           <div>
             <h2>Professional experience</h2>
-            <p>Recent roles with measurable impact across platform engineering, cloud migration, automation, and AI evaluation.</p>
+            <p>Recent work aligned with AI automation, intelligent systems, cloud platforms, and enterprise-grade backend delivery.</p>
           </div>
         </div>
         <div class="timeline">
@@ -765,7 +776,7 @@
             <ul>
               <li>Led a pod of 10 AI trainers focused on agentic AI development, evaluation, RLHF, and multi-step reasoning.</li>
               <li>Improved task completion rates by 40% and reduced deployment time by 60% across complex workflow evaluations.</li>
-              <li>Built training protocols and benchmarking frameworks spanning 500+ test scenarios.</li>
+              <li>Built training protocols and benchmarking frameworks spanning 500+ test scenarios for enterprise AI use cases.</li>
             </ul>
           </article>
 
@@ -778,9 +789,9 @@
               <span>May 2024 – Present</span>
             </div>
             <ul>
-              <li>Developed and maintained a Laravel-based POS, inventory, stock, and ledger management platform.</li>
-              <li>Built a C# desktop application integrated with QuickBooks for invoice automation and customer synchronization.</li>
-              <li>Reduced manual data entry by 60% and improved backend response time by 50% under high load.</li>
+              <li>Built automation-first business systems with Laravel and C# for POS, inventory, ledger management, and QuickBooks integration.</li>
+              <li>Developed finance automation workflows that reduced manual data entry by 60% and improved accounting accuracy.</li>
+              <li>Improved backend response time by 50% under high load through better architecture and optimization.</li>
             </ul>
           </article>
 
@@ -793,9 +804,9 @@
               <span>May 2024 – Jul 2025</span>
             </div>
             <ul>
-              <li>Improved API response time by 70% through backend optimization and service-to-service workflow improvements.</li>
-              <li>Designed microservices that reduced server load by 60% and improved application availability.</li>
-              <li>Automated engineering workflows, improved SQL performance by 80%, and cut release time by 75% with CI/CD.</li>
+              <li>Improved API response time by 70% through backend optimization, data-access tuning, and service workflow improvements.</li>
+              <li>Designed scalable microservices that reduced server load by 60% and improved application availability.</li>
+              <li>Delivered automation, reporting, and ML-oriented systems including sentiment analysis and predictive maintenance solutions.</li>
             </ul>
           </article>
 
@@ -810,7 +821,7 @@
             <ul>
               <li>Migrated legacy services to cloud-native infrastructure using Docker, Kubernetes, and AWS.</li>
               <li>Reduced server costs by 30%, supported 99.9% uptime, and improved API latency by 60% with Redis caching.</li>
-              <li>Built real-time data pipelines and automated backend workflows to increase delivery speed and reduce manual effort.</li>
+              <li>Built real-time data pipelines and automated backend workflows to improve performance and delivery speed.</li>
             </ul>
           </article>
         </div>
@@ -822,46 +833,67 @@
         <div class="section-head">
           <div>
             <h2>Selected projects</h2>
-            <p>Representative work that shows technical depth, measurable results, and practical engineering value.</p>
+            <p>Projects reframed to highlight AI automation, applied ML, and business workflow engineering.</p>
           </div>
         </div>
         <div class="projects-grid">
           <article class="panel project-card">
             <div>
-              <h3>Invoices Tax Calculator</h3>
-              <div class="project-meta">Linx Computations Inc. · C# Desktop Application</div>
+              <h3>Agentic AI Training & Evaluation</h3>
+              <div class="project-meta">Turing · AI Workflow Design, Evaluation, Benchmarking</div>
             </div>
-            <p>Automated tax calculations for 10,000+ invoices across customizable date ranges with high compliance accuracy.</p>
+            <p>Led agentic AI training and evaluation initiatives for enterprise scenarios with structured testing and quality-focused workflows.</p>
             <ul>
-              <li>Implemented U.S. state-specific tax rules with 99.9% computation accuracy.</li>
-              <li>Reduced manual calculation errors by 40%.</li>
+              <li>Built evaluation frameworks across 500+ scenarios.</li>
+              <li>Improved task completion by 40% and reduced deployment time by 60%.</li>
             </ul>
           </article>
 
           <article class="panel project-card">
             <div>
-              <h3>Sentiment Analysis Tool</h3>
-              <div class="project-meta">DevXen · Python, NLP, Automation</div>
+              <h3>Finance & Operations Automation Platform</h3>
+              <div class="project-meta">Linx Computations Inc. · Laravel, C#, QuickBooks API</div>
             </div>
-            <p>Created a Python-based sentiment classification workflow using NLTK and spaCy for multi-channel feedback analysis.</p>
+            <p>Developed automation tooling for invoicing, stock, ledger, and finance workflows, combining backend systems with enterprise integrations.</p>
             <ul>
-              <li>Reached 85% classification accuracy.</li>
-              <li>Reduced manual effort by 60% through automated preprocessing and training workflows.</li>
+              <li>Automated tax calculations for 10,000+ invoices.</li>
+              <li>Reduced manual accounting work by 60% with bi-directional QuickBooks integration.</li>
             </ul>
           </article>
 
           <article class="panel project-card">
             <div>
-              <h3>Predictive Maintenance System</h3>
-              <div class="project-meta">DevXen · Machine Learning, Real-Time Analytics</div>
+              <h3>Predictive Maintenance & NLP Systems</h3>
+              <div class="project-meta">DevXen · Python, Scikit-learn, NLP, Real-Time Analytics</div>
             </div>
-            <p>Designed an ML system using Random Forest and XGBoost to analyze real-time data from 500+ industrial machines.</p>
+            <p>Built ML-powered applications including predictive maintenance and sentiment analysis to turn operational and customer data into decisions.</p>
             <ul>
-              <li>Improved failure prediction accuracy by 20%.</li>
-              <li>Reduced unplanned downtime by 25% and contributed to major annual maintenance savings.</li>
+              <li>Improved failure prediction accuracy by 20% across 500+ machines.</li>
+              <li>Reached 85% sentiment classification accuracy with automated NLP workflows.</li>
             </ul>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container grid-4">
+        <article class="panel position-card">
+          <h3>AI Automation</h3>
+          <p>Agentic workflows, evaluation systems, orchestration logic, and intelligent task automation.</p>
+        </article>
+        <article class="panel position-card">
+          <h3>Automation</h3>
+          <p>Finance, reporting, operations, and repetitive workflow automation through practical software systems.</p>
+        </article>
+        <article class="panel position-card">
+          <h3>AI / ML</h3>
+          <p>NLP, predictive analytics, evaluation pipelines, vector search, and applied machine learning.</p>
+        </article>
+        <article class="panel position-card">
+          <h3>Cloud Engineering</h3>
+          <p>AWS, Docker, Kubernetes, CI/CD, observability, and scalable backend architecture.</p>
+        </article>
       </div>
     </section>
 
@@ -871,7 +903,7 @@
           <div class="section-head">
             <div>
               <h2>Education</h2>
-              <p>Academic background supporting software engineering and systems design.</p>
+              <p>Academic foundation supporting engineering, software systems, and technical problem solving.</p>
             </div>
           </div>
           <h3>Bachelor of Science in Computer Science</h3>
@@ -883,12 +915,12 @@
           <div class="section-head">
             <div>
               <h2>Let’s work together</h2>
-              <p>Open to senior backend, cloud, platform, and AI-enabled software engineering opportunities.</p>
+              <p>Open to AI automation, senior backend, platform, cloud, and applied AI/ML engineering opportunities.</p>
             </div>
           </div>
           <p>
-            I’m available for remote full-time roles, contract engagements, and high-impact backend or platform work.
-            Email is the best way to start a conversation.
+            I’m available for remote full-time roles, contract engagements, and high-impact projects involving modern backend systems,
+            AI-enabled automation, or cloud-native product engineering.
           </p>
           <div class="actions">
             <a class="btn btn-primary" href="mailto:m.ibrahim8325@gmail.com">Email Me</a>
