@@ -41,652 +41,7 @@
     }
   </script>
 
-  <style>
-    :root {
-      --bg: #0a0a0a;
-      --surface: #111113;
-      --surface-2: #18181b;
-      --border: rgba(255, 255, 255, .06);
-      --border-strong: rgba(255, 255, 255, .12);
-      --text: #fafafa;
-      --muted: #a1a1aa;
-      --subtle: #71717a;
-      --accent: #7dd3fc;
-      --accent-soft: rgba(125, 211, 252, .12);
-      --success: #6ee7b7;
-      --warn: #fcd34d;
-      --ease: cubic-bezier(.22, 1, .36, 1);
-    }
-
-    * {
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Inter', system-ui, sans-serif;
-      font-feature-settings: 'ss01', 'cv11';
-      letter-spacing: -0.011em;
-    }
-
-    ::selection {
-      background: var(--accent-soft);
-      color: var(--text);
-    }
-
-    /* ── Scrollbar ── */
-    ::-webkit-scrollbar {
-      width: 10px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: var(--bg);
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: #27272a;
-      border-radius: 10px;
-      border: 2px solid var(--bg);
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background: #3f3f46;
-    }
-
-    /* ── Surfaces ── */
-    .surface {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .04);
-      border-radius: 14px;
-    }
-
-    .surface-2 {
-      background: var(--surface-2);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-    }
-
-    .hairline {
-      border-color: var(--border);
-    }
-
-    .hairline-strong {
-      border-color: var(--border-strong);
-    }
-
-    /* ── Type ── */
-    .eyebrow {
-      font-family: 'JetBrains Mono', ui-monospace, monospace;
-      font-size: 11px;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: .18em;
-      color: var(--subtle);
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .eyebrow::before {
-      content: '';
-      width: 28px;
-      height: 1px;
-      background: var(--border-strong);
-    }
-
-    .eyebrow.center::after {
-      content: '';
-      width: 28px;
-      height: 1px;
-      background: var(--border-strong);
-    }
-
-    .h-display {
-      font-family: 'Inter', system-ui, sans-serif;
-      font-weight: 500;
-      font-size: clamp(2.75rem, 7vw, 5.25rem);
-      line-height: .98;
-      letter-spacing: -0.045em;
-      color: var(--text);
-    }
-
-    .h-display .serif {
-      font-family: 'Instrument Serif', ui-serif, Georgia, serif;
-      font-weight: 400;
-      font-style: italic;
-      letter-spacing: -0.02em;
-    }
-
-    .h-section {
-      font-family: 'Inter', system-ui, sans-serif;
-      font-weight: 500;
-      font-size: clamp(1.75rem, 3.4vw, 2.5rem);
-      line-height: 1.05;
-      letter-spacing: -0.035em;
-      color: var(--text);
-    }
-
-    .h-section .serif {
-      font-family: 'Instrument Serif', ui-serif, Georgia, serif;
-      font-weight: 400;
-      font-style: italic;
-    }
-
-    .lead {
-      color: var(--muted);
-      font-size: 1.0625rem;
-      line-height: 1.65;
-      letter-spacing: -0.01em;
-    }
-
-    .body {
-      color: var(--muted);
-      font-size: .9375rem;
-      line-height: 1.7;
-    }
-
-    .mono {
-      font-family: 'JetBrains Mono', ui-monospace, monospace;
-    }
-
-    .text-text {
-      color: var(--text);
-    }
-
-    .text-muted {
-      color: var(--muted);
-    }
-
-    .text-subtle {
-      color: var(--subtle);
-    }
-
-    .text-accent {
-      color: var(--accent);
-    }
-
-    /* ── Buttons ── */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 18px;
-      border-radius: 10px;
-      font-size: .875rem;
-      font-weight: 500;
-      letter-spacing: -0.005em;
-      transition: all .25s var(--ease);
-      border: 1px solid transparent;
-      white-space: nowrap;
-    }
-
-    .btn-primary {
-      background: #fafafa;
-      color: #0a0a0a;
-      border-color: #fafafa;
-    }
-
-    .btn-primary:hover {
-      background: #ffffff;
-      transform: translateY(-1px);
-      box-shadow: 0 10px 30px -10px rgba(255, 255, 255, .25);
-    }
-
-    .btn-ghost {
-      background: transparent;
-      color: var(--text);
-      border-color: var(--border-strong);
-    }
-
-    .btn-ghost:hover {
-      background: var(--surface);
-      border-color: rgba(255, 255, 255, .22);
-    }
-
-    .btn-sm {
-      padding: 7px 14px;
-      font-size: .8125rem;
-    }
-
-    /* ── Chips ── */
-    .chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 5px 10px;
-      border-radius: 6px;
-      font-family: 'JetBrains Mono', ui-monospace, monospace;
-      font-size: 11.5px;
-      letter-spacing: -0.01em;
-      color: var(--muted);
-      background: var(--surface-2);
-      border: 1px solid var(--border);
-      transition: all .2s var(--ease);
-    }
-
-    .chip:hover {
-      color: var(--text);
-      border-color: var(--border-strong);
-    }
-
-    .chip img {
-      width: 14px;
-      height: 14px;
-      object-fit: contain;
-      filter: grayscale(1) brightness(1.4);
-      opacity: .8;
-      transition: all .2s var(--ease);
-    }
-
-    .chip:hover img {
-      filter: none;
-      opacity: 1;
-    }
-
-    .chip-sm {
-      padding: 3px 8px;
-      font-size: 10.5px;
-    }
-
-    /* ── Section labels ── */
-    .section-num {
-      font-family: 'JetBrains Mono', ui-monospace, monospace;
-      font-size: 11px;
-      color: var(--subtle);
-      letter-spacing: .1em;
-    }
-
-    /* ── Nav ── */
-    .nav-shell {
-      transition: background .35s var(--ease), border-color .35s var(--ease), backdrop-filter .35s var(--ease);
-      border-bottom: 1px solid transparent;
-    }
-
-    .nav-shell.scrolled {
-      background: rgba(10, 10, 10, .78);
-      backdrop-filter: blur(12px) saturate(120%);
-      -webkit-backdrop-filter: blur(12px) saturate(120%);
-      border-bottom-color: var(--border);
-    }
-
-    .nav-link {
-      position: relative;
-      font-size: .875rem;
-      color: var(--muted);
-      transition: color .2s var(--ease);
-      padding: 6px 0;
-    }
-
-    .nav-link:hover {
-      color: var(--text);
-    }
-
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      height: 1px;
-      width: 0;
-      background: var(--text);
-      transition: width .25s var(--ease);
-    }
-
-    .nav-link:hover::after {
-      width: 100%;
-    }
-
-    /* ── Mobile menu ── */
-    .mobile-menu {
-      display: none;
-    }
-
-    .mobile-menu.open {
-      display: flex;
-    }
-
-    /* ── Marquee ── */
-    .marquee {
-      overflow: hidden;
-      position: relative;
-      mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
-      -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
-    }
-
-    .marquee-track {
-      display: flex;
-      gap: 80px;
-      width: max-content;
-      align-items: center;
-      animation: marquee 50s linear infinite;
-    }
-
-    @keyframes marquee {
-      from {
-        transform: translateX(0);
-      }
-
-      to {
-        transform: translateX(-50%);
-      }
-    }
-
-    .company-logo {
-      height: 28px;
-      width: auto;
-      max-width: 130px;
-      object-fit: contain;
-      opacity: .45;
-      filter: grayscale(1) brightness(1.6);
-      transition: opacity .3s var(--ease);
-    }
-
-    .company-logo:hover {
-      opacity: .85;
-    }
-
-    /* ── Cards (interactive surfaces with spotlight) ── */
-    .card {
-      position: relative;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      transition: border-color .3s var(--ease), transform .3s var(--ease);
-      overflow: hidden;
-    }
-
-    .card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 0%), rgba(255, 255, 255, .04), transparent 40%);
-      opacity: 0;
-      transition: opacity .35s var(--ease);
-      pointer-events: none;
-    }
-
-    .card:hover {
-      border-color: var(--border-strong);
-    }
-
-    .card:hover::before {
-      opacity: 1;
-    }
-
-    /* ── Timeline ── */
-    .timeline {
-      position: relative;
-      padding-left: 28px;
-    }
-
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 5px;
-      top: 6px;
-      bottom: 6px;
-      width: 1px;
-      background: var(--border);
-    }
-
-    .timeline-item {
-      position: relative;
-    }
-
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -27px;
-      top: 14px;
-      width: 11px;
-      height: 11px;
-      border-radius: 50%;
-      background: var(--bg);
-      border: 1px solid var(--border-strong);
-      transition: all .3s var(--ease);
-    }
-
-    .timeline-item:hover::before {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 4px var(--accent-soft);
-    }
-
-    .monogram {
-      width: 40px;
-      height: 40px;
-      border-radius: 8px;
-      background: var(--surface-2);
-      border: 1px solid var(--border);
-      display: grid;
-      place-items: center;
-      font-family: 'Instrument Serif', ui-serif, Georgia, serif;
-      font-size: 1.25rem;
-      color: var(--text);
-      flex-shrink: 0;
-      overflow: hidden;
-    }
-
-    .monogram img {
-      width: 22px;
-      height: 22px;
-      object-fit: contain;
-      filter: grayscale(1) brightness(1.4);
-      opacity: .85;
-    }
-
-    /* ── Stat row ── */
-    .stat-num {
-      font-family: 'Instrument Serif', ui-serif, Georgia, serif;
-      font-weight: 400;
-      font-size: clamp(2.5rem, 5vw, 3.75rem);
-      line-height: 1;
-      letter-spacing: -0.02em;
-      color: var(--text);
-    }
-
-    .stat-label {
-      font-family: 'JetBrains Mono', ui-monospace, monospace;
-      font-size: 10.5px;
-      text-transform: uppercase;
-      letter-spacing: .14em;
-      color: var(--subtle);
-      margin-top: 14px;
-    }
-
-    /* ── Tool icons ── */
-    .tool-icon {
-      width: 16px;
-      height: 16px;
-      object-fit: contain;
-      filter: grayscale(1) brightness(1.4);
-      opacity: .8;
-      transition: all .2s var(--ease);
-    }
-
-    .tool-row:hover .tool-icon {
-      filter: none;
-      opacity: 1;
-    }
-
-    .tool-icon-lg {
-      width: 22px;
-      height: 22px;
-      object-fit: contain;
-      filter: grayscale(1) brightness(1.4);
-      opacity: .8;
-      transition: all .2s var(--ease);
-    }
-
-    .tool-row {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 12px 0;
-      border-bottom: 1px solid var(--border);
-      color: var(--muted);
-      font-size: .875rem;
-      transition: color .2s var(--ease);
-    }
-
-    .tool-row:last-child {
-      border-bottom: none;
-    }
-
-    .tool-row:hover {
-      color: var(--text);
-    }
-
-    .tool-row:hover .tool-icon-lg {
-      filter: none;
-      opacity: 1;
-    }
-
-    /* ── Browser mockup ── */
-    .browser {
-      background: #0f0f11;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      overflow: hidden;
-      transition: border-color .3s var(--ease);
-    }
-
-    .card:hover .browser {
-      border-color: var(--border-strong);
-    }
-
-    .browser-bar {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 9px 12px;
-      background: var(--surface-2);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: #2a2a2e;
-    }
-
-    .browser-url {
-      flex: 1;
-      font-family: 'JetBrains Mono', ui-monospace, monospace;
-      font-size: 10.5px;
-      color: var(--subtle);
-      text-align: center;
-    }
-
-    .mockup-canvas {
-      aspect-ratio: 16 / 10;
-      background:
-        linear-gradient(135deg, rgba(125, 211, 252, .04), transparent 50%),
-        repeating-linear-gradient(0deg, transparent 0 23px, var(--border) 23px 24px),
-        repeating-linear-gradient(90deg, transparent 0 23px, var(--border) 23px 24px),
-        var(--surface);
-      display: grid;
-      place-items: center;
-      color: var(--subtle);
-      font-family: 'JetBrains Mono', ui-monospace, monospace;
-      font-size: 10.5px;
-    }
-
-    /* ── Fade-in on scroll ── */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(12px);
-      transition: opacity .6s var(--ease), transform .6s var(--ease);
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* ── Avatar ── */
-    .avatar-mark {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 1px solid var(--border-strong);
-    }
-
-    /* ── Link arrow ── */
-    .link-arrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      color: var(--text);
-      font-size: .875rem;
-      transition: color .2s var(--ease);
-    }
-
-    .link-arrow i {
-      transition: transform .2s var(--ease);
-    }
-
-    .link-arrow:hover {
-      color: var(--accent);
-    }
-
-    .link-arrow:hover i {
-      transform: translate(2px, -2px);
-    }
-
-    /* ── Section divider ── */
-    .divider {
-      height: 1px;
-      background: var(--border);
-      width: 100%;
-    }
-
-    /* ── Status dot ── */
-    .status-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--success);
-      box-shadow: 0 0 0 3px rgba(110, 231, 183, .15);
-      flex-shrink: 0;
-    }
-
-    /* ── Featured tag ── */
-    .tag-featured {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 3px 9px;
-      border-radius: 6px;
-      font-family: 'JetBrains Mono', ui-monospace, monospace;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: .1em;
-      color: var(--warn);
-      background: rgba(252, 211, 77, .08);
-      border: 1px solid rgba(252, 211, 77, .2);
-    }
-
-    /* Responsive timeline padding */
-    @media (max-width: 640px) {
-      .timeline {
-        padding-left: 22px;
-      }
-
-      .timeline-item::before {
-        left: -21px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="./assets/css/style.css" rel="preload" as="style">
 </head>
 
 <body class="font-sans">
@@ -760,7 +115,8 @@
       </div>
 
       <div class="mt-14 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-subtle fade-in">
-        <span class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-[11px]"></i>Faisalabad, Pakistan</span>
+        <span class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-[11px]"></i>Faisalabad,
+          Pakistan</span>
         <span class="flex items-center gap-2"><i class="fa-regular fa-clock text-[11px]"></i>Remote · Global</span>
         <a href="https://github.com/muhammad-ibrahim-butt" target="_blank" rel="noreferrer"
           class="flex items-center gap-2 hover:text-text transition"><i class="fa-brands fa-github"></i>GitHub</a>
@@ -871,7 +227,8 @@
             <div class="flex items-baseline justify-between gap-4 py-4 border-b hairline">
               <dt class="mono text-xs text-subtle uppercase tracking-wider">Email</dt>
               <dd class="text-sm">
-                <a href="mailto:m.ibrahim8325@gmail.com" class="text-text hover:text-accent transition">m.ibrahim8325@gmail.com</a>
+                <a href="mailto:m.ibrahim8325@gmail.com"
+                  class="text-text hover:text-accent transition">m.ibrahim8325@gmail.com</a>
               </dd>
             </div>
           </dl>
@@ -925,15 +282,18 @@
 
             <div class="grid grid-cols-3 gap-4 py-5 border-y hairline mb-6">
               <div>
-                <p class="font-serif text-2xl text-text" style="font-family:'Instrument Serif',serif">10K<span class="text-subtle">+</span></p>
+                <p class="font-serif text-2xl text-text" style="font-family:'Instrument Serif',serif">10K<span
+                    class="text-subtle">+</span></p>
                 <p class="mono text-[10px] text-subtle uppercase tracking-wider mt-1">invoices</p>
               </div>
               <div>
-                <p class="font-serif text-2xl text-text" style="font-family:'Instrument Serif',serif">60<span class="text-subtle">%</span></p>
+                <p class="font-serif text-2xl text-text" style="font-family:'Instrument Serif',serif">60<span
+                    class="text-subtle">%</span></p>
                 <p class="mono text-[10px] text-subtle uppercase tracking-wider mt-1">less manual</p>
               </div>
               <div>
-                <p class="font-serif text-2xl text-text" style="font-family:'Instrument Serif',serif">50<span class="text-subtle">%</span></p>
+                <p class="font-serif text-2xl text-text" style="font-family:'Instrument Serif',serif">50<span
+                    class="text-subtle">%</span></p>
                 <p class="mono text-[10px] text-subtle uppercase tracking-wider mt-1">faster api</p>
               </div>
             </div>
@@ -1031,17 +391,22 @@
             <div class="flex items-start gap-4">
               <div class="monogram"><img src="./assets/companies/turing.png" alt="Turing"></div>
               <div>
-                <h3 class="text-lg text-text font-medium tracking-tight">Pod Lead <span class="text-subtle font-normal text-sm">· Contract</span></h3>
-                <p class="text-sm text-muted mt-0.5">Turing <span class="text-subtle">— Remote · Palo Alto, CA</span></p>
+                <h3 class="text-lg text-text font-medium tracking-tight">Pod Lead <span
+                    class="text-subtle font-normal text-sm">· Contract</span></h3>
+                <p class="text-sm text-muted mt-0.5">Turing <span class="text-subtle">— Remote · Palo Alto, CA</span>
+                </p>
               </div>
             </div>
             <span class="mono text-[11px] text-subtle md:pt-1">Aug 2025 — Apr 2026</span>
           </div>
 
           <ul class="space-y-2 body text-sm md:pl-14">
-            <li>Led a pod of <span class="text-text">10 AI trainers</span> focused on agentic AI development, evaluation, RLHF, and multi-step reasoning.</li>
-            <li>Improved task completion rates by <span class="text-text">40%</span> and reduced deployment time by <span class="text-text">60%</span> across complex workflow evaluations.</li>
-            <li>Built training protocols and benchmarking frameworks spanning <span class="text-text">500+ test scenarios</span> for enterprise AI use cases.</li>
+            <li>Led a pod of <span class="text-text">10 AI trainers</span> focused on agentic AI development,
+              evaluation, RLHF, and multi-step reasoning.</li>
+            <li>Improved task completion rates by <span class="text-text">40%</span> and reduced deployment time by
+              <span class="text-text">60%</span> across complex workflow evaluations.</li>
+            <li>Built training protocols and benchmarking frameworks spanning <span class="text-text">500+ test
+                scenarios</span> for enterprise AI use cases.</li>
             <li>Established quality gates and review workflows that improved evaluation consistency across the pod.</li>
           </ul>
 
@@ -1061,18 +426,24 @@
             <div class="flex items-start gap-4">
               <div class="monogram">L</div>
               <div>
-                <h3 class="text-lg text-text font-medium tracking-tight">Senior Software Engineer <span class="text-subtle font-normal text-sm">· Contract</span></h3>
-                <p class="text-sm text-muted mt-0.5">Linx Computations Inc. <span class="text-subtle">— Remote · New York, NY</span></p>
+                <h3 class="text-lg text-text font-medium tracking-tight">Senior Software Engineer <span
+                    class="text-subtle font-normal text-sm">· Contract</span></h3>
+                <p class="text-sm text-muted mt-0.5">Linx Computations Inc. <span class="text-subtle">— Remote · New
+                    York, NY</span></p>
               </div>
             </div>
             <span class="mono text-[11px] text-subtle md:pt-1">May 2024 — Present</span>
           </div>
 
           <ul class="space-y-2 body text-sm md:pl-14">
-            <li>Built automation-first business systems with Laravel and C# for POS, inventory, ledger management, and <span class="text-text">QuickBooks integration</span>.</li>
-            <li>Developed finance automation workflows that reduced manual data entry by <span class="text-text">60%</span> and improved accounting accuracy.</li>
-            <li>Improved backend response time by <span class="text-text">50%</span> under high load through better architecture and query optimization.</li>
-            <li>Automated tax calculations across <span class="text-text">10,000+ invoices</span> with bi-directional QuickBooks sync.</li>
+            <li>Built automation-first business systems with Laravel and C# for POS, inventory, ledger management, and
+              <span class="text-text">QuickBooks integration</span>.</li>
+            <li>Developed finance automation workflows that reduced manual data entry by <span
+                class="text-text">60%</span> and improved accounting accuracy.</li>
+            <li>Improved backend response time by <span class="text-text">50%</span> under high load through better
+              architecture and query optimization.</li>
+            <li>Automated tax calculations across <span class="text-text">10,000+ invoices</span> with bi-directional
+              QuickBooks sync.</li>
           </ul>
 
           <div class="flex flex-wrap gap-1.5 mt-5 md:pl-14">
@@ -1093,16 +464,20 @@
               <div class="monogram">D</div>
               <div>
                 <h3 class="text-lg text-text font-medium tracking-tight">Senior Software Engineer</h3>
-                <p class="text-sm text-muted mt-0.5">DevXen <span class="text-subtle">— Remote · Wollongong, NSW</span></p>
+                <p class="text-sm text-muted mt-0.5">DevXen <span class="text-subtle">— Remote · Wollongong, NSW</span>
+                </p>
               </div>
             </div>
             <span class="mono text-[11px] text-subtle md:pt-1">May 2024 — Jul 2025</span>
           </div>
 
           <ul class="space-y-2 body text-sm md:pl-14">
-            <li>Improved API response time by <span class="text-text">70%</span> through backend optimization, data-access tuning, and service workflow improvements.</li>
-            <li>Designed scalable microservices that reduced server load by <span class="text-text">60%</span> and improved application availability.</li>
-            <li>Delivered ML-oriented systems including <span class="text-text">sentiment analysis</span> (85% accuracy) and <span class="text-text">predictive maintenance</span> (20% accuracy lift across 500+ machines).</li>
+            <li>Improved API response time by <span class="text-text">70%</span> through backend optimization,
+              data-access tuning, and service workflow improvements.</li>
+            <li>Designed scalable microservices that reduced server load by <span class="text-text">60%</span> and
+              improved application availability.</li>
+            <li>Delivered ML-oriented systems including <span class="text-text">sentiment analysis</span> (85% accuracy)
+              and <span class="text-text">predictive maintenance</span> (20% accuracy lift across 500+ machines).</li>
             <li>Built real-time analytics dashboards and automated reporting pipelines for operations teams.</li>
           </ul>
 
@@ -1124,17 +499,21 @@
               <div class="monogram">M</div>
               <div>
                 <h3 class="text-lg text-text font-medium tracking-tight">Senior Software Engineer</h3>
-                <p class="text-sm text-muted mt-0.5">Microbeck <span class="text-subtle">— Faisalabad, Pakistan</span></p>
+                <p class="text-sm text-muted mt-0.5">Microbeck <span class="text-subtle">— Faisalabad, Pakistan</span>
+                </p>
               </div>
             </div>
             <span class="mono text-[11px] text-subtle md:pt-1">Jul 2022 — Apr 2024</span>
           </div>
 
           <ul class="space-y-2 body text-sm md:pl-14">
-            <li>Migrated legacy services to <span class="text-text">cloud-native infrastructure</span> using Docker, Kubernetes, and AWS.</li>
-            <li>Reduced server costs by <span class="text-text">30%</span> while supporting <span class="text-text">99.9% uptime</span>.</li>
+            <li>Migrated legacy services to <span class="text-text">cloud-native infrastructure</span> using Docker,
+              Kubernetes, and AWS.</li>
+            <li>Reduced server costs by <span class="text-text">30%</span> while supporting <span
+                class="text-text">99.9% uptime</span>.</li>
             <li>Improved API latency by <span class="text-text">60%</span> through Redis caching and query tuning.</li>
-            <li>Built real-time data pipelines and automated backend workflows to improve performance and delivery speed.</li>
+            <li>Built real-time data pipelines and automated backend workflows to improve performance and delivery
+              speed.</li>
           </ul>
 
           <div class="flex flex-wrap gap-1.5 mt-5 md:pl-14">
@@ -1307,7 +686,8 @@
       <div class="grid md:grid-cols-3 gap-x-12 gap-y-2">
 
         <div>
-          <p class="mono text-xs text-subtle uppercase tracking-wider mb-3 pb-3 border-b hairline-strong">Development</p>
+          <p class="mono text-xs text-subtle uppercase tracking-wider mb-3 pb-3 border-b hairline-strong">Development
+          </p>
           <div class="tool-row"><img class="tool-icon-lg" src="./assets/tools/vscode-original.svg" alt="">VS Code</div>
           <div class="tool-row"><img class="tool-icon-lg" src="./assets/tools/cursor.svg" alt="">Cursor</div>
           <div class="tool-row"><img class="tool-icon-lg" src="./assets/tools/github-original.svg" alt="">GitHub</div>
@@ -1317,16 +697,21 @@
         </div>
 
         <div>
-          <p class="mono text-xs text-subtle uppercase tracking-wider mb-3 pb-3 border-b hairline-strong">AI Platforms</p>
-          <div class="tool-row"><img class="tool-icon-lg" src="./assets/tools/anthropic.svg" alt="">Claude / Anthropic</div>
+          <p class="mono text-xs text-subtle uppercase tracking-wider mb-3 pb-3 border-b hairline-strong">AI Platforms
+          </p>
+          <div class="tool-row"><img class="tool-icon-lg" src="./assets/tools/anthropic.svg" alt="">Claude / Anthropic
+          </div>
           <div class="tool-row"><img class="tool-icon-lg" src="./assets/tools/openai.svg" alt="">OpenAI / ChatGPT</div>
-          <div class="tool-row"><img class="tool-icon-lg" src="./assets/tools/googlegemini.svg" alt="">Google Gemini</div>
+          <div class="tool-row"><img class="tool-icon-lg" src="./assets/tools/googlegemini.svg" alt="">Google Gemini
+          </div>
           <div class="tool-row"><img class="tool-icon-lg" src="./assets/tools/huggingface.svg" alt="">Hugging Face</div>
-          <div class="tool-row"><i class="fa-solid fa-link text-subtle text-base w-[22px] text-center"></i>LangChain / AutoGen</div>
+          <div class="tool-row"><i class="fa-solid fa-link text-subtle text-base w-[22px] text-center"></i>LangChain /
+            AutoGen</div>
         </div>
 
         <div>
-          <p class="mono text-xs text-subtle uppercase tracking-wider mb-3 pb-3 border-b hairline-strong">Productivity</p>
+          <p class="mono text-xs text-subtle uppercase tracking-wider mb-3 pb-3 border-b hairline-strong">Productivity
+          </p>
           <div class="tool-row"><img class="tool-icon-lg" src="./assets/tools/slack-original.svg" alt="">Slack</div>
           <div class="tool-row"><img class="tool-icon-lg" src="./assets/tools/jira-original.svg" alt="">Jira</div>
           <div class="tool-row"><img class="tool-icon-lg" src="./assets/tools/clickup.svg" alt="">ClickUp</div>
@@ -1353,7 +738,8 @@
           <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-5">
             <div>
               <h3 class="text-lg text-text font-medium tracking-tight">B.S. Computer Science</h3>
-              <p class="text-sm text-muted mt-1">National University of Computer &amp; Emerging Sciences (FAST-NUCES)</p>
+              <p class="text-sm text-muted mt-1">National University of Computer &amp; Emerging Sciences (FAST-NUCES)
+              </p>
               <div class="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 mono text-[11px] text-subtle">
                 <span>Pakistan</span><span>·</span>
                 <span>CGPA <span class="text-muted">3.10 / 4.00</span></span><span>·</span>
@@ -1393,7 +779,8 @@
               <p class="text-sm text-text truncate">AWS Solutions Architect</p>
               <p class="mono text-[10.5px] text-subtle mt-0.5">Amazon Web Services · TODO: date</p>
             </div>
-            <i class="fa-solid fa-arrow-up-right-from-square text-[11px] text-subtle group-hover:text-text transition"></i>
+            <i
+              class="fa-solid fa-arrow-up-right-from-square text-[11px] text-subtle group-hover:text-text transition"></i>
           </a>
 
           <a href="#" class="card p-5 flex items-center gap-4 group">
@@ -1402,7 +789,8 @@
               <p class="text-sm text-text truncate">Machine Learning Specialization</p>
               <p class="mono text-[10.5px] text-subtle mt-0.5">TODO: issuer · TODO: date</p>
             </div>
-            <i class="fa-solid fa-arrow-up-right-from-square text-[11px] text-subtle group-hover:text-text transition"></i>
+            <i
+              class="fa-solid fa-arrow-up-right-from-square text-[11px] text-subtle group-hover:text-text transition"></i>
           </a>
 
           <a href="#" class="card p-5 flex items-center gap-4 group">
@@ -1411,7 +799,8 @@
               <p class="text-sm text-text truncate">GitHub Professional Certificate</p>
               <p class="mono text-[10.5px] text-subtle mt-0.5">GitHub · TODO: date</p>
             </div>
-            <i class="fa-solid fa-arrow-up-right-from-square text-[11px] text-subtle group-hover:text-text transition"></i>
+            <i
+              class="fa-solid fa-arrow-up-right-from-square text-[11px] text-subtle group-hover:text-text transition"></i>
           </a>
         </div>
 
@@ -1460,17 +849,11 @@
 
   <!-- ═════════════ FOOTER ═════════════ -->
   <footer class="border-t hairline mt-12">
-    <div class="max-w-5xl mx-auto px-6 lg:px-8 py-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
+    <div
+      class="max-w-5xl mx-auto px-6 lg:px-8 py-8 flex flex-col md:flex-row items-start md:items-center justify-center gap-3">
       <p class="text-xs text-subtle">
-        © <span id="year">2026</span> Muhammad Ibrahim Butt · Faisalabad, Pakistan
+        © <span id="year">2026</span> Muhammad Ibrahim Butt
       </p>
-      <div class="flex items-center gap-5 text-xs text-subtle">
-        <a href="https://github.com/muhammad-ibrahim-butt/muhammad-ibrahim-butt.github.io" target="_blank"
-          rel="noreferrer" class="hover:text-text transition flex items-center gap-1.5">
-          <i class="fa-solid fa-code-branch text-[10px]"></i>View source
-        </a>
-        <span class="mono">Built with HTML · Tailwind</span>
-      </div>
     </div>
   </footer>
 
@@ -1481,53 +864,7 @@
     <i class="fa-solid fa-arrow-up text-xs"></i>
   </button>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    const nav = document.getElementById('nav');
-    const onScroll = () => {
-      nav.classList.toggle('scrolled', window.scrollY > 12);
-      const btn = document.getElementById('scroll-top');
-      if (window.scrollY > 600) {
-        btn.classList.remove('opacity-0', 'invisible');
-        btn.classList.add('opacity-100', 'visible');
-      } else {
-        btn.classList.add('opacity-0', 'invisible');
-        btn.classList.remove('opacity-100', 'visible');
-      }
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-
-    const mobileToggle = document.getElementById('mobile-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    mobileToggle?.addEventListener('click', () => mobileMenu.classList.toggle('open'));
-    mobileMenu?.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => mobileMenu.classList.remove('open'));
-    });
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-    document.getElementById('scroll-top')?.addEventListener('click',
-      () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-    document.querySelectorAll('.card').forEach(card => {
-      card.addEventListener('pointermove', (e) => {
-        const r = card.getBoundingClientRect();
-        card.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100) + '%');
-        card.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100) + '%');
-      });
-    });
-  </script>
-
+  <script src="./assets/js/script.js" rel="preload" as="script"></script>
 </body>
 
 </html>
