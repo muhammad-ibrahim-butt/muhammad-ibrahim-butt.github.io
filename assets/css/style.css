@@ -544,16 +544,37 @@ body {
 
 .mockup-canvas {
     aspect-ratio: 16 / 10;
-    background:
-        linear-gradient(135deg, rgba(125, 211, 252, .04), transparent 50%),
-        repeating-linear-gradient(0deg, transparent 0 23px, var(--border) 23px 24px),
-        repeating-linear-gradient(90deg, transparent 0 23px, var(--border) 23px 24px),
-        var(--surface);
-    display: grid;
-    place-items: center;
-    color: var(--subtle);
-    font-family: 'JetBrains Mono', ui-monospace, monospace;
-    font-size: 10.5px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: var(--surface);
+    position: relative;
+}
+
+/* Image styling */
+.mockup-canvas img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* or 'contain' if you don't want cropping */
+    display: block;
+}
+
+.mockup-canvas::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(0deg, transparent 0 23px, var(--border) 23px 24px),
+    repeating-linear-gradient(90deg, transparent 0 23px, var(--border) 23px 24px);
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+/* Optional subtle overlay to keep your aesthetic */
+.mockup-canvas::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(125, 211, 252, .05), transparent 50%);
+    pointer-events: none;
 }
 
 /* ── Fade-in on scroll ── */
