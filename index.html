@@ -2,869 +2,916 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-    content="Muhammad Ibrahim Butt - Senior Software Engineer focused on AI automation, backend engineering, cloud-native systems, and applied machine learning." />
-  <meta name="author" content="Muhammad Ibrahim Butt" />
-  <meta name="theme-color" content="#0a0a0a" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description"
+          content="Muhammad Ibrahim Butt - Senior Software Engineer focused on AI automation, backend engineering, cloud-native systems, and applied machine learning."/>
+    <meta name="author" content="Muhammad Ibrahim Butt"/>
+    <meta name="theme-color" content="#0a0a0a"/>
 
-  <meta property="og:title" content="Muhammad Ibrahim Butt | AI Automation, Backend & Cloud Engineer" />
-  <meta property="og:description"
-    content="AI automation, backend engineering, cloud-native systems, and applied ML portfolio." />
-  <meta property="og:image" content="./assets/images/profile.JPG" />
-  <meta property="og:type" content="website" />
+    <meta property="og:title" content="Muhammad Ibrahim Butt | AI Automation, Backend & Cloud Engineer"/>
+    <meta property="og:description"
+          content="AI automation, backend engineering, cloud-native systems, and applied ML portfolio."/>
+    <meta property="og:image" content="https://muhammad-ibrahim-butt.github.io/assets/images/profile.JPG"/>
+    <meta property="og:url" content="https://muhammad-ibrahim-butt.github.io/"/>
+    <meta property="og:type" content="website"/>
 
-  <title>Muhammad Ibrahim Butt - Senior Software Engineer</title>
+    <title>Muhammad Ibrahim Butt - Senior Software Engineer</title>
 
-  <link rel="icon" type="image/jpeg" href="./assets/images/profile.JPG" />
+    <link rel="icon" type="image/jpeg" href="./assets/images/profile.JPG"/>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"
-    rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"
+            rel="stylesheet">
 
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-            serif: ['"Instrument Serif"', 'ui-serif', 'Georgia', 'serif'],
-            mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace']
-          }
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        serif: ['"Instrument Serif"', 'ui-serif', 'Georgia', 'serif'],
+                        mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace']
+                    }
+                }
+            }
         }
-      }
-    }
-  </script>
+    </script>
 
-  <link rel="stylesheet" href="./assets/css/style.css" rel="preload" as="style">
+    <link rel="stylesheet" href="./assets/css/style.css" as="style">
 </head>
 
 <body class="font-sans">
 
-  <!-- ═════════════ NAV ═════════════ -->
-  <header id="nav" class="nav-shell fixed top-0 left-0 right-0 z-50">
+<!-- ═════════════ NAV ═════════════ -->
+<header id="nav" class="nav-shell fixed top-0 left-0 right-0 z-50">
     <nav class="max-w-5xl mx-auto px-6 lg:px-8 py-4 flex items-center justify-between">
-      <a href="#top" class="flex items-center gap-3 group">
-        <img src="./assets/images/profile.JPG" alt="Muhammad Ibrahim Butt" class="avatar-mark">
-        <span class="text-sm text-text font-medium tracking-tight">Muhammad Ibrahim Butt</span>
-      </a>
-
-      <div class="hidden md:flex items-center gap-8">
-        <a href="#work" class="nav-link">Work</a>
-        <a href="#experience" class="nav-link">Experience</a>
-        <a href="#skills" class="nav-link">Skills</a>
-        <a href="#about" class="nav-link">About</a>
-        <a href="#contact" class="nav-link">Contact</a>
-        <a href="./assets/resume.pdf" target="_blank" class="btn btn-ghost btn-sm" download>
-          Resume <i class="fa-solid fa-arrow-down text-[10px]"></i>
+        <a href="#top" class="flex items-center gap-3 group">
+            <img src="./assets/images/profile.JPG" alt="Muhammad Ibrahim Butt" class="avatar-mark">
+            <span class="text-sm text-text font-medium tracking-tight">Muhammad Ibrahim Butt</span>
         </a>
-      </div>
 
-      <button id="mobile-toggle" class="md:hidden text-muted hover:text-text transition" aria-label="Toggle menu">
-        <i class="fa-solid fa-bars text-lg"></i>
-      </button>
+        <div class="hidden md:flex items-center gap-8">
+            <a href="#work" class="nav-link">Work</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#contact" class="nav-link">Contact</a>
+            <a href="./assets/resume.pdf" target="_blank" class="btn btn-ghost btn-sm" download>
+                Resume <i class="fa-solid fa-arrow-down text-[10px]"></i>
+            </a>
+        </div>
+
+        <button id="mobile-toggle" class="md:hidden text-muted hover:text-text transition" aria-label="Toggle menu">
+            <i class="fa-solid fa-bars text-lg"></i>
+        </button>
     </nav>
 
     <div id="mobile-menu" class="mobile-menu md:hidden flex-col gap-1 px-6 pb-5 border-t hairline">
-      <a href="#work" class="py-3 text-sm text-muted hover:text-text border-b hairline">Work</a>
-      <a href="#experience" class="py-3 text-sm text-muted hover:text-text border-b hairline">Experience</a>
-      <a href="#skills" class="py-3 text-sm text-muted hover:text-text border-b hairline">Skills</a>
-      <a href="#about" class="py-3 text-sm text-muted hover:text-text border-b hairline">About</a>
-      <a href="#contact" class="py-3 text-sm text-muted hover:text-text border-b hairline">Contact</a>
-      <a href="./assets/resume.pdf" target="_blank" class="py-3 text-sm text-text" download>Download Resume →</a>
+        <a href="#work" class="py-3 text-sm text-muted hover:text-text border-b hairline">Work</a>
+        <a href="#experience" class="py-3 text-sm text-muted hover:text-text border-b hairline">Experience</a>
+        <a href="#skills" class="py-3 text-sm text-muted hover:text-text border-b hairline">Skills</a>
+        <a href="#about" class="py-3 text-sm text-muted hover:text-text border-b hairline">About</a>
+        <a href="#contact" class="py-3 text-sm text-muted hover:text-text border-b hairline">Contact</a>
+        <a href="./assets/resume.pdf" target="_blank" class="py-3 text-sm text-text" download>Download Resume →</a>
     </div>
-  </header>
+</header>
 
-  <main id="top" class="max-w-5xl mx-auto px-6 lg:px-8 pt-32 md:pt-40">
+<main id="top" class="max-w-5xl mx-auto px-6 lg:px-8 pt-32 md:pt-40">
 
     <!-- ═════════════ HERO ═════════════ -->
     <section class="pb-24 md:pb-32">
-      <div class="flex items-center gap-3 mb-10 fade-in">
-        <span class="status-dot"></span>
-        <span class="eyebrow">Available for select engagements</span>
-      </div>
+        <div class="flex items-center gap-3 mb-10 fade-in">
+            <span class="status-dot"></span>
+            <span class="eyebrow">Available for select engagements</span>
+        </div>
 
-      <h1 class="h-display fade-in">
-        Senior engineer building<br>
-        <span class="serif">AI&nbsp;automation</span>, backend<br>
-        platforms, and <span class="serif">cloud-native</span><br>
-        systems.
-      </h1>
+        <h1 class="h-display fade-in">
+            Senior engineer building<br>
+            <span class="serif">AI&nbsp;automation</span>, backend<br>
+            platforms, and <span class="serif">cloud-native</span><br>
+            systems.
+        </h1>
 
-      <p class="lead mt-10 max-w-2xl fade-in">
-        Muhammad Ibrahim Butt - six years shipping production systems where business
-        workflows, APIs, data, and AI capabilities meet. Currently leading agentic AI
-        evaluation at Turing and building finance-automation platforms with Laravel and C#.
-      </p>
+        <p class="lead mt-10 max-w-2xl fade-in">
+            Muhammad Ibrahim Butt - six years shipping production systems where business
+            workflows, APIs, data, and AI capabilities meet. Currently leading agentic AI
+            evaluation at Turing and building finance-automation platforms with Laravel and C#.
+        </p>
 
-      <div class="mt-10 flex flex-wrap items-center gap-3 fade-in">
-        <a href="#work" class="btn btn-primary">
-          View selected work <i class="fa-solid fa-arrow-right text-[11px]"></i>
-        </a>
-        <a href="./assets/resume.pdf" target="_blank" class="btn btn-ghost" download>
-          <i class="fa-solid fa-download text-[11px]"></i> Download resume
-        </a>
-        <a href="mailto:m.ibrahim8325@gmail.com" class="btn btn-ghost">
-          <i class="fa-regular fa-envelope text-[11px]"></i> Get in touch
-        </a>
-      </div>
+        <div class="mt-10 flex flex-wrap items-center gap-3 fade-in">
+            <a href="#work" class="btn btn-primary">
+                View selected work <i class="fa-solid fa-arrow-right text-[11px]"></i>
+            </a>
+            <a href="./assets/resume.pdf" target="_blank" class="btn btn-ghost" download>
+                <i class="fa-solid fa-download text-[11px]"></i> Download resume
+            </a>
+            <a href="mailto:m.ibrahim8325@gmail.com" class="btn btn-ghost">
+                <i class="fa-regular fa-envelope text-[11px]"></i> Get in touch
+            </a>
+        </div>
 
-      <div class="mt-14 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-subtle fade-in">
+        <div class="mt-14 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-subtle fade-in">
         <span class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-[11px]"></i>Faisalabad,
           Pakistan</span>
-        <span class="flex items-center gap-2"><i class="fa-regular fa-clock text-[11px]"></i>Remote · Global</span>
-        <a href="https://github.com/muhammad-ibrahim-butt" target="_blank" rel="noreferrer"
-          class="flex items-center gap-2 hover:text-text transition"><i class="fa-brands fa-github"></i>GitHub</a>
-        <a href="https://linkedin.com/in/muhammad-ibrahim-butt" target="_blank" rel="noreferrer"
-          class="flex items-center gap-2 hover:text-text transition"><i class="fa-brands fa-linkedin"></i>LinkedIn</a>
-        <a href="https://g.dev/muhammadibrahimbutt" target="_blank" rel="noreferrer"
-          class="flex items-center gap-2 hover:text-text transition">
-          <img src="./assets/tools/google-dev.png" class="w-3.5 h-3.5" alt="">Google Developers
-        </a>
-      </div>
+            <span class="flex items-center gap-2"><i class="fa-regular fa-clock text-[11px]"></i>Remote · Global</span>
+            <a href="https://github.com/muhammad-ibrahim-butt" target="_blank" rel="noreferrer"
+               class="flex items-center gap-2 hover:text-text transition"><i class="fa-brands fa-github"></i>GitHub</a>
+            <a href="https://linkedin.com/in/muhammad-ibrahim-butt" target="_blank" rel="noreferrer"
+               class="flex items-center gap-2 hover:text-text transition"><i class="fa-brands fa-linkedin"></i>LinkedIn</a>
+            <a href="https://g.dev/muhammadibrahimbutt" target="_blank" rel="noreferrer"
+               class="flex items-center gap-2 hover:text-text transition">
+                <img src="./assets/tools/google-dev.png" class="w-3.5 h-3.5" alt="">Google Developers
+            </a>
+        </div>
     </section>
 
     <!-- ═════════════ COMPANIES MARQUEE ═════════════ -->
     <section class="pb-24 fade-in">
-      <p class="eyebrow mb-8">Trusted by teams at</p>
-      <div class="marquee">
-        <div class="marquee-track">
-          <img class="company-logo" src="./assets/companies/turing.png" alt="Turing">
-          <img class="company-logo" src="./assets/companies/mercor.png" alt="Mercor">
-          <img class="company-logo" src="./assets/companies/superannotate.png" alt="SuperAnnotate">
-          <img class="company-logo" src="./assets/companies/micro1.png" alt="micro1">
-          <img class="company-logo" src="./assets/companies/fiverr.png" alt="Fiverr">
-          <img class="company-logo" src="./assets/companies/turing.png" alt="Turing">
-          <img class="company-logo" src="./assets/companies/mercor.png" alt="Mercor">
-          <img class="company-logo" src="./assets/companies/superannotate.png" alt="SuperAnnotate">
-          <img class="company-logo" src="./assets/companies/micro1.png" alt="micro1">
-          <img class="company-logo" src="./assets/companies/fiverr.png" alt="Fiverr">
+        <p class="eyebrow mb-8">Trusted by teams at</p>
+        <div class="marquee">
+            <div class="marquee-track">
+                <img class="company-logo" src="./assets/companies/turing.png" alt="Turing">
+                <img class="company-logo" src="./assets/companies/mercor.png" alt="Mercor">
+                <img class="company-logo" src="./assets/companies/superannotate.png" alt="SuperAnnotate">
+                <img class="company-logo" src="./assets/companies/micro1.png" alt="micro1">
+                <img class="company-logo" src="./assets/companies/fiverr.png" alt="Fiverr">
+                <img class="company-logo" src="./assets/companies/turing.png" alt="Turing">
+                <img class="company-logo" src="./assets/companies/mercor.png" alt="Mercor">
+                <img class="company-logo" src="./assets/companies/superannotate.png" alt="SuperAnnotate">
+                <img class="company-logo" src="./assets/companies/micro1.png" alt="micro1">
+                <img class="company-logo" src="./assets/companies/fiverr.png" alt="Fiverr">
+            </div>
         </div>
-      </div>
     </section>
 
     <!-- ═════════════ STATS ═════════════ -->
     <section class="pb-32 fade-in">
-      <div class="grid grid-cols-2 md:grid-cols-4 border-t border-l hairline">
-        <div class="p-7 md:p-9 border-r border-b hairline">
-          <p class="stat-num">70<span class="text-subtle">%</span></p>
-          <p class="stat-label">API response improved</p>
+        <div class="grid grid-cols-2 md:grid-cols-4 border-t border-l hairline">
+            <div class="p-7 md:p-9 border-r border-b hairline">
+                <p class="stat-num">70<span class="text-subtle">%</span></p>
+                <p class="stat-label">Faster API response across clients</p>
+            </div>
+            <div class="p-7 md:p-9 border-r border-b hairline">
+                <p class="stat-num">60<span class="text-subtle">%</span></p>
+                <p class="stat-label">Faster backend deployments</p>
+            </div>
+            <div class="p-7 md:p-9 border-r border-b hairline">
+                <p class="stat-num">500<span class="text-subtle">+</span></p>
+                <p class="stat-label">Enterprise AI scenarios benchmarked</p>
+            </div>
+            <div class="p-7 md:p-9 border-r border-b hairline">
+                <p class="stat-num">99.9<span class="text-subtle">%</span></p>
+                <p class="stat-label">Uptime sustained on cloud migration</p>
+            </div>
         </div>
-        <div class="p-7 md:p-9 border-r border-b hairline">
-          <p class="stat-num">60<span class="text-subtle">%</span></p>
-          <p class="stat-label">Faster deployments</p>
-        </div>
-        <div class="p-7 md:p-9 border-r border-b hairline">
-          <p class="stat-num">500<span class="text-subtle">+</span></p>
-          <p class="stat-label">AI scenarios benchmarked</p>
-        </div>
-        <div class="p-7 md:p-9 border-r border-b hairline">
-          <p class="stat-num">99.9<span class="text-subtle">%</span></p>
-          <p class="stat-label">Uptime delivered</p>
-        </div>
-      </div>
     </section>
 
     <!-- ═════════════ ABOUT ═════════════ -->
     <section id="about" class="pb-32 fade-in">
-      <div class="flex items-baseline justify-between mb-12">
-        <div>
-          <p class="eyebrow mb-4">01 - About</p>
-          <h2 class="h-section">A short <span class="serif">introduction</span></h2>
-        </div>
-      </div>
-
-      <div class="grid md:grid-cols-12 gap-10 md:gap-16">
-        <div class="md:col-span-7 space-y-6 body">
-          <p class="text-text text-lg leading-[1.55]" style="letter-spacing:-0.015em">
-            I'm a senior software engineer working at the intersection of AI automation,
-            backend engineering, and cloud-native systems - building production platforms
-            with Python, Laravel, C#/.NET, Node.js, and modern AI tooling for agentic
-            workflows and data-driven products.
-          </p>
-          <p>
-            At <span class="text-text">Turing</span>, I lead a pod of 10 AI trainers focused on
-            agentic AI development, evaluation, and RLHF - improving task completion by 40%
-            and cutting deployment time by 60% across 500+ enterprise scenarios. At
-            <span class="text-text">Linx Computations</span> and <span class="text-text">DevXen</span>,
-            I've shipped Laravel and C# automation platforms, finance integrations, and
-            ML-powered services that reduced manual work by 60% and improved API response
-            times by up to 70%.
-          </p>
-          <p>
-            I'm strongest where business workflows, APIs, integrations, data, and AI
-            capabilities converge - internal platforms, finance and operations automation,
-            evaluation frameworks, ML-powered features, and backend services that need to
-            scale reliably.
-          </p>
+        <div class="flex items-baseline justify-between mb-12">
+            <div>
+                <p class="eyebrow mb-4">01 - About</p>
+                <h2 class="h-section">A short <span class="serif">introduction</span></h2>
+            </div>
         </div>
 
-        <aside class="md:col-span-5">
-          <dl class="border-t hairline">
-            <div class="flex items-baseline justify-between gap-4 py-4 border-b hairline">
-              <dt class="mono text-xs text-subtle uppercase tracking-wider">Based in</dt>
-              <dd class="text-sm text-text">Faisalabad, Pakistan</dd>
+        <div class="grid md:grid-cols-12 gap-10 md:gap-16">
+            <div class="md:col-span-7 space-y-6 body">
+                <p class="text-text text-lg leading-[1.55]" style="letter-spacing:-0.015em">
+                    I'm a senior software engineer working at the intersection of AI automation,
+                    backend engineering, and cloud-native systems - building production platforms
+                    with Python, Laravel, C#/.NET, Node.js, and modern AI tooling for agentic
+                    workflows and data-driven products.
+                </p>
+                <p>
+                    At <span class="text-text">Turing</span>, I lead a pod of 10 AI trainers focused on
+                    agentic AI development, evaluation, and RLHF - improving task completion by 40%
+                    and cutting deployment time by 60% across 500+ enterprise scenarios. At
+                    <span class="text-text">Linx Computations</span> and <span class="text-text">DevXen</span>,
+                    I've shipped Laravel and C# automation platforms, finance integrations, and
+                    ML-powered services that reduced manual work by 60% and improved API response
+                    times by up to 70%.
+                </p>
+                <p>
+                    I'm strongest where business workflows, APIs, integrations, data, and AI
+                    capabilities converge - internal platforms, finance and operations automation,
+                    evaluation frameworks, ML-powered features, and backend services that need to
+                    scale reliably.
+                </p>
             </div>
-            <div class="flex items-baseline justify-between gap-4 py-4 border-b hairline">
-              <dt class="mono text-xs text-subtle uppercase tracking-wider">Experience</dt>
-              <dd class="text-sm text-text">5+ years</dd>
-            </div>
-            <div class="flex items-baseline justify-between gap-4 py-4 border-b hairline">
-              <dt class="mono text-xs text-subtle uppercase tracking-wider">Focus</dt>
-              <dd class="text-sm text-text text-right">AI automation · Backend · Cloud</dd>
-            </div>
-            <div class="flex items-baseline justify-between gap-4 py-4 border-b hairline">
-              <dt class="mono text-xs text-subtle uppercase tracking-wider">Availability</dt>
-              <dd class="text-sm text-text flex items-center gap-2">
-                <span class="status-dot"></span>Remote · Global
-              </dd>
-            </div>
-            <div class="flex items-baseline justify-between gap-4 py-4 border-b hairline">
-              <dt class="mono text-xs text-subtle uppercase tracking-wider">Email</dt>
-              <dd class="text-sm">
-                <a href="mailto:m.ibrahim8325@gmail.com"
-                  class="text-text hover:text-accent transition">m.ibrahim8325@gmail.com</a>
-              </dd>
-            </div>
-          </dl>
-        </aside>
-      </div>
+
+            <aside class="md:col-span-5">
+                <dl class="border-t hairline">
+                    <div class="flex items-baseline justify-between gap-4 py-4 border-b hairline">
+                        <dt class="mono text-xs text-subtle uppercase tracking-wider">Based in</dt>
+                        <dd class="text-sm text-text">Faisalabad, Pakistan</dd>
+                    </div>
+                    <div class="flex items-baseline justify-between gap-4 py-4 border-b hairline">
+                        <dt class="mono text-xs text-subtle uppercase tracking-wider">Experience</dt>
+                        <dd class="text-sm text-text">Six years</dd>
+                    </div>
+                    <div class="flex items-baseline justify-between gap-4 py-4 border-b hairline">
+                        <dt class="mono text-xs text-subtle uppercase tracking-wider">Focus</dt>
+                        <dd class="text-sm text-text text-right">AI automation · Backend · Cloud</dd>
+                    </div>
+                    <div class="flex items-baseline justify-between gap-4 py-4 border-b hairline">
+                        <dt class="mono text-xs text-subtle uppercase tracking-wider">Availability</dt>
+                        <dd class="text-sm text-text flex items-center gap-2">
+                            <span class="status-dot"></span>Remote · Global
+                        </dd>
+                    </div>
+                    <div class="flex items-baseline justify-between gap-4 py-4 border-b hairline">
+                        <dt class="mono text-xs text-subtle uppercase tracking-wider">Email</dt>
+                        <dd class="text-sm">
+                            <a href="mailto:m.ibrahim8325@gmail.com"
+                               class="text-text hover:text-accent transition">m.ibrahim8325@gmail.com</a>
+                        </dd>
+                    </div>
+                </dl>
+            </aside>
+        </div>
     </section>
 
     <!-- ═════════════ SELECTED WORK ═════════════ -->
     <section id="work" class="pb-32 fade-in">
-      <div class="mb-12">
-        <p class="eyebrow mb-4">02 - Selected work</p>
-        <h2 class="h-section">A few things I've <span class="serif">shipped</span></h2>
-      </div>
-
-      <!-- Featured: Linx Finance Platform -->
-      <article class="card mb-6 group">
-        <div class="grid lg:grid-cols-12 gap-0">
-          <div class="lg:col-span-7 p-6 md:p-8 lg:p-10 border-b lg:border-b-0 lg:border-r hairline">
-            <div class="grid grid-cols-2 gap-4">
-              <div class="browser">
-                <div class="browser-bar">
-                  <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-                  <span class="browser-url">linx.app/dashboard</span>
-                </div>
-                <div class="mockup-canvas">./assets/projects/linx-dashboard.png</div>
-              </div>
-              <div class="browser">
-                <div class="browser-bar">
-                  <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-                  <span class="browser-url">linx.app/invoices</span>
-                </div>
-                <div class="mockup-canvas">./assets/projects/linx-invoices.png</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="lg:col-span-5 p-6 md:p-8 lg:p-10 flex flex-col">
-            <div class="flex items-center gap-2 mb-5">
-              <span class="tag-featured"><i class="fa-solid fa-star text-[9px]"></i>Featured</span>
-              <span class="mono text-[11px] text-subtle">Linx Computations · 2024 - Now</span>
-            </div>
-            <h3 class="text-2xl text-text font-medium tracking-tight leading-tight mb-4">
-              Finance &amp; operations automation platform
-            </h3>
-            <p class="body mb-6">
-              End-to-end automation for invoicing, inventory, ledger management, and finance
-              workflows. Laravel + C# backends with bi-directional QuickBooks API sync,
-              automated tax calculation across 10,000+ invoices, and POS integrations -
-              replacing manual accounting with reliable, auditable software.
-            </p>
-
-            <div class="grid grid-cols-3 gap-4 py-5 border-y hairline mb-6">
-              <div>
-                <p class="font-serif text-2xl text-text" style="font-family:'Instrument Serif',serif">10K<span
-                    class="text-subtle">+</span></p>
-                <p class="mono text-[10px] text-subtle uppercase tracking-wider mt-1">invoices</p>
-              </div>
-              <div>
-                <p class="font-serif text-2xl text-text" style="font-family:'Instrument Serif',serif">60<span
-                    class="text-subtle">%</span></p>
-                <p class="mono text-[10px] text-subtle uppercase tracking-wider mt-1">less manual</p>
-              </div>
-              <div>
-                <p class="font-serif text-2xl text-text" style="font-family:'Instrument Serif',serif">50<span
-                    class="text-subtle">%</span></p>
-                <p class="mono text-[10px] text-subtle uppercase tracking-wider mt-1">faster api</p>
-              </div>
-            </div>
-
-            <div class="flex flex-wrap gap-1.5 mt-auto">
-              <span class="chip chip-sm">Laravel</span>
-              <span class="chip chip-sm">C# / .NET</span>
-              <span class="chip chip-sm">QuickBooks API</span>
-              <span class="chip chip-sm">Stripe</span>
-              <span class="chip chip-sm">MySQL</span>
-              <span class="chip chip-sm">REST</span>
-            </div>
-          </div>
+        <div class="mb-12">
+            <p class="eyebrow mb-4">02 - Selected work</p>
+            <h2 class="h-section">A few things I've <span class="serif">shipped</span></h2>
         </div>
-      </article>
 
-      <!-- 3 supporting projects -->
-      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Featured: Linx Finance Platform -->
+        <article class="card mb-6 group">
+            <div class="grid lg:grid-cols-12 gap-0">
+                <div class="lg:col-span-7 p-6 md:p-8 lg:p-10 border-b lg:border-b-0 lg:border-r hairline">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="browser">
+                            <div class="browser-bar">
+                                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                                <span class="browser-url">linx.app/dashboard</span>
+                            </div>
+                            <div class="mockup-canvas">./assets/projects/linx-dashboard.png</div>
+                        </div>
+                        <div class="browser">
+                            <div class="browser-bar">
+                                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                                <span class="browser-url">linx.app/invoices</span>
+                            </div>
+                            <div class="mockup-canvas">./assets/projects/linx-invoices.png</div>
+                        </div>
+                    </div>
+                </div>
 
-        <article class="card p-7">
-          <div class="flex items-center justify-between mb-6">
-            <div class="monogram"><img src="./assets/companies/turing.png" alt="Turing"></div>
-            <span class="mono text-[10px] text-subtle">2025 - 2026</span>
-          </div>
-          <h3 class="text-base text-text font-medium tracking-tight mb-3 leading-snug">
-            Agentic AI training &amp; evaluation
-          </h3>
-          <p class="body text-sm mb-5">
-            Built evaluation frameworks across 500+ enterprise scenarios; improved task
-            completion by 40% and cut deployment time by 60% leading a pod of 10 AI trainers.
-          </p>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="chip chip-sm">Python</span>
-            <span class="chip chip-sm">Agentic AI</span>
-            <span class="chip chip-sm">RLHF</span>
-            <span class="chip chip-sm">LLM Eval</span>
-          </div>
+                <div class="lg:col-span-5 p-6 md:p-8 lg:p-10 flex flex-col">
+                    <div class="flex items-center gap-2 mb-5">
+                        <span class="tag-featured"><i class="fa-solid fa-star text-[9px]"></i>Featured</span>
+                        <span class="mono text-[11px] text-subtle">Linx Computations · 2024 - Now</span>
+                    </div>
+                    <h3 class="text-2xl text-text font-medium tracking-tight leading-tight mb-4">
+                        Finance &amp; operations automation platform
+                    </h3>
+                    <p class="body mb-6">
+                        End-to-end automation for invoicing, inventory, ledger management, and finance
+                        workflows. Laravel + C# backends with bidirectional QuickBooks API sync,
+                        automated tax calculation across 10,000+ invoices, and POS integrations -
+                        replacing manual accounting with reliable, auditable software.
+                    </p>
+
+                    <div class="grid grid-cols-3 gap-4 py-5 border-y hairline mb-6">
+                        <div>
+                            <p class="font-serif text-2xl text-text" style="font-family:'Instrument Serif',serif">
+                                10K<span
+                                    class="text-subtle">+</span></p>
+                            <p class="mono text-[10px] text-subtle uppercase tracking-wider mt-1">invoices</p>
+                        </div>
+                        <div>
+                            <p class="font-serif text-2xl text-text" style="font-family:'Instrument Serif',serif">
+                                60<span
+                                    class="text-subtle">%</span></p>
+                            <p class="mono text-[10px] text-subtle uppercase tracking-wider mt-1">less manual</p>
+                        </div>
+                        <div>
+                            <p class="font-serif text-2xl text-text" style="font-family:'Instrument Serif',serif">
+                                50<span
+                                    class="text-subtle">%</span></p>
+                            <p class="mono text-[10px] text-subtle uppercase tracking-wider mt-1">faster api</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-1.5 mt-auto">
+                        <span class="chip chip-sm">Laravel</span>
+                        <span class="chip chip-sm">C# / .NET</span>
+                        <span class="chip chip-sm">QuickBooks API</span>
+                        <span class="chip chip-sm">Stripe</span>
+                        <span class="chip chip-sm">MySQL</span>
+                        <span class="chip chip-sm">REST</span>
+                    </div>
+                </div>
+            </div>
         </article>
 
-        <article class="card p-7">
-          <div class="flex items-center justify-between mb-6">
-            <div class="monogram">D</div>
-            <span class="mono text-[10px] text-subtle">2024 - 2025</span>
-          </div>
-          <h3 class="text-base text-text font-medium tracking-tight mb-3 leading-snug">
-            Predictive maintenance &amp; NLP systems
-          </h3>
-          <p class="body text-sm mb-5">
-            ML applications for operational and customer data: 20% lift in failure
-            prediction across 500+ machines and 85% sentiment classification accuracy.
-          </p>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="chip chip-sm">Python</span>
-            <span class="chip chip-sm">Scikit-learn</span>
-            <span class="chip chip-sm">NLP</span>
-            <span class="chip chip-sm">Real-time</span>
-          </div>
-        </article>
+        <!-- 3 supporting projects -->
+        <div class="grid md:grid-cols-3 gap-6">
 
-        <article class="card p-7">
-          <div class="flex items-center justify-between mb-6">
-            <div class="monogram">M</div>
-            <span class="mono text-[10px] text-subtle">2022 - 2024</span>
-          </div>
-          <h3 class="text-base text-text font-medium tracking-tight mb-3 leading-snug">
-            Cloud-native migration platform
-          </h3>
-          <p class="body text-sm mb-5">
-            Moved legacy monoliths to a containerized AWS architecture with Docker, K8s, and
-            Redis caching. 30% lower cost, 60% better latency, 99.9% uptime sustained.
-          </p>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="chip chip-sm">Docker</span>
-            <span class="chip chip-sm">Kubernetes</span>
-            <span class="chip chip-sm">AWS</span>
-            <span class="chip chip-sm">Redis</span>
-          </div>
-        </article>
+            <article class="card p-7">
+                <div class="flex items-center justify-between mb-6">
+                    <div class="monogram"><img src="./assets/companies/turing.png" alt="Turing"></div>
+                    <span class="mono text-[10px] text-subtle">2025 - 2026</span>
+                </div>
+                <h3 class="text-base text-text font-medium tracking-tight mb-3 leading-snug">
+                    Agentic AI training &amp; evaluation
+                </h3>
+                <p class="body text-sm mb-5">
+                    Built evaluation frameworks across 500+ enterprise scenarios; improved task
+                    completion by 40% and cut deployment time by 60% leading a pod of 10 AI trainers.
+                </p>
+                <div class="flex flex-wrap gap-1.5">
+                    <span class="chip chip-sm">Python</span>
+                    <span class="chip chip-sm">Agentic AI</span>
+                    <span class="chip chip-sm">RLHF</span>
+                    <span class="chip chip-sm">LLM Eval</span>
+                </div>
+            </article>
 
-      </div>
+            <article class="card p-7">
+                <div class="flex items-center justify-between mb-6">
+                    <div class="monogram">D</div>
+                    <span class="mono text-[10px] text-subtle">2024 - 2025</span>
+                </div>
+                <h3 class="text-base text-text font-medium tracking-tight mb-3 leading-snug">
+                    Predictive maintenance &amp; NLP systems
+                </h3>
+                <p class="body text-sm mb-5">
+                    ML applications for operational and customer data: 20% lift in failure
+                    prediction across 500+ machines and 85% sentiment classification accuracy.
+                </p>
+                <div class="flex flex-wrap gap-1.5">
+                    <span class="chip chip-sm">Python</span>
+                    <span class="chip chip-sm">Scikit-learn</span>
+                    <span class="chip chip-sm">NLP</span>
+                    <span class="chip chip-sm">Real-time</span>
+                </div>
+            </article>
+
+            <article class="card p-7">
+                <div class="flex items-center justify-between mb-6">
+                    <div class="monogram">M</div>
+                    <span class="mono text-[10px] text-subtle">2022 - 2024</span>
+                </div>
+                <h3 class="text-base text-text font-medium tracking-tight mb-3 leading-snug">
+                    Cloud-native migration platform
+                </h3>
+                <p class="body text-sm mb-5">
+                    Moved legacy monoliths to a containerized AWS architecture with Docker, K8s, and
+                    Redis caching. 30% lower cost, 60% better latency, 99.9% uptime sustained.
+                </p>
+                <div class="flex flex-wrap gap-1.5">
+                    <span class="chip chip-sm">Docker</span>
+                    <span class="chip chip-sm">Kubernetes</span>
+                    <span class="chip chip-sm">AWS</span>
+                    <span class="chip chip-sm">Redis</span>
+                </div>
+            </article>
+
+        </div>
     </section>
 
     <!-- ═════════════ EXPERIENCE ═════════════ -->
     <section id="experience" class="pb-32 fade-in">
-      <div class="mb-12">
-        <p class="eyebrow mb-4">03 - Experience</p>
-        <h2 class="h-section">Where I've <span class="serif">worked</span></h2>
-      </div>
-
-      <div class="timeline space-y-12">
-
-        <!-- Turing -->
-        <div class="timeline-item">
-          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-4">
-            <div class="flex items-start gap-4">
-              <div class="monogram"><img src="./assets/companies/turing.png" alt="Turing"></div>
-              <div>
-                <h3 class="text-lg text-text font-medium tracking-tight">Pod Lead <span
-                    class="text-subtle font-normal text-sm">· Contract</span></h3>
-                <p class="text-sm text-muted mt-0.5">Turing <span class="text-subtle">- Remote · Palo Alto, CA</span>
-                </p>
-              </div>
-            </div>
-            <span class="mono text-[11px] text-subtle md:pt-1">Aug 2025 - Apr 2026</span>
-          </div>
-
-          <ul class="space-y-2 body text-sm md:pl-14">
-            <li>Led a pod of <span class="text-text">10 AI trainers</span> focused on agentic AI development,
-              evaluation, RLHF, and multi-step reasoning.</li>
-            <li>Improved task completion rates by <span class="text-text">40%</span> and reduced deployment time by
-              <span class="text-text">60%</span> across complex workflow evaluations.</li>
-            <li>Built training protocols and benchmarking frameworks spanning <span class="text-text">500+ test
-                scenarios</span> for enterprise AI use cases.</li>
-            <li>Established quality gates and review workflows that improved evaluation consistency across the pod.</li>
-          </ul>
-
-          <div class="flex flex-wrap gap-1.5 mt-5 md:pl-14">
-            <span class="chip chip-sm">Python</span>
-            <span class="chip chip-sm">Agentic AI</span>
-            <span class="chip chip-sm">RLHF</span>
-            <span class="chip chip-sm">LLM Evaluation</span>
-            <span class="chip chip-sm">Benchmarking</span>
-            <span class="chip chip-sm">Pod Leadership</span>
-          </div>
+        <div class="mb-12">
+            <p class="eyebrow mb-4">03 - Experience</p>
+            <h2 class="h-section">Where I've <span class="serif">worked</span></h2>
         </div>
 
-        <!-- Linx -->
-        <div class="timeline-item">
-          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-4">
-            <div class="flex items-start gap-4">
-              <div class="monogram">L</div>
-              <div>
-                <h3 class="text-lg text-text font-medium tracking-tight">Senior Software Engineer <span
-                    class="text-subtle font-normal text-sm">· Contract</span></h3>
-                <p class="text-sm text-muted mt-0.5">Linx Computations Inc. <span class="text-subtle">- Remote · New
+        <div class="timeline space-y-12">
+
+            <!-- Turing -->
+            <div class="timeline-item">
+                <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-4">
+                    <div class="flex items-start gap-4">
+                        <div class="monogram"><img src="./assets/companies/turing.png" alt="Turing"></div>
+                        <div>
+                            <h3 class="text-lg text-text font-medium tracking-tight">Pod Lead <span
+                                    class="text-subtle font-normal text-sm">· Contract</span></h3>
+                            <p class="text-sm text-muted mt-0.5">Turing <span class="text-subtle">- Remote · Palo Alto, CA</span>
+                            </p>
+                        </div>
+                    </div>
+                    <span class="mono text-[11px] text-subtle md:pt-1">Aug 2025 - Apr 2026</span>
+                </div>
+
+                <ul class="space-y-2 body text-sm md:pl-14">
+                    <li>Led a pod of <span class="text-text">10 AI trainers</span> focused on agentic AI development,
+                        evaluation, RLHF, and multistep reasoning.
+                    </li>
+                    <li>Improved task completion rates by <span class="text-text">40%</span> and reduced deployment time
+                        by
+                        <span class="text-text">60%</span> across complex workflow evaluations.
+                    </li>
+                    <li>Built training protocols and benchmarking frameworks spanning <span class="text-text">500+ test
+                scenarios</span> for enterprise AI use cases.
+                    </li>
+                    <li>Established quality gates and review workflows that improved evaluation consistency across the
+                        pod.
+                    </li>
+                </ul>
+
+                <div class="flex flex-wrap gap-1.5 mt-5 md:pl-14">
+                    <span class="chip chip-sm">Python</span>
+                    <span class="chip chip-sm">Agentic AI</span>
+                    <span class="chip chip-sm">RLHF</span>
+                    <span class="chip chip-sm">LLM Evaluation</span>
+                    <span class="chip chip-sm">Benchmarking</span>
+                    <span class="chip chip-sm">Pod Leadership</span>
+                </div>
+            </div>
+
+            <!-- Linx -->
+            <div class="timeline-item">
+                <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-4">
+                    <div class="flex items-start gap-4">
+                        <div class="monogram">L</div>
+                        <div>
+                            <h3 class="text-lg text-text font-medium tracking-tight">Senior Software Engineer <span
+                                    class="text-subtle font-normal text-sm">· Contract</span></h3>
+                            <p class="text-sm text-muted mt-0.5">Linx Computations Inc. <span class="text-subtle">- Remote · New
                     York, NY</span></p>
-              </div>
+                        </div>
+                    </div>
+                    <span class="mono text-[11px] text-subtle md:pt-1">May 2024 - Present</span>
+                </div>
+
+                <ul class="space-y-2 body text-sm md:pl-14">
+                    <li>Built automation-first business systems with Laravel and C# for POS, inventory, ledger
+                        management, and
+                        <span class="text-text">QuickBooks integration</span>.
+                    </li>
+                    <li>Developed finance automation workflows that reduced manual data entry by <span
+                            class="text-text">60%</span> and improved accounting accuracy.
+                    </li>
+                    <li>Improved backend response time by <span class="text-text">50%</span> under high load through
+                        better
+                        architecture and query optimization.
+                    </li>
+                    <li>Automated tax calculations across <span class="text-text">10,000+ invoices</span> with
+                        bidirectional QuickBooks sync.
+                    </li>
+                </ul>
+
+                <div class="flex flex-wrap gap-1.5 mt-5 md:pl-14">
+                    <span class="chip chip-sm">Laravel</span>
+                    <span class="chip chip-sm">PHP</span>
+                    <span class="chip chip-sm">C# / .NET</span>
+                    <span class="chip chip-sm">QuickBooks API</span>
+                    <span class="chip chip-sm">MySQL</span>
+                    <span class="chip chip-sm">Stripe</span>
+                    <span class="chip chip-sm">REST APIs</span>
+                </div>
             </div>
-            <span class="mono text-[11px] text-subtle md:pt-1">May 2024 - Present</span>
-          </div>
 
-          <ul class="space-y-2 body text-sm md:pl-14">
-            <li>Built automation-first business systems with Laravel and C# for POS, inventory, ledger management, and
-              <span class="text-text">QuickBooks integration</span>.</li>
-            <li>Developed finance automation workflows that reduced manual data entry by <span
-                class="text-text">60%</span> and improved accounting accuracy.</li>
-            <li>Improved backend response time by <span class="text-text">50%</span> under high load through better
-              architecture and query optimization.</li>
-            <li>Automated tax calculations across <span class="text-text">10,000+ invoices</span> with bi-directional
-              QuickBooks sync.</li>
-          </ul>
+            <!-- DevXen -->
+            <div class="timeline-item">
+                <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-4">
+                    <div class="flex items-start gap-4">
+                        <div class="monogram">D</div>
+                        <div>
+                            <h3 class="text-lg text-text font-medium tracking-tight">Senior Software Engineer</h3>
+                            <p class="text-sm text-muted mt-0.5">DevXen <span class="text-subtle">- Remote · Wollongong, NSW</span>
+                            </p>
+                        </div>
+                    </div>
+                    <span class="mono text-[11px] text-subtle md:pt-1">May 2024 - Jul 2025</span>
+                </div>
 
-          <div class="flex flex-wrap gap-1.5 mt-5 md:pl-14">
-            <span class="chip chip-sm">Laravel</span>
-            <span class="chip chip-sm">PHP</span>
-            <span class="chip chip-sm">C# / .NET</span>
-            <span class="chip chip-sm">QuickBooks API</span>
-            <span class="chip chip-sm">MySQL</span>
-            <span class="chip chip-sm">Stripe</span>
-            <span class="chip chip-sm">REST APIs</span>
-          </div>
-        </div>
+                <ul class="space-y-2 body text-sm md:pl-14">
+                    <li>Improved API response time by <span class="text-text">70%</span> through backend optimization,
+                        data-access tuning, and service workflow improvements.
+                    </li>
+                    <li>Designed scalable microservices that reduced server load by <span class="text-text">60%</span>
+                        and
+                        improved application availability.
+                    </li>
+                    <li>Delivered ML-oriented systems including <span class="text-text">sentiment analysis</span> (85%
+                        accuracy)
+                        and <span class="text-text">predictive maintenance</span> (20% accuracy lift across 500+
+                        machines).
+                    </li>
+                    <li>Built real-time analytics dashboards and automated reporting pipelines for operations teams.
+                    </li>
+                </ul>
 
-        <!-- DevXen -->
-        <div class="timeline-item">
-          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-4">
-            <div class="flex items-start gap-4">
-              <div class="monogram">D</div>
-              <div>
-                <h3 class="text-lg text-text font-medium tracking-tight">Senior Software Engineer</h3>
-                <p class="text-sm text-muted mt-0.5">DevXen <span class="text-subtle">- Remote · Wollongong, NSW</span>
-                </p>
-              </div>
+                <div class="flex flex-wrap gap-1.5 mt-5 md:pl-14">
+                    <span class="chip chip-sm">Python</span>
+                    <span class="chip chip-sm">Node.js</span>
+                    <span class="chip chip-sm">Scikit-learn</span>
+                    <span class="chip chip-sm">NLP</span>
+                    <span class="chip chip-sm">PostgreSQL</span>
+                    <span class="chip chip-sm">Microservices</span>
+                    <span class="chip chip-sm">AWS</span>
+                </div>
             </div>
-            <span class="mono text-[11px] text-subtle md:pt-1">May 2024 - Jul 2025</span>
-          </div>
 
-          <ul class="space-y-2 body text-sm md:pl-14">
-            <li>Improved API response time by <span class="text-text">70%</span> through backend optimization,
-              data-access tuning, and service workflow improvements.</li>
-            <li>Designed scalable microservices that reduced server load by <span class="text-text">60%</span> and
-              improved application availability.</li>
-            <li>Delivered ML-oriented systems including <span class="text-text">sentiment analysis</span> (85% accuracy)
-              and <span class="text-text">predictive maintenance</span> (20% accuracy lift across 500+ machines).</li>
-            <li>Built real-time analytics dashboards and automated reporting pipelines for operations teams.</li>
-          </ul>
+            <!-- Microbeck -->
+            <div class="timeline-item">
+                <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-4">
+                    <div class="flex items-start gap-4">
+                        <div class="monogram">M</div>
+                        <div>
+                            <h3 class="text-lg text-text font-medium tracking-tight">Senior Software Engineer</h3>
+                            <p class="text-sm text-muted mt-0.5">Microbeck <span class="text-subtle">- Faisalabad, Pakistan</span>
+                            </p>
+                        </div>
+                    </div>
+                    <span class="mono text-[11px] text-subtle md:pt-1">Jul 2022 - Apr 2024</span>
+                </div>
 
-          <div class="flex flex-wrap gap-1.5 mt-5 md:pl-14">
-            <span class="chip chip-sm">Python</span>
-            <span class="chip chip-sm">Node.js</span>
-            <span class="chip chip-sm">Scikit-learn</span>
-            <span class="chip chip-sm">NLP</span>
-            <span class="chip chip-sm">PostgreSQL</span>
-            <span class="chip chip-sm">Microservices</span>
-            <span class="chip chip-sm">AWS</span>
-          </div>
-        </div>
+                <ul class="space-y-2 body text-sm md:pl-14">
+                    <li>Migrated legacy services to <span class="text-text">cloud-native infrastructure</span> using
+                        Docker,
+                        Kubernetes, and AWS.
+                    </li>
+                    <li>Reduced server costs by <span class="text-text">30%</span> while supporting <span
+                            class="text-text">99.9% uptime</span>.
+                    </li>
+                    <li>Improved API latency by <span class="text-text">60%</span> through Redis caching and query
+                        tuning.
+                    </li>
+                    <li>Built real-time data pipelines and automated backend workflows to improve performance and
+                        delivery
+                        speed.
+                    </li>
+                </ul>
 
-        <!-- Microbeck -->
-        <div class="timeline-item">
-          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-4">
-            <div class="flex items-start gap-4">
-              <div class="monogram">M</div>
-              <div>
-                <h3 class="text-lg text-text font-medium tracking-tight">Senior Software Engineer</h3>
-                <p class="text-sm text-muted mt-0.5">Microbeck <span class="text-subtle">- Faisalabad, Pakistan</span>
-                </p>
-              </div>
+                <div class="flex flex-wrap gap-1.5 mt-5 md:pl-14">
+                    <span class="chip chip-sm">Python</span>
+                    <span class="chip chip-sm">Docker</span>
+                    <span class="chip chip-sm">Kubernetes</span>
+                    <span class="chip chip-sm">AWS</span>
+                    <span class="chip chip-sm">Redis</span>
+                    <span class="chip chip-sm">PostgreSQL</span>
+                    <span class="chip chip-sm">CI/CD</span>
+                </div>
             </div>
-            <span class="mono text-[11px] text-subtle md:pt-1">Jul 2022 - Apr 2024</span>
-          </div>
 
-          <ul class="space-y-2 body text-sm md:pl-14">
-            <li>Migrated legacy services to <span class="text-text">cloud-native infrastructure</span> using Docker,
-              Kubernetes, and AWS.</li>
-            <li>Reduced server costs by <span class="text-text">30%</span> while supporting <span
-                class="text-text">99.9% uptime</span>.</li>
-            <li>Improved API latency by <span class="text-text">60%</span> through Redis caching and query tuning.</li>
-            <li>Built real-time data pipelines and automated backend workflows to improve performance and delivery
-              speed.</li>
-          </ul>
-
-          <div class="flex flex-wrap gap-1.5 mt-5 md:pl-14">
-            <span class="chip chip-sm">Python</span>
-            <span class="chip chip-sm">Docker</span>
-            <span class="chip chip-sm">Kubernetes</span>
-            <span class="chip chip-sm">AWS</span>
-            <span class="chip chip-sm">Redis</span>
-            <span class="chip chip-sm">PostgreSQL</span>
-            <span class="chip chip-sm">CI/CD</span>
-          </div>
         </div>
-
-      </div>
     </section>
 
     <!-- ═════════════ SKILLS ═════════════ -->
     <section id="skills" class="pb-32 fade-in">
-      <div class="mb-12">
-        <p class="eyebrow mb-4">04 - Skills</p>
-        <h2 class="h-section">Tools of the <span class="serif">trade</span></h2>
-      </div>
-
-      <div class="surface p-7 md:p-10 space-y-9">
-
-        <div class="grid md:grid-cols-[180px_1fr] gap-6 md:gap-10 items-start pb-9 border-b hairline">
-          <p class="mono text-xs text-subtle uppercase tracking-wider pt-1">Languages</p>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="chip"><img src="./assets/tools/python-original.svg" alt="">Python</span>
-            <span class="chip"><img src="./assets/tools/php-original.svg" alt="">PHP</span>
-            <span class="chip">C# / .NET</span>
-            <span class="chip"><img src="./assets/tools/javascript-original.svg" alt="">JavaScript</span>
-            <span class="chip"><img src="./assets/tools/typescript-original.svg" alt="">TypeScript</span>
-            <span class="chip"><img src="./assets/tools/cplusplus-original.svg" alt="">C / C++</span>
-            <span class="chip"><img src="./assets/tools/java-original.svg" alt="">Java</span>
-            <span class="chip">SQL</span>
-            <span class="chip">Bash</span>
-          </div>
+        <div class="mb-12">
+            <p class="eyebrow mb-4">04 - Skills</p>
+            <h2 class="h-section">Tools of the <span class="serif">trade</span></h2>
         </div>
 
-        <div class="grid md:grid-cols-[180px_1fr] gap-6 md:gap-10 items-start pb-9 border-b hairline">
-          <p class="mono text-xs text-subtle uppercase tracking-wider pt-1">Frameworks &amp; Backend</p>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="chip"><img src="./assets/tools/laravel-original.svg" alt="">Laravel</span>
-            <span class="chip"><img src="./assets/tools/django-plain.svg" alt="">Django</span>
-            <span class="chip"><img src="./assets/tools/flask-original.svg" alt="">Flask</span>
-            <span class="chip">.NET / ASP.NET</span>
-            <span class="chip"><img src="./assets/tools/nodejs-original.svg" alt="">Node.js</span>
-            <span class="chip">Express</span>
-            <span class="chip">FastAPI</span>
-            <span class="chip">REST</span>
-            <span class="chip">GraphQL</span>
-            <span class="chip">Microservices</span>
-          </div>
-        </div>
+        <div class="surface p-7 md:p-10 space-y-9">
 
-        <div class="grid md:grid-cols-[180px_1fr] gap-6 md:gap-10 items-start pb-9 border-b hairline">
-          <p class="mono text-xs text-subtle uppercase tracking-wider pt-1">AI Automation &amp; ML</p>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="chip">LangChain</span>
-            <span class="chip">AutoGen</span>
-            <span class="chip">Agentic Workflows</span>
-            <span class="chip">RLHF</span>
-            <span class="chip">Model Evaluation</span>
-            <span class="chip">Benchmarking</span>
-            <span class="chip">Transformers</span>
-            <span class="chip">NLP</span>
-            <span class="chip">Vector DBs</span>
-            <span class="chip">RAG</span>
-            <span class="chip">PyTorch</span>
-            <span class="chip">TensorFlow</span>
-            <span class="chip">Scikit-learn</span>
-            <span class="chip">XGBoost</span>
-          </div>
-        </div>
+            <div class="grid md:grid-cols-[180px_1fr] gap-6 md:gap-10 items-start pb-9 border-b hairline">
+                <p class="mono text-xs text-subtle uppercase tracking-wider pt-1">Languages</p>
+                <div class="flex flex-wrap gap-1.5">
+                    <span class="chip"><img src="./assets/tools/python-original.svg" alt="">Python</span>
+                    <span class="chip"><img src="./assets/tools/php-original.svg" alt="">PHP</span>
+                    <span class="chip">C# / .NET</span>
+                    <span class="chip"><img src="./assets/tools/javascript-original.svg" alt="">JavaScript</span>
+                    <span class="chip"><img src="./assets/tools/typescript-original.svg" alt="">TypeScript</span>
+                    <span class="chip"><img src="./assets/tools/cplusplus-original.svg" alt="">C / C++</span>
+                    <span class="chip"><img src="./assets/tools/java-original.svg" alt="">Java</span>
+                    <span class="chip">SQL</span>
+                    <span class="chip">Bash</span>
+                </div>
+            </div>
 
-        <div class="grid md:grid-cols-[180px_1fr] gap-6 md:gap-10 items-start pb-9 border-b hairline">
-          <p class="mono text-xs text-subtle uppercase tracking-wider pt-1">Data &amp; Storage</p>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="chip"><img src="./assets/tools/postgresql-original.svg" alt="">PostgreSQL</span>
-            <span class="chip"><img src="./assets/tools/mysql-original.svg" alt="">MySQL</span>
-            <span class="chip"><img src="./assets/tools/microsoftsqlserver-original.svg" alt="">SQL Server</span>
-            <span class="chip">Redis</span>
-            <span class="chip">Kafka</span>
-            <span class="chip">ETL Pipelines</span>
-            <span class="chip">Data Aggregation</span>
-            <span class="chip">Database Design</span>
-          </div>
-        </div>
+            <div class="grid md:grid-cols-[180px_1fr] gap-6 md:gap-10 items-start pb-9 border-b hairline">
+                <p class="mono text-xs text-subtle uppercase tracking-wider pt-1">Frameworks &amp; Backend</p>
+                <div class="flex flex-wrap gap-1.5">
+                    <span class="chip"><img src="./assets/tools/laravel-original.svg" alt="">Laravel</span>
+                    <span class="chip"><img src="./assets/tools/django-plain.svg" alt="">Django</span>
+                    <span class="chip"><img src="./assets/tools/flask-original.svg" alt="">Flask</span>
+                    <span class="chip">.NET / ASP.NET</span>
+                    <span class="chip"><img src="./assets/tools/nodejs-original.svg" alt="">Node.js</span>
+                    <span class="chip">Express</span>
+                    <span class="chip">FastAPI</span>
+                    <span class="chip">REST</span>
+                    <span class="chip">GraphQL</span>
+                    <span class="chip">Microservices</span>
+                </div>
+            </div>
 
-        <div class="grid md:grid-cols-[180px_1fr] gap-6 md:gap-10 items-start pb-9 border-b hairline">
-          <p class="mono text-xs text-subtle uppercase tracking-wider pt-1">AWS</p>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="chip">EC2</span>
-            <span class="chip">S3</span>
-            <span class="chip">Lambda</span>
-            <span class="chip">RDS</span>
-            <span class="chip">ECS</span>
-            <span class="chip">ECR</span>
-            <span class="chip">CloudFront</span>
-            <span class="chip">CloudWatch</span>
-            <span class="chip">API Gateway</span>
-            <span class="chip">SQS</span>
-            <span class="chip">SNS</span>
-            <span class="chip">IAM</span>
-            <span class="chip">Route 53</span>
-            <span class="chip">Secrets Manager</span>
-            <span class="chip">CodePipeline</span>
-          </div>
-        </div>
+            <div class="grid md:grid-cols-[180px_1fr] gap-6 md:gap-10 items-start pb-9 border-b hairline">
+                <p class="mono text-xs text-subtle uppercase tracking-wider pt-1">AI Automation &amp; ML</p>
+                <div class="flex flex-wrap gap-1.5">
+                    <span class="chip">LangChain</span>
+                    <span class="chip">AutoGen</span>
+                    <span class="chip">Agentic Workflows</span>
+                    <span class="chip">RLHF</span>
+                    <span class="chip">Model Evaluation</span>
+                    <span class="chip">Benchmarking</span>
+                    <span class="chip">Transformers</span>
+                    <span class="chip">NLP</span>
+                    <span class="chip">Vector DBs</span>
+                    <span class="chip">RAG</span>
+                    <span class="chip">PyTorch</span>
+                    <span class="chip">TensorFlow</span>
+                    <span class="chip">Scikit-learn</span>
+                    <span class="chip">XGBoost</span>
+                </div>
+            </div>
 
-        <div class="grid md:grid-cols-[180px_1fr] gap-6 md:gap-10 items-start pb-9 border-b hairline">
-          <p class="mono text-xs text-subtle uppercase tracking-wider pt-1">Cloud &amp; DevOps</p>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="chip"><img src="./assets/tools/azure-original.svg" alt="">Azure</span>
-            <span class="chip"><img src="./assets/tools/googlecloud-original.svg" alt="">GCP</span>
-            <span class="chip"><img src="./assets/tools/docker-original.svg" alt="">Docker</span>
-            <span class="chip">Kubernetes</span>
-            <span class="chip">Terraform</span>
-            <span class="chip">GitHub Actions</span>
-            <span class="chip">Jenkins</span>
-            <span class="chip">Prometheus</span>
-            <span class="chip">Grafana</span>
-            <span class="chip"><img src="./assets/tools/nginx-original.svg" alt="">Nginx</span>
-            <span class="chip"><img src="./assets/tools/linux-original.svg" alt="">Linux</span>
-            <span class="chip">CI / CD</span>
-          </div>
-        </div>
+            <div class="grid md:grid-cols-[180px_1fr] gap-6 md:gap-10 items-start pb-9 border-b hairline">
+                <p class="mono text-xs text-subtle uppercase tracking-wider pt-1">Data &amp; Storage</p>
+                <div class="flex flex-wrap gap-1.5">
+                    <span class="chip"><img src="./assets/tools/postgresql-original.svg" alt="">PostgreSQL</span>
+                    <span class="chip"><img src="./assets/tools/mysql-original.svg" alt="">MySQL</span>
+                    <span class="chip"><img src="./assets/tools/microsoftsqlserver-original.svg"
+                                            alt="">SQL Server</span>
+                    <span class="chip">Redis</span>
+                    <span class="chip">Kafka</span>
+                    <span class="chip">ETL Pipelines</span>
+                    <span class="chip">Data Aggregation</span>
+                    <span class="chip">Database Design</span>
+                </div>
+            </div>
 
-        <div class="grid md:grid-cols-[180px_1fr] gap-6 md:gap-10 items-start pb-9 border-b hairline">
-          <p class="mono text-xs text-subtle uppercase tracking-wider pt-1">APIs &amp; Integrations</p>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="chip">REST</span>
-            <span class="chip">GraphQL</span>
-            <span class="chip">QuickBooks API</span>
-            <span class="chip">Stripe</span>
-            <span class="chip">Square</span>
-            <span class="chip">Google API</span>
-            <span class="chip">Webhooks</span>
-            <span class="chip">3rd-party Integrations</span>
-          </div>
-        </div>
+            <div class="grid md:grid-cols-[180px_1fr] gap-6 md:gap-10 items-start pb-9 border-b hairline">
+                <p class="mono text-xs text-subtle uppercase tracking-wider pt-1">AWS</p>
+                <div class="flex flex-wrap gap-1.5">
+                    <span class="chip">EC2</span>
+                    <span class="chip">S3</span>
+                    <span class="chip">Lambda</span>
+                    <span class="chip">RDS</span>
+                    <span class="chip">ECS</span>
+                    <span class="chip">ECR</span>
+                    <span class="chip">CloudFront</span>
+                    <span class="chip">CloudWatch</span>
+                    <span class="chip">API Gateway</span>
+                    <span class="chip">SQS</span>
+                    <span class="chip">SNS</span>
+                    <span class="chip">IAM</span>
+                    <span class="chip">Route 53</span>
+                    <span class="chip">Secrets Manager</span>
+                    <span class="chip">CodePipeline</span>
+                </div>
+            </div>
 
-        <div class="grid md:grid-cols-[180px_1fr] gap-6 md:gap-10 items-start">
-          <p class="mono text-xs text-subtle uppercase tracking-wider pt-1">Leadership &amp; Soft Skills</p>
-          <div class="flex flex-wrap gap-1.5">
-            <span class="chip">Team Leadership</span>
-            <span class="chip">Pod Management</span>
-            <span class="chip">Project Management</span>
-            <span class="chip">Software Architecture</span>
-            <span class="chip">Code Review</span>
-            <span class="chip">Mentoring</span>
-            <span class="chip">Problem Solving</span>
-            <span class="chip">Client Communication</span>
-            <span class="chip">Cross-functional Collaboration</span>
-            <span class="chip">Technical Writing</span>
-          </div>
-        </div>
+            <div class="grid md:grid-cols-[180px_1fr] gap-6 md:gap-10 items-start pb-9 border-b hairline">
+                <p class="mono text-xs text-subtle uppercase tracking-wider pt-1">Cloud &amp; DevOps</p>
+                <div class="flex flex-wrap gap-1.5">
+                    <span class="chip"><img src="./assets/tools/azure-original.svg" alt="">Azure</span>
+                    <span class="chip"><img src="./assets/tools/googlecloud-original.svg" alt="">GCP</span>
+                    <span class="chip"><img src="./assets/tools/docker-original.svg" alt="">Docker</span>
+                    <span class="chip">Kubernetes</span>
+                    <span class="chip">Terraform</span>
+                    <span class="chip">GitHub Actions</span>
+                    <span class="chip">Jenkins</span>
+                    <span class="chip">Prometheus</span>
+                    <span class="chip">Grafana</span>
+                    <span class="chip"><img src="./assets/tools/nginx-original.svg" alt="">Nginx</span>
+                    <span class="chip"><img src="./assets/tools/linux-original.svg" alt="">Linux</span>
+                    <span class="chip">CI / CD</span>
+                </div>
+            </div>
 
-      </div>
+            <div class="grid md:grid-cols-[180px_1fr] gap-6 md:gap-10 items-start pb-9 border-b hairline">
+                <p class="mono text-xs text-subtle uppercase tracking-wider pt-1">APIs &amp; Integrations</p>
+                <div class="flex flex-wrap gap-1.5">
+                    <span class="chip">REST</span>
+                    <span class="chip">GraphQL</span>
+                    <span class="chip">QuickBooks API</span>
+                    <span class="chip">Stripe</span>
+                    <span class="chip">Square</span>
+                    <span class="chip">Google API</span>
+                    <span class="chip">Webhooks</span>
+                    <span class="chip">3rd-party Integrations</span>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-[180px_1fr] gap-6 md:gap-10 items-start">
+                <p class="mono text-xs text-subtle uppercase tracking-wider pt-1">Leadership &amp; Soft Skills</p>
+                <div class="flex flex-wrap gap-1.5">
+                    <span class="chip">Team Leadership</span>
+                    <span class="chip">Pod Management</span>
+                    <span class="chip">Project Management</span>
+                    <span class="chip">Software Architecture</span>
+                    <span class="chip">Code Review</span>
+                    <span class="chip">Mentoring</span>
+                    <span class="chip">Problem-Solving</span>
+                    <span class="chip">Client Communication</span>
+                    <span class="chip">Cross-functional Collaboration</span>
+                    <span class="chip">Technical Writing</span>
+                </div>
+            </div>
+
+        </div>
     </section>
 
     <!-- ═════════════ TOOLS ═════════════ -->
     <section id="tools" class="pb-32 fade-in">
-      <div class="mb-12">
-        <p class="eyebrow mb-4">05 - Toolbox</p>
-        <h2 class="h-section">Daily <span class="serif">drivers</span></h2>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-x-12 gap-y-2">
-
-        <div>
-          <p class="mono text-xs text-subtle uppercase tracking-wider mb-3 pb-3 border-b hairline-strong">Development
-          </p>
-          <div class="tool-row"><img class="tool-icon-lg" src="./assets/tools/vscode-original.svg" alt="">VS Code</div>
-          <div class="tool-row"><img class="tool-icon-lg" src="./assets/tools/cursor.svg" alt="">Cursor</div>
-          <div class="tool-row"><img class="tool-icon-lg" src="./assets/tools/github-original.svg" alt="">GitHub</div>
-          <div class="tool-row"><img class="tool-icon-lg" src="./assets/tools/git-original.svg" alt="">Git</div>
-          <div class="tool-row"><img class="tool-icon-lg" src="./assets/tools/docker-original.svg" alt="">Docker</div>
-          <div class="tool-row"><img class="tool-icon-lg" src="./assets/tools/postman-original.svg" alt="">Postman</div>
+        <div class="mb-12">
+            <p class="eyebrow mb-4">05 - Toolbox</p>
+            <h2 class="h-section">Daily <span class="serif">drivers</span></h2>
         </div>
 
-        <div>
-          <p class="mono text-xs text-subtle uppercase tracking-wider mb-3 pb-3 border-b hairline-strong">AI Platforms
-          </p>
-          <div class="tool-row"><img class="tool-icon-lg" src="./assets/tools/anthropic.svg" alt="">Claude / Anthropic
-          </div>
-          <div class="tool-row"><img class="tool-icon-lg" src="./assets/tools/openai.svg" alt="">OpenAI / ChatGPT</div>
-          <div class="tool-row"><img class="tool-icon-lg" src="./assets/tools/googlegemini.svg" alt="">Google Gemini
-          </div>
-          <div class="tool-row"><img class="tool-icon-lg" src="./assets/tools/huggingface.svg" alt="">Hugging Face</div>
-          <div class="tool-row"><i class="fa-solid fa-link text-subtle text-base w-[22px] text-center"></i>LangChain /
-            AutoGen</div>
-        </div>
+        <div class="grid md:grid-cols-3 gap-x-12 gap-y-2">
 
-        <div>
-          <p class="mono text-xs text-subtle uppercase tracking-wider mb-3 pb-3 border-b hairline-strong">Productivity
-          </p>
-          <div class="tool-row"><img class="tool-icon-lg" src="./assets/tools/slack-original.svg" alt="">Slack</div>
-          <div class="tool-row"><img class="tool-icon-lg" src="./assets/tools/jira-original.svg" alt="">Jira</div>
-          <div class="tool-row"><img class="tool-icon-lg" src="./assets/tools/clickup.svg" alt="">ClickUp</div>
-          <div class="tool-row"><img class="tool-icon-lg" src="./assets/tools/notion.svg" alt="">Notion</div>
-          <div class="tool-row"><img class="tool-icon-lg" src="./assets/tools/figma-original.svg" alt="">Figma</div>
-        </div>
+            <div>
+                <p class="mono text-xs text-subtle uppercase tracking-wider mb-3 pb-3 border-b hairline-strong">
+                    Development
+                </p>
+                <div class="tool-row"><img class="tool-icon-lg" src="./assets/tools/vscode-original.svg" alt="">VS Code
+                </div>
+                <div class="tool-row"><img class="tool-icon-lg" src="./assets/tools/cursor.svg" alt="">Cursor</div>
+                <div class="tool-row"><img class="tool-icon-lg" src="./assets/tools/github-original.svg" alt="">GitHub
+                </div>
+                <div class="tool-row"><img class="tool-icon-lg" src="./assets/tools/git-original.svg" alt="">Git</div>
+                <div class="tool-row"><img class="tool-icon-lg" src="./assets/tools/docker-original.svg" alt="">Docker
+                </div>
+                <div class="tool-row"><img class="tool-icon-lg" src="./assets/tools/postman-original.svg" alt="">Postman
+                </div>
+            </div>
 
-      </div>
+            <div>
+                <p class="mono text-xs text-subtle uppercase tracking-wider mb-3 pb-3 border-b hairline-strong">AI
+                    Platforms
+                </p>
+                <div class="tool-row"><img class="tool-icon-lg" src="./assets/tools/anthropic.svg" alt="">Claude /
+                    Anthropic
+                </div>
+                <div class="tool-row"><img class="tool-icon-lg" src="./assets/tools/openai.svg" alt="">OpenAI / ChatGPT
+                </div>
+                <div class="tool-row"><img class="tool-icon-lg" src="./assets/tools/googlegemini.svg" alt="">Google
+                    Gemini
+                </div>
+                <div class="tool-row"><img class="tool-icon-lg" src="./assets/tools/huggingface.svg" alt="">Hugging Face
+                </div>
+                <div class="tool-row"><i class="fa-solid fa-link text-subtle text-base w-[22px] text-center"></i>LangChain
+                    /
+                    AutoGen
+                </div>
+            </div>
+
+            <div>
+                <p class="mono text-xs text-subtle uppercase tracking-wider mb-3 pb-3 border-b hairline-strong">
+                    Productivity
+                </p>
+                <div class="tool-row"><img class="tool-icon-lg" src="./assets/tools/slack-original.svg" alt="">Slack
+                </div>
+                <div class="tool-row"><img class="tool-icon-lg" src="./assets/tools/jira-original.svg" alt="">Jira</div>
+                <div class="tool-row"><img class="tool-icon-lg" src="./assets/tools/clickup.svg" alt="">ClickUp</div>
+                <div class="tool-row"><img class="tool-icon-lg" src="./assets/tools/notion.svg" alt="">Notion</div>
+                <div class="tool-row"><img class="tool-icon-lg" src="./assets/tools/figma-original.svg" alt="">Figma
+                </div>
+            </div>
+
+        </div>
     </section>
 
-    <!-- ═════════════ EDUCATION & CREDENTIALS ═════════════ -->
+    <!-- ═════════════ EDUCATION ═════════════ -->
     <section id="education" class="pb-32 fade-in">
-      <div class="mb-12">
-        <p class="eyebrow mb-4">06 - Education &amp; Credentials</p>
-        <h2 class="h-section">Studied &amp; <span class="serif">certified</span></h2>
-      </div>
-
-      <div class="grid md:grid-cols-12 gap-6">
-
-        <!-- Education -->
-        <div class="md:col-span-7 card p-7 md:p-9">
-          <p class="mono text-xs text-subtle uppercase tracking-wider mb-5">Education</p>
-
-          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-5">
-            <div>
-              <h3 class="text-lg text-text font-medium tracking-tight">B.S. Computer Science</h3>
-              <p class="text-sm text-muted mt-1">National University of Computer &amp; Emerging Sciences (FAST-NUCES)
-              </p>
-              <div class="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 mono text-[11px] text-subtle">
-                <span>Pakistan</span><span>·</span>
-                <span>CGPA <span class="text-muted">3.10 / 4.00</span></span><span>·</span>
-                <span>4 years</span>
-              </div>
-            </div>
-            <span class="mono text-[11px] text-subtle md:pt-1 whitespace-nowrap">Graduated 2021</span>
-          </div>
-
-          <div class="pt-5 border-t hairline">
-            <p class="mono text-xs text-subtle uppercase tracking-wider mb-3">Relevant coursework</p>
-            <div class="flex flex-wrap gap-1.5">
-              <span class="chip chip-sm">Applied ML</span>
-              <span class="chip chip-sm">Artificial Intelligence</span>
-              <span class="chip chip-sm">Data Structures</span>
-              <span class="chip chip-sm">Algorithms</span>
-              <span class="chip chip-sm">Cloud Computing</span>
-              <span class="chip chip-sm">Software Engineering</span>
-              <span class="chip chip-sm">Software Testing</span>
-              <span class="chip chip-sm">OOAD</span>
-              <span class="chip chip-sm">Web Programming</span>
-              <span class="chip chip-sm">Discrete Structures</span>
-              <span class="chip chip-sm">Database Systems</span>
-              <span class="chip chip-sm">Operating Systems</span>
-              <span class="chip chip-sm">Computer Networks</span>
-            </div>
-          </div>
+        <div class="mb-12">
+            <p class="eyebrow mb-4">06 - Education</p>
+            <h2 class="h-section">Where I <span class="serif">studied</span></h2>
         </div>
 
-        <!-- Credentials -->
-        <div class="md:col-span-5 space-y-3">
-          <p class="mono text-xs text-subtle uppercase tracking-wider mb-1">Credentials</p>
+        <div class="grid md:grid-cols-12 gap-6">
 
-          <a href="#" class="card p-5 flex items-center gap-4 group">
-            <div class="monogram"><i class="fa-brands fa-aws text-text"></i></div>
-            <div class="flex-1 min-w-0">
-              <p class="text-sm text-text truncate">AWS Solutions Architect</p>
-              <p class="mono text-[10.5px] text-subtle mt-0.5">Amazon Web Services · TODO: date</p>
-            </div>
-            <i
-              class="fa-solid fa-arrow-up-right-from-square text-[11px] text-subtle group-hover:text-text transition"></i>
-          </a>
+            <!-- Education -->
+            <div class="md:col-span-12 card p-7 md:p-9">
+                <p class="mono text-xs text-subtle uppercase tracking-wider mb-5">Education</p>
 
-          <a href="#" class="card p-5 flex items-center gap-4 group">
-            <div class="monogram"><i class="fa-solid fa-brain text-text text-sm"></i></div>
-            <div class="flex-1 min-w-0">
-              <p class="text-sm text-text truncate">Machine Learning Specialization</p>
-              <p class="mono text-[10.5px] text-subtle mt-0.5">TODO: issuer · TODO: date</p>
-            </div>
-            <i
-              class="fa-solid fa-arrow-up-right-from-square text-[11px] text-subtle group-hover:text-text transition"></i>
-          </a>
+                <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-5">
+                    <div>
+                        <h3 class="text-lg text-text font-medium tracking-tight">B.S. Computer Science</h3>
+                        <p class="text-sm text-muted mt-1">National University of Computer &amp; Emerging Sciences
+                            (FAST-NUCES)
+                        </p>
+                        <div class="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 mono text-[11px] text-subtle">
+                            <span>Pakistan</span><span>·</span>
+                            <span>CGPA <span class="text-muted">3.10 / 4.00</span></span><span>·</span>
+                            <span>4 years</span>
+                        </div>
+                    </div>
+                    <span class="mono text-[11px] text-subtle md:pt-1 whitespace-nowrap">Graduated 2021</span>
+                </div>
 
-          <a href="#" class="card p-5 flex items-center gap-4 group">
-            <div class="monogram"><i class="fa-brands fa-github text-text"></i></div>
-            <div class="flex-1 min-w-0">
-              <p class="text-sm text-text truncate">GitHub Professional Certificate</p>
-              <p class="mono text-[10.5px] text-subtle mt-0.5">GitHub · TODO: date</p>
+                <div class="pt-5 border-t hairline">
+                    <p class="mono text-xs text-subtle uppercase tracking-wider mb-3">Relevant coursework</p>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="chip chip-sm">Applied ML</span>
+                        <span class="chip chip-sm">Artificial Intelligence</span>
+                        <span class="chip chip-sm">Data Structures</span>
+                        <span class="chip chip-sm">Algorithms</span>
+                        <span class="chip chip-sm">Cloud Computing</span>
+                        <span class="chip chip-sm">Software Engineering</span>
+                        <span class="chip chip-sm">Software Testing</span>
+                        <span class="chip chip-sm">OOAD</span>
+                        <span class="chip chip-sm">Web Programming</span>
+                        <span class="chip chip-sm">Discrete Structures</span>
+                        <span class="chip chip-sm">Database Systems</span>
+                        <span class="chip chip-sm">Operating Systems</span>
+                        <span class="chip chip-sm">Computer Networks</span>
+                    </div>
+                </div>
             </div>
-            <i
-              class="fa-solid fa-arrow-up-right-from-square text-[11px] text-subtle group-hover:text-text transition"></i>
-          </a>
+
+<!--            &lt;!&ndash; Credentials &ndash;&gt;-->
+<!--            <div class="md:col-span-5 space-y-3">-->
+<!--                <p class="mono text-xs text-subtle uppercase tracking-wider mb-1">Credentials</p>-->
+
+<!--                <a href="#" class="card p-5 flex items-center gap-4 group">-->
+<!--                    <div class="monogram"><i class="fa-brands fa-aws text-text"></i></div>-->
+<!--                    <div class="flex-1 min-w-0">-->
+<!--                        <p class="text-sm text-text truncate">AWS Solutions Architect</p>-->
+<!--                        <p class="mono text-[10.5px] text-subtle mt-0.5">Amazon Web Services · TODO: date</p>-->
+<!--                    </div>-->
+<!--                    <i-->
+<!--                            class="fa-solid fa-arrow-up-right-from-square text-[11px] text-subtle group-hover:text-text transition"></i>-->
+<!--                </a>-->
+
+<!--                <a href="#" class="card p-5 flex items-center gap-4 group">-->
+<!--                    <div class="monogram"><i class="fa-solid fa-brain text-text text-sm"></i></div>-->
+<!--                    <div class="flex-1 min-w-0">-->
+<!--                        <p class="text-sm text-text truncate">Machine Learning Specialization</p>-->
+<!--                        <p class="mono text-[10.5px] text-subtle mt-0.5">TODO: issuer · TODO: date</p>-->
+<!--                    </div>-->
+<!--                    <i-->
+<!--                            class="fa-solid fa-arrow-up-right-from-square text-[11px] text-subtle group-hover:text-text transition"></i>-->
+<!--                </a>-->
+
+<!--                <a href="#" class="card p-5 flex items-center gap-4 group">-->
+<!--                    <div class="monogram"><i class="fa-brands fa-github text-text"></i></div>-->
+<!--                    <div class="flex-1 min-w-0">-->
+<!--                        <p class="text-sm text-text truncate">GitHub Professional Certificate</p>-->
+<!--                        <p class="mono text-[10.5px] text-subtle mt-0.5">GitHub · TODO: date</p>-->
+<!--                    </div>-->
+<!--                    <i-->
+<!--                            class="fa-solid fa-arrow-up-right-from-square text-[11px] text-subtle group-hover:text-text transition"></i>-->
+<!--                </a>-->
+<!--            </div>-->
+
         </div>
-
-      </div>
     </section>
 
     <!-- ═════════════ CONTACT ═════════════ -->
     <section id="contact" class="pb-32 fade-in">
-      <div class="card p-10 md:p-16 text-center">
-        <p class="eyebrow center justify-center mb-6">07 - Contact</p>
-        <h2 class="h-display !text-[clamp(2.25rem,5vw,3.5rem)] mb-6">
-          Let's build <span class="serif">something good.</span>
-        </h2>
-        <p class="lead max-w-xl mx-auto mb-10">
-          Available for full-time remote roles, AI automation contracts, and senior backend
-          or cloud engagements. Open to collaborating on meaningful work.
-        </p>
+        <div class="card p-10 md:p-16 text-center">
+            <p class="eyebrow center justify-center mb-6">07 - Contact</p>
+            <h2 class="h-display !text-[clamp(2.25rem,5vw,3.5rem)] mb-6">
+                Let's build <span class="serif">something good.</span>
+            </h2>
+            <p class="lead max-w-xl mx-auto mb-10">
+                Available for full-time remote roles, AI automation contracts, and senior backend
+                or cloud engagements. Open to collaborating on meaningful work.
+            </p>
 
-        <div class="flex flex-wrap justify-center gap-3 mb-10">
-          <a href="mailto:m.ibrahim8325@gmail.com" class="btn btn-primary">
-            <i class="fa-regular fa-envelope text-[11px]"></i> m.ibrahim8325@gmail.com
-          </a>
-          <a href="./assets/resume.pdf" target="_blank" class="btn btn-ghost" download>
-            <i class="fa-solid fa-download text-[11px]"></i> Download resume
-          </a>
+            <div class="flex flex-wrap justify-center gap-3 mb-10">
+                <a href="mailto:m.ibrahim8325@gmail.com" class="btn btn-primary">
+                    <i class="fa-regular fa-envelope text-[11px]"></i> m.ibrahim8325@gmail.com
+                </a>
+                <a href="./assets/resume.pdf" target="_blank" class="btn btn-ghost" download>
+                    <i class="fa-solid fa-download text-[11px]"></i> Download resume
+                </a>
+            </div>
+
+            <div class="flex justify-center items-center gap-6 text-sm text-subtle">
+                <a href="tel:+923118663209" class="hover:text-text transition flex items-center gap-2">
+                    <i class="fa-solid fa-phone text-[11px]"></i>+92 311 8663209
+                </a>
+                <span class="hairline border-l h-4"></span>
+                <a href="https://linkedin.com/in/muhammad-ibrahim-butt" target="_blank" rel="noreferrer"
+                   class="hover:text-text transition"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/muhammad-ibrahim-butt" target="_blank" rel="noreferrer"
+                   class="hover:text-text transition"><i class="fa-brands fa-github"></i> GitHub</a>
+            </div>
+
+            <p class="mono text-[10.5px] text-subtle mt-10 uppercase tracking-wider">
+                Response within 24h
+            </p>
         </div>
-
-        <div class="flex justify-center items-center gap-6 text-sm text-subtle">
-          <a href="tel:+923118663209" class="hover:text-text transition flex items-center gap-2">
-            <i class="fa-solid fa-phone text-[11px]"></i>+92 311 8663209
-          </a>
-          <span class="hairline border-l h-4"></span>
-          <a href="https://linkedin.com/in/muhammad-ibrahim-butt" target="_blank" rel="noreferrer"
-            class="hover:text-text transition"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-          <a href="https://github.com/muhammad-ibrahim-butt" target="_blank" rel="noreferrer"
-            class="hover:text-text transition"><i class="fa-brands fa-github"></i> GitHub</a>
-        </div>
-
-        <p class="mono text-[10.5px] text-subtle mt-10 uppercase tracking-wider">
-          Response within 24h
-        </p>
-      </div>
     </section>
 
-  </main>
+</main>
 
-  <!-- ═════════════ FOOTER ═════════════ -->
-  <footer class="border-t hairline mt-12">
+<!-- ═════════════ FOOTER ═════════════ -->
+<footer class="border-t hairline mt-12">
     <div
-      class="max-w-5xl mx-auto px-6 lg:px-8 py-8 flex flex-col md:flex-row items-start md:items-center justify-center gap-3">
-      <p class="text-xs text-subtle">
-        © <span id="year">2026</span> Muhammad Ibrahim Butt
-      </p>
+            class="max-w-5xl mx-auto px-6 lg:px-8 py-8 flex flex-col md:flex-row items-start md:items-center justify-center gap-3">
+        <p class="text-xs text-subtle">
+            © <span id="year">2026</span> Muhammad Ibrahim Butt
+        </p>
     </div>
-  </footer>
+</footer>
 
-  <!-- ═════════════ SCROLL TOP ═════════════ -->
-  <button id="scroll-top"
-    class="fixed bottom-6 right-6 w-10 h-10 rounded-full surface-2 text-muted hover:text-text opacity-0 invisible transition-all hover:-translate-y-0.5 z-40"
-    aria-label="Scroll to top">
+<!-- ═════════════ SCROLL TOP ═════════════ -->
+<button id="scroll-top"
+        class="fixed bottom-6 right-6 w-10 h-10 rounded-full surface-2 text-muted hover:text-text opacity-0 invisible transition-all hover:-translate-y-0.5 z-40"
+        aria-label="Scroll to top">
     <i class="fa-solid fa-arrow-up text-xs"></i>
-  </button>
+</button>
 
-  <script src="./assets/js/script.js" rel="preload" as="script"></script>
+<script src="./assets/js/script.js" rel="preload"></script>
 </body>
 
 </html>
