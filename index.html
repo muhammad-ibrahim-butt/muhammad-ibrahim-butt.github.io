@@ -359,15 +359,15 @@
 
                     <!-- Sub-label -->
                     <p class="mono text-[10px] text-subtle uppercase tracking-wider mb-5">
-                        QuickBooks Desktop operations layer
+                        Desktop + web operations platform
                     </p>
 
                     <!-- Description -->
                     <p class="body mb-6">
-                        A custom Windows desktop application for a wholesale distribution client that needed a faster,
-                        simpler operational layer on top of QuickBooks Desktop. QBSalesStar keeps QuickBooks as the
-                        accounting source of truth while giving staff focused workflows for sales, inventory, invoicing,
-                        purchasing, fulfillment, reporting, and web synchronization.
+                        A custom desktop and web operations platform for a wholesale distribution client that needed a
+                        faster, simpler layer on top of QuickBooks Desktop. QBSalesStar keeps QuickBooks as the
+                        accounting source of truth while synchronizing operational data across the web application,
+                        local C# application, and background services.
                     </p>
 
                     <!-- Bullet list -->
@@ -391,9 +391,9 @@
                         <li class="flex gap-3">
                             <span class="mt-[7px] w-1.5 h-1.5 rounded-full bg-text/60 shrink-0"></span>
                             <p class="body text-sm">
-                                Built background automation with a QuickBooks event listener, folder watcher service,
-                                local cache, retry/outbox handling, dead-letter logging, setup wizard, and production
-                                installer for repeatable workstation deployment.
+                                Built a QB COM event listener that detects QuickBooks changes and synchronizes supported
+                                records into the web system and local C# app through MySQL/API publishing, local cache
+                                updates, retry/outbox handling, and dead-letter logging.
                             </p>
                         </li>
                     </ul>
@@ -404,8 +404,8 @@
                             <p>Sales orders, invoices, purchase orders, receiving, returns, pick lists, back orders, and reporting.</p>
                         </div>
                         <div>
-                            <span>Sync reliability</span>
-                            <p>Live QuickBooks events, MySQL/API publishing, retry queues, outbox records, and failure logs.</p>
+                            <span>QB to web sync</span>
+                            <p>QuickBooks changes flow through the COM event listener into the web app, C# app, MySQL, and API layer.</p>
                         </div>
                         <div>
                             <span>File automation</span>
@@ -430,16 +430,16 @@
                             <div class="surface-2 rounded-xl px-4 py-4">
                                 <p class="font-serif text-2xl text-text leading-none"
                                    style="font-family:'Instrument Serif',serif">
-                                    QBFC15
+                                    3-part
                                 </p>
-                                <p class="mono text-[10px] text-subtle uppercase tracking-wider mt-2">Desktop SDK</p>
+                                <p class="mono text-[10px] text-subtle uppercase tracking-wider mt-2">desktop + web + QB</p>
                             </div>
                             <div class="surface-2 rounded-xl px-4 py-4">
                                 <p class="font-serif text-2xl text-text leading-none"
                                    style="font-family:'Instrument Serif',serif">
                                     Live
                                 </p>
-                                <p class="mono text-[10px] text-subtle uppercase tracking-wider mt-2">QB event sync</p>
+                                <p class="mono text-[10px] text-subtle uppercase tracking-wider mt-2">COM event sync</p>
                             </div>
                             <div class="surface-2 rounded-xl px-4 py-4">
                                 <p class="font-serif text-2xl text-text leading-none"
@@ -467,9 +467,11 @@
                             <span class="chip chip-sm">C# / .NET</span>
                             <span class="chip chip-sm">WinForms</span>
                             <span class="chip chip-sm">.NET Framework 4.8</span>
+                            <span class="chip chip-sm">Web App</span>
                             <span class="chip chip-sm">QuickBooks SDK</span>
                             <span class="chip chip-sm">QBXML</span>
                             <span class="chip chip-sm">QuickBooks Desktop</span>
+                            <span class="chip chip-sm">QB COM Server</span>
                             <span class="chip chip-sm">Windows Services</span>
                             <span class="chip chip-sm">COM Events</span>
                             <span class="chip chip-sm">SQLite</span>
