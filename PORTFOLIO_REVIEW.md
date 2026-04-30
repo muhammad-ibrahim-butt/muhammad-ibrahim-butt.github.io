@@ -23,7 +23,7 @@ Overall assessment: strong foundation, but not yet fully optimized for search, r
 | Performance | 6.7 / 10 | Static site is lightweight overall, but CDN Tailwind, fonts, image loading, and unused assets can be improved. |
 | UX and visual design | 8.1 / 10 | Professional, polished, and readable; some dense sections can be made more scannable. |
 | Conversion | 7.5 / 10 | Contact paths are clear; stronger lead-specific CTAs and proof would improve client conversion. |
-| Technical maintainability | 7.0 / 10 | Simple static architecture is maintainable, but inline Tailwind CDN and commented TODO blocks should be cleaned up. |
+| Technical maintainability | 7.0 / 10 | Simple static architecture is maintainable, but inline Tailwind CDN and commented unfinished credential blocks should be cleaned up. |
 
 ## Audit Facts
 
@@ -321,8 +321,8 @@ Senior AI and backend engineer specializing in LLM evaluation, agent function ca
    - Tailwind, Font Awesome, and Google Fonts all require third-party network requests.
    - For a portfolio, this is acceptable, but self-hosting or bundling critical assets improves reliability.
 
-2. Source contains commented TODO credential blocks.
-   - The commented certification section includes TODO lines.
+2. Source contains commented unfinished credential blocks.
+   - The commented certification section includes unfinished credential copy.
    - Remove commented dead code or finish the credentials section.
 
 3. Add basic site files.

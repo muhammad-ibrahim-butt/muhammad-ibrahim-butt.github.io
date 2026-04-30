@@ -312,7 +312,7 @@ The monetization model is especially strong because it aligns user motivation wi
 
 ## Why This Project Is a Strong Portfolio Case Study
 
-Shouri is a strong project to present to a client or viewer because it demonstrates more than basic CRUD development. It includes public launch readiness, app store distribution, social networking mechanics, payments-related logic, reward calculation, media handling, admin tooling, scheduled automation, and notification infrastructure.
+Shouri demonstrates more than basic CRUD development. It includes public launch readiness, app store distribution, social networking mechanics, payments-related logic, reward calculation, media handling, admin tooling, scheduled automation, and notification infrastructure.
 
 Notable strengths include:
 

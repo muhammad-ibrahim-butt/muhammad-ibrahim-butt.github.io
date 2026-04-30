@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WEPROCESS (https://weprocess.co.uk/) is a Laravel-based backend platform for managing legal process serving operations. The system supports the full lifecycle of a service...">
+    <link rel="canonical" href="https://muhammad-ibrahim-butt.github.io/we-process.html">
+    <title>WEPROCESS Legal Operations Backend - Muhammad Ibrahim Butt</title>
+    <link rel="icon" type="image/jpeg" href="./assets/images/profile.JPG">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body class="font-sans">
+<a href="#content" class="skip-link">Skip to case study</a>
+<main class="case-shell" id="content" tabindex="-1">
+    <nav class="case-nav" aria-label="Case study navigation">
+        <a href="./" class="case-brand">
+            <img src="./assets/images/profile.JPG" alt="Muhammad Ibrahim Butt" class="avatar-mark" width="28" height="28" decoding="async">
+            Muhammad Ibrahim Butt
+        </a>
+        <a href="./#work" class="btn btn-ghost btn-sm"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to work</a>
+    </nav>
+
+    <header class="case-hero card">
+        <p class="eyebrow">Legal operations backend</p>
+        <h1 class="h-display">WEPROCESS Legal Operations Backend</h1>
+        <p class="lead">WEPROCESS (https://weprocess.co.uk/) is a Laravel-based backend platform for managing legal process serving operations. The system supports the full lifecycle of a service...</p>
+        <div class="case-meta">
+            <span class="chip chip-sm">Laravel</span>
+                    <span class="chip chip-sm">Sanctum</span>
+                    <span class="chip chip-sm">Azure AI</span>
+                    <span class="chip chip-sm">Stripe</span>
+        </div>
+    </header>
+
+    <article class="case-content card">
+<h2>Project Overview</h2>
+<p>WEPROCESS (https://weprocess.co.uk/) is a Laravel-based backend platform for managing legal process serving operations. The system supports the full lifecycle of a service instruction, from client onboarding and serve creation through driver assignment, field attempts, evidence capture, Statement of Service generation, invoicing, notifications, chat, and external system synchronization.</p>
+<p>The project is built as a production API backend for three main user groups:</p>
+<ul><li><strong>Clients</strong>, who create and track service instructions, manage billing, view dashboards, approve sub-serve requests, and communicate with support or drivers.</li><li><strong>Drivers / process servers</strong>, who receive available serves, claim or start assignments, record service attempts, upload evidence, update location data, and track earnings.</li><li><strong>Administrators</strong>, who manage users, clients, serves, invoices, discounts, driver documents, service plans, police communication, Salesforce-originated work, and operational reporting.</li></ul>
+<p>The backend is not a simple CRUD application. It contains workflow-heavy business logic around legal service states, financial rules, document processing, AI extraction, real-time messaging, queue processing, scheduled maintenance, and integrations with third-party services.</p>
+<h2>Technology Stack</h2>
+<ul><li><strong>Framework:</strong> Laravel 10</li><li><strong>Language:</strong> PHP 8.1+</li><li><strong>Authentication:</strong> Laravel Sanctum with separate guards for users, clients, and admins</li><li><strong>Database:</strong> Relational database managed through Laravel migrations and Eloquent models</li><li><strong>Queues:</strong> Laravel database queues for document extraction, email dispatch, notifications, and background processing</li><li><strong>Realtime / Broadcasting:</strong> Laravel broadcasting with Pusher-compatible infrastructure</li><li><strong>Payments:</strong> Stripe integration for checkout and payment session retrieval</li><li><strong>AI / Document Processing:</strong> Azure Document Intelligence and Azure OpenAI</li><li><strong>Notifications:</strong> Laravel notifications, Firebase Cloud Messaging, email jobs, and realtime chat events</li><li><strong>PDF Generation:</strong> FPDI / FPDF for Statement of Service PDF creation</li><li><strong>External Integrations:</strong> Salesforce webhooks, Firebase Cloud Messaging, Stripe, Azure AI services, Google API client</li><li><strong>Testing:</strong> PHPUnit feature and unit tests for controllers, authentication, profile services, invoices, chat, banks, notifications, and serve flows</li></ul>
+<h2>My Work and Responsibilities</h2>
+<p>My work on this project focused on building and maintaining the backend systems that power the WEPROCESS operational platform. The codebase shows responsibility across API design, domain modeling, service-layer architecture, integration work, background processing, validation, reporting, and production operations.</p>
+<p>Key areas of work include:</p>
+<ul><li>Designing Laravel API endpoints for clients, admins, and drivers with clear authentication boundaries.</li><li>Building service-layer business logic for serve creation, assignment, cancellation, completion, archiving, driver claiming, sub-serves, activity logs, and admin updates.</li><li>Implementing invoice generation, invoice item calculation, legal aid billing rules, VAT handling, discounts, fixed-fee invoices, invoice reminders, refunds, and invoice exports.</li><li>Integrating Salesforce webhooks to create serves from external CRM data and append documents to existing serves.</li><li>Building an AI-assisted document extraction pipeline using Azure Document Intelligence and Azure OpenAI to fill missing serve fields from uploaded legal documents.</li><li>Implementing Statement of Service generation using PDF templates, attempt data, signatures, recipient details, and service outcome logic.</li><li>Building real-time chat between admins, clients, and drivers, including message read states, editing, unsending, media uploads, export to CSV/TXT, and session updates.</li><li>Creating notification flows for serve status changes, new messages, sub-serve actions, invoice payments, driver account approval, client updates, and serve completion.</li><li>Adding scheduled jobs and console commands for queue processing, invoice reminders, stale extraction checks, location purging, storage maintenance, postal code imports, invoice exports, and operational backfills.</li><li>Structuring the codebase with repositories, interfaces, DTOs, services, request validation classes, policies, resources, enums, custom exceptions, jobs, events, notifications, and console commands.</li></ul>
+<h2>Core Product Domains</h2>
+<h3>1. Authentication and Role Separation</h3>
+<p>The platform supports three major authenticated identities: admins, clients, and users/drivers. Each role has its own operational permissions and API surface.</p>
+<p>The API routes are organized around:</p>
+<ul><li>Public registration and login endpoints.</li><li>User-specific protected routes for process servers.</li><li>Client-specific protected routes for client dashboards, serve creation, payments, and billing.</li><li>Admin-specific protected routes for operational control and reporting.</li><li>Shared authenticated routes for viewing serves, invoices, chat sessions, messages, notifications, and user/client details.</li></ul>
+<p>The project uses dedicated middleware such as <code>auth:user</code>, <code>auth:client</code>, <code>auth:admin</code>, <code>auth.any</code>, guard-specific middleware, token validation, and Salesforce webhook validation. This separation makes the backend suitable for a multi-portal product where each type of user sees and performs different actions.</p>
+<h3>2. Serve / Instruction Management</h3>
+<p>The serve workflow is the central domain of the application. A serve represents a legal service instruction with applicant details, respondent details, court data, service plan, documents, payment method, priority, deadline, assigned driver, attempts, invoices, chat, and status transitions.</p>
+<p>Important capabilities include:</p>
+<ul><li>Creating serves from the client portal.</li><li>Creating serves from Salesforce webhooks.</li><li>Uploading and appending legal documents.</li><li>Applying service plans and pricing.</li><li>Applying discount codes.</li><li>Calculating VAT and total amounts.</li><li>Assigning and unassigning drivers.</li><li>Allowing drivers to claim available serves.</li><li>Starting a serve.</li><li>Logging delivery attempts with location, evidence, signature, confirmation methods, and recipient interaction data.</li><li>Supporting successful service, failed service, non-service, substituted service, and letterbox-style flows.</li><li>Handling sub-serve requests, approvals, updates, and completion.</li><li>Archiving, unarchiving, deleting, and bulk deleting serves.</li><li>Force-completing serves from the admin portal.</li><li>Releasing ON_HOLD instructions back to NEW after required fields are completed.</li><li>Recording activity logs for operational traceability.</li></ul>
+<p>The serve domain is implemented with a service-oriented approach. <code>ServeService</code> coordinates repositories, file uploads, invoices, notifications, chat sessions, availability, Statement of Service generation, postal code validation, and discounts. This keeps controllers thinner and centralizes the main business rules.</p>
+<h3>3. Driver / Process Server Workflow</h3>
+<p>The backend supports a driver-facing workflow where process servers can:</p>
+<ul><li>Register and submit applications.</li><li>Update profile and availability information.</li><li>Receive serve notifications.</li><li>Claim or start available serves.</li><li>Record attempt data from the field.</li><li>Upload evidence, drop evidence, and signatures.</li><li>Send location pings.</li><li>Track user-specific serve statistics.</li><li>View pending invoices and earnings.</li><li>Receive admin instructions and account approval/rejection notifications.</li></ul>
+<p>Driver location tracking is supported through user location records, location index APIs, and a scheduled purge command that removes older location records in batches. Driver documents and DBS files can also be managed by administrators.</p>
+<h3>4. Client Portal Backend</h3>
+<p>The client side of the platform includes:</p>
+<ul><li>Client registration and login.</li><li>Password reset and OTP validation flows.</li><li>Dashboard summaries.</li><li>Serve status reporting.</li><li>Requested serve reporting.</li><li>Serve creation.</li><li>Stripe checkout session creation and retrieval.</li><li>Discount validation.</li><li>Invoice viewing.</li><li>Client profile updates.</li><li>Sub-serve request approval.</li><li>Chat with admins or drivers.</li></ul>
+<p>The backend also supports client records created automatically from Salesforce account data, including welcome email delivery with generated credentials.</p>
+<h3>5. Admin Operations</h3>
+<p>Admins have the broadest operational control. The admin API includes:</p>
+<ul><li>Dashboard summary data.</li><li>Completed serves by driver.</li><li>Serve status analytics.</li><li>Invoice status analytics.</li><li>New serve rate reporting.</li><li>Client-level and driver-level summaries.</li><li>User access control and hired status updates.</li><li>Client access and billing updates.</li><li>Serve assignment, unassignment, archiving, unarchiving, force completion, service type changes, and document management.</li><li>Discount CRUD.</li><li>Invoice generation, export, updates, deletion, refund handling, and summary reporting.</li><li>Driver document and DBS file management.</li><li>Police contact management and Court SOS email workflows.</li><li>OTP generation and validation for admin-sensitive operations.</li></ul>
+<p>This gives the application the shape of an operational back office rather than only an API for a frontend app.</p>
+<h2>AI and Document Extraction Pipeline</h2>
+<p>One of the more advanced parts of the project is the AI-assisted extraction pipeline for Salesforce-created serves.</p>
+<p>When a serve is created from Salesforce, the incoming payload may be missing respondent or applicant details. The backend can detect missing fields and decide whether extraction is required. If required, it creates the serve in a draft or pending extraction state and dispatches background jobs.</p>
+<p>The extraction pipeline works broadly as follows:</p>
+<ol><li>Salesforce sends serve data and document URLs through a secured webhook.</li><li>The backend downloads the documents and stores them with the serve.</li><li>If documents include formats that need conversion, a document conversion job runs before extraction.</li><li>Azure Document Intelligence reads the legal documents and extracts raw text.</li><li>Azure OpenAI receives the combined extracted text and target field list.</li><li>The system maps extracted structured fields back onto the serve.</li><li>Confidence and extraction status are stored.</li><li>If all required release fields are present, the serve can move to <code>NEW</code>.</li><li>If required fields are still missing, the serve moves to <code>ON_HOLD</code> and admins/clients are notified.</li></ol>
+<p>The implementation also handles partial failures. If some documents fail Azure processing but others succeed, the pipeline can continue and log failed document details. This is important for operational reliability because a single bad document should not always block an entire instruction if useful data can still be extracted from the remaining files.</p>
+<h2>Salesforce Integration</h2>
+<p>The Salesforce webhook integration allows external CRM data to create or update WEPROCESS serves.</p>
+<p>Implemented capabilities include:</p>
+<ul><li>Secure webhook routes protected by Salesforce signature validation.</li><li>Find-or-create client behavior based on Salesforce account ID and email.</li><li>Automatic client creation from Salesforce account data.</li><li>Downloading external Salesforce document URLs.</li><li>Preserving document labels when storing files.</li><li>Creating a <code>CreateServeDTO</code> from Salesforce payload data.</li><li>Storing Salesforce opportunity and WEPROCESS request identifiers on serves.</li><li>Triggering AI extraction when required fields are missing.</li><li>Adding more documents to an existing serve through a webhook.</li><li>Synchronizing legal aid subserve invoice line items when documents change.</li></ul>
+<p>This integration connects the operational backend to the sales/client intake process and reduces manual re-entry of legal service instructions.</p>
+<h2>Statement of Service and PDF Generation</h2>
+<p>The backend generates Statement of Service documents from real attempt data. This feature uses FPDI/FPDF and a PDF template stored in application storage.</p>
+<p>The generated documents include:</p>
+<ul><li>Court case number.</li><li>Applicant and respondent references.</li><li>Court name.</li><li>Recipient name and address.</li><li>List of served documents.</li><li>Driver/process server name.</li><li>Date.</li><li>Signature image.</li><li>Statement title and statement body.</li><li>Statement of truth content.</li></ul>
+<p>The Statement of Service logic adapts to different service outcomes:</p>
+<ul><li>Personal service.</li><li>Attempted service.</li><li>Failed service.</li><li>Non-service.</li><li>Substituted service.</li><li>Letterbox document posting.</li><li>Immediate non-service cases.</li></ul>
+<p>The service also handles signature image conversion for PDF compatibility and queues completion emails after successful document generation.</p>
+<h2>Invoicing and Billing</h2>
+<p>The invoice system supports both client-facing and driver-facing financial flows.</p>
+<p>Key capabilities include:</p>
+<ul><li>Invoice creation for clients and users/drivers.</li><li>Unique invoice number generation with database locking and retry handling.</li><li>Invoice status transitions such as generated, pending, paid, refunded, and not required.</li><li>Paid and refunded timestamp handling.</li><li>Notifications when invoices are paid.</li><li>Invoice deletion with serve status rollback.</li><li>Invoice summaries and exports.</li><li>Invoice reminders through scheduled commands.</li><li>Line item generation based on service type, payment method, fixed-fee rules, legal aid rules, mileage, travel time, waiting time, document count, and attempts.</li><li>VAT and discount recalculation.</li><li>Legal aid fixed-fee auto-generation.</li><li>Per-document fee handling for legal aid subserve workflows.</li></ul>
+<p>This part of the system contains business-specific billing logic rather than generic invoice records only.</p>
+<h2>Realtime Chat and Communication</h2>
+<p>The project includes a full chat subsystem for communication between admins, clients, and users/drivers.</p>
+<p>Features include:</p>
+<ul><li>Admin-client chat sessions.</li><li>Admin-user chat sessions.</li><li>Client-user chat sessions.</li><li>Text and media messages.</li><li>Read receipts.</li><li>Unread counts.</li><li>Latest message summaries.</li><li>Realtime broadcast events for sent messages, read messages, edited messages, unsent messages, and session updates.</li><li>Message editing with time limits.</li><li>Message unsending with media cleanup.</li><li>Serve-specific message filtering.</li><li>Chat export to CSV or TXT over a selected date range.</li></ul>
+<p>This provides operational communication directly inside the platform, reducing dependence on external messaging channels.</p>
+<h2>Notifications, Emails, and Background Jobs</h2>
+<p>The backend uses Laravel notifications, queued jobs, broadcast events, FCM, and email classes to keep users informed about workflow events.</p>
+<p>Notification examples include:</p>
+<ul><li>Serve created.</li><li>Serve assigned or unassigned.</li><li>Serve claimed or unclaimed.</li><li>Serve started.</li><li>Serve completed.</li><li>Serve archived or unarchived.</li><li>Serve cancellation request and action.</li><li>Serve review.</li><li>Serve on hold.</li><li>Sub-serve request, approval, and completion.</li><li>New chat message.</li><li>Invoice paid.</li><li>User account approval, rejection, and verification.</li><li>Additional user instructions.</li></ul>
+<p>Queued jobs include:</p>
+<ul><li>Document conversion.</li><li>Document extraction.</li><li>Serve creation notification dispatch.</li><li>OTP emails.</li><li>Attempt notification emails.</li><li>Invoice created emails.</li><li>Invoice reminder emails.</li><li>Serve completion emails.</li><li>Court SOS to police emails.</li></ul>
+<p>The scheduled tasks run queue processing, invoice reminders, old location purging, and stuck extraction monitoring.</p>
+<h2>Postal Codes, Geolocation, and Areas</h2>
+<p>The backend includes support for UK postal code validation and search.</p>
+<p>Functionality includes:</p>
+<ul><li>Postal code import commands.</li><li>Searchable postal code records.</li><li>City/district listing.</li><li>Postal code validation.</li><li>Postal code lookup by district.</li><li>Address geocoding and validation.</li><li>Distance calculation for mileage-based invoice line items.</li><li>Driver location indexing and cleanup.</li></ul>
+<p>This supports serve assignment, client entry validation, reporting, and accurate mileage calculations.</p>
+<h2>Police and Court SOS Workflows</h2>
+<p>The project includes police-related functionality for sending Court SOS communication.</p>
+<p>The backend includes:</p>
+<ul><li>Police and police email models.</li><li>Police seed data.</li><li>Admin APIs for listing and viewing police records.</li><li>Admin endpoint for sending police-related records.</li><li>Mail classes and jobs for Court SOS to police communication.</li></ul>
+<p>This reflects the legal and compliance-oriented nature of the application, where completed service documents may need to be routed to external agencies.</p>
+<h2>Architecture and Code Organization</h2>
+<p>The project uses a layered Laravel architecture:</p>
+<ul><li><strong>Controllers</strong> handle HTTP entry points and response formatting.</li><li><strong>Request classes</strong> centralize validation rules.</li><li><strong>Services</strong> contain business logic and workflow orchestration.</li><li><strong>Repositories and interfaces</strong> abstract database access for major entities.</li><li><strong>DTOs</strong> carry structured data between layers.</li><li><strong>Enums</strong> model fixed domain states such as serve statuses, invoice statuses, attempt statuses, client types, payment methods, priorities, and sub-serve types.</li><li><strong>Resources</strong> format API responses.</li><li><strong>Jobs</strong> move slow or unreliable operations into background processing.</li><li><strong>Notifications and events</strong> handle realtime and asynchronous user communication.</li><li><strong>Policies and middleware</strong> enforce access rules and request validation.</li><li><strong>Custom exceptions</strong> provide domain-specific error handling.</li><li><strong>Console commands</strong> support operational maintenance and backfills.</li></ul>
+<p>This structure helps keep the code maintainable as the product grows in workflow complexity.</p>
+<h2>Data Model Highlights</h2>
+<p>Major models in the system include:</p>
+<ul><li><code>User</code> for drivers/process servers.</li><li><code>Client</code> for customers and legal firms.</li><li><code>Admin</code> for internal operators.</li><li><code>Serve</code> for legal service instructions.</li><li><code>UserServe</code> for driver assignment and serve-driver state.</li><li><code>Attempt</code> for field service attempts.</li><li><code>SubServeRequest</code> and <code>SubServeAttempt</code> for substituted service flows.</li><li><code>Invoice</code>, <code>InvoiceItem</code>, and <code>InvoiceItemDetail</code> for billing.</li><li><code>ChatSession</code> and <code>ChatMessage</code> for realtime communication.</li><li><code>Notification</code> records through Laravel notification infrastructure.</li><li><code>ServicePlan</code> for pricing, VAT, attempts, rates, and delivery rules.</li><li><code>Discount</code> for promotional or business discounts.</li><li><code>PostalCode</code>, <code>Police</code>, <code>PoliceEmail</code>, <code>Bank</code>, <code>BankDetail</code>, <code>DriverDocument</code>, <code>ServeReview</code>, <code>ServeCancelRequest</code>, and <code>UserLocation</code>.</li></ul>
+<p>The migrations show continuous evolution of the product, including changes to serve statuses, Salesforce fields, extraction fields, invoice items, postal code indexing, location cleanup, driver documents, legal aid billing, and more.</p>
+<h2>API Design</h2>
+<p>The API is organized by role and business capability.</p>
+<p>Examples of exposed capabilities:</p>
+<ul><li><code>/register</code>, <code>/login</code>, <code>/forgot/password</code>, <code>/otp/verify</code>, and <code>/change/password</code> for user authentication.</li><li><code>/clients/register</code>, <code>/clients/login</code>, <code>/clients/dashboard/summary</code>, and <code>/clients/dashboard/serves-status</code> for client workflows.</li><li><code>/admins/login</code>, <code>/admins/dashboard/summary</code>, and admin-specific reporting routes.</li><li><code>/serves</code> for listing, creating, showing, reviewing, updating, assigning, claiming, starting, archiving, and completing serves.</li><li><code>/chat/sessions</code>, <code>/chat/{id}/messages</code>, <code>/chat/send-message</code>, and chat export routes.</li><li><code>/notifications</code> for notification listing and read status.</li><li><code>/invoices</code> and <code>/admin/invoices</code> for invoice viewing, generation, update, export, and deletion.</li><li><code>/stripe/checkout</code> and <code>/stripe/session/retrieve</code> for payment processing.</li><li><code>/postcodes</code> routes for validation and search.</li><li><code>/webhooks/salesforce/serve/create</code> and <code>/webhooks/salesforce/add-more-documents</code> for Salesforce integration.</li></ul>
+<p>The routes are grouped with middleware that clearly maps each endpoint to the identities allowed to use it.</p>
+<h2>Reliability and Production Operations</h2>
+<p>The project includes several production-oriented features:</p>
+<ul><li>Queue processing through scheduled commands and queue listeners.</li><li>Supervisor-friendly queue worker instructions.</li><li><code>php artisan schedule:run</code> deployment guidance.</li><li>Invoice reminders scheduled on weekdays.</li><li>Location purging for old driver tracking data.</li><li>Stuck AI extraction detection every ten minutes.</li><li>Storage cleanup commands.</li><li>Commands for importing postal codes, exporting invoices, geocoding drivers, backfilling invoice items, migrating failed serves, and completing serves.</li><li>Logging around document downloads, AI extraction, Salesforce webhook processing, invoice generation, notification dispatch, and PDF generation.</li><li>Error handling through custom domain exceptions and consistent API responses.</li></ul>
+<p>These details show that the backend was built with real operational support in mind, not just local development.</p>
+<h2>Testing Coverage</h2>
+<p>The repository includes both feature and unit tests.</p>
+<p>Test areas include:</p>
+<ul><li>Authentication controllers.</li><li>Client authentication.</li><li>User authentication services.</li><li>Client authentication services.</li><li>Client profile service.</li><li>User profile service.</li><li>Bank controller.</li><li>Chat controller.</li><li>Client controller.</li><li>Invoice controller.</li><li>Notification controller.</li><li>Serve controller.</li><li>User controller.</li></ul>
+<p>The tests help validate the API behavior and service-level business logic around the most important application flows.</p>
+<h2>Why This Project Matters</h2>
+<p>This project demonstrates my ability to work on a complex backend system with real business rules, multiple user roles, external integrations, asynchronous processing, and production maintenance needs.</p>
+<p>The strongest technical aspects of the work are:</p>
+<ul><li>Building a domain-driven Laravel backend around complex legal process-serving workflows.</li><li>Managing stateful business flows where status transitions matter.</li><li>Designing APIs for multiple portals and role types.</li><li>Integrating AI document extraction into an operational workflow.</li><li>Connecting Salesforce intake data to internal service execution.</li><li>Generating legal PDF documents from structured field data and field evidence.</li><li>Handling invoices with business-specific pricing, VAT, discounts, and legal aid rules.</li><li>Supporting realtime chat and notifications across admins, clients, and drivers.</li><li>Using queues and scheduled commands to keep slow or recurring work out of request-response flows.</li><li>Keeping code organized through services, repositories, DTOs, enums, requests, resources, jobs, notifications, and custom exceptions.</li></ul>
+<p>For a portfolio, this project represents a backend system that required more than framework knowledge. It required understanding workflow design, data integrity, operational reliability, third-party integrations, document automation, financial logic, and maintainable architecture in a growing production codebase.</p>
+    </article>
+</main>
+</body>
+</html>

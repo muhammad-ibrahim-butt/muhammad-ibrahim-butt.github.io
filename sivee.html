@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The platform has two main roles: - **Candidate/User**: signs up, completes onboarding, manages profile/CV/skills, browses jobs, and tracks job interactions. - **Admin**: logs...">
+    <link rel="canonical" href="https://muhammad-ibrahim-butt.github.io/sivee.html">
+    <title>Sivee.ai Candidate and Job Platform - Muhammad Ibrahim Butt</title>
+    <link rel="icon" type="image/jpeg" href="./assets/images/profile.JPG">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body class="font-sans">
+<a href="#content" class="skip-link">Skip to case study</a>
+<main class="case-shell" id="content" tabindex="-1">
+    <nav class="case-nav" aria-label="Case study navigation">
+        <a href="./" class="case-brand">
+            <img src="./assets/images/profile.JPG" alt="Muhammad Ibrahim Butt" class="avatar-mark" width="28" height="28" decoding="async">
+            Muhammad Ibrahim Butt
+        </a>
+        <a href="./#work" class="btn btn-ghost btn-sm"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to work</a>
+    </nav>
+
+    <header class="case-hero card">
+        <p class="eyebrow">Candidate and job platform</p>
+        <h1 class="h-display">Sivee.ai Candidate and Job Platform</h1>
+        <p class="lead">The platform has two main roles: - **Candidate/User**: signs up, completes onboarding, manages profile/CV/skills, browses jobs, and tracks job interactions. - **Admin**: logs...</p>
+        <div class="case-meta">
+            <span class="chip chip-sm">Laravel 11</span>
+                    <span class="chip chip-sm">Python</span>
+                    <span class="chip chip-sm">Job Scraping</span>
+                    <span class="chip chip-sm">MySQL</span>
+        </div>
+    </header>
+
+    <article class="case-content card">
+<h2>1) Project Overview</h2>
+<p>Sivee is a Laravel 11 web application for job discovery and candidate profile management, with a separate admin panel for managing users, companies, and scraped job listings.</p>
+<p>The platform has two main roles:</p>
+<ul><li><strong>Candidate/User</strong>: signs up, completes onboarding, manages profile/CV/skills, browses jobs, and tracks job interactions.</li><li><strong>Admin</strong>: logs into a separate admin guard and manages users, companies, and jobs through DataTables-powered CRUD screens.</li></ul>
+<p>Core app routes and role split are defined in:</p>
+<ul><li><code>routes/web.php</code></li><li><code>config/auth.php</code></li></ul>
+<h2>1.1) Portfolio Context (Provided)</h2>
+<ul><li><strong>Role:</strong> Full-stack developer</li><li><strong>Implementation ownership:</strong> End-to-end feature ownership (all listed app features)</li><li><strong>Project duration:</strong> Approximately 2-3 months</li><li><strong>Team setup:</strong> 3 people (client-facing/coordination, full-stack development, QA/testing)</li><li><strong>Hosting model:</strong> Shared hosting</li><li><strong>Production URL:</strong> <code>https://sivee.ai</code></li></ul>
+<h2>2) Business Flows Implemented</h2>
+<h3>Candidate-facing flows</h3>
+<p>- personal info + profile photo - job preferences (industry/title/location/employment type/rates) - summary and external links - languages, skills, work experience, education, certificates - cover letters - multiple CV management and default CV selection (<code>auto_submission</code> + <code>default_cv</code>)</p>
+<p>- searchable/filterable listing by query, location, and category - list/detail rendering mode - job detail page by slug - company page with jobs and popularity sort</p>
+<p>- job views recorded in <code>job_views</code> - CTA/button clicks tracked in <code>user_click_tracks</code></p>
+<ul><li>User authentication (signup, login, forgot/reset password, logout).</li><li>Google OAuth login via Socialite.</li><li>Email verification flow using signed verification URLs.</li><li>Multi-step onboarding that captures personal details, job preferences, and CV upload.</li><li>Profile management:</li><li>Job discovery:</li><li>Job engagement tracking:</li></ul>
+<p>Primary controllers:</p>
+<ul><li><code>app/Http/Controllers/AuthController.php</code></li><li><code>app/Http/Controllers/ProfileController.php</code></li><li><code>app/Http/Controllers/HomeController.php</code></li><li><code>app/Http/Controllers/JobController.php</code></li><li><code>app/Http/Controllers/NotificationController.php</code></li></ul>
+<h3>Admin-facing flows</h3>
+<p>- monthly total clicks - per-company click stats segmented by button type (<code>1_click</code>, <code>company</code>)</p>
+<p>- list, activate/deactivate, delete</p>
+<p>- list, edit metadata/logo, activate/deactivate, delete - activating/deactivating a company cascades job <code>active</code> state updates</p>
+<p>- list, activate/deactivate, delete - manual scrape trigger for a selected company (with limit)</p>
+<ul><li>Admin login via separate <code>admin</code> guard.</li><li>Admin dashboard showing:</li><li>User management:</li><li>Company management:</li><li>Job management:</li></ul>
+<p>Primary admin controllers:</p>
+<ul><li><code>app/Http/Controllers/Admin/HomeController.php</code></li><li><code>app/Http/Controllers/Admin/UserController.php</code></li><li><code>app/Http/Controllers/Admin/CompanyController.php</code></li><li><code>app/Http/Controllers/Admin/JobController.php</code></li></ul>
+<h2>3) Job Scraping Architecture</h2>
+<p>Sivee imports jobs through domain-specific scraper endpoints configured in <code>scrape_domains</code>.</p>
+<p>Implementation:</p>
+<p>1. iterates active scrape domains 2. finds matching company by name 3. marks existing active jobs inactive for that domain/company 4. inserts latest jobs</p>
+<ul><li><code>ScrapeDomain::scrapeJobs()</code> builds a request to <code>https://{API_URL}/api/extract-jobs</code> with <code>url</code>, <code>site_id</code>, and <code>limit</code>.</li><li>Job payloads are normalized and inserted/upserted by <code>CompanyJob::InsertJobs()</code>.</li><li>The scheduled command <code>app:scrape-jobs</code> runs daily and:</li></ul>
+<p>Relevant files:</p>
+<ul><li><code>app/Models/ScrapeDomain.php</code></li><li><code>app/Models/CompanyJob.php</code></li><li><code>app/Console/Commands/ScrapeJobs.php</code></li><li><code>routes/console.php</code></li></ul>
+<h2>4) Data Model Summary</h2>
+<p>Main entities:</p>
+<ul><li><code>users</code>, <code>admins</code></li><li><code>companies</code>, <code>company_jobs</code>, <code>scrape_domains</code></li><li><code>job_infos</code>, <code>user_c_v_s</code>, <code>cover_letters</code></li><li><code>skills</code>, <code>languages</code>, pivot tables (<code>user_skills</code>, <code>user_languages</code>)</li><li><code>work_experiences</code>, <code>user_education</code>, <code>user_certificates</code></li><li><code>job_views</code>, <code>user_click_tracks</code></li><li>Laravel defaults for auth/session/cache/queue/notifications</li></ul>
+<p>Notable relationships:</p>
+<ul><li>User has one <code>jobInfo</code>, many CVs, many profile sub-records, many-to-many skills/languages.</li><li>Company has many jobs.</li><li>CompanyJob belongs to company, has many views/clicks.</li></ul>
+<p>Migrations are in <code>database/migrations</code> and include custom schema additions from 2024-06 through 2025-01.</p>
+<h2>5) Tech Stack</h2>
+<h3>Backend</h3>
+<ul><li>PHP <code>^8.2</code></li><li>Laravel <code>^11.9</code></li><li>MySQL (from <code>.env.example</code>)</li><li>Queue + notifications + scheduled commands</li></ul>
+<h3>Key packages</h3>
+<ul><li><code>laravel/socialite</code> (Google auth)</li><li><code>cviebrock/eloquent-sluggable</code> (company/job slugs)</li><li><code>yajra/laravel-datatables</code> (admin data grids)</li></ul>
+<h3>Frontend</h3>
+<ul><li>Blade templates</li><li>jQuery + Bootstrap assets under <code>public/assets</code> and <code>public/admin/assets</code></li><li>Vite scaffolding exists (<code>vite.config.js</code>, <code>resources/js</code>, <code>resources/css</code>), while much UI is served from static assets in <code>public/</code></li></ul>
+<h2>6) Security/Access Patterns in Code</h2>
+<p>- <code>CheckBoardingDone</code> - <code>ComingSoonMiddleware</code></p>
+<ul><li>Separate auth guards for users and admins (<code>config/auth.php</code>).</li><li>Route-level middleware for onboarding and launch-gating:</li><li>Email verification support via <code>MustVerifyEmail</code> on <code>User</code>.</li><li>Passwords are hashed through model casts.</li></ul>
+<h2>7) Notification and Email Flows</h2>
+<p>- <code>SendAccountCreatedEmailJob</code> - <code>SendVerificationEmailJob</code> - <code>SendResetPasswordEmailJob</code></p>
+<ul><li>Account created notification (mail + database).</li><li>Verification email (mail with temporary signed URL).</li><li>Reset password email (mail with broker token route).</li><li>These are dispatched through queue jobs:</li></ul>
+<h2>8) Portfolio-Ready Talking Points (Code-Verified)</h2>
+<ul><li>Built a dual-guard Laravel platform with separate candidate and admin experiences.</li><li>Implemented end-to-end candidate profile lifecycle, including structured CV and career metadata.</li><li>Designed a scraping ingestion pipeline with daily scheduling and idempotent upsert behavior.</li><li>Added engagement analytics (<code>views</code> + <code>click tracks</code>) and admin-level monthly aggregations.</li><li>Integrated OAuth (Google), email verification, reset-password, and asynchronous notification delivery.</li></ul>
+<h2>8.1) Public Product Positioning (Live Site Verified on 2026-04-29)</h2>
+<p>From the live site homepage (<code>https://sivee.ai</code>), Sivee positions itself around:</p>
+<ul><li>AI-assisted job discovery</li><li>Real-time job availability messaging</li><li>1-click account/application workflow messaging</li><li>Offline/automated job submission messaging</li><li>User flow emphasis: profile + CV upload -&gt; preferences -&gt; apply</li></ul>
+<p>These points are based on currently visible homepage copy and align with major implemented flows in the codebase.</p>
+<h2>9) Professional Summary</h2>
+<p>Sivee.ai demonstrates practical Laravel product engineering across candidate onboarding, profile management, admin operations, OAuth authentication, scheduled job ingestion, and analytics tracking. The project is strongest as a portfolio case study because it combines user-facing workflows with backend automation and operational admin tooling in a live product context.</p>
+    </article>
+</main>
+</body>
+</html>

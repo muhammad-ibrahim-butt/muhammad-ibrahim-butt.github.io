@@ -1,4 +1,4 @@
-# Sivee Project Context (Portfolio Draft)
+# Sivee.ai Candidate and Job Platform
 
 ## 1) Project Overview
 Sivee is a Laravel 11 web application for job discovery and candidate profile management, with a separate admin panel for managing users, companies, and scraped job listings.
@@ -154,16 +154,8 @@ From the live site homepage (`https://sivee.ai`), Sivee positions itself around:
 
 These points are based on currently visible homepage copy and align with major implemented flows in the codebase.
 
-## 9) Important Observations from Current Code
-- The repository README is still the default Laravel README and does not describe Sivee-specific setup/workflows.
-- The `coming-soon` middleware currently redirects most authenticated users (except `root@sivee.ai`) to signup; this appears to be a launch-gating rule and may be intentional for restricted rollout.
-- There is minimal automated test coverage in the repository (`tests/Feature/ExampleTest.php`, `tests/Unit/ExampleTest.php`).
-
-## 10) Details Needed From You (Not Inferable from Code)
-Confirmed from your input:
-- Role, timeline, team, deployment model, and implementation ownership are now included.
-
-Still unavailable (and not inferable from code alone):
-- Measurable outcomes/KPIs (traffic, retention, application conversion, scrape volume/day, latency improvements, etc.).
-
-Note: I did **not** add fabricated impact metrics. If you later share any real numbers (even rough internal ranges), I can add a stronger impact section immediately.
+## 9) Professional Summary
+Sivee.ai demonstrates practical Laravel product engineering across candidate onboarding, profile management,
+admin operations, OAuth authentication, scheduled job ingestion, and analytics tracking. The project is strongest as a
+portfolio case study because it combines user-facing workflows with backend automation and operational admin tooling in
+a live product context.

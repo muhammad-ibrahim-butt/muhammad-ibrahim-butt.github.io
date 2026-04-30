@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sema Tax Report is a Windows desktop application built to automate US sales tax reporting for a business that manages invoices, purchases, inventory items, customers, vendors,...">
+    <link rel="canonical" href="https://muhammad-ibrahim-butt.github.io/sema-tax-report.html">
+    <title>Sema Tax Report Automation - Muhammad Ibrahim Butt</title>
+    <link rel="icon" type="image/jpeg" href="./assets/images/profile.JPG">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body class="font-sans">
+<a href="#content" class="skip-link">Skip to case study</a>
+<main class="case-shell" id="content" tabindex="-1">
+    <nav class="case-nav" aria-label="Case study navigation">
+        <a href="./" class="case-brand">
+            <img src="./assets/images/profile.JPG" alt="Muhammad Ibrahim Butt" class="avatar-mark" width="28" height="28" decoding="async">
+            Muhammad Ibrahim Butt
+        </a>
+        <a href="./#work" class="btn btn-ghost btn-sm"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to work</a>
+    </nav>
+
+    <header class="case-hero card">
+        <p class="eyebrow">Tax automation tool</p>
+        <h1 class="h-display">Sema Tax Report Automation</h1>
+        <p class="lead">Sema Tax Report is a Windows desktop application built to automate US sales tax reporting for a business that manages invoices, purchases, inventory items, customers, vendors,...</p>
+        <div class="case-meta">
+            <span class="chip chip-sm">C#</span>
+                    <span class="chip chip-sm">QuickBooks SDK</span>
+                    <span class="chip chip-sm">MySQL</span>
+                    <span class="chip chip-sm">Excel</span>
+        </div>
+    </header>
+
+    <article class="case-content card">
+<h2>Project Overview</h2>
+<p>Sema Tax Report is a Windows desktop application built to automate US sales tax reporting for a business that manages invoices, purchases, inventory items, customers, vendors, and company data through QuickBooks Desktop. The project focuses on automating state-specific sales tax calculation across the United States by combining QuickBooks transaction data with a local MySQL tax-rule database.</p>
+<p>The application eliminates a manual process where invoice lines, item quantities, product categories, taxable units, customer details, and state tax values had to be reviewed and calculated by hand. Instead, the system imports transactions from QuickBooks, enriches every line item with item master data, applies the correct tax rule for the selected US state, highlights missing tax data, calculates tax totals, and exports ready-to-use reports.</p>
+<p>The main automation objective was to calculate US sales tax according to each state&#39;s rule by maintaining state-wise unit tax records for every item and applying those rules to invoice and purchase lines based on the destination or vendor state.</p>
+<h2>Portfolio Summary</h2>
+<p>This project demonstrates end-to-end automation of a real accounting and compliance workflow:</p>
+<ul><li>Automated QuickBooks Desktop invoice and bill imports.</li><li>Automated US state-wise sales tax calculation.</li><li>Built a local MySQL data model for tax rules, companies, states, customers, vendors, invoices, bills, and inventory items.</li><li>Added item-level tax configuration by UPC and state.</li><li>Added dirty-record detection to identify missing unit volume, pack quantity, stick count, or tax data.</li><li>Generated Excel reports for tax filing and customer-level review.</li><li>Added the ability to create tax invoices back into QuickBooks.</li><li>Built a WinForms interface for finance/accounting users to import, filter, correct, calculate, and export tax data without manually editing spreadsheets.</li></ul>
+<h2>Business Problem</h2>
+<p>The business needed to calculate sales tax for tobacco, vapor, cigar, hookah, wrap, and similar product categories sold across different US states. Each state can have different tax handling, and the tax depends on item-specific information such as:</p>
+<ul><li>Item UPC or item code.</li><li>Catalog category.</li><li>Catalog brand.</li><li>Product description.</li><li>Unit ml/mg.</li><li>Quantity in pack.</li><li>Stick count.</li><li>Quantity sold.</li><li>Destination state.</li><li>State-specific unit tax.</li></ul>
+<p>Manual tax reporting was time-consuming and error-prone because the data existed across multiple systems:</p>
+<ul><li>QuickBooks held invoices, bills, customers, vendors, line items, and transaction dates.</li><li>Item master data was needed to know volume, pack size, and stick count.</li><li>State tax rules were needed per UPC and state.</li><li>Excel reports were required for filing and review.</li></ul>
+<p>The application centralizes this process and turns it into a repeatable workflow.</p>
+<h2>Core Automation Goal</h2>
+<p>The core goal was to automate US sales tax calculation according to each state&#39;s rules. The system does this through the <code>item_master_tax</code> table, where every tax rule is stored against:</p>
+<ul><li><code>upc_code</code></li><li><code>state_code</code></li><li><code>unit_tax</code></li><li><code>stick_tax</code></li></ul>
+<p>When a user selects a state, the application loads that state&#39;s tax rules into memory and applies the correct <code>unit_tax</code> to each matching item code. The tax is calculated as:</p>
+<pre><code>Tax = Unit Tax x Quantity</code></pre>
+<p>The system also calculates supporting taxable values:</p>
+<pre><code>Extended Taxable Amount = Unit ml/mg x Quantity
+Total No. Of Sticks Sold = Stick Count x Quantity</code></pre>
+<p>These calculated fields are used in invoice views, bill views, totals, Excel exports, and QuickBooks tax invoice creation.</p>
+<h2>Technology Stack</h2>
+<ul><li>Language: C#</li><li>Framework: .NET Framework 4.7.2</li><li>UI: Windows Forms</li><li>Accounting integration: QuickBooks Desktop through QBFC15 COM library</li><li>Database: MySQL / MariaDB</li><li>Excel integration: Microsoft Office Interop Excel and EPPlus</li><li>CSV processing: CsvHelper</li><li>JSON processing: Newtonsoft.Json</li><li>Database connector: MySql.Data</li><li>Project type: Windows desktop executable</li><li>Solution: <code>SemaTaxReport.sln</code></li><li>Main project: <code>SemaTaxReport.csproj</code></li></ul>
+<h2>Application Entry Point</h2>
+<p>The application starts from <code>Program.cs</code>, which initializes WinForms and opens <code>MainMenu</code>.</p>
+<p><code>MainMenu</code> is an MDI parent form. It loads the active QuickBooks company, stores it in global state, enables the menu, and opens child forms for the main workflows:</p>
+<ul><li>Invoices tax automation.</li><li>Purchases/bills tax automation.</li><li>Items list and state tax maintenance.</li><li>Add item.</li><li>Settings.</li></ul>
+<h2>Main UI Modules</h2>
+<h3>Main Menu</h3>
+<p>File: <code>MainMenu.cs</code></p>
+<p>Responsibilities:</p>
+<ul><li>Loads the active QuickBooks company.</li><li>Uses saved company data when the QuickBooks company file has not changed.</li><li>Fetches company details from QuickBooks when the selected company file changes.</li><li>Stores active company context in <code>GlobalState.CurrentCompany</code>.</li><li>Opens application modules as MDI child forms.</li></ul>
+<p>Available modules:</p>
+<ul><li><code>FormInvoices</code></li><li><code>BillsTax</code></li><li><code>ItemsList</code></li><li><code>AddItem</code></li><li><code>Settings</code></li></ul>
+<h3>Invoice Tax Automation</h3>
+<p>File: <code>FormInvoices.cs</code></p>
+<p>This is the main sales tax automation screen.</p>
+<p>Responsibilities:</p>
+<ul><li>Imports invoices from QuickBooks for a selected date range.</li><li>Defaults the date range to the previous month.</li><li>Displays invoice line items in a DataGridView.</li><li>Filters invoices by state.</li><li>Filters invoices by catalog category.</li><li>Supports views such as dirty records, item-level view, and customer-level view.</li><li>Loads state-wise tax rules when a state is selected.</li><li>Applies item tax values to every invoice line.</li><li>Calculates taxable amount, stick totals, and tax totals.</li><li>Groups records and adds total rows.</li><li>Highlights invalid or incomplete records.</li><li>Allows correction of item master fields and unit tax.</li><li>Updates MySQL item and tax tables.</li><li>Exports tax reports to Excel.</li><li>Exports calculated tax invoices back into QuickBooks.</li></ul>
+<p>Important calculated columns:</p>
+<ul><li><code>Unit ml/mg</code></li><li><code>Quantity In Pack</code></li><li><code>Stick Count</code></li><li><code>Extended Taxable Amount</code></li><li><code>Total No. Of Sticks Sold</code></li><li><code>Unit Tax</code></li><li><code>Tax</code></li></ul>
+<p>Dirty-record detection flags rows where one or more required calculation fields are missing or zero:</p>
+<ul><li>Missing or zero unit ml/mg.</li><li>Missing or zero quantity in pack.</li><li>Missing or zero stick count.</li><li>Missing tax value for the selected state.</li></ul>
+<h3>Purchase / Bills Tax Automation</h3>
+<p>File: <code>BillsTax.cs</code></p>
+<p>This module imports and calculates tax data for QuickBooks bills and purchase records.</p>
+<p>Responsibilities:</p>
+<ul><li>Imports bills from QuickBooks for a selected date range.</li><li>Defaults the date range to the previous month.</li><li>Loads purchase line items into a DataGridView.</li><li>Filters purchase records by state and category.</li><li>Loads state tax rules.</li><li>Applies unit tax to bill line items.</li><li>Calculates extended taxable amount and tax.</li><li>Adds grouped vendor totals and grand tax totals.</li><li>Highlights dirty records.</li><li>Allows correction of item master and state tax values.</li><li>Updates the <code>item</code> and <code>item_master_tax</code> tables.</li></ul>
+<p>The purchase workflow mirrors the invoice workflow, making the same tax-rule engine usable for both sales and purchases.</p>
+<h3>Item Master Management</h3>
+<p>File: <code>ItemsList.cs</code></p>
+<p>This screen maintains item master and state tax data.</p>
+<p>Responsibilities:</p>
+<ul><li>Loads all US states from the <code>state</code> table.</li><li>Defaults state selection to Wisconsin.</li><li>Loads categories linked to the current company.</li><li>Filters items by state, category, and search text.</li><li>Displays each item with UPC, brand, description, unit volume, quantity in pack, stick count, state code, and unit tax.</li><li>Supports dirty-record filtering.</li><li>Allows editing of calculation-critical fields.</li><li>Updates item master data in the <code>item</code> table.</li><li>Updates or creates state tax records in <code>item_master_tax</code>.</li></ul>
+<p>This module is important because the accuracy of automated tax calculation depends on complete item master data and state-wise tax values.</p>
+<h3>Add Item</h3>
+<p>File: <code>AddItem.cs</code></p>
+<p>This screen creates a new item and its state tax configuration.</p>
+<p>Responsibilities:</p>
+<ul><li>Loads state list from the database.</li><li>Loads brand values from existing item records.</li><li>Loads categories from the database.</li><li>Validates UPC, unit volume, quantity in pack, stick count, and unit tax.</li><li>Inserts a new item into the <code>item</code> table.</li><li>Links the item to a category through <code>item_category</code>.</li><li>Adds the item&#39;s state tax rule into <code>item_master_tax</code>.</li></ul>
+<h3>Settings</h3>
+<p>Files:</p>
+<ul><li><code>Settings.cs</code></li><li><code>Classes/AppConfigManager.cs</code></li></ul>
+<p>The Settings screen manages application configuration.</p>
+<p>Configurable values:</p>
+<ul><li>Application name.</li><li>Environment.</li><li>QuickBooks company file path.</li><li>MySQL server.</li><li>Database name.</li><li>Database user.</li><li>Database password.</li></ul>
+<p>Configuration is stored in <code>appsettings.json</code> in the application base directory. The database password is encrypted using AES before it is saved.</p>
+<p>The settings module also includes:</p>
+<ul><li>QuickBooks company file picker for <code>.qbw</code> files.</li><li>MySQL connection test.</li><li>Company-file-changed flag so the app knows when to reload company data from QuickBooks.</li></ul>
+<h2>QuickBooks Integration</h2>
+<p>Files:</p>
+<ul><li><code>QuickBook.cs</code></li><li><code>Services/QuickBookService.cs</code></li></ul>
+<p>The project integrates with QuickBooks Desktop using QBFC15.</p>
+<p>QuickBooks connection behavior:</p>
+<ul><li>Opens a QBFC session using the configured application name and company file.</li><li>Creates request message sets for QuickBooks queries.</li><li>Sends requests using <code>DoRequests</code>.</li><li>Closes QuickBooks sessions and connections after operations.</li></ul>
+<p>Supported QuickBooks operations:</p>
+<ul><li>Get active company details.</li><li>Import vendors.</li><li>Import customers.</li><li>Import inventory items.</li><li>Import non-inventory items.</li><li>Import price levels.</li><li>Import invoices for a date range.</li><li>Import bills for a date range.</li><li>Fetch individual customer details.</li><li>Create tax invoices back in QuickBooks.</li></ul>
+<h3>Company Import</h3>
+<p>The app retrieves company name and address from QuickBooks and stores the active company in MySQL. This company context is used for category mappings, default category rules, reports, and generated tax invoices.</p>
+<h3>Customer Import and FEIN Handling</h3>
+<p>Customer data is imported from QuickBooks and stored locally. During invoice import, the app attempts to populate customer FEIN from local customer data. If it is missing, the app queries QuickBooks for the customer&#39;s resale number and stores it as <code>customerFein</code>.</p>
+<p>This is important for Excel tax report generation because missing FEIN values are reported back to the user.</p>
+<h3>Invoice Import</h3>
+<p>Invoice import process:</p>
+<p>- <code>Catalog Category</code> - <code>Catalog Brand</code></p>
+<ol><li>User selects a date range.</li><li>The app checks for cached invoice data for that date range.</li><li>If cache exists, it loads the DataTable from JSON.</li><li>If cache does not exist, it queries QuickBooks invoices with line items.</li><li>It imports invoice headers into the <code>invoice</code> table.</li><li>It imports invoice line items into the <code>invoice_detail</code> table.</li><li>It extracts QuickBooks custom fields:</li><li>It creates missing categories for the active company.</li><li>It enriches the result with item master fields.</li><li>It displays the final data in the invoice grid.</li></ol>
+<h3>Bill Import</h3>
+<p>Bill import process:</p>
+<p>- <code>Catalog Category</code> - <code>Catalog Brand</code></p>
+<ol><li>User selects a date range.</li><li>The app checks for cached bill data.</li><li>If cache exists, it loads the DataTable from JSON.</li><li>If cache does not exist, it queries QuickBooks bills with line items.</li><li>It imports bill headers into <code>bills</code>.</li><li>It imports line items into <code>bill_details</code>.</li><li>It extracts shipping lines and calculates shipping cost per item in <code>bills_shipping</code>.</li><li>It extracts QuickBooks custom fields:</li><li>It enriches purchase rows with item master fields.</li><li>It displays the final data in the bill grid.</li></ol>
+<h3>QuickBooks Tax Invoice Creation</h3>
+<p>The invoice module can create tax invoices back into QuickBooks after calculations are complete.</p>
+<p>Before creating QuickBooks invoices, the app validates that no dirty records exist. It then groups total rows by customer list ID and creates QuickBooks invoice lines using the calculated tax amount.</p>
+<p>Created QuickBooks tax invoice IDs are stored in <code>qb_tax_invoices</code>, preventing duplicate invoice creation for the same invoice number.</p>
+<h2>Database Design</h2>
+<p>Database file:</p>
+<ul><li><code>Database/sema_tax_report.sql</code></li></ul>
+<p>Database name:</p>
+<ul><li><code>sema_tax_report</code></li></ul>
+<p>The database stores QuickBooks data, local item metadata, category mappings, state rules, and generated QuickBooks tax invoice references.</p>
+<h3>Core Tables</h3>
+<h4><code>state</code></h4>
+<p>Stores all 50 US states.</p>
+<p>Important fields:</p>
+<ul><li><code>Id</code></li><li><code>StateCode</code></li><li><code>StateName</code></li></ul>
+<p>This table is used for state selectors and state-level tax rules.</p>
+<h4><code>company</code></h4>
+<p>Stores QuickBooks company details.</p>
+<p>Important fields:</p>
+<ul><li><code>Id</code></li><li><code>Name</code></li><li><code>Address1</code></li><li><code>City</code></li><li><code>State</code></li><li><code>PostalCode</code></li><li><code>Country</code></li><li><code>is_active</code></li></ul>
+<h4><code>customer</code></h4>
+<p>Stores QuickBooks customer records, including billing address, shipping address, tax code fields, price level, balance, resale number, and FEIN-related fields.</p>
+<p>Used for:</p>
+<ul><li>Invoice customer mapping.</li><li>FEIN retrieval.</li><li>QuickBooks customer list ID references.</li></ul>
+<h4><code>vendor</code></h4>
+<p>Stores QuickBooks vendor records.</p>
+<p>Used for:</p>
+<ul><li>Bill and purchase import.</li><li>Vendor-level grouping.</li><li>Vendor address and state information.</li></ul>
+<h4><code>invoice</code></h4>
+<p>Stores imported invoice headers.</p>
+<p>Important fields:</p>
+<ul><li><code>invoiceNumber</code></li><li><code>invoiceDate</code></li><li><code>invoiceCompanyName</code></li><li><code>customerListId</code></li><li><code>invoiceAddress</code></li><li><code>invoiceCity</code></li><li><code>invoiceState</code></li><li><code>invoiceSalesTaxCode</code></li><li><code>invoiceTotal</code></li><li><code>invoiceTimeCreated</code></li><li><code>invoiceTimeModified</code></li></ul>
+<h4><code>invoice_detail</code></h4>
+<p>Stores imported invoice line items.</p>
+<p>Important fields:</p>
+<ul><li><code>invoiceNumber</code></li><li><code>itemCode</code></li><li><code>itemQuantity</code></li><li><code>itemDescription</code></li><li><code>itemRate</code></li><li><code>itemAmount</code></li><li><code>itemCategory</code></li><li><code>itemBrand</code></li></ul>
+<h4><code>bills</code></h4>
+<p>Stores imported QuickBooks bill headers.</p>
+<p>Important fields:</p>
+<ul><li><code>id</code></li><li><code>vendor</code></li><li><code>ref_number</code></li><li><code>city</code></li><li><code>state</code></li><li><code>total</code></li><li><code>is_paid</code></li><li><code>memo</code></li><li><code>date</code></li></ul>
+<h4><code>bill_details</code></h4>
+<p>Stores imported bill line items.</p>
+<p>Important fields:</p>
+<ul><li><code>bill_id</code></li><li><code>item_code</code></li><li><code>item_category</code></li><li><code>item_brand</code></li><li><code>item_cost</code></li><li><code>item_quantity</code></li><li><code>item_description</code></li></ul>
+<h4><code>bills_shipping</code></h4>
+<p>Stores shipping allocation for bills.</p>
+<p>Important fields:</p>
+<ul><li><code>bill_id</code></li><li><code>total_sticks</code></li><li><code>shipping_cost</code></li><li><code>shipping_cost_per_item</code></li></ul>
+<p>This allows purchase cost to include allocated shipping cost per item.</p>
+<h4><code>item</code></h4>
+<p>Stores item master data.</p>
+<p>Important fields:</p>
+<ul><li><code>upc_code</code></li><li><code>catalog_brand</code></li><li><code>description</code></li><li><code>unit_volume</code></li><li><code>quantity_in_pack</code></li><li><code>stick_count</code></li><li><code>list_id</code></li><li><code>edit_sequence</code></li><li><code>full_name</code></li><li><code>case_upc</code></li><li><code>msrp</code></li><li><code>created_at</code></li><li><code>updated_at</code></li></ul>
+<p>This table provides the physical product information required for tax calculation.</p>
+<h4><code>item_master_tax</code></h4>
+<p>Stores the automated state tax rules.</p>
+<p>Important fields:</p>
+<ul><li><code>id</code></li><li><code>upc_code</code></li><li><code>state_code</code></li><li><code>unit_tax</code></li><li><code>stick_tax</code></li></ul>
+<p>This is the core rule table for state-by-state tax automation.</p>
+<h4><code>categories</code></h4>
+<p>Stores product categories by company.</p>
+<p>Important fields:</p>
+<ul><li><code>id</code></li><li><code>company_id</code></li><li><code>name</code></li></ul>
+<p>Categories are imported from QuickBooks custom fields and linked to the active company.</p>
+<h4><code>item_category</code></h4>
+<p>Links items to categories.</p>
+<p>Important fields:</p>
+<ul><li><code>id</code></li><li><code>upc_code</code></li><li><code>category_id</code></li></ul>
+<h4><code>default_category</code></h4>
+<p>Stores default category selections by company and state.</p>
+<p>Important fields:</p>
+<ul><li><code>company_id</code></li><li><code>category_id</code></li><li><code>state_code</code></li></ul>
+<p>This helps automate filtering by automatically selecting relevant categories when a state is selected.</p>
+<h4><code>qb_tax_invoices</code></h4>
+<p>Stores generated QuickBooks tax invoice references.</p>
+<p>Important fields:</p>
+<ul><li><code>company_id</code></li><li><code>invoice_number</code></li><li><code>qb_list_id</code></li><li><code>created_at</code></li></ul>
+<p>This table prevents duplicate QuickBooks tax invoice creation and links calculated tax results back to QuickBooks.</p>
+<h4><code>item_inventory</code>, <code>item_non_inventory</code>, and <code>price_level</code></h4>
+<p>These tables store QuickBooks item and pricing data imported from QuickBooks. They preserve detailed QuickBooks fields for inventory items, non-inventory items, and price levels.</p>
+<h2>Tax Calculation Workflow</h2>
+<p>The automated tax calculation workflow works as follows:</p>
+<ol><li>Import invoices or bills from QuickBooks.</li><li>Store transaction headers and line items in MySQL.</li><li>Load line items into a DataTable.</li><li>Join item codes with local item master data.</li><li>Add unit volume, quantity in pack, and stick count to each row.</li><li>User selects a US state.</li><li>App loads the state&#39;s tax rules from <code>item_master_tax</code>.</li><li>For each line item, match <code>Item Code</code> with <code>upc_code</code>.</li><li>Apply the state&#39;s <code>unit_tax</code>.</li><li>Calculate tax using quantity.</li><li>Calculate extended taxable amount.</li><li>Calculate total sticks sold.</li><li>Add group totals and grand tax totals.</li><li>Highlight rows that cannot be calculated safely.</li><li>Allow user correction directly in the grid.</li><li>Save corrected item data and state tax data.</li><li>Export final reports or create QuickBooks tax invoices.</li></ol>
+<h2>State Rule Automation</h2>
+<p>The system supports US state-level automation through state codes. The <code>state</code> table includes all 50 states, and <code>item_master_tax</code> stores tax values per item and state.</p>
+<p>For example, the same item can have different tax values for different states:</p>
+<pre><code>UPC A + WI = Wisconsin unit tax
+UPC A + CA = California unit tax
+UPC A + TX = Texas unit tax</code></pre>
+<p>This design allows the system to calculate tax based on the selected state without changing application code. Adding or updating a state&#39;s tax rule is a data operation, not a code change.</p>
+<h2>Data Enrichment</h2>
+<p>QuickBooks line items alone do not contain every field needed for tax reporting. The app enriches each imported line with local item master data:</p>
+<ul><li>Unit ml/mg from <code>item.unit_volume</code>.</li><li>Quantity in pack from <code>item.quantity_in_pack</code>.</li><li>Stick count from <code>item.stick_count</code>.</li><li>Unit tax from <code>item_master_tax.unit_tax</code>.</li><li>Category and brand from QuickBooks custom fields and local category data.</li></ul>
+<p>This enrichment step is what turns raw accounting transactions into tax-ready data.</p>
+<h2>Dirty Record Handling</h2>
+<p>Dirty records are records that cannot be trusted for final tax calculation because required values are missing.</p>
+<p>The app flags dirty records when:</p>
+<ul><li>Unit ml/mg is missing or zero.</li><li>Quantity in pack is missing or zero.</li><li>Stick count is missing or zero.</li><li>Unit tax is missing for the selected state.</li></ul>
+<p>Dirty records are highlighted in the grid with a visible background color. Users can filter to dirty records, correct the values, and save updates back to MySQL.</p>
+<p>This feature is critical because it prevents incorrect tax reporting and makes data cleanup part of the automated workflow.</p>
+<h2>Reporting</h2>
+<p>The application supports Excel exports for tax reporting and review.</p>
+<h3>TT101 Export</h3>
+<p>File: <code>Model/Invoice.cs</code></p>
+<p>Method:</p>
+<ul><li><code>ExportToTT101</code></li></ul>
+<p>The TT101 export uses a template file named <code>TT101.xlsx</code>. It writes invoice data into the expected report format and saves the result under the Reports directory.</p>
+<p>The export includes:</p>
+<ul><li>Schedule code.</li><li>Document date.</li><li>Invoice number.</li><li>Customer type.</li><li>Sold-to / ship-to details.</li><li>Customer FEIN.</li><li>Address, city, state, and country.</li><li>Federal product category.</li><li>State product category.</li><li>Price.</li><li>Tax jurisdiction.</li><li>Catalog brand.</li><li>Manufacturer fields.</li><li>Unit description.</li><li>Weight / volume.</li><li>Quantity.</li><li>Stick count.</li><li>Extended taxable amount.</li><li>Product description.</li></ul>
+<p>The export also identifies customers with missing FEIN values and displays a warning.</p>
+<h3>Customer-Level Export</h3>
+<p>Method:</p>
+<ul><li><code>ExportByCustomer</code></li></ul>
+<p>This export creates an Excel workbook with invoice-level and customer-level tax totals. It is useful for review, reconciliation, and customer-specific summaries.</p>
+<h2>Caching</h2>
+<p>The application caches imported invoice and bill data as JSON files using date-range-specific cache keys.</p>
+<p>Invoice cache format:</p>
+<pre><code>cache/invoices_yyyy-MM-dd_yyyy-MM-dd.json</code></pre>
+<p>Bill cache format:</p>
+<pre><code>cache/bills_yyyy-MM-dd_yyyy-MM-dd.json</code></pre>
+<p>Caching reduces repeated QuickBooks queries for the same reporting period and improves performance during review.</p>
+<h2>Bulk Import Strategy</h2>
+<p>For QuickBooks invoice and bill imports, the application uses CSV temp files and <code>MySqlBulkLoader</code>.</p>
+<p>Benefits:</p>
+<ul><li>Faster imports compared with row-by-row inserts.</li><li>Handles large transaction sets more efficiently.</li><li>Keeps QuickBooks data import practical for monthly reporting.</li></ul>
+<p>Bulk-loaded tables include:</p>
+<ul><li><code>invoice</code></li><li><code>invoice_detail</code></li><li><code>bills</code></li><li><code>bill_details</code></li><li><code>bills_shipping</code></li></ul>
+<h2>Global Application State</h2>
+<p>File:</p>
+<ul><li><code>Classes/GlobalState.cs</code></li></ul>
+<p>The app stores shared runtime state such as:</p>
+<ul><li>Current active company.</li><li>MySQL <code>secure_file_priv</code> path.</li></ul>
+<p>The active company is used by category filtering, default category rules, reports, and QuickBooks tax invoice descriptions.</p>
+<h2>Configuration Management</h2>
+<p>File:</p>
+<ul><li><code>Classes/AppConfigManager.cs</code></li></ul>
+<p>The app uses a singleton configuration manager. It reads and writes <code>appsettings.json</code>.</p>
+<p>Default configuration includes:</p>
+<ul><li>App name: <code>Sema Tax Report</code></li><li>Environment: <code>Development</code></li><li>Default QuickBooks company file path.</li><li>Server: <code>localhost</code></li><li>Database: <code>sema_tax_report</code></li><li>Database user: <code>root</code></li><li>Database password: encrypted when saved.</li></ul>
+<p>The configuration manager supports:</p>
+<ul><li>Loading default config if no config file exists.</li><li>Saving config changes.</li><li>Encrypting database password.</li><li>Decrypting database password for runtime use.</li><li>Dynamic get/set by property name.</li></ul>
+<h2>Data Access Layer</h2>
+<p>Files:</p>
+<ul><li><code>Classes/DB.cs</code></li><li><code>Classes/MySqlDatabase.cs</code></li></ul>
+<p><code>MySqlDatabase</code> creates MySQL connections using the configured connection string and enables local infile loading through:</p>
+<pre><code>AllowLoadLocalInfile=true</code></pre>
+<p><code>DB</code> provides reusable helpers for:</p>
+<ul><li>Executing non-query SQL.</li><li>Inserting rows from dictionaries.</li><li>Updating rows from dictionaries.</li><li>Reading query results into dictionaries.</li><li>Running parameterized read queries.</li></ul>
+<h2>Models and Responsibilities</h2>
+<h3><code>Invoice</code></h3>
+<p>Handles invoice import, invoice table population, grid alignment, TT101 export, and customer-level export.</p>
+<h3><code>InvoiceDetail</code></h3>
+<p>Represents invoice line item details and supports invoice detail table operations.</p>
+<h3><code>Bill</code></h3>
+<p>Handles bill import, bill table population, shipping allocation, and grid alignment.</p>
+<h3><code>BillDetail</code></h3>
+<p>Represents bill line item details and supports bill detail table operations.</p>
+<h3><code>BillShipping</code></h3>
+<p>Represents bill shipping allocation data.</p>
+<h3><code>Item</code></h3>
+<p>Handles item existence checks, item creation, item update, and loading item master data for calculations.</p>
+<h3><code>ItemMasterTax</code></h3>
+<p>Handles state-wise tax rule lookup, creation, and update.</p>
+<h3><code>Category</code></h3>
+<p>Creates product categories linked to the active company.</p>
+<h3><code>DefaultCategory</code></h3>
+<p>Stores and updates default product categories by state and company.</p>
+<h3><code>Company</code></h3>
+<p>Stores QuickBooks company data in the local database.</p>
+<h3><code>Customer</code></h3>
+<p>Imports and updates QuickBooks customer records.</p>
+<h3><code>Vendor</code></h3>
+<p>Imports QuickBooks vendor records.</p>
+<h3><code>InventoryItem</code></h3>
+<p>Represents QuickBooks inventory item data.</p>
+<h3><code>NonInventoryItem</code></h3>
+<p>Represents QuickBooks non-inventory item data.</p>
+<h3><code>PriceLevel</code></h3>
+<p>Represents QuickBooks price level data.</p>
+<h3><code>State</code></h3>
+<p>Represents US state data.</p>
+<h2>User Workflow</h2>
+<p>Typical invoice tax workflow:</p>
+<ol><li>Open the application.</li><li>Configure QuickBooks company file and MySQL connection if needed.</li><li>Application loads active company.</li><li>Open the Invoices module.</li><li>Select date range.</li><li>Import invoices from QuickBooks.</li><li>Select target state.</li><li>Application automatically loads state tax rules.</li><li>Select relevant categories or use default category selections.</li><li>Review calculated tax rows.</li><li>Filter dirty records if needed.</li><li>Correct missing item or tax data.</li><li>Save corrections.</li><li>Export TT101 report or customer-level report.</li><li>Optionally create QuickBooks tax invoices.</li></ol>
+<p>Typical purchase tax workflow:</p>
+<ol><li>Open Purchases/Bills module.</li><li>Select date range.</li><li>Import bills from QuickBooks.</li><li>Select state.</li><li>Apply state tax rules.</li><li>Review vendor totals and grand tax totals.</li><li>Correct dirty records.</li><li>Save item and tax updates.</li></ol>
+<p>Typical item maintenance workflow:</p>
+<ol><li>Open Items List.</li><li>Select state.</li><li>Search item by UPC or description.</li><li>Filter by category.</li><li>Review unit volume, pack quantity, stick count, and unit tax.</li><li>Update missing or incorrect values.</li><li>Save changes.</li></ol>
+<h2>Key Features</h2>
+<ul><li>QuickBooks Desktop integration.</li><li>MySQL-backed state tax rule engine.</li><li>State-by-state tax calculation.</li><li>Invoice and bill import by date range.</li><li>Item master enrichment.</li><li>Dirty-record detection.</li><li>Editable tax-critical fields.</li><li>Category and state filtering.</li><li>Default category selection by state.</li><li>Group totals by company, invoice, customer, or vendor.</li><li>Grand tax totals.</li><li>TT101 Excel export.</li><li>Customer-level Excel export.</li><li>QuickBooks tax invoice creation.</li><li>JSON caching for imported transaction data.</li><li>Encrypted database password in local config.</li><li>Bulk MySQL imports for performance.</li></ul>
+<h2>Calculation Fields</h2>
+<p>The project calculates and displays these tax-specific fields:</p>
+<ul><li><code>Unit ml/mg</code>: Product unit volume or measurement.</li><li><code>Quantity In Pack</code>: Number of units in a pack.</li><li><code>Stick Count</code>: Number of sticks represented by the item.</li><li><code>Extended Taxable Amount</code>: Unit ml/mg multiplied by quantity.</li><li><code>Total No. Of Sticks Sold</code>: Stick count multiplied by quantity.</li><li><code>Unit Tax</code>: State-specific tax value for the UPC.</li><li><code>Tax</code>: Unit tax multiplied by quantity.</li></ul>
+<h2>Product Category Handling</h2>
+<p>The app reads QuickBooks custom fields from line items:</p>
+<ul><li><code>Catalog Category</code></li><li><code>Catalog Brand</code></li></ul>
+<p>Categories are stored locally and associated with the active company. During TT101 export, category values are mapped into federal and state product categories.</p>
+<p>Examples from the current export logic:</p>
+<ul><li><code>09 Premium Cigar</code> maps to federal <code>LARGE CIGAR</code> and state <code>Cigar</code>.</li><li><code>06 Hookah Tobacco</code> and <code>08-5 Wraps Tobacco</code> map to federal <code>OTHER</code> and state <code>OTP</code>.</li><li>Other categories default to vapor-product reporting fields.</li></ul>
+<h2>Impact</h2>
+<p>This project converted a manual tax-reporting workflow into a controlled desktop automation tool. The app reduces manual spreadsheet work, improves consistency, keeps state tax rules centralized, and gives accounting users a way to detect and fix missing tax data before reports are filed.</p>
+<p>The most important impact is that state-specific tax logic became data-driven. Instead of rewriting formulas or manually editing spreadsheets for every state, users can maintain tax values in <code>item_master_tax</code> and reuse the same workflow across states.</p>
+<h2>My Role</h2>
+<p>I automated the US sales tax calculation workflow according to state-level rules across the USA. My work included building the data flow from QuickBooks to MySQL, implementing the state-wise tax rule lookup, calculating item-level and total tax values, creating dirty-record validation, adding correction workflows, and generating Excel reports for compliance and review.</p>
+<h2>Portfolio Description</h2>
+<p>Sema Tax Report is a C# WinForms automation tool that integrates with QuickBooks Desktop and MySQL to calculate US sales tax based on state-specific rules. The application imports invoices and bills from QuickBooks, enriches each transaction line with local item master data, applies tax rates by UPC and state, calculates taxable volume, stick totals, and tax totals, highlights incomplete records, and exports filing-ready Excel reports. It also supports item tax maintenance and can create calculated tax invoices back into QuickBooks, making the overall sales tax workflow faster, more accurate, and easier to audit.</p>
+<h2>Resume Bullet Points</h2>
+<ul><li>Built a C# WinForms desktop application to automate US state-wise sales tax calculation for QuickBooks invoice and bill data.</li><li>Integrated QuickBooks Desktop through QBFC15 to import invoices, bills, customers, vendors, inventory items, non-inventory items, price levels, and company information.</li><li>Designed a MySQL-backed tax rule model using item UPC and state code to calculate sales tax according to each US state&#39;s rule.</li><li>Implemented item master enrichment for unit volume, pack quantity, stick count, extended taxable amount, total sticks sold, unit tax, and total tax.</li><li>Added dirty-record detection and correction workflows to prevent incomplete or inaccurate tax reporting.</li><li>Developed Excel exports including TT101-style tax reporting and customer-level tax summaries.</li><li>Added QuickBooks tax invoice creation and stored generated QuickBooks invoice references to prevent duplicate processing.</li><li>Used bulk loading, caching, and structured DataTable workflows to improve performance for monthly reporting.</li></ul>
+<h2>Repository Structure</h2>
+<pre><code>SemaTaxReport/
+  AddItem.cs
+  App.config
+  BillsTax.cs
+  FormInvoices.cs
+  ItemsList.cs
+  MainMenu.cs
+  Program.cs
+  QuickBook.cs
+  Settings.cs
+  SemaTaxReport.csproj
+  SemaTaxReport.sln
+  Classes/
+    AppConfigManager.cs
+    DB.cs
+    GlobalState.cs
+    HelperFunctions.cs
+    MySqlDatabase.cs
+  Database/
+    sema_tax_report.sql
+  Model/
+    Bill.cs
+    BillDetail.cs
+    BillShipping.cs
+    Category.cs
+    Company.cs
+    Customer.cs
+    DefaultCategory.cs
+    InventoryItem.cs
+    Invoice.cs
+    InvoiceDetail.cs
+    Item.cs
+    ItemMasterTax.cs
+    NonInventoryItem.cs
+    PriceLevel.cs
+    State.cs
+    Vendor.cs
+  Resources/
+    Icons/
+    Samples/
+  Services/
+    QuickBookService.cs</code></pre>
+<h2>Final Notes</h2>
+<p>This project is best presented in a portfolio as an accounting automation and compliance reporting tool. The strongest point is not just that it calculates tax, but that it automates the full operational loop:</p>
+<pre><code>QuickBooks import -&gt; MySQL normalization -&gt; state tax rule lookup -&gt; calculation -&gt; validation -&gt; correction -&gt; Excel export -&gt; QuickBooks tax invoice creation</code></pre>
+<p>That full loop shows practical business automation, accounting-system integration, state-wise tax rule management, and user-facing desktop application development.</p>
+    </article>
+</main>
+</body>
+</html>

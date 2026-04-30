@@ -33,7 +33,6 @@
 
     <link rel="icon" type="image/jpeg" href="./assets/images/profile.JPG"/>
 
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,20 +40,7 @@
             href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"
             rel="stylesheet">
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
-                        serif: ['"Instrument Serif"', 'ui-serif', 'Georgia', 'serif'],
-                        mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace']
-                    }
-                }
-            }
-        }
-    </script>
-
+    <link rel="stylesheet" href="./assets/css/tailwind.generated.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 
     <script type="application/ld+json">
@@ -582,7 +568,7 @@
                     </div>
 
                     <div>
-                        <a href="./qbsalesstar.md" class="btn btn-ghost btn-sm">
+                        <a href="./qbsalesstar.html" class="btn btn-ghost btn-sm">
                             View case study <i class="fa-solid fa-arrow-right text-[10px]" aria-hidden="true"></i>
                         </a>
                     </div>
@@ -626,7 +612,7 @@
                     <span class="chip chip-sm">Queues</span>
                 </div>
                 <div class="mt-5 flex flex-wrap gap-2">
-                    <a href="./we-process.md" class="btn btn-ghost btn-sm">
+                    <a href="./we-process.html" class="btn btn-ghost btn-sm">
                         Case study <i class="fa-solid fa-arrow-right text-[10px]" aria-hidden="true"></i>
                     </a>
                     <a href="https://weprocess.co.uk/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">
@@ -669,7 +655,7 @@
                     <span class="chip chip-sm">Scheduler</span>
                 </div>
                 <div class="mt-5 flex flex-wrap gap-2">
-                    <a href="./shouri.md" class="btn btn-ghost btn-sm">
+                    <a href="./shouri.html" class="btn btn-ghost btn-sm">
                         Case study <i class="fa-solid fa-arrow-right text-[10px]" aria-hidden="true"></i>
                     </a>
                     <a href="https://app.getshouri.com/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">
@@ -712,7 +698,7 @@
                     <span class="chip chip-sm">RAG</span>
                 </div>
                 <div class="mt-5">
-                    <a href="./ai-pdf-chatbot.md" class="btn btn-ghost btn-sm">
+                    <a href="./ai-pdf-chatbot.html" class="btn btn-ghost btn-sm">
                         Case study <i class="fa-solid fa-arrow-right text-[10px]" aria-hidden="true"></i>
                     </a>
                 </div>
@@ -752,7 +738,7 @@
                     <span class="chip chip-sm">Tax Reports</span>
                 </div>
                 <div class="mt-5">
-                    <a href="./sema-tax-report.md" class="btn btn-ghost btn-sm">
+                    <a href="./sema-tax-report.html" class="btn btn-ghost btn-sm">
                         Case study <i class="fa-solid fa-arrow-right text-[10px]" aria-hidden="true"></i>
                     </a>
                 </div>
@@ -793,7 +779,7 @@
                     <span class="chip chip-sm">Schedulers & Queues</span>
                 </div>
                 <div class="mt-5 flex flex-wrap gap-2">
-                    <a href="./sivee.md" class="btn btn-ghost btn-sm">
+                    <a href="./sivee.html" class="btn btn-ghost btn-sm">
                         Case study <i class="fa-solid fa-arrow-right text-[10px]" aria-hidden="true"></i>
                     </a>
                     <a href="https://sivee.ai/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">
@@ -1363,40 +1349,6 @@
                 </div>
             </div>
 
-            <!--            &lt;!&ndash; Credentials &ndash;&gt;-->
-            <!--            <div class="md:col-span-5 space-y-3">-->
-            <!--                <p class="mono text-xs text-subtle uppercase tracking-wider mb-1">Credentials</p>-->
-
-            <!--                <a href="#" class="card p-5 flex items-center gap-4 group">-->
-            <!--                    <div class="monogram"><i class="fa-brands fa-aws text-text"></i></div>-->
-            <!--                    <div class="flex-1 min-w-0">-->
-            <!--                        <p class="text-sm text-text truncate">AWS Solutions Architect</p>-->
-            <!--                        <p class="mono text-[10.5px] text-subtle mt-0.5">Amazon Web Services · TODO: date</p>-->
-            <!--                    </div>-->
-            <!--                    <i-->
-            <!--                            class="fa-solid fa-arrow-up-right-from-square text-[11px] text-subtle group-hover:text-text transition"></i>-->
-            <!--                </a>-->
-
-            <!--                <a href="#" class="card p-5 flex items-center gap-4 group">-->
-            <!--                    <div class="monogram"><i class="fa-solid fa-brain text-text text-sm"></i></div>-->
-            <!--                    <div class="flex-1 min-w-0">-->
-            <!--                        <p class="text-sm text-text truncate">Machine Learning Specialization</p>-->
-            <!--                        <p class="mono text-[10.5px] text-subtle mt-0.5">TODO: issuer · TODO: date</p>-->
-            <!--                    </div>-->
-            <!--                    <i-->
-            <!--                            class="fa-solid fa-arrow-up-right-from-square text-[11px] text-subtle group-hover:text-text transition"></i>-->
-            <!--                </a>-->
-
-            <!--                <a href="#" class="card p-5 flex items-center gap-4 group">-->
-            <!--                    <div class="monogram"><i class="fa-brands fa-github text-text"></i></div>-->
-            <!--                    <div class="flex-1 min-w-0">-->
-            <!--                        <p class="text-sm text-text truncate">GitHub Professional Certificate</p>-->
-            <!--                        <p class="mono text-[10.5px] text-subtle mt-0.5">GitHub · TODO: date</p>-->
-            <!--                    </div>-->
-            <!--                    <i-->
-            <!--                            class="fa-solid fa-arrow-up-right-from-square text-[11px] text-subtle group-hover:text-text transition"></i>-->
-            <!--                </a>-->
-            <!--            </div>-->
 
         </div>
     </section>

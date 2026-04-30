@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shouri is a live social challenge platform built around community participation, creator engagement, competitive submissions, and reward-based interaction. The product connects...">
+    <link rel="canonical" href="https://muhammad-ibrahim-butt.github.io/shouri.html">
+    <title>Shouri Social Challenge Platform - Muhammad Ibrahim Butt</title>
+    <link rel="icon" type="image/jpeg" href="./assets/images/profile.JPG">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body class="font-sans">
+<a href="#content" class="skip-link">Skip to case study</a>
+<main class="case-shell" id="content" tabindex="-1">
+    <nav class="case-nav" aria-label="Case study navigation">
+        <a href="./" class="case-brand">
+            <img src="./assets/images/profile.JPG" alt="Muhammad Ibrahim Butt" class="avatar-mark" width="28" height="28" decoding="async">
+            Muhammad Ibrahim Butt
+        </a>
+        <a href="./#work" class="btn btn-ghost btn-sm"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to work</a>
+    </nav>
+
+    <header class="case-hero card">
+        <p class="eyebrow">Public social platform</p>
+        <h1 class="h-display">Shouri Social Challenge Platform</h1>
+        <p class="lead">Shouri is a live social challenge platform built around community participation, creator engagement, competitive submissions, and reward-based interaction. The product connects...</p>
+        <div class="case-meta">
+            <span class="chip chip-sm">Laravel</span>
+                    <span class="chip chip-sm">iOS</span>
+                    <span class="chip chip-sm">Android</span>
+                    <span class="chip chip-sm">100K+ downloads</span>
+        </div>
+    </header>
+
+    <article class="case-content card">
+<h2>Project Overview</h2>
+<p>Shouri is a live social challenge platform built around community participation, creator engagement, competitive submissions, and reward-based interaction. The product connects users, creators, communities, and brands through challenge-based content where users can create challenges, submit video entries, vote through likes, follow creators, participate in discussions, and earn rewards through winning challenge submissions.</p>
+<p>The platform is not only a backend prototype or internal tool. Shouri is publicly available across the major user channels:</p>
+<ul><li>Web application: <a href="https://app.getshouri.com/" target="_blank" rel="noopener noreferrer">https://app.getshouri.com/</a></li><li>iOS App Store: <a href="https://apps.apple.com/us/app/shouri/id6476094112?l=fr-FR" target="_blank" rel="noopener noreferrer">https://apps.apple.com/us/app/shouri/id6476094112?l=fr-FR</a></li><li>Google Play Store: <a href="https://play.google.com/store/apps/details?id=com.shouri.sports.mobileapp&amp;pli=1" target="_blank" rel="noopener noreferrer">https://play.google.com/store/apps/details?id=com.shouri.sports.mobileapp&amp;pli=1</a></li></ul>
+<p>This multi-platform availability is an important success signal because it shows that the product moved beyond development into real public distribution across web, iPhone, and Android.</p>
+<h2>Product Positioning</h2>
+<p>Shouri is positioned as a social networking experience where challenge participation becomes the core engagement loop. Instead of only consuming content, users are encouraged to create, compete, vote, follow, comment, and build reputation inside a community-driven environment.</p>
+<p>The product combines several strong engagement models:</p>
+<ul><li>User-generated challenges</li><li>Sponsored or brand-friendly challenge opportunities</li><li>Video submissions</li><li>Community voting</li><li>Creator profiles</li><li>Follow-based discovery</li><li>Wallet balances and withdrawals</li><li>Winner rewards</li><li>Push notifications</li><li>Ranking and recognition</li></ul>
+<p>This gives Shouri a stronger product story than a simple content feed. The app is designed around repeat participation: users return to check challenge results, view submissions, receive notifications, vote, improve rankings, and withdraw earned rewards.</p>
+<h2>Public Success Indicators</h2>
+<p>Shouri already has visible public traction and production credibility:</p>
+<ul><li>The Android app is listed on Google Play with 100K+ downloads.</li><li>The iOS app is live on the Apple App Store under the Social Networking category.</li><li>The product has a public web experience at app.getshouri.com with feed, profile, wallet, messages, notifications, upload, settings, and app download flows.</li><li>The App Store listing shows ongoing product maintenance, including version updates and app improvements.</li><li>The Play Store listing presents Shouri as a complete social experience with challenges, voting, subscriptions, profile types, cards, and payout functionality.</li><li>The backend contains real production-grade modules for authentication, user management, challenge lifecycle handling, submissions, wallet history, withdrawals, admin review, moderation, and push notifications.</li></ul>
+<p>These points show that Shouri is a serious shipped product with real distribution, an active product surface, and a backend architecture supporting monetization and community growth.</p>
+<h2>Core User Experience</h2>
+<p>Shouri&#39;s user experience is built around challenges. A user can join the platform, create a profile, follow other users, browse challenges, submit video content, vote on submissions, comment, and receive updates as activity happens.</p>
+<p>The public web app also reinforces this flow with sections such as:</p>
+<ul><li>Home feed</li><li>Profile</li><li>Wallet</li><li>Messages</li><li>Notifications</li><li>Settings</li><li>Upload</li><li>Download app prompts</li><li>Challenge feed filters such as For You, Followings, Specials, and Open</li></ul>
+<p>The product therefore supports both discovery and conversion. A visitor can view the public web experience and is encouraged to continue into the full mobile app for richer functionality.</p>
+<h2>Main Features</h2>
+<h3>User Accounts and Authentication</h3>
+<p>The backend supports user registration, login, logout, password reset, profile updates, email OTP verification, phone-based checks, and social provider support for TikTok, Facebook, Instagram, and Google identifiers. User sessions are handled through Laravel Sanctum API tokens.</p>
+<p>Important account features include:</p>
+<ul><li>Username-based registration and login</li><li>Email verification through OTP</li><li>Password reset support</li><li>Phone number validation with country dial code handling</li><li>Social provider account support</li><li>FCM token storage for push notifications</li><li>Time zone awareness through request headers</li><li>Account deletion</li><li>Active and inactive account states</li></ul>
+<h3>Profiles and Social Graph</h3>
+<p>Users can follow and unfollow each other, view follower lists, search users, and see profile-level statistics. The user model exposes follower counts and total submission counts, giving each profile measurable social activity.</p>
+<p>The app also supports blocking and unblocking users, which is important for user safety and content control in a social platform.</p>
+<h3>Challenge Creation</h3>
+<p>Authenticated users can create challenges with:</p>
+<ul><li>Title</li><li>Description</li><li>Tags</li><li>Entry fee</li><li>Deadline duration</li><li>Thumbnail</li><li>Trailer video</li><li>Optional access code</li></ul>
+<p>Challenge media is uploaded to AWS S3, which is a scalable production-ready storage choice for image and video assets. Tags are normalized and stored so challenges can be searched and filtered.</p>
+<p>The challenge duration rules require a minimum of 24 hours and a maximum of 72 hours, creating a controlled challenge lifecycle that keeps competitions active without becoming stale.</p>
+<h3>Challenge Discovery and Filtering</h3>
+<p>The API supports listing challenges, searching by title, and filtering by tags. Each challenge response can include:</p>
+<ul><li>Creator information</li><li>Human-readable tag names</li><li>Like state</li><li>Follow state</li><li>Share count</li><li>Comment count</li><li>Participant count</li><li>View count</li><li>Lock state for access-code challenges</li></ul>
+<p>This gives the frontend enough structured data to create rich challenge cards and feeds.</p>
+<h3>Video Submissions</h3>
+<p>Users can submit video entries to active challenges. Each submission includes a video file and thumbnail, with media uploaded to S3. The backend validates challenge status, payment requirements, and supported payment gateways.</p>
+<p>Supported payment gateway values include:</p>
+<ul><li>PayPal</li><li>Google Pay</li><li>Apple Pay</li><li>Wallet</li></ul>
+<p>The submission system also records transactions or wallet deductions when a challenge requires a fee.</p>
+<h3>Voting, Likes, Views, Shares, and Comments</h3>
+<p>Shouri supports the core interaction mechanics expected from a social challenge platform:</p>
+<ul><li>Challenge likes</li><li>Submission likes</li><li>Challenge comments</li><li>Submission comments</li><li>Comment likes</li><li>Challenge views</li><li>Submission views</li><li>Challenge shares</li><li>Submission shares</li></ul>
+<p>These engagement signals drive discovery, rankings, notifications, and winner selection.</p>
+<h3>Winner Selection and Rewards</h3>
+<p>The challenge model includes logic for assigning winners based on submission likes. When a challenge ends, the backend evaluates submissions, identifies the winning submission, calculates reward distribution, updates the winner&#39;s wallet balance, records balance history, creates admin earning records, and stores the challenge winner record.</p>
+<p>If there is a tie in submission likes, the challenge can be extended by one hour. This is a thoughtful product rule because it prevents unfair automatic winner selection when multiple submissions have equal top engagement.</p>
+<p>Reward handling includes:</p>
+<ul><li>Total reward calculation from participant fees</li><li>Winner reward percentage</li><li>Admin earning percentage</li><li>Balance updates</li><li>Wallet history records</li><li>Winner notification</li><li>Submission rank assignment</li></ul>
+<p>This reward loop is one of the strongest business-value parts of the project because it directly connects engagement with monetization.</p>
+<h3>Wallet, Bank Details, and Withdrawals</h3>
+<p>Users have wallet balances and can store bank or PayPal withdrawal information. The backend includes withdrawal request handling, admin approval/rejection states, balance history, and user notifications when withdrawal requests are responded to.</p>
+<p>Supported withdrawal request statuses are:</p>
+<ul><li>Pending</li><li>Accepted</li><li>Rejected</li></ul>
+<p>This shows that Shouri includes a practical money-flow system, not just content interaction.</p>
+<h3>Push Notifications</h3>
+<p>The backend includes a queued push notification job using Firebase Cloud Messaging. Notifications are created for major user events, including:</p>
+<ul><li>New challenge created</li><li>Challenge liked</li><li>Challenge commented</li><li>Challenge ended</li><li>Challenge winner selected</li><li>New follower</li><li>New submission</li><li>Submission liked</li><li>Submission commented</li><li>Rank updated</li><li>Withdrawal request responded</li></ul>
+<p>Users also have notification settings, allowing them to control which categories they receive. Notifications are stored in the database and new notification counts are tracked per user.</p>
+<h3>Ranking System</h3>
+<p>Shouri includes monthly rank calculation based on challenge likes and submission likes. The scheduled command calculates user rankings near the end of each month, stores rank history, updates current ranks, and sends rank update notifications when a user&#39;s rank changes.</p>
+<p>This gives the platform a long-term retention mechanic. Users can compete not only inside individual challenges but also across the whole platform through monthly performance.</p>
+<h3>Moderation and Safety</h3>
+<p>The project includes moderation features that are important for a public social app:</p>
+<ul><li>Content reporting</li><li>Report reasons</li><li>Admin review of content reports</li><li>Accept or reject report actions</li><li>User blocking</li><li>Hidden content from blocked users</li><li>Admin user status management</li><li>Account deletion support</li></ul>
+<p>These features show that the product was built with public community management in mind.</p>
+<h3>Admin Dashboard</h3>
+<p>The Laravel web admin panel includes management sections for:</p>
+<ul><li>Dashboard</li><li>Users</li><li>Challenges</li><li>Submissions</li><li>Challenge winners</li><li>Withdrawal requests</li><li>Settings</li><li>Support messages</li><li>Content reports</li><li>Password management</li></ul>
+<p>The admin panel uses server-side Laravel views and DataTables support, giving operators a practical way to monitor and manage the platform.</p>
+<h2>Backend Architecture</h2>
+<p>The backend is built with Laravel 10 and PHP 8.1. It uses a structured API and admin architecture with controllers, models, migrations, jobs, commands, seeders, helpers, and Blade views.</p>
+<p>Key backend technologies and packages include:</p>
+<ul><li>Laravel 10</li><li>PHP 8.1</li><li>Laravel Sanctum for API authentication</li><li>AWS SDK and Flysystem S3 adapter for cloud file storage</li><li>SendGrid for email delivery</li><li>Firebase Cloud Messaging helper integration for push notifications</li><li>Laravel queues for background notification work</li><li>Laravel scheduler for automated lifecycle tasks</li><li>Yajra DataTables for admin data management</li></ul>
+<p>The architecture separates mobile/API behavior from admin web behavior. API routes serve the mobile and web client experience, while web routes power the admin dashboard.</p>
+<h2>Scheduled Automation</h2>
+<p>The platform includes scheduled backend jobs that keep the app operating without manual admin work:</p>
+<ul><li>Challenges are checked and deactivated every three minutes.</li><li>User rankings are calculated monthly near the end of the month.</li></ul>
+<p>This automation is important because the core product depends on timed competitions, winner calculation, and ranking updates.</p>
+<h2>Database Scope</h2>
+<p>The database schema supports a wide range of product domains:</p>
+<ul><li>Users</li><li>Admins</li><li>Countries, states, and cities</li><li>Followers</li><li>Tags</li><li>Challenges</li><li>Submissions</li><li>Challenge comments</li><li>Submission comments</li><li>Likes</li><li>Views</li><li>Shares</li><li>Transactions</li><li>Balance histories</li><li>Bank details</li><li>Withdrawal requests</li><li>Challenge winners</li><li>Admin earnings</li><li>Settings</li><li>Support messages</li><li>Notifications</li><li>Notification settings</li><li>Rank histories</li><li>Content reports</li><li>Report reasons</li><li>Blocked users</li><li>Email verifications</li></ul>
+<p>This schema shows that the backend is designed for a complete social-commerce challenge platform rather than a narrow MVP.</p>
+<h2>Monetization and Business Value</h2>
+<p>Shouri has multiple product paths that can support business growth:</p>
+<ul><li>Challenge entry fees</li><li>Winner rewards</li><li>Admin earning percentage from challenge pools</li><li>Paid subscriptions mentioned in the public listings</li><li>Sponsored challenge opportunities</li><li>Agency or business profile positioning</li><li>Wallet and payout infrastructure</li><li>Brand-community engagement through challenge campaigns</li></ul>
+<p>The monetization model is especially strong because it aligns user motivation with platform activity. Users are encouraged to participate, create quality submissions, earn votes, win rewards, and return for future challenges.</p>
+<h2>Why This Project Is a Strong Portfolio Case Study</h2>
+<p>Shouri demonstrates more than basic CRUD development. It includes public launch readiness, app store distribution, social networking mechanics, payments-related logic, reward calculation, media handling, admin tooling, scheduled automation, and notification infrastructure.</p>
+<p>Notable strengths include:</p>
+<ul><li>Publicly launched on web, iOS, and Android</li><li>Google Play listing with 100K+ downloads</li><li>Real user engagement mechanics through challenges, submissions, likes, comments, follows, shares, and views</li><li>Production-style media handling with S3</li><li>Token-based API authentication</li><li>Push notification system with queued delivery</li><li>Wallet, balance, withdrawal, and reward workflows</li><li>Admin moderation and management dashboard</li><li>Automated challenge lifecycle and monthly ranking system</li><li>Safety features such as reporting, blocking, and account deletion</li></ul>
+<p>These points make Shouri easy to position as a successful, full-featured social platform with a clear product identity and visible market presence.</p>
+<h2>Project Summary</h2>
+<p>Shouri is a complete challenge-based social networking platform where users can create competitions, submit videos, vote, follow creators, win rewards, and manage wallet payouts. The product is already available publicly through the web, Apple App Store, and Google Play Store, with the Android listing showing 100K+ downloads.</p>
+<p>From a technical perspective, the project includes a Laravel API backend, admin dashboard, media storage, authentication, social interactions, notifications, ranking, moderation, wallet accounting, withdrawals, and scheduled background automation. From a business perspective, Shouri combines social engagement, creator participation, brand opportunities, and reward-based monetization into one platform.</p>
+<p>This makes the project a credible success story: it is shipped, discoverable, multi-platform, feature-rich, and built around a clear engagement and revenue model.</p>
+    </article>
+</main>
+</body>
+</html>

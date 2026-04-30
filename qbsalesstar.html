@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="QBSalesStar is a Windows desktop application built to simplify sales, invoicing, inventory, and QuickBooks Desktop workflows for a wholesale distribution business. The...">
+    <link rel="canonical" href="https://muhammad-ibrahim-butt.github.io/qbsalesstar.html">
+    <title>QBSalesStar Operations Platform - Muhammad Ibrahim Butt</title>
+    <link rel="icon" type="image/jpeg" href="./assets/images/profile.JPG">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body class="font-sans">
+<a href="#content" class="skip-link">Skip to case study</a>
+<main class="case-shell" id="content" tabindex="-1">
+    <nav class="case-nav" aria-label="Case study navigation">
+        <a href="./" class="case-brand">
+            <img src="./assets/images/profile.JPG" alt="Muhammad Ibrahim Butt" class="avatar-mark" width="28" height="28" decoding="async">
+            Muhammad Ibrahim Butt
+        </a>
+        <a href="./#work" class="btn btn-ghost btn-sm"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to work</a>
+    </nav>
+
+    <header class="case-hero card">
+        <p class="eyebrow">Featured operations platform</p>
+        <h1 class="h-display">QBSalesStar Operations Platform</h1>
+        <p class="lead">QBSalesStar is a Windows desktop application built to simplify sales, invoicing, inventory, and QuickBooks Desktop workflows for a wholesale distribution business. The...</p>
+        <div class="case-meta">
+            <span class="chip chip-sm">C# / .NET</span>
+                    <span class="chip chip-sm">QuickBooks Desktop</span>
+                    <span class="chip chip-sm">WinForms</span>
+                    <span class="chip chip-sm">Automation</span>
+        </div>
+    </header>
+
+    <article class="case-content card">
+<h2>Overview</h2>
+<p>QBSalesStar is a Windows desktop application built to simplify sales, invoicing, inventory, and QuickBooks Desktop workflows for a wholesale distribution business. The application acts as a focused operational layer on top of QuickBooks Desktop, giving the client a cleaner and more specialized interface for day-to-day sales operations while still keeping QuickBooks as the accounting source of truth.</p>
+<p>The project was created because the client was using QuickBooks Desktop directly for business operations, but QuickBooks had too many modules, screens, and workflows for the staff&#39;s daily needs. Its interface was complex, customization was limited, and some invoice-related calculations were still being handled manually. A key example was category-wise total quantity sold in an invoice, which required extra manual work outside the normal QuickBooks flow.</p>
+<p>QBSalesStar solves this by providing a custom desktop application tailored around the client&#39;s actual business process: creating sales orders, generating invoices, managing items and pricing, tracking inventory, handling purchase orders, creating pick lists, processing returns, publishing data to a web system, and synchronizing important QuickBooks changes automatically.</p>
+<h2>Business Problem</h2>
+<p>The client needed a practical replacement for operating directly inside the full QuickBooks Desktop UI. QuickBooks Desktop is powerful, but for this business it introduced several operational issues:</p>
+<ul><li>Too many accounting-focused modules were visible to users who only needed sales and inventory workflows.</li><li>Invoice creation involved extra manual calculations.</li><li>Staff had to move through complex QuickBooks screens for routine tasks.</li><li>Customization inside QuickBooks Desktop was limited.</li><li>Product, customer, invoice, price, and inventory data needed to be shared with an external web system.</li><li>Supporting documents such as invoice PDFs and product images needed a reliable upload workflow.</li><li>QuickBooks data changes needed to be reflected outside QuickBooks without requiring users to manually export or re-enter data.</li></ul>
+<p>The goal of QBSalesStar was to keep QuickBooks Desktop in the business as the trusted accounting system, but wrap it with a custom operational application that is easier, faster, and better aligned with the client&#39;s workflow.</p>
+<h2>What the Application Does</h2>
+<p>QBSalesStar provides a business-specific desktop interface for managing the complete sales and inventory lifecycle. Users can create sales orders, convert orders into invoices, create direct invoices, manage credit and debit memos, add and update inventory items, manage vendors, receive products against purchase orders, generate pick lists, view reports, and synchronize data with QuickBooks Desktop and a remote web API.</p>
+<p>The application connects to QuickBooks Desktop through the QuickBooks Desktop SDK and QBFC15 COM libraries. It can query and update QuickBooks records such as customers, items, invoices, vendors, purchase orders, price levels, credit memos, sales reps, ship methods, employees, and customer messages.</p>
+<p>The system also includes background integration components:</p>
+<ul><li><code>QBEventListener</code>, a tray application and COM local server that listens to QuickBooks Desktop change events.</li><li><code>QBFolderWatcher</code>, a Windows Service that watches folders for invoice and product files and uploads them to the web API.</li><li><code>QBClientConfig</code>, a setup wizard used to configure each client workstation.</li><li>An installer pipeline that packages the desktop app, helper services, setup scripts, prerequisites, and configuration workflow into a single setup bundle.</li></ul>
+<h2>Main User Workflows</h2>
+<h3>Sales Order Management</h3>
+<p>The application allows staff to create and manage sales orders through a focused WinForms interface. Users can search customers, search inventory items, add item quantities, adjust order lines, and prepare orders for fulfillment. The sales order workflow is designed around the business&#39;s actual ordering process instead of the generic QuickBooks screens.</p>
+<p>Prominent capabilities include:</p>
+<ul><li>Customer lookup and selection.</li><li>Item search and item selection.</li><li>Quantity entry through standard and keypad-style quantity forms.</li><li>Existing order viewing and editing.</li><li>Sales order creation.</li><li>Order status tracking.</li><li>Order notes.</li><li>Customer order form generation.</li><li>Progress reporting for order-form creation.</li><li>Conversion of sales orders into invoices.</li></ul>
+<h3>Invoice Processing</h3>
+<p>Invoice creation is one of the central workflows in QBSalesStar. The application supports both invoices created from sales orders and direct invoices created without a prior order.</p>
+<p>The invoice workflow was especially important because the client previously had to perform invoice-related calculations manually in QuickBooks. QBSalesStar centralizes those calculations and presents the invoice process through a cleaner UI.</p>
+<p>Invoice-related features include:</p>
+<ul><li>Create invoices from sales orders.</li><li>Create direct invoices.</li><li>Update existing invoices.</li><li>View invoice lists and invoice history.</li><li>Publish invoices to a remote web API.</li><li>Retry failed invoice publishing attempts.</li><li>Track invoices that have already been published.</li><li>Upload or associate invoice PDF files through watched folders.</li><li>Generate invoice reports.</li><li>Read invoice history from QuickBooks for customer-specific reporting.</li></ul>
+<p>The application also contains local outbox and retry storage for failed invoice publishing, which helps prevent data loss when network or API issues occur.</p>
+<h3>Credit Memo and Debit Memo Handling</h3>
+<p>QBSalesStar supports credit memo and debit memo workflows for returns, adjustments, and customer account corrections.</p>
+<p>Credit memo features include:</p>
+<ul><li>Create credit memos through a dedicated form.</li><li>View credit memo details.</li><li>Generate credit memo reports.</li><li>Retry failed credit memo publishing attempts.</li><li>Store failed credit memo records for later retry.</li><li>Process returns and return-related reports.</li></ul>
+<p>Debit memo support is also included through a dedicated form.</p>
+<h3>Inventory and Item Management</h3>
+<p>The application provides item management features for wholesale inventory operations. It can create new items in QuickBooks, update local and remote item data, manage pricing, and synchronize item quantities.</p>
+<p>Inventory capabilities include:</p>
+<ul><li>Add new inventory items.</li><li>Save created items back into QuickBooks and the local MySQL cache.</li><li>Update item sales prices and purchase costs.</li><li>Update per-item price levels.</li><li>Load active price levels from QuickBooks.</li><li>Manage item locations.</li><li>View item reports by price, location, category, and brand.</li><li>Upload product images.</li><li>Publish product data to the remote API.</li><li>Synchronize product changes based on the last sync timestamp.</li><li>Refresh item cache for faster lookup.</li><li>Track quantity on hand and quantity on sales order.</li></ul>
+<p>The system uses local caching so users can search and work with product data more efficiently without repeatedly querying QuickBooks for every operation.</p>
+<h3>Purchase Order and Receiving Workflow</h3>
+<p>QBSalesStar includes purchase order and receiving functionality for inventory replenishment.</p>
+<p>Purchase order and receiving features include:</p>
+<ul><li>Load open purchase orders by vendor.</li><li>View purchase order line items with catalog data.</li><li>Receive products against purchase orders.</li><li>Record item receipts.</li><li>Track received items.</li><li>Support return-to-vendor and return-processing workflows.</li></ul>
+<p>This gives the client a single operational tool for both sales-side and purchasing-side inventory activities.</p>
+<h3>Pick Lists and Fulfillment</h3>
+<p>The application supports pick-list generation for warehouse or fulfillment staff. Pick lists help staff prepare products for orders without needing to work directly inside QuickBooks.</p>
+<p>Pick-list features include:</p>
+<ul><li>Generate pick lists.</li><li>Print pick lists.</li><li>View pick-list reports.</li><li>Use WebView-based pick-list rendering.</li><li>Support item-wise and customer-wise open/back-order reports.</li></ul>
+<h3>Back Orders</h3>
+<p>Back-order tracking is included for orders that cannot be completely fulfilled immediately.</p>
+<p>Back-order capabilities include:</p>
+<ul><li>Back-order screens.</li><li>Customer-wise back-order reports.</li><li>Item-wise back-order reports.</li><li>Open order reports.</li><li>Back-order RDLC reports for printing and review.</li></ul>
+<h3>Customer and Vendor Management</h3>
+<p>The application handles customer and vendor data needed for sales and purchasing operations.</p>
+<p>Customer features include:</p>
+<ul><li>Customer lookup.</li><li>Customer category management.</li><li>Customer messages.</li><li>Customer balance publishing.</li><li>Customer open balance reporting.</li><li>Customer-specific rates.</li><li>Customer order form generation.</li></ul>
+<p>Vendor features include:</p>
+<ul><li>Vendor creation.</li><li>Vendor lookup.</li><li>Vendor synchronization with QuickBooks and the remote system.</li><li>Vendor persistence in the local database.</li></ul>
+<h3>Pricing, Promotions, and Tax</h3>
+<p>QBSalesStar includes multiple pricing and tax tools that were likely difficult to manage through the generic QuickBooks UI alone.</p>
+<p>Pricing and tax capabilities include:</p>
+<ul><li>Create and update price levels.</li><li>Update per-item price-level pricing.</li><li>Update standard item prices.</li><li>Manage temporary rates.</li><li>Manage customer-specific rates.</li><li>Manage promotional data.</li><li>Update promotions.</li><li>Configure tax values.</li><li>Generate bill tax and bill return tax reports.</li><li>Manage banned-state pricing and state-specific restrictions.</li></ul>
+<h3>Reporting</h3>
+<p>The project includes many reports built with Microsoft ReportViewer and RDLC files. These reports help staff review sales, invoice, tax, inventory, back-order, and credit memo information without needing to construct reports manually in QuickBooks.</p>
+<p>Reporting areas include:</p>
+<ul><li>Invoice reports.</li><li>Credit memo reports.</li><li>Item reports.</li><li>Item reports with price.</li><li>Item reports with location.</li><li>Customer-wise open order reports.</li><li>Customer-wise back-order reports.</li><li>Item-wise open order reports.</li><li>Item-wise back-order reports.</li><li>Bill tax reports.</li><li>Bill return tax reports.</li><li>Pick-list reports.</li><li>Back-order reports.</li></ul>
+<h2>QuickBooks Desktop Integration</h2>
+<p>QuickBooks integration is the core technical foundation of QBSalesStar. The main desktop app uses QBFC15 and QuickBooks COM interop to connect to the configured QuickBooks company file, open sessions, query records, and submit modifications.</p>
+<p>The application can work with QuickBooks entities such as:</p>
+<ul><li>Customers.</li><li>Inventory items.</li><li>Vendors.</li><li>Invoices.</li><li>Credit memos.</li><li>Purchase orders.</li><li>Price levels.</li><li>Employees.</li><li>Sales reps.</li><li>Ship methods.</li><li>Customer messages.</li></ul>
+<p>The <code>QBCalls</code> integration layer handles the session lifecycle, including opening the QuickBooks connection, beginning a session, sending requests, processing responses, and closing the session. It also contains business-specific QuickBooks operations for updating item prices, updating price levels, querying customers, reading invoice history, synchronizing quantities, and working with other QuickBooks records.</p>
+<h2>Real-Time QuickBooks Change Synchronization</h2>
+<p>The solution includes a dedicated <code>QBEventListener</code> component for live QuickBooks change events. This component registers as a COM local server and subscribes to QuickBooks Desktop data events.</p>
+<p>When a supported QuickBooks record changes, the listener:</p>
+<ol><li>Receives the QuickBooks event through a COM callback.</li><li>Parses the event XML.</li><li>Filters the event by company file when configured.</li><li>Dispatches the event to the correct entity handler.</li><li>Re-queries QuickBooks for the latest version of the changed record.</li><li>Persists the change to MySQL.</li><li>Posts the change to the remote API when applicable.</li><li>Writes normalized JSON to an outbox directory.</li><li>Logs errors and writes failed payloads to a dead-letter location.</li></ol>
+<p>Supported live-change entities include:</p>
+<ul><li>Customer.</li><li>Vendor.</li><li>Inventory item.</li><li>Price level.</li><li>Employee.</li><li>Other name.</li><li>Sales rep.</li><li>Ship method.</li><li>Customer message.</li></ul>
+<p>This allows external systems and local caches to stay aligned with QuickBooks without depending on manual exports.</p>
+<h2>Web API Synchronization</h2>
+<p>QBSalesStar communicates with a remote PHP/MySQL web API. The desktop app and helper services publish business data such as products, vendors, invoices, customer balances, price levels, and other operational records.</p>
+<p>Web synchronization includes:</p>
+<ul><li>Product publishing.</li><li>Invoice publishing.</li><li>Credit memo publishing.</li><li>Customer balance publishing.</li><li>Vendor publishing.</li><li>Price-level synchronization.</li><li>Failed publish retry handling.</li><li>Published invoice tracking by edit sequence.</li><li>API request logging and failure handling.</li></ul>
+<p>The application uses local storage and retry services to handle cases where the API is temporarily unavailable.</p>
+<h2>File Upload Automation</h2>
+<p>The <code>QBFolderWatcher</code> service automates uploading supporting files to the remote system. It watches configured folders for invoice files and product files.</p>
+<p>Typical examples:</p>
+<ul><li>Invoice file: <code>142165.pdf</code></li><li>Product image: <code>102000721531.png</code></li></ul>
+<p>The service detects created, changed, or renamed files, waits for files to finish copying, validates file names and extensions, chooses the best file when multiple files exist for the same identifier, and uploads the file to the correct API endpoint.</p>
+<p>File watcher features include:</p>
+<ul><li>Runs as a Windows Service.</li><li>Can also run interactively with a system tray icon.</li><li>Watches separate invoice and product folders.</li><li>Supports PDF and common image formats.</li><li>Uses numeric file names as record identifiers.</li><li>Uploads files using multipart form data.</li><li>Retries failed uploads.</li><li>Scans existing files on startup.</li><li>Writes rolling logs.</li><li>Writes a health heartbeat file.</li><li>Supports service restart on crash.</li></ul>
+<p>This removes a manual step from the document-management process and gives the client a simple file-drop workflow.</p>
+<h2>Local Data Storage and Caching</h2>
+<p>QBSalesStar uses local and remote storage together:</p>
+<ul><li>SQLite is used for local application cache and offline-friendly lookups.</li><li>MySQL is used for shared business data and synchronization.</li><li>Local settings files store workstation-specific configuration.</li><li>Outbox tables and retry tables track failed invoice and credit memo publishes.</li><li>In-memory caches speed up customer, vendor, and item lookup in the UI.</li></ul>
+<p>Local caching improves performance because the app can quickly populate search lists and grids without making every screen depend on a live QuickBooks query.</p>
+<h2>Installer and Deployment</h2>
+<p>The project includes a complete client-machine deployment process. The application is packaged into a setup bundle that installs the main WinForms app, helper services, setup wizard, scripts, and prerequisites.</p>
+<p>The installer includes:</p>
+<ul><li>Main <code>QBSalesStar.exe</code> desktop application.</li><li><code>QBEventListener</code> tray/COM event listener.</li><li><code>QBFolderWatcher</code> Windows Service.</li><li><code>QBClientConfig</code> setup wizard.</li><li>PowerShell configuration and uninstall scripts.</li><li>Desktop and Start Menu shortcuts.</li><li>WiX Burn bundle for a unified installer.</li><li>Visual Studio Setup Project MSI integration.</li></ul>
+<p>The setup wizard collects:</p>
+<ul><li>QuickBooks company file path.</li><li>MySQL connection string.</li><li>Web API base URL.</li><li>Invoice watch folder path.</li><li>Product watch folder path.</li><li>Optional shared configuration path.</li></ul>
+<p>It then writes configuration files, encrypts sensitive connection values, registers the QuickBooks event listener, subscribes to QuickBooks events, and installs the folder watcher service.</p>
+<h2>Technical Stack</h2>
+<p>The project uses the following technologies:</p>
+<ul><li>C#.</li><li>.NET Framework 4.8 for the main Windows Forms desktop application.</li><li>.NET 8 for helper applications and services.</li><li>Windows Forms.</li><li>QuickBooks Desktop SDK / QBFC15 COM integration.</li><li>QBXML request and response processing.</li><li>SQLite with System.Data.SQLite.</li><li>MySQL with MySql.Data.</li><li>Newtonsoft.Json.</li><li>Microsoft ReportViewer for RDLC reports.</li><li>Microsoft WebView2.</li><li>ClosedXML and OpenXML for spreadsheet-related workflows.</li><li>iTextSharp for PDF-related functionality.</li><li>Serilog for service logging.</li><li>WiX v5 Burn bundle for installer packaging.</li><li>PowerShell for client configuration automation.</li></ul>
+<h2>Architecture Summary</h2>
+<p>The solution is organized into several major parts:</p>
+<ul><li><code>QBSalesStar</code>: The main WinForms desktop application used by staff.</li><li><code>SqlitePlug</code>: A SQLite helper/data-access project.</li><li><code>QBEventListener</code>: A COM callback and tray application for QuickBooks change events.</li><li><code>QBFolderWatcher</code>: A Windows Service for file-drop upload automation.</li><li><code>QBClientConfig</code>: A setup wizard for workstation configuration.</li><li><code>QBSalesStar_Installer</code>: Installer, bundle, scripts, and deployment tooling.</li></ul>
+<p>The main app handles interactive business workflows. The helper components run in the background to synchronize QuickBooks changes and upload supporting files. The installer ties everything together so the application can be deployed reliably on client workstations.</p>
+<h2>Prominent Features</h2>
+<ul><li>Custom simplified UI over QuickBooks Desktop for sales and inventory staff.</li><li>QuickBooks Desktop read/write integration.</li><li>Sales order creation and invoice conversion.</li><li>Direct invoice creation.</li><li>Automated invoice-related calculations and operational data preparation.</li><li>Credit memo and debit memo handling.</li><li>Purchase order receiving.</li><li>Pick-list generation and printing.</li><li>Back-order tracking.</li><li>Item, vendor, customer, employee, sales rep, ship method, and price-level workflows.</li><li>Item price and price-level updates.</li><li>Promotional and temporary rate management.</li><li>Tax configuration and tax reports.</li><li>Customer balance publishing.</li><li>Product and invoice publishing to a remote API.</li><li>File-drop automation for invoice PDFs and product images.</li><li>Live QuickBooks change-event listener.</li><li>Retry and outbox handling for failed API operations.</li><li>Local SQLite cache for faster lookups.</li><li>MySQL synchronization layer.</li><li>RDLC-based reporting.</li><li>Client setup wizard and production installer.</li></ul>
+<h2>Portfolio Description</h2>
+<p>QBSalesStar is a custom Windows desktop application developed for a wholesale distribution client that relied on QuickBooks Desktop but needed a simpler, faster, and more business-specific operational system. QuickBooks Desktop was being used as the accounting backend, but its UI was too broad and complex for the client&#39;s sales workflow, and some invoice calculations were still being handled manually.</p>
+<p>I built QBSalesStar as a focused sales and inventory management layer that integrates directly with QuickBooks Desktop. The application supports sales orders, invoices, direct invoices, credit memos, debit memos, purchase orders, item receiving, item and vendor management, price-level updates, customer balances, pick lists, back orders, product publishing, invoice publishing, and detailed reporting.</p>
+<p>The system also includes background services for automation. A QuickBooks event listener subscribes to live QuickBooks data changes and synchronizes supported entities to MySQL and a remote web API. A folder watcher service monitors invoice and product folders, automatically uploading invoice PDFs and product images based on numeric identifiers. The deployment package includes a setup wizard, encrypted configuration handling, service installation, QuickBooks event subscription, and a unified installer for client workstations.</p>
+<p>The result is a business-specific desktop application that keeps QuickBooks Desktop as the accounting source of truth while giving staff a streamlined interface for the workflows they use every day.</p>
+<h2>Business Impact</h2>
+<p>QBSalesStar reduced the client&#39;s dependence on the full QuickBooks Desktop interface for daily operations. Instead of navigating a large accounting system for every task, staff can use a focused application designed around sales, inventory, invoicing, and fulfillment.</p>
+<p>The application improves the workflow by:</p>
+<ul><li>Reducing manual invoice calculations.</li><li>Simplifying invoice and sales order creation.</li><li>Making item lookup and quantity entry faster.</li><li>Centralizing reports needed by the business.</li><li>Automating product and invoice synchronization.</li><li>Keeping QuickBooks data aligned with external systems.</li><li>Reducing duplicate data entry.</li><li>Providing retry mechanisms for failed sync operations.</li><li>Making deployment and workstation setup repeatable.</li></ul>
+<h2>My Role</h2>
+<p>The project involved full-stack desktop and integration development across the following areas:</p>
+<ul><li>Windows Forms application development.</li><li>QuickBooks Desktop SDK integration.</li><li>QBXML request/response handling.</li><li>Sales, invoicing, inventory, reporting, and pricing workflows.</li><li>SQLite and MySQL data access.</li><li>Web API synchronization.</li><li>Background Windows Service development.</li><li>COM event listener development for QuickBooks Desktop.</li><li>File-system watcher automation.</li><li>Retry/outbox reliability design.</li><li>Installer and client deployment automation.</li><li>Documentation for deployment and maintenance.</li></ul>
+    </article>
+</main>
+</body>
+</html>
