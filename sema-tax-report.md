@@ -136,7 +136,7 @@ Responsibilities:
 - Applies item tax values to every invoice line.
 - Calculates taxable amount, stick totals, and tax totals.
 - Groups records and adds total rows.
-- Highlights invalid or incomplete records.
+- Highlights records with invalid or missing calculation data.
 - Allows correction of item master fields and unit tax.
 - Updates MySQL item and tax tables.
 - Exports tax reports to Excel.
@@ -920,7 +920,7 @@ I automated the US sales tax calculation workflow according to state-level rules
 
 ## Portfolio Description
 
-Sema Tax Report is a C# WinForms automation tool that integrates with QuickBooks Desktop and MySQL to calculate US sales tax based on state-specific rules. The application imports invoices and bills from QuickBooks, enriches each transaction line with local item master data, applies tax rates by UPC and state, calculates taxable volume, stick totals, and tax totals, highlights incomplete records, and exports filing-ready Excel reports. It also supports item tax maintenance and can create calculated tax invoices back into QuickBooks, making the overall sales tax workflow faster, more accurate, and easier to audit.
+Sema Tax Report is a C# WinForms automation tool that integrates with QuickBooks Desktop and MySQL to calculate US sales tax based on state-specific rules. The application imports invoices and bills from QuickBooks, enriches each transaction line with local item master data, applies tax rates by UPC and state, calculates taxable volume, stick totals, and tax totals, highlights records with missing calculation data, and exports filing-ready Excel reports. It also supports item tax maintenance and can create calculated tax invoices back into QuickBooks, making the overall sales tax workflow faster, more accurate, and easier to audit.
 
 ## Resume Bullet Points
 
@@ -928,7 +928,7 @@ Sema Tax Report is a C# WinForms automation tool that integrates with QuickBooks
 - Integrated QuickBooks Desktop through QBFC15 to import invoices, bills, customers, vendors, inventory items, non-inventory items, price levels, and company information.
 - Designed a MySQL-backed tax rule model using item UPC and state code to calculate sales tax according to each US state's rule.
 - Implemented item master enrichment for unit volume, pack quantity, stick count, extended taxable amount, total sticks sold, unit tax, and total tax.
-- Added dirty-record detection and correction workflows to prevent incomplete or inaccurate tax reporting.
+- Added dirty-record detection and correction workflows to prevent inaccurate tax reporting caused by missing calculation fields.
 - Developed Excel exports including TT101-style tax reporting and customer-level tax summaries.
 - Added QuickBooks tax invoice creation and stored generated QuickBooks invoice references to prevent duplicate processing.
 - Used bulk loading, caching, and structured DataTable workflows to improve performance for monthly reporting.

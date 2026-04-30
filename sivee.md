@@ -1,6 +1,6 @@
 # Sivee.ai Candidate and Job Platform
 
-## 1) Project Overview
+## Project Overview
 Sivee is a Laravel 11 web application for job discovery and candidate profile management, with a separate admin panel for managing users, companies, and scraped job listings.
 
 The platform has two main roles:
@@ -11,7 +11,7 @@ Core app routes and role split are defined in:
 - `routes/web.php`
 - `config/auth.php`
 
-## 1.1) Portfolio Context (Provided)
+## Delivery Context
 - **Role:** Full-stack developer
 - **Implementation ownership:** End-to-end feature ownership (all listed app features)
 - **Project duration:** Approximately 2-3 months
@@ -19,7 +19,7 @@ Core app routes and role split are defined in:
 - **Hosting model:** Shared hosting
 - **Production URL:** `https://sivee.ai`
 
-## 2) Business Flows Implemented
+## Business Flows Implemented
 ### Candidate-facing flows
 - User authentication (signup, login, forgot/reset password, logout).
 - Google OAuth login via Socialite.
@@ -68,7 +68,7 @@ Primary admin controllers:
 - `app/Http/Controllers/Admin/CompanyController.php`
 - `app/Http/Controllers/Admin/JobController.php`
 
-## 3) Job Scraping Architecture
+## Job Scraping Architecture
 Sivee imports jobs through domain-specific scraper endpoints configured in `scrape_domains`.
 
 Implementation:
@@ -86,7 +86,7 @@ Relevant files:
 - `app/Console/Commands/ScrapeJobs.php`
 - `routes/console.php`
 
-## 4) Data Model Summary
+## Data Model Summary
 Main entities:
 - `users`, `admins`
 - `companies`, `company_jobs`, `scrape_domains`
@@ -103,7 +103,7 @@ Notable relationships:
 
 Migrations are in `database/migrations` and include custom schema additions from 2024-06 through 2025-01.
 
-## 5) Tech Stack
+## Tech Stack
 ### Backend
 - PHP `^8.2`
 - Laravel `^11.9`
@@ -120,7 +120,7 @@ Migrations are in `database/migrations` and include custom schema additions from
 - jQuery + Bootstrap assets under `public/assets` and `public/admin/assets`
 - Vite scaffolding exists (`vite.config.js`, `resources/js`, `resources/css`), while much UI is served from static assets in `public/`
 
-## 6) Security/Access Patterns in Code
+## Security and Access Patterns
 - Separate auth guards for users and admins (`config/auth.php`).
 - Route-level middleware for onboarding and launch-gating:
   - `CheckBoardingDone`
@@ -128,7 +128,7 @@ Migrations are in `database/migrations` and include custom schema additions from
 - Email verification support via `MustVerifyEmail` on `User`.
 - Passwords are hashed through model casts.
 
-## 7) Notification and Email Flows
+## Notification and Email Flows
 - Account created notification (mail + database).
 - Verification email (mail with temporary signed URL).
 - Reset password email (mail with broker token route).
@@ -137,24 +137,24 @@ Migrations are in `database/migrations` and include custom schema additions from
   - `SendVerificationEmailJob`
   - `SendResetPasswordEmailJob`
 
-## 8) Portfolio-Ready Talking Points (Code-Verified)
+## Project Strengths
 - Built a dual-guard Laravel platform with separate candidate and admin experiences.
 - Implemented end-to-end candidate profile lifecycle, including structured CV and career metadata.
 - Designed a scraping ingestion pipeline with daily scheduling and idempotent upsert behavior.
 - Added engagement analytics (`views` + `click tracks`) and admin-level monthly aggregations.
 - Integrated OAuth (Google), email verification, reset-password, and asynchronous notification delivery.
 
-## 8.1) Public Product Positioning (Live Site Verified on 2026-04-29)
-From the live site homepage (`https://sivee.ai`), Sivee positions itself around:
+## Public Product Positioning
+Sivee positions itself around:
 - AI-assisted job discovery
 - Real-time job availability messaging
 - 1-click account/application workflow messaging
 - Offline/automated job submission messaging
 - User flow emphasis: profile + CV upload -> preferences -> apply
 
-These points are based on currently visible homepage copy and align with major implemented flows in the codebase.
+These product themes align with the implemented candidate profile, CV, job discovery, and automation workflows.
 
-## 9) Professional Summary
+## Professional Summary
 Sivee.ai demonstrates practical Laravel product engineering across candidate onboarding, profile management,
 admin operations, OAuth authentication, scheduled job ingestion, and analytics tracking. The project is strongest as a
 portfolio case study because it combines user-facing workflows with backend automation and operational admin tooling in

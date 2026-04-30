@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="AI PDF Chatbot is a Retrieval-Augmented Generation (RAG) application that allows users to upload a PDF document and ask questions about its contents in natural language....">
     <link rel="canonical" href="https://muhammad-ibrahim-butt.github.io/ai-pdf-chatbot.html">
+    <meta property="og:title" content="AI PDF Chatbot - Muhammad Ibrahim Butt">
+    <meta property="og:description" content="Retrieval-augmented PDF chatbot case study using Python, LangChain, local embeddings, semantic retrieval, and Groq Llama 3.1.">
+    <meta property="og:image" content="https://muhammad-ibrahim-butt.github.io/assets/images/og-preview.png">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI PDF Chatbot - Muhammad Ibrahim Butt">
+    <meta name="twitter:description" content="Python RAG application for grounded PDF question answering with chunking, embeddings, retrieval, and LLM answers.">
+    <meta name="twitter:image" content="https://muhammad-ibrahim-butt.github.io/assets/images/og-preview.png">
     <title>AI PDF Chatbot - Muhammad Ibrahim Butt</title>
     <link rel="icon" type="image/jpeg" href="./assets/images/profile.JPG">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -35,6 +43,34 @@
                     <span class="chip chip-sm">Groq</span>
         </div>
     </header>
+
+    <section class="case-proof card" aria-labelledby="pdf-chatbot-pipeline">
+        <div class="case-proof-head">
+            <div>
+                <p class="eyebrow">RAG pipeline</p>
+                <h2 class="case-proof-title" id="pdf-chatbot-pipeline">Grounded PDF question answering workflow</h2>
+            </div>
+            <p class="case-proof-text">The project demonstrates a complete retrieval-augmented generation loop: document ingestion, semantic indexing, similarity search, prompt construction, and grounded answer generation.</p>
+        </div>
+        <div class="case-architecture">
+            <div class="case-architecture-row">
+                <strong>Ingestion</strong>
+                <span>Upload PDF files, extract readable text with LangChain/PDFPlumber, and cache repeated uploads by file hash.</span>
+            </div>
+            <div class="case-architecture-row">
+                <strong>Indexing</strong>
+                <span>Split text into overlapping chunks and generate local MiniLM embeddings for each document section.</span>
+            </div>
+            <div class="case-architecture-row">
+                <strong>Retrieval</strong>
+                <span>Embed each question, rank document chunks with cosine similarity, and select the strongest context.</span>
+            </div>
+            <div class="case-architecture-row">
+                <strong>Answering</strong>
+                <span>Send retrieved context to Groq Llama 3.1 with instructions to answer only from the uploaded PDF.</span>
+            </div>
+        </div>
+    </section>
 
     <article class="case-content card">
 <h2>Project Overview</h2>

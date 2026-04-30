@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="WEPROCESS (https://weprocess.co.uk/) is a Laravel-based backend platform for managing legal process serving operations. The system supports the full lifecycle of a service...">
     <link rel="canonical" href="https://muhammad-ibrahim-butt.github.io/we-process.html">
+    <meta property="og:title" content="WEPROCESS Legal Operations Backend - Muhammad Ibrahim Butt">
+    <meta property="og:description" content="Laravel backend case study for legal process serving operations, Salesforce intake, Azure AI extraction, billing, chat, and field workflows.">
+    <meta property="og:image" content="https://muhammad-ibrahim-butt.github.io/assets/images/og-preview.png">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="WEPROCESS Legal Operations Backend - Muhammad Ibrahim Butt">
+    <meta name="twitter:description" content="Workflow-heavy Laravel backend with AI document extraction, Stripe billing, queues, chat, and Salesforce integration.">
+    <meta name="twitter:image" content="https://muhammad-ibrahim-butt.github.io/assets/images/og-preview.png">
     <title>WEPROCESS Legal Operations Backend - Muhammad Ibrahim Butt</title>
     <link rel="icon" type="image/jpeg" href="./assets/images/profile.JPG">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -35,6 +43,39 @@
                     <span class="chip chip-sm">Stripe</span>
         </div>
     </header>
+
+    <section class="case-proof card" aria-labelledby="weprocess-architecture">
+        <div class="case-proof-head">
+            <div>
+                <p class="eyebrow">Architecture proof</p>
+                <h2 class="case-proof-title" id="weprocess-architecture">Workflow-heavy backend built around legal service operations</h2>
+            </div>
+            <p class="case-proof-text">A compact view of the core platform paths: client intake, driver field work, admin control, AI extraction, billing, documents, and external CRM synchronization.</p>
+        </div>
+        <div class="case-architecture">
+            <div class="case-architecture-row">
+                <strong>Role APIs</strong>
+                <span>Separate Laravel Sanctum surfaces for clients, process servers, and administrators with clear guard boundaries.</span>
+            </div>
+            <div class="case-architecture-row">
+                <strong>Serve Flow</strong>
+                <span>Instruction creation, assignment, attempts, evidence, Statement of Service generation, status changes, and activity logs.</span>
+            </div>
+            <div class="case-architecture-row">
+                <strong>AI Intake</strong>
+                <span>Salesforce webhooks, document download, Azure Document Intelligence, Azure OpenAI extraction, confidence state, and release checks.</span>
+            </div>
+            <div class="case-architecture-row">
+                <strong>Operations</strong>
+                <span>Stripe payments, invoices, realtime chat, FCM notifications, queues, scheduled maintenance, and reporting exports.</span>
+            </div>
+        </div>
+        <div class="case-proof-actions">
+            <a href="https://weprocess.co.uk/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">
+                View live project <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+            </a>
+        </div>
+    </section>
 
     <article class="case-content card">
 <h2>Project Overview</h2>
