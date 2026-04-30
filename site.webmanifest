@@ -1,0 +1,17 @@
+{
+  "name": "Muhammad Ibrahim Butt Portfolio",
+  "short_name": "Ibrahim Butt",
+  "description": "Senior AI and automation engineering portfolio.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "icons": [
+    {
+      "src": "/assets/images/profile.JPG",
+      "sizes": "1367x1367",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}

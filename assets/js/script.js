@@ -1,5 +1,7 @@
 document.getElementById('year').textContent = new Date().getFullYear();
 
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 const nav = document.getElementById('nav');
 const onScroll = () => {
     nav.classList.toggle('scrolled', window.scrollY > 12);
@@ -17,23 +19,54 @@ onScroll();
 
 const mobileToggle = document.getElementById('mobile-toggle');
 const mobileMenu = document.getElementById('mobile-menu');
-mobileToggle?.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+const setMobileMenuOpen = (open) => {
+    mobileMenu?.classList.toggle('open', open);
+    mobileToggle?.setAttribute('aria-expanded', String(open));
+};
+
+mobileToggle?.addEventListener('click', () => {
+    setMobileMenuOpen(!mobileMenu?.classList.contains('open'));
+});
 mobileMenu?.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => mobileMenu.classList.remove('open'));
+    a.addEventListener('click', () => setMobileMenuOpen(false));
 });
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-        if (e.isIntersecting) {
-            e.target.classList.add('visible');
-            observer.unobserve(e.target);
-        }
-    });
-}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+const fadeTargets = document.querySelectorAll('.fade-in');
+if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+    fadeTargets.forEach(el => el.classList.add('visible'));
+} else {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.classList.add('visible');
+                observer.unobserve(e.target);
+            }
+        });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    fadeTargets.forEach(el => observer.observe(el));
+}
 
-document.getElementById('scroll-top')?.addEventListener('click',
-    () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+        setMobileMenuOpen(false);
+    }
+});
+
+document.addEventListener('click', (event) => {
+    if (!mobileMenu?.classList.contains('open')) {
+        return;
+    }
+    if (!mobileMenu.contains(event.target) && !mobileToggle?.contains(event.target)) {
+        setMobileMenuOpen(false);
+    }
+});
+
+document.getElementById('scroll-top')?.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: prefersReducedMotion ? 'auto' : 'smooth'
+    });
+});
 
 document.querySelectorAll('.card').forEach(card => {
     card.addEventListener('pointermove', (e) => {
