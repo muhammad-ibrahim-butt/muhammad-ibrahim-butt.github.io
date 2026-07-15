@@ -483,19 +483,23 @@ body:has(.mobile-menu.open) {
     color: var(--subtle);
 }
 
-.hero-client-logos {
-    display: grid;
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-    gap: 18px;
-    align-items: center;
+.hero-client-marquee {
+    margin: 0 -4px;
 }
 
-.hero-client-logos img {
-    width: 100%;
-    max-height: 24px;
-    object-fit: contain;
-    filter: grayscale(1) brightness(1.55);
+.hero-client-marquee .marquee-track {
+    gap: 36px;
+    animation-duration: 32s;
+}
+
+.hero-client-marquee .company-logo {
+    height: 24px;
+    max-width: 108px;
     opacity: .62;
+}
+
+.hero-client-marquee:hover .marquee-track {
+    animation-play-state: paused;
 }
 
 @media (max-width: 1023px) {
@@ -544,10 +548,6 @@ body:has(.mobile-menu.open) {
 
     .hero-proof-grid > div {
         min-height: auto;
-    }
-
-    .hero-client-logos {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
