@@ -1,11 +1,11 @@
 {
   "name": "Muhammad Ibrahim Butt Portfolio",
   "short_name": "Ibrahim Butt",
-  "description": "Senior AI & Automation Engineer portfolio — AI agent evaluation, LLM evaluation, RLHF, backend, and cloud systems.",
+  "description": "Software engineering, backend platforms, business automation, and AI agent evaluation by Muhammad Ibrahim Butt.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0a0a0a",
-  "theme_color": "#0a0a0a",
+  "background_color": "#0c0e10",
+  "theme_color": "#0c0e10",
   "icons": [
     {
       "src": "/assets/images/profile.JPG",

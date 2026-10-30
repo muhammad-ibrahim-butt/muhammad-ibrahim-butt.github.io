@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Human-in-the-loop evaluation of AI tool selection, parameter grounding, and response completeness. A project by Muhammad Ibrahim Butt.">
+    <link rel="canonical" href="https://muhammad-ibrahim-butt.github.io/agent-evaluation.html">
+    <meta property="og:title" content="AI Agent Function-Calling Evaluation">
+    <meta property="og:description" content="Human-in-the-loop evaluation of AI tool selection, parameter grounding, and response completeness. A project by Muhammad Ibrahim Butt.">
+    <meta property="og:image" content="https://muhammad-ibrahim-butt.github.io/assets/images/og-preview.png">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Agent Function-Calling Evaluation">
+    <meta name="twitter:description" content="Human-in-the-loop evaluation of AI tool selection, parameter grounding, and response completeness. A project by Muhammad Ibrahim Butt.">
+    <meta name="twitter:image" content="https://muhammad-ibrahim-butt.github.io/assets/images/og-preview.png">
+    <title>AI Agent Evaluation | Function-Calling Case Study</title>
+    <link rel="icon" type="image/jpeg" href="./assets/images/profile.JPG">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+<meta property="og:url" content="https://muhammad-ibrahim-butt.github.io/agent-evaluation.html">
+<meta property="og:image:alt" content="Muhammad Ibrahim Butt engineering portfolio">
+</head>
+<body>
+<a href="#content" class="skip-link">Skip to case study</a><main class="case-shell" id="content" tabindex="-1"><nav class="case-nav" aria-label="Case study navigation">
+        <a href="./" class="case-brand">
+            <img src="./assets/images/profile.JPG" alt="Muhammad Ibrahim Butt" class="avatar-mark" width="28" height="28" decoding="async">
+            Muhammad Ibrahim Butt
+        </a>
+        <a href="./#work" class="btn btn-ghost btn-sm"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to work</a>
+    </nav>
+<header class="case-hero card"><p class="eyebrow">AI evaluation / Sep–Oct 2025</p>
+<h1 class="h-display">Agent function-calling evaluation</h1>
+<p class="lead">A human-in-the-loop evaluation platform for reviewing how AI agents choose tools, supply arguments, and complete a user's request.</p>
+<div class="case-meta">
+<span class="chip">LLM evaluation</span><span class="chip">Human feedback</span><span class="chip">Function calling</span>
+</div>
+</header>
+<section class="case-proof card" aria-labelledby="workflow-title"><h2 id="workflow-title">The review workflow</h2>
+<div class="evaluation-flow">
+<span>User request</span><span>Assistant tool usage</span><span>Structured human review</span><span>Evaluation feedback</span>
+</div>
+</section>
+<article class="case-content card"><h2>The problem</h2>
+<p>A plausible response does not guarantee that an agent used the right tool or supplied grounded arguments. Reviewers need to assess the actions behind an answer as well as the answer itself.</p>
+<h2>My contribution</h2>
+<p>I designed and developed a quiz-style review interface in which graders compare a user query with the assistant's tool usage. A structured framework of nine to ten questions captures judgments about tool selection, parameter accuracy, and response completeness.</p>
+<h2>What the platform produces</h2>
+<p>The workflow captures granular human feedback as labeled evaluation data for an RLHF pipeline. It makes distinct failure modes visible instead of reducing every response to a single overall judgment.</p>
+<h2>Evaluation dimensions</h2>
+<ul>
+<li>
+<strong>Tool selection:</strong> Did the assistant select an appropriate function for the request?</li>
+<li>
+<strong>Parameter grounding:</strong> Were arguments supported by the user's intent and available context?</li>
+<li>
+<strong>Completeness:</strong> Did the resulting response address the request?</li>
+</ul>
+<h2>Related experience</h2>
+<p>This project sits alongside my work leading an AI evaluation pod at Turing and evaluating coding-agent behavior at Mindrift. The focus is consistent review, useful feedback, and understanding where an agent's reasoning or actions break down.</p>
+<p><a href="./#experience">Explore my AI evaluation experience</a> or <a href="mailto:m.ibrahim8325@gmail.com">discuss an evaluation workflow</a>.</p>
+</article>
+</main>
+</body>
+</html>
