@@ -1,2 +1,12 @@
-.idea
-node_modules/
+/.idea/
+/node_modules/
+
+# Local agent tools and personal source documents
+/.agents/
+/skills-lock.json
+/assets/certificates/
+
+# Local GitHub Pages build output
+/_site/
+/.jekyll-cache/
+/.jekyll-metadata

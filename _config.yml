@@ -1,0 +1,7 @@
+# Keep development files and case-study source notes off the live portfolio.
+exclude:
+  - "*.md"
+  - tests
+  - package.json
+  - package-lock.json
+  - node_modules
