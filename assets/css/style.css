@@ -86,7 +86,7 @@ a:hover {
     font-size: clamp(36px,5.5vw,64px);
     line-height: 1.08;
     font-weight: 500;
-    letter-spacing: -.045em;
+    letter-spacing: -.035em;
     overflow-wrap: break-word
 }
 .card {
@@ -236,14 +236,32 @@ a:hover {
     color: var(--text)
 }
 #mobile-toggle {
+    display: grid;
+    place-items: center;
     background: none;
     border: 1px solid var(--border);
     border-radius: 6px;
     width: 44px;
-    height: 44px
+    height: 44px;
+    cursor: pointer;
+    list-style: none
+}
+#mobile-toggle::-webkit-details-marker {
+    display: none
+}
+#mobile-toggle:hover,
+.mobile-menu[open] #mobile-toggle {
+    border-color: var(--accent);
+    color: var(--accent)
 }
 .mobile-menu {
-    display: none
+    display: none;
+    flex-shrink: 0
+}
+.icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0
 }
 /* Homepage */
 .site-shell {
@@ -274,8 +292,11 @@ a:hover {
     font-size: clamp(42px,5.1vw,72px);
     font-weight: 500;
     line-height: 1.05;
-    letter-spacing: -.055em;
+    letter-spacing: -.035em;
     margin-bottom: 24px
+}
+.intro h1 .serif {
+    letter-spacing: -.01em
 }
 .intro .lead {
     max-width: 600px;
@@ -288,6 +309,12 @@ a:hover {
 }
 .location span {
     padding: 0 8px
+}
+.resume-downloads {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 20px;
+    margin-top: 8px
 }
 .profile-panel {
     border-left: 1px solid var(--border-strong);
@@ -686,35 +713,38 @@ a:hover {
         display: none
     }
     .mobile-menu {
+        display: block
+    }
+    .mobile-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
         display: flex;
         flex-wrap: wrap;
         gap: 4px 16px;
-        padding: 0 20px 12px
+        padding: 12px 20px;
+        background: var(--bg);
+        border-bottom: 1px solid var(--border)
     }
     .mobile-menu a {
         font-size: 14px;
         padding: 10px 0
-    }
-    .js .mobile-menu {
-        display: none
-    }
-    .js .mobile-menu.open {
-        display: flex
     }
     .site-shell {
         padding: 0 20px
     }
     .intro {
         grid-template-columns: 1fr;
-        padding: 40px 0 48px;
-        gap: 32px
+        padding: 32px 0;
+        gap: 24px
     }
     .availability {
         font-size: 12px;
-        margin-bottom: 24px
+        margin-bottom: 20px
     }
     .intro h1 {
-        font-size: clamp(40px,8vw,58px)
+        font-size: clamp(34px,9.5vw,58px)
     }
     .intro .lead {
         font-size: 16px
@@ -722,43 +752,43 @@ a:hover {
     .intro .actions {
         gap: 10px
     }
-    .intro .actions>.text-link {
-        flex-basis: 100%
-    }
     .profile-panel {
-        padding: 24px;
+        padding: 16px;
         border: 1px solid var(--border);
         border-radius: 8px;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 16px
+        gap: 12px
     }
     .profile-heading {
         grid-column: 1/-1;
-        padding-bottom: 4px
+        padding-bottom: 0;
+        gap: 12px
     }
     .profile-heading img {
-        width: 56px;
-        height: 64px
+        width: 48px;
+        height: 48px
+    }
+    .profile-heading .eyebrow {
+        margin-bottom: 4px
     }
     .profile-metric {
         display: block;
-        padding: 16px 0 0
+        padding: 12px 0 0
     }
     .profile-metric strong {
         display: block;
-        font-size: 38px;
-        margin-bottom: 10px
+        font-size: 30px;
+        margin-bottom: 6px
     }
     .profile-metric span {
         font-size: 12px
     }
     .profile-note {
-        grid-column: 1/-1;
-        padding: 16px 0 0
+        display: none
     }
     .social-links {
-        grid-column: 1/-1
+        display: none
     }
     .section {
         padding: 44px 0
@@ -842,9 +872,6 @@ a:hover {
     font-size: .9rem;
     font-weight: 500;
 }
-.case-nav .btn i {
-    font-size: 10px;
-}
 .case-hero {
     padding: clamp(28px, 5vw, 54px);
     margin-bottom: 28px;
@@ -892,7 +919,7 @@ a:hover {
 }
 .case-media-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
     gap: 14px;
 }
 .case-media-grid figure {
