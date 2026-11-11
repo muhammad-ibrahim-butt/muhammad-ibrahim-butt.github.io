@@ -2,7 +2,7 @@
 
 ## Overview
 
-QBSalesStar is a Windows desktop application built to simplify sales, invoicing, inventory, and QuickBooks Desktop workflows for a wholesale distribution business. The application acts as a focused operational layer on top of QuickBooks Desktop, giving the client a cleaner and more specialized interface for day-to-day sales operations while still keeping QuickBooks as the accounting source of truth.
+QBSalesStar is a legacy Windows desktop application, originally built by another developer approximately 10 years ago, for wholesale sales, invoicing, inventory, and QuickBooks Desktop workflows. I am its sole current developer and own modernization of the complete C# frontend and backend. It is used by 3 clients, with 10-15 installed workstations per warehouse. The application acts as a focused operational layer on top of QuickBooks Desktop, giving the client a cleaner and more specialized interface for day-to-day sales operations while still keeping QuickBooks as the accounting source of truth.
 
 The project was created because the client was using QuickBooks Desktop directly for business operations, but QuickBooks had too many modules, screens, and workflows for the staff's daily needs. Its interface was complex, customization was limited, and some invoice-related calculations were still being handled manually. A key example was category-wise total quantity sold in an invoice, which required extra manual work outside the normal QuickBooks flow.
 
@@ -404,13 +404,17 @@ The main app handles interactive business workflows. The helper components run i
 
 QBSalesStar is a custom Windows desktop application developed for a wholesale distribution client that relied on QuickBooks Desktop but needed a simpler, faster, and more business-specific operational system. QuickBooks Desktop was being used as the accounting backend, but its UI was too broad and complex for the client's sales workflow, and some invoice calculations were still being handled manually.
 
-I built QBSalesStar as a focused sales and inventory management layer that integrates directly with QuickBooks Desktop. The application supports sales orders, invoices, direct invoices, credit memos, debit memos, purchase orders, item receiving, item and vendor management, price-level updates, customer balances, pick lists, back orders, product publishing, invoice publishing, and detailed reporting.
+I maintain and modernize QBSalesStar as a focused sales and inventory management layer that integrates directly with QuickBooks Desktop. The application supports sales orders, invoices, direct invoices, credit memos, debit memos, purchase orders, item receiving, item and vendor management, price-level updates, customer balances, pick lists, back orders, product publishing, invoice publishing, and detailed reporting.
 
 The system also includes background services for automation. A QuickBooks event listener subscribes to live QuickBooks data changes and synchronizes supported entities to MySQL and a remote web API. A folder watcher service monitors invoice and product folders, automatically uploading invoice PDFs and product images based on numeric identifiers. The deployment package includes a setup wizard, encrypted configuration handling, service installation, QuickBooks event subscription, and a unified installer for client workstations.
 
 The result is a business-specific desktop application that keeps QuickBooks Desktop as the accounting source of truth while giving staff a streamlined interface for the workflows they use every day.
 
 ## Business Impact
+
+- Full application-context loading improved from 2-3 minutes on a good machine to 3-5 seconds even on low-end hardware, based on observed operating times rather than a controlled benchmark.
+- Current deployment serves 3 clients with 10-15 installed workstations per warehouse; the total warehouse count is not specified.
+- Related finance automations process 10,000+ invoices per month. See `sema-tax-report.md` for the tax and transaction-preparation workflows.
 
 QBSalesStar reduced the client's dependence on the full QuickBooks Desktop interface for daily operations. Instead of navigating a large accounting system for every task, staff can use a focused application designed around sales, inventory, invoicing, and fulfillment.
 

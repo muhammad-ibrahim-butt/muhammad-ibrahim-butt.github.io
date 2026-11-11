@@ -1,10 +1,17 @@
 # Resume sources
 
-The editable, single-column sources share `print.css` and are excluded from the GitHub Pages build.
+The Word documents are the editable originals. The portfolio PDFs are exported from them in Microsoft Word. All three versions have two pages and a single-column layout.
 
-- Print `backend.html` to `assets/resume.pdf` (the existing default download).
-- Print `ai-evaluation.html` to `assets/resume-ai-evaluation.pdf`.
+| Version | Word original | Text snapshot | Published PDF path |
+| --- | --- | --- | --- |
+| Backend | [backend.docx](backend.docx) | [backend.html](backend.html) | `assets/resume.pdf` |
+| AI | [ai-evaluation.docx](ai-evaluation.docx) | [ai-evaluation.html](ai-evaluation.html) | `assets/resume-ai-evaluation.pdf` |
+| Combined | [combined.docx](combined.docx) | [combined.html](combined.html) | `assets/resume-combined.pdf` |
 
-Use Chromium or Chrome, A4 paper, 100% scale, CSS page margins, and no browser headers or footers. Each source has two explicit pages. Check the exported PDF for exactly two pages, readable text, working links, and no clipped content after edits.
+Edit the relevant Word original, export it to PDF, and synchronize its HTML text snapshot. The snapshots share `print.css` for convenient review; use Word for the published PDF export so its layout matches the editable document. Inspect every exported page for clipping, readable text, correct links, and a two-page count. Keep the personal copies and these repository copies synchronized.
 
-Employment dates and figures come from the existing resume and case studies. Keep overlapping roles labeled as full-time, part-time, contract, or project-based. Do not add estimated performance or business metrics.
+The latest facts were confirmed by Ibrahim on November 11, 2026: 36 approved benchmark tasks, approximately 50 sandbox users, 10,000+ invoices monthly, and the stated application/automation timings. The application timings describe observed use, not a controlled comparison on identical hardware. Automation timings measure software processing and exclude preparation and human review. Do not present them as total turnaround time or derive unsupported savings percentages.
+
+Keep overlapping roles labeled as full-time, part-time, contract, or project-based. QBSalesStar is an inherited legacy application with Ibrahim as its sole current developer. WEPROCESS APIs, Sivee.ai, the training sandbox, and the personal PDF chatbot were independently implemented by him. Do not publish private client task content or invent metrics.
+
+This directory is excluded from the GitHub Pages build in `_config.yml`.

@@ -13,9 +13,9 @@ Core app routes and role split are defined in:
 
 ## Delivery Context
 - **Role:** Full-stack developer
-- **Implementation ownership:** End-to-end feature ownership (all listed app features)
+- **Implementation ownership:** Sole developer for all listed application features, frontend and backend
 - **Project duration:** Approximately 2-3 months
-- **Team setup:** 3 people (client-facing/coordination, full-stack development, QA/testing)
+- **Development:** Implemented by Muhammad Ibrahim Butt alone
 - **Hosting model:** Shared hosting
 - **Production URL:** `https://sivee.ai`
 

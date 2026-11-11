@@ -922,6 +922,13 @@ I automated the US sales tax calculation workflow according to state-level rules
 
 Sema Tax Report is a C# WinForms automation tool that integrates with QuickBooks Desktop and MySQL to calculate US sales tax based on state-specific rules. The application imports invoices and bills from QuickBooks, enriches each transaction line with local item master data, applies tax rates by UPC and state, calculates taxable volume, stick totals, and tax totals, highlights records with missing calculation data, and exports filing-ready Excel reports. It also supports item tax maintenance and can create calculated tax invoices back into QuickBooks, making the overall sales tax workflow faster, more accurate, and easier to audit.
 
+## Confirmed Operating Outcomes
+
+- Related finance workflows process 10,000+ invoices per month.
+- Monthly state-specific sales-tax preparation previously involved 4-5 people for about one week; automated calculation processing now takes 5 minutes or less.
+- A related transaction-preparation tool fills Paid To/By and account fields for QuickBooks import. A manual process involving 4-5 people over 3-4 days now uses one operator with 5-10 seconds of software processing.
+- Processing times are distinct from input preparation, validation, and human review. Figures describe the developer's reported operating experience.
+
 ## Resume Bullet Points
 
 - Built a C# WinForms desktop application to automate US state-wise sales tax calculation for QuickBooks invoice and bill data.

@@ -1,6 +1,6 @@
 # Muhammad Ibrahim Butt — Engineering Portfolio
 
-[Visit the portfolio](https://muhammad-ibrahim-butt.github.io/) · [Backend résumé](https://muhammad-ibrahim-butt.github.io/assets/resume.pdf) · [AI evaluation résumé](https://muhammad-ibrahim-butt.github.io/assets/resume-ai-evaluation.pdf)
+[Visit the portfolio](https://muhammad-ibrahim-butt.github.io/) · [Backend résumé](https://muhammad-ibrahim-butt.github.io/assets/resume.pdf) · [AI résumé](https://muhammad-ibrahim-butt.github.io/assets/resume-ai-evaluation.pdf) · [Combined résumé](https://muhammad-ibrahim-butt.github.io/assets/resume-combined.pdf)
 
 A static portfolio covering backend platforms, business automation, and AI agent evaluation. Built with HTML, shared CSS, and a small JavaScript navigation enhancement; hosted on GitHub Pages.
 
@@ -8,7 +8,7 @@ A static portfolio covering backend platforms, business automation, and AI agent
 
 - Seven case studies describing my role, engineering decisions, and outcomes, including QBSalesStar, WEPROCESS, and AI agent evaluation.
 - Employment history with full-time, part-time, and contract roles labeled.
-- Two downloadable résumés for backend engineering and AI evaluation roles.
+- Three downloadable résumés: backend, AI, and combined backend/AI.
 - Responsive images, keyboard navigation, reduced-motion support, and a mobile menu that works without JavaScript.
 
 ## Preview locally
@@ -39,8 +39,8 @@ The checks cover local links and assets, fragment targets, page metadata, struct
 - Root case-study HTML files: individual project narratives.
 - `assets/css/style.css` and `assets/js/script.js`: shared presentation and navigation behavior.
 - `assets/images/` and `assets/projects/`: profile images, icons, and project media.
-- `assets/resume.pdf` and `assets/resume-ai-evaluation.pdf`: published résumé PDFs.
-- [Résumé sources and export notes](resume/README.md): editable HTML and print styling.
+- `assets/resume.pdf`, `assets/resume-ai-evaluation.pdf`, and `assets/resume-combined.pdf`: résumé PDFs matching the Word originals.
+- [Résumé sources and export notes](resume/README.md): editable Word documents and synchronized HTML snapshots.
 - `_config.yml`: excludes development notes, tests, and résumé source files from the published site.
 
 Keep claims consistent across the portfolio, résumé sources, exported PDFs, and [GitHub profile](https://github.com/muhammad-ibrahim-butt). Use synthetic data for examples and remove customer information from screenshots before publishing.

@@ -64,7 +64,9 @@
 <ol><li>Select the company, reporting dates, and state.</li><li>Import invoices or bills from QuickBooks.</li><li>Match line items to product attributes and configured state tax values.</li><li>Review flagged records and correct missing inputs.</li><li>Recalculate totals and export the selected report for review.</li></ol>
 <h2>Outcome</h2>
 <p>The delivered application turns recurring spreadsheet preparation into a repeatable desktop process. It centralizes the client's configured tax values and gives accounting users a visible route from imported records to corrected data and exported reports.</p>
-<p>This work is part of the finance automation described in my Linx experience, which spans 10,000+ invoices. That figure describes the broader automation work, rather than a separate throughput measurement for this application.</p>
+<p>The broader finance-automation workflow now processes <strong>10,000+ invoices per month</strong>. Monthly state-specific sales-tax preparation previously involved a team of 4&ndash;5 people working for about a week; the automated calculation now takes <strong>5 minutes or less</strong> of processing time.</p>
+<h2>Related transaction-preparation automation</h2>
+<p>I also built an accounting tool that reads transactions and fills the Paid To/By and account fields for QuickBooks import. The previous manual process involved 4&ndash;5 people over 3&ndash;4 days. The automated tool supports a single operator, with <strong>5&ndash;10 seconds of processing time</strong>. Preparation, validation, and human review are separate from these processing timings.</p>
 <h2>Implementation</h2>
 <p>C#/.NET and Windows Forms provide the desktop interface. QuickBooks SDK/QBXML supplies transaction data; MySQL holds the structured records and configured rules; bulk-loading, caching, and Excel-generation workflows support reporting.</p>
 <p><a href="./qbsalesstar.html">See the related QBSalesStar operations platform</a>.</p>

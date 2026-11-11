@@ -29,7 +29,7 @@ The backend is not a simple CRUD application. It contains workflow-heavy busines
 
 ## My Work and Responsibilities
 
-My work on this project focused on building and maintaining the backend systems that power the WEPROCESS operational platform. The codebase shows responsibility across API design, domain modeling, service-layer architecture, integration work, background processing, validation, reporting, and production operations.
+I independently implemented all Laravel APIs for this client project and maintain the backend systems that power the WEPROCESS operational platform. The codebase shows responsibility across API design, domain modeling, service-layer architecture, integration work, background processing, validation, reporting, and production operations.
 
 Key areas of work include:
 

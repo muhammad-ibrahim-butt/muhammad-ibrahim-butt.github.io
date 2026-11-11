@@ -39,8 +39,8 @@
 </header>
 <article class="case-content card">
 <h2>My contribution</h2>
-<p>I designed and developed a quiz-style interface for comparing a user's request with an assistant's tool usage. A structured framework of nine to ten questions records judgments about tool selection, parameter grounding, and response completeness. The interface project ran in September&ndash;October 2025.</p>
-<p>My broader evaluation work includes leading a 10-person trainer pod at Turing across 500+ scenarios, authoring six coding-agent tasks with 90 automated behavioral checks at AfterQuery, and evaluating coding-agent behavior and automated grader quality at Mindrift.</p>
+<p>At Turing, I independently built a Laravel onboarding sandbox that reproduced the client's agent function-calling workflows. It included practice tasks, quizzes, and scoring so new trainers could learn the workflow before working on the client platform. Approximately 50 trainers used it before the project was paused.</p>
+<p>I onboarded 10 trainers from an initial group of 20, managed their work with assigned reviewers, owned assigned throughput, and coordinated directly with the project manager. I also developed progress-reporting tools. My broader work includes coding-agent benchmarks at AfterQuery and coding-agent and grader evaluation at Mindrift.</p>
 <h2>The problem</h2>
 <p>A plausible answer can conceal the wrong tool call, an invented argument, or an unfinished task. A useful evaluation needs to inspect what the agent actually did and explain why a response passed or failed. That feedback must be specific enough for another reviewer to apply consistently.</p>
 <h2>How I structure a review</h2>
@@ -65,11 +65,11 @@
 <p><strong>Actionable feedback:</strong> repeat the lookup with the unpaid filter, inspect the returned records, and report only what that result supports.</p>
 </div>
 <h2>Coding benchmark work</h2>
-<p>At AfterQuery, I authored six tasks with reproducible Docker environments, reference solutions, and 90 automated behavioral checks. The work covered debugging, backend, security, and compiler tasks, including task difficulty and resistance to shortcuts.</p>
-<p>At Turing, I created and reviewed evaluation protocols and translated recurring failures into clearer guidance for a 10-person pod. At Mindrift, I assess behavioral correctness, pairwise comparisons, and automated grader transcripts.</p>
+<p>At AfterQuery, I authored 36 approved coding-agent benchmark tasks across two evaluation projects. The work combines reproducible Docker environments, reference solutions or patches, and automated behavioral verifiers. Tasks span Python, PHP/Laravel, Django, JavaScript, backend reliability, security, database operations, and infrastructure.</p>
+<p>The benchmark workflow includes checking task difficulty, testing behavioral coverage, and resisting shortcut solutions. At Mindrift, I assess behavioral correctness, pairwise comparisons, and automated grader transcripts.</p>
 <h2>Outcome</h2>
-<p>The review interface captures distinct judgments as structured human feedback for an RLHF pipeline. The benchmark work adds executable checks and reference solutions to the evaluation process. These are related contributions, rather than a claim that the interface itself produced all of the task and scenario counts above.</p>
-<p><a href="./assets/resume-ai-evaluation.pdf" download>Download my AI evaluation resume</a> or <a href="./#experience">explore the corresponding roles</a>.</p>
+<p>The Laravel sandbox gave approximately 50 new trainers a place to practise client workflows with quizzes and scoring. Progress reporting supported team coordination. The benchmark work adds executable behavioral checks and reference solutions to coding-agent evaluation.</p>
+<p><a href="./assets/resume-ai-evaluation.pdf" download>Download my AI resume</a> or <a href="./#experience">explore the corresponding roles</a>.</p>
 </article>
 </main>
 </body>
