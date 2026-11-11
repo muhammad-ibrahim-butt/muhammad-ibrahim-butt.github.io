@@ -6,6 +6,15 @@ const path = require('node:path');
 const root = path.resolve(__dirname, '..');
 const pages = fs.readdirSync(root).filter(file => file.endsWith('.html'));
 
+test('customer-data screenshots are absent from public assets and page references', () => {
+  for (const name of ['projects-3.png', 'projects-4.png']) {
+    assert.equal(fs.existsSync(path.join(root, 'assets', 'projects', name)), false);
+    for (const file of pages) {
+      assert.equal(fs.readFileSync(path.join(root, file), 'utf8').includes(name), false);
+    }
+  }
+});
+
 for (const file of pages) {
   const source = fs.readFileSync(path.join(root, file), 'utf8');
   test(`${file}: local links, assets, and fragments resolve`, () => {

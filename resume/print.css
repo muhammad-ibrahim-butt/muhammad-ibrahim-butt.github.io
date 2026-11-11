@@ -1,0 +1,22 @@
+@page { size: A4; margin: 14mm 16mm; }
+* { box-sizing: border-box; }
+body { margin: 0; color: #172c35; font: 10.5pt/1.36 Arial, sans-serif; }
+h1 { margin: 0 0 3pt; font-size: 23pt; letter-spacing: -.5pt; }
+h2 { margin: 14pt 0 6pt; padding-bottom: 3pt; border-bottom: 1px solid #bac7ce; font-size: 10.5pt; text-transform: uppercase; letter-spacing: .7pt; }
+h3 { margin: 8pt 0 2pt; font-size: 10.5pt; }
+p { margin: 0 0 4pt; }
+a { color: #174c62; text-underline-offset: 2px; }
+ul { margin: 4pt 0 8pt; padding-left: 14pt; }
+li { margin-bottom: 3pt; }
+.headline { font-size: 12pt; color: #174c62; margin-bottom: 7pt; }
+.contact, .meta, .continuation { font-size: 9pt; }
+.meta { color: #435d69; }
+.role, .project, .skills { break-inside: avoid; }
+.page + .page { break-before: page; }
+.continuation { color: #435d69; border-bottom: 1px solid #bac7ce; padding-bottom: 5pt; }
+.page h2:first-of-type { margin-top: 11pt; }
+.project { margin-bottom: 7pt; }
+@media screen {
+  body { background: #e8edef; }
+  .page { background: white; width: 210mm; min-height: 269mm; padding: 14mm 16mm; margin: 20px auto; }
+}

@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Human-in-the-loop evaluation of AI tool selection, parameter grounding, and response completeness. A project by Muhammad Ibrahim Butt.">
+    <meta name="description" content="Coding-agent benchmarks, tool-use evaluation, and structured human review. Explore my engineering work and a synthetic rubric example.">
     <link rel="canonical" href="https://muhammad-ibrahim-butt.github.io/agent-evaluation.html">
     <meta property="og:title" content="AI Agent Function-Calling Evaluation">
-    <meta property="og:description" content="Human-in-the-loop evaluation of AI tool selection, parameter grounding, and response completeness. A project by Muhammad Ibrahim Butt.">
+    <meta property="og:description" content="Coding-agent benchmarks, tool-use evaluation, and structured human review. Explore my engineering work and a synthetic rubric example.">
     <meta property="og:image" content="https://muhammad-ibrahim-butt.github.io/assets/images/og-preview.png">
     <meta property="og:type" content="article">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="AI Agent Function-Calling Evaluation">
-    <meta name="twitter:description" content="Human-in-the-loop evaluation of AI tool selection, parameter grounding, and response completeness. A project by Muhammad Ibrahim Butt.">
+    <meta name="twitter:description" content="Coding-agent benchmarks, tool-use evaluation, and structured human review. Explore my engineering work and a synthetic rubric example.">
     <meta name="twitter:image" content="https://muhammad-ibrahim-butt.github.io/assets/images/og-preview.png">
     <title>AI Agent Evaluation | Function-Calling Case Study</title>
     <link rel="icon" type="image/jpeg" href="./assets/images/profile.JPG">
@@ -31,36 +31,46 @@
         </a>
         <a href="./#work" class="btn btn-ghost btn-sm"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to work</a>
     </nav>
-<header class="case-hero card"><p class="eyebrow">AI evaluation / Sep–Oct 2025</p>
-<h1 class="h-display">Agent function-calling evaluation</h1>
-<p class="lead">A human-in-the-loop evaluation platform for reviewing how AI agents choose tools, supply arguments, and complete a user's request.</p>
+<header class="case-hero card"><p class="eyebrow">AI evaluation / Human review &amp; coding benchmarks</p>
+<h1 class="h-display">AI agent evaluation</h1>
+<p class="lead">I build review workflows and coding tasks that test an agent's tool choices, argument grounding, and ability to complete real engineering work.</p>
 <div class="case-meta">
 <span class="chip">LLM evaluation</span><span class="chip">Human feedback</span><span class="chip">Function calling</span>
 </div>
 </header>
-<section class="case-proof card" aria-labelledby="workflow-title"><h2 id="workflow-title">The review workflow</h2>
-<div class="evaluation-flow">
-<span>User request</span><span>Assistant tool usage</span><span>Structured human review</span><span>Evaluation feedback</span>
-</div>
-</section>
-<article class="case-content card"><h2>The problem</h2>
-<p>A plausible response does not guarantee that an agent used the right tool or supplied grounded arguments. Reviewers need to assess the actions behind an answer as well as the answer itself.</p>
+<article class="case-content card">
 <h2>My contribution</h2>
-<p>I designed and developed a quiz-style review interface in which graders compare a user query with the assistant's tool usage. A structured framework of nine to ten questions captures judgments about tool selection, parameter accuracy, and response completeness.</p>
-<h2>What the platform produces</h2>
-<p>The workflow captures granular human feedback as labeled evaluation data for an RLHF pipeline. It makes distinct failure modes visible instead of reducing every response to a single overall judgment.</p>
-<h2>Evaluation dimensions</h2>
-<ul>
-<li>
-<strong>Tool selection:</strong> Did the assistant select an appropriate function for the request?</li>
-<li>
-<strong>Parameter grounding:</strong> Were arguments supported by the user's intent and available context?</li>
-<li>
-<strong>Completeness:</strong> Did the resulting response address the request?</li>
-</ul>
-<h2>Related experience</h2>
-<p>This project sits alongside my work leading an AI evaluation pod at Turing and evaluating coding-agent behavior at Mindrift. The focus is consistent review, useful feedback, and understanding where an agent's reasoning or actions break down.</p>
-<p><a href="./#experience">Explore my AI evaluation experience</a> or <a href="mailto:m.ibrahim8325@gmail.com">discuss an evaluation workflow</a>.</p>
+<p>I designed and developed a quiz-style interface for comparing a user's request with an assistant's tool usage. A structured framework of nine to ten questions records judgments about tool selection, parameter grounding, and response completeness. The interface project ran in September&ndash;October 2025.</p>
+<p>My broader evaluation work includes leading a 10-person trainer pod at Turing across 500+ scenarios, authoring six coding-agent tasks with 90 automated behavioral checks at AfterQuery, and evaluating coding-agent behavior and automated grader quality at Mindrift.</p>
+<h2>The problem</h2>
+<p>A plausible answer can conceal the wrong tool call, an invented argument, or an unfinished task. A useful evaluation needs to inspect what the agent actually did and explain why a response passed or failed. That feedback must be specific enough for another reviewer to apply consistently.</p>
+<h2>How I structure a review</h2>
+<ol><li><strong>Establish intent:</strong> identify the requested result and the constraints stated by the user.</li><li><strong>Inspect actions:</strong> check the chosen tool, its arguments, and the returned evidence.</li><li><strong>Separate failure modes:</strong> score tool choice, argument grounding, and completion independently.</li><li><strong>Record feedback:</strong> point to the action or omission that explains the judgment.</li></ol>
+<h2>A worked evaluation example</h2>
+<div class="sample-panel">
+<p class="eyebrow">Synthetic example &middot; created for this portfolio</p>
+<p>This example illustrates the review method. It is not a client task, a production transcript, or a measured benchmark result.</p>
+<p><strong>User request:</strong> &ldquo;Find the unpaid invoices for customer D-17. Do not send reminders.&rdquo;</p>
+<p><strong>Observed tool call:</strong></p>
+<pre><code>list_invoices({
+  "customer_id": "D-17",
+  "status": "paid"
+})</code></pre>
+<p><strong>Observed response:</strong> &ldquo;You have no unpaid invoices.&rdquo;</p>
+<dl class="sample-records">
+<div><dt>Tool choice &middot; Pass</dt><dd>An invoice lookup matches the request.</dd></div>
+<div><dt>Argument grounding &middot; Fail</dt><dd>The status filter asks for paid invoices instead of unpaid invoices.</dd></div>
+<div><dt>Instruction compliance &middot; Pass</dt><dd>The observed action does not send a reminder.</dd></div>
+<div><dt>Completion &middot; Fail</dt><dd>A paid-invoice lookup cannot establish that no unpaid invoices exist.</dd></div>
+</dl>
+<p><strong>Actionable feedback:</strong> repeat the lookup with the unpaid filter, inspect the returned records, and report only what that result supports.</p>
+</div>
+<h2>Coding benchmark work</h2>
+<p>At AfterQuery, I authored six tasks with reproducible Docker environments, reference solutions, and 90 automated behavioral checks. The work covered debugging, backend, security, and compiler tasks, including task difficulty and resistance to shortcuts.</p>
+<p>At Turing, I created and reviewed evaluation protocols and translated recurring failures into clearer guidance for a 10-person pod. At Mindrift, I assess behavioral correctness, pairwise comparisons, and automated grader transcripts.</p>
+<h2>Outcome</h2>
+<p>The review interface captures distinct judgments as structured human feedback for an RLHF pipeline. The benchmark work adds executable checks and reference solutions to the evaluation process. These are related contributions, rather than a claim that the interface itself produced all of the task and scenario counts above.</p>
+<p><a href="./assets/resume-ai-evaluation.pdf" download>Download my AI evaluation resume</a> or <a href="./#experience">explore the corresponding roles</a>.</p>
 </article>
 </main>
 </body>

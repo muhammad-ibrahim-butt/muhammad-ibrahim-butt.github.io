@@ -1066,3 +1066,51 @@ a:hover {
 .case-content h2 {
     scroll-margin-top: 100px
 }
+.sample-panel {
+    margin: 24px 0;
+    padding: clamp(16px, 3vw, 28px);
+    border: 1px solid var(--border-strong);
+    border-radius: 10px;
+    background: var(--bg)
+}
+.case-content .sample-panel .eyebrow {
+    color: var(--accent);
+    font-size: 11px
+}
+.sample-panel h3 {
+    margin-top: 12px
+}
+.sample-records {
+    margin: 20px 0
+}
+.sample-records>div {
+    padding: 14px 0;
+    border-top: 1px solid var(--border)
+}
+.sample-records dt {
+    margin-bottom: 6px;
+    font-weight: 600
+}
+.sample-records dd {
+    margin: 0;
+    color: var(--muted);
+    font-size: .94rem
+}
+.case-content .case-architecture {
+    margin: 20px 0
+}
+.career-detail h3 {
+    margin: 20px 0 6px;
+    color: var(--text);
+    font-size: 14px
+}
+.resume-options {
+    margin-top: 20px
+}
+.resume-options p {
+    color: var(--muted);
+    font-size: 13px
+}
+.resume-options .actions {
+    margin-top: 8px
+}
